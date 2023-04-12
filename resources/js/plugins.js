@@ -116,4 +116,16 @@ $(function () {
 
     // Enable tooltips everywhere
     $('[data-toggle="tooltip"]').tooltip();
+
+
+    // handle information tab button click
+    $('a[data-action="open-information"]').on('shown.bs.tab', function (event) {
+        event.target // newly activated tab
+        event.relatedTarget // previous active tab
+
+        $('a[data-toggle="pill"]').each((index, element) => {
+            $(element).removeClass('active');
+        })
+        $('#information-tab').addClass('active')
+    })
 });

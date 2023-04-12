@@ -10,6 +10,8 @@ use Illuminate\Validation\Rule;
  */
 class UpdateProfileRequest extends FormRequest
 {
+    protected $redirect = "/account#information";
+
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -32,6 +34,14 @@ class UpdateProfileRequest extends FormRequest
             'email' => [Rule::requiredIf(function () {
                 return config('boilerplate.access.user.change_email');
             }), 'max:255', 'email', Rule::unique('users')->ignore($this->user()->id)],
+            "dob" => ['required', 'date'],
+            "phone" => ['required', 'numeric'],
+            "province" => ['string', 'required'],
+            "city" => ['string', 'required'],
+            "child_name" => ['string', 'required'],
+            "child_dob" => ['date', 'required'],
+            "address" => ['string', 'required', 'max:500'],
+            "postal_code" => ['numeric', 'required', 'digits_between:4,10'],
         ];
     }
 }

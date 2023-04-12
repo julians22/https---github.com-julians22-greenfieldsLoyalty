@@ -67,4 +67,100 @@ trait UserAttribute
             })
             ->implode('<br/>');
     }
+
+    /**
+     * @return null|string
+     */
+    public function getDateOfBirthAttribute()
+    {
+        if (! $this->isHasDetail()) {
+            return null;
+        }
+
+        return $this->detail->date_of_birth;
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getProvinceAttribute()
+    {
+        if (! $this->isHasDetail()) {
+            return null;
+        }
+
+        return $this->detail->province;
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getCityAttribute()
+    {
+        if (! $this->isHasDetail()) {
+            return null;
+        }
+
+        return $this->detail->city;
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getPhoneAttribute()
+    {
+        if (! $this->isHasDetail()) {
+            return null;
+        }
+
+        return $this->detail->phone;
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getAddressAttribute()
+    {
+        if (! $this->isHasDetail()) {
+            return null;
+        }
+
+        return $this->detail->address;
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getChildNameAttribute()
+    {
+        if (! $this->isHasDetail()) {
+            return null;
+        }
+
+        return $this->detail->child_name;
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getChildDateOfBirthAttribute()
+    {
+        if (! $this->isHasDetail()) {
+            return null;
+        }
+
+        return $this->detail->child_date_of_birth;
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getPostalCodeAttribute()
+    {
+        if (! $this->isHasDetail()) {
+            return null;
+        }
+
+        return $this->detail->postal_code;
+    }
 }

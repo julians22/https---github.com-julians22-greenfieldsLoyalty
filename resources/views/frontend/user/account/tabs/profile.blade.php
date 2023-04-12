@@ -41,5 +41,23 @@
             <th>@lang('Last Updated')</th>
             <td>@displayDate($logged_in_user->updated_at) ({{ $logged_in_user->updated_at->diffForHumans() }})</td>
         </tr>
+        @if (!$logged_in_user->isHasDetail())
+
+        <tr>
+            <td colspan="2">
+                <x-utils.link
+                    :text="__('Complete You Profile')"
+                    class="btn btn-warning"
+                    data-action="open-information"
+                    data-toggle="pill"
+                    href="#information"
+                    role="tab"
+                    aria-controls="information"
+                    aria-selected="false"
+                    />
+            </td>
+        </tr>
+
+        @endif
     </table>
 </div><!--table-responsive-->

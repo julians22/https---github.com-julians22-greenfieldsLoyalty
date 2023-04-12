@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-light bg-white" style="z-index: 2;">
+<nav class="navbar navbar-expand-md navbar-light bg-white py-md-4" style="z-index: 2;">
     <div class="container">
         <div class="navbar-brand">
             <div class="d-flex items-center position-relative">
@@ -77,20 +77,20 @@
 
         <div class="container">
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="">Beranda</a>
+                <li class="nav-item {{activeClass(Route::is('frontend.user.dashboard'))}}">
+                    <a class="nav-link" href="{{ route('frontend.user.dashboard') }}">Beranda</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Aktivitas</a>
+                    <a class="nav-link" href="#">Aktivitas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Tukar Hadiah</a>
+                    <a class="nav-link" href="#">Tukar <br>Hadiah</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">FAQ</a>
+                    <a class="nav-link" href="#">FAQ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Syarat & Ketentuan</a>
+                    <a class="nav-link" href="#">Syarat & <br>Ketentuan</a>
                 </li>
             </ul>
         </div> <!-- container -->

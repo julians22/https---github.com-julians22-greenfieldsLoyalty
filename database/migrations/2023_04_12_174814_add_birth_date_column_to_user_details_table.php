@@ -17,6 +17,7 @@ class AddBirthDateColumnToUserDetailsTable extends Migration
             $table->date('date_of_birth');
             $table->string('child_name', 120);
             $table->date('child_date_of_birth');
+            $table->string('postal_code', 10);
         });
     }
 
@@ -31,6 +32,7 @@ class AddBirthDateColumnToUserDetailsTable extends Migration
             $table->dropColumn('date_of_birth');
             $table->dropColumn('child_name');
             $table->dropColumn('child_date_of_birth');
+            $table->dropColumn('postal_code');
         });
     }
 }

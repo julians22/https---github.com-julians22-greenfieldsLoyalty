@@ -98,7 +98,7 @@ class User extends Authenticatable implements MustVerifyEmail, TwoFactorAuthenti
      * @var array
      */
     protected $appends = [
-        'avatar',
+        'avatar'
     ];
 
     /**
@@ -107,6 +107,7 @@ class User extends Authenticatable implements MustVerifyEmail, TwoFactorAuthenti
     protected $with = [
         'permissions',
         'roles',
+        'detail',
     ];
 
     /**
