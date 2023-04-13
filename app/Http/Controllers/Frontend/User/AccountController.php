@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Frontend\User;
 
+use Indonesia;
+
 /**
  * Class AccountController.
  */
@@ -12,6 +14,7 @@ class AccountController
      */
     public function index()
     {
+        $provinces = Indonesia::all();
         return view('frontend.user.account');
     }
 }

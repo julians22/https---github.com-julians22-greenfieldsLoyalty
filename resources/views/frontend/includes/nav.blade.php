@@ -6,7 +6,7 @@
                     <img src="{{ asset('img/brand/1x/Logo.png') }}" alt="" width="160" height="36">
                 </div>
                 <x-utils.link
-                    class="stretched-link text-dark ml-1"
+                    class="stretched-link text-dark ml-2"
                     :href="route('frontend.index')">
                     <div class="d-inline-block" style="line-height: 1;">
                         LOYALTY <br>PROGRAM
@@ -58,7 +58,7 @@
                     <li class="nav-item">
                         <x-utils.link
                             :text="__('Logout')"
-                            class="btn btn-info my-2 my-sm-0 rounded-0"
+                            class="btn btn-cyan my-2 my-sm-0 rounded-0"
                             onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                             <x-slot name="text">
                                 @lang('Logout')
@@ -75,24 +75,44 @@
 <div style="z-index: 1;" class="shadow-lg position-relative">
     <nav class="navbar navbar-expand-md navbar-light py-0 navbar-stack">
 
-        <div class="container">
-            <ul class="navbar-nav">
-                <li class="nav-item {{activeClass(Route::is('frontend.user.dashboard'))}}">
-                    <a class="nav-link" href="{{ route('frontend.user.dashboard') }}">Beranda</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Aktivitas</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Tukar <br>Hadiah</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">FAQ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Syarat & <br>Ketentuan</a>
-                </li>
-            </ul>
+        <div class="container justify-content-between">
+            {{-- <div class="d-flex "> --}}
+                <ul class="navbar-nav">
+                    <li class="nav-item {{ activeClass(Route::is('frontend.user.dashboard')) }}">
+                        <a class="nav-link" href="{{ route('frontend.user.dashboard') }}">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Aktivitas</a>
+                    </li>
+                    <li class="nav-item {{ activeClass(Route::is('frontend.redeem.index')) }}">
+                        <a class="nav-link" href="{{ route('frontend.redeem.index') }}">Tukar <br>Hadiah</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">FAQ</a>
+                    </li>
+                    <li class="nav-item {{ activeClass(Route::is('frontend.pages.terms')) }}">
+                        <a class="nav-link" href="{{ route('frontend.pages.terms') }}">Syarat & <br>Ketentuan</a>
+                    </li>
+                </ul>
+
+                <div class="point-card-wrapper">
+                    <div class="card-wrapper">
+                        <div class="header">
+                            <div></div>
+                            <div>POINT KAMU</div>
+                            <div></div>
+                        </div>
+
+                        <div class="body">
+                            <div class="point">
+                                8,000
+                            </div>
+                            <button class="btn btn-cyan rounded-0">UPLOAD STRUK</button>
+                        </div>
+                    </div>
+                </div>
+            {{-- </div> --}}
+
         </div> <!-- container -->
     </nav>
 

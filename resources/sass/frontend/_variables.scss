@@ -2,7 +2,7 @@
 $body-bg: #f8fafc;
 
 // Typography
-$font-family-sans-serif: 'Roboto', sans-serif;
+$font-family-sans-serif: 'Montserrat', sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
 
@@ -15,5 +15,10 @@ $red: #e3342f;
 $orange: #f6993f;
 $yellow: #ffed4a;
 $green: #38c172;
+$dark-green: #256146;
 $teal: #4dc0b5;
-$cyan: #6cb2eb;
+$cyan: #48a2b1;
+
+$theme-colors: (
+  "cyan": $cyan
+);
