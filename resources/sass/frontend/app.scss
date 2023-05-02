@@ -199,5 +199,30 @@
         padding: 1rem;
         display: flex;
         justify-content: space-between;
+
+        button{
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2rem;
+            height: 2rem;
+            background-color: $gray-700;
+            text-decoration: none;
+            outline: 0;
+            border-width: 0;
+            color: white;
+            border-radius: 10rem;
+            transition: all ease-in .2s;
+            transform: rotate(90deg);
+
+            &.collapsed{
+                transform: rotate(0deg);
+            }
+        }
+    }
+
+    .card-body{
+        padding-top: 0;
     }
 }

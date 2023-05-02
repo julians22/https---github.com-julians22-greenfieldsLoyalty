@@ -21,6 +21,13 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <x-utils.link
+                        :href="route('frontend.pages.terms')"
+                        :active="activeClass(Route::is('frontend.pages.terms'))"
+                        :text="__('Syarat Dan Ketentuan')"
+                        class="nav-link mr-2" />
+                </li>
                 @guest
                     <li class="nav-item">
                         <x-utils.link
@@ -72,6 +79,8 @@
     </div><!--container-->
 </nav>
 
+@auth
+
 <div style="z-index: 1;" class="shadow-lg position-relative">
     <nav class="navbar navbar-expand-md navbar-light py-0 navbar-stack">
 
@@ -87,8 +96,8 @@
                     <li class="nav-item {{ activeClass(Route::is('frontend.redeem.index')) }}">
                         <a class="nav-link" href="{{ route('frontend.redeem.index') }}">Tukar <br>Hadiah</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">FAQ</a>
+                    <li class="nav-item {{ activeClass(Route::is('frontend.pages.faq')) }}">
+                        <a class="nav-link" href="{{ route('frontend.pages.faq') }}">FAQ</a>
                     </li>
                     <li class="nav-item {{ activeClass(Route::is('frontend.pages.terms')) }}">
                         <a class="nav-link" href="{{ route('frontend.pages.terms') }}">Syarat & <br>Ketentuan</a>
@@ -118,3 +127,5 @@
 
     <div class="nav-border"></div>
 </div>
+@endauth
+

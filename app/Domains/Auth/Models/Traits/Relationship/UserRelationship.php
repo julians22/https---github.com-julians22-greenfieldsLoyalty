@@ -18,14 +18,4 @@ trait UserRelationship
     {
         return $this->morphMany(PasswordHistory::class, 'model');
     }
-
-    /**
-     * Get the detail that owns the User
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
-    public function detail(): HasOne
-    {
-        return $this->hasOne(UserDetail::class, 'user_id');
-    }
 }
