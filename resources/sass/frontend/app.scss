@@ -7,14 +7,24 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+.main-section{
+    background-image: url('/img/background-100.jpg');
+    background-position: bottom center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    padding-bottom: 3rem;
+}
+
 .navbar-stack {
     background-color: #e9f4f5;
     height: 85px;
     .navbar-nav{
-        display: grid;
-        justify-content: start;
-        grid-template-columns: repeat(5, minmax(0, 1fr));
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
         gap: 1.5rem;
+        width: 80%;
     }
     .nav-item {
         height: 85px;
@@ -27,13 +37,14 @@
             width: 100%;
             text-align: center;
             text-transform: uppercase;
-            font-size: 18px;
+            font-size: 17px;
+            font-weight: 600;
             margin-bottom: 0px;
-            font-weight: 400;
             flex: 1;
             padding-left: 0;
             padding-right: 0;
             line-height: 1;
+            color: black;
             transition: all ease-in-out .5s;
         }
         &::after{
@@ -50,21 +61,20 @@
 
         &.active{
             .nav-link{
-                font-weight: 500 !important;
-                color: #48a2b1;
+                color: $dark-green;
             }
             &::after{
-                background: #48a2b1;
+                background: $dark-green;
                 opacity: 1;
             }
         }
 
         &:hover{
             .nav-link{
-                color: #48a2b1;
+                color: $dark-green;
             }
             &::after{
-                background: #48a2b1;
+                background: $dark-green;
                 opacity: 1;
             }
         }
@@ -84,13 +94,18 @@
             left: 0;
             right: 0;
             padding: 1rem;
-            background-color: $dark-green;
+            // background-color: $dark-green;
+            background-color: transparent;
+            background-image: url('/img/point_board.png');
+            background-repeat: no-repeat;
+            background-position: bottom center;
+            background-size: cover;
 
             display: flex;
             flex-direction: column;
             align-items: center;
 
-            color: white;
+            color: $gold;
             text-align: center;
 
             .header{
@@ -167,7 +182,7 @@
         }
 
         .point-badge{
-            background-color: $dark-green;
+            // background-color: $dark-green;
             color: white;
             width: 65px;
             height: 65px;
@@ -225,4 +240,8 @@
     .card-body{
         padding-top: 0;
     }
+}
+
+.btn-rounded{
+    border-radius: .5rem;
 }

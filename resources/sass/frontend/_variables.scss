@@ -14,11 +14,14 @@ $pink: #f66d9b;
 $red: #e3342f;
 $orange: #f6993f;
 $yellow: #ffed4a;
-$green: #38c172;
+$green: #228E5B;
 $dark-green: #256146;
 $teal: #4dc0b5;
 $cyan: #48a2b1;
+$gold: #C49A6C;
 
 $theme-colors: (
-  "cyan": $cyan
+  "cyan": $cyan,
+  "green": $green,
+  "dark-green": $dark-green
 );

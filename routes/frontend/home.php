@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Frontend\FaqController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\PrivacyController;
 use App\Http\Controllers\Frontend\RedeemController;
 use App\Http\Controllers\Frontend\TermsController;
 use Tabuna\Breadcrumbs\Trail;
@@ -20,8 +21,11 @@ Route::group(['middleware' => 'auth', 'as' => 'redeem.', 'prefix' => 'redeem'], 
     Route::get('/', [RedeemController::class, 'index'])->name('index');
 });
 
-Route::get('terms', [TermsController::class, 'index'])
+Route::get('term-and-condition', [TermsController::class, 'index'])
     ->name('pages.terms');
+
+Route::get('privacy-policy', [PrivacyController::class, 'index'])
+    ->name('pages.privacy');
 
 Route::get('faq', [FaqController::class, 'index'])
     ->name('pages.faq');

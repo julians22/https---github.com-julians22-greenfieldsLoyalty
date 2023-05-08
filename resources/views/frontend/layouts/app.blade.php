@@ -24,12 +24,19 @@
     @include('includes.partials.profile-completion')
 
     <div id="app">
-        @include('frontend.includes.nav')
-        @include('includes.partials.messages')
+        <div>
+            @include('frontend.includes.nav')
+            @include('includes.partials.messages')
 
-        <main>
-            @yield('content')
-        </main>
+            <x-frontend.main-section>
+
+                <x-slot name="content">
+                    @yield('content')
+                </x-slot>
+
+            </x-frontend.main-section>
+
+        </div>
     </div><!--app-->
 
     @stack('before-scripts')
