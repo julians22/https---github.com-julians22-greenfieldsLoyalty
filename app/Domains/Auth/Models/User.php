@@ -99,7 +99,8 @@ class User extends Authenticatable implements MustVerifyEmail, TwoFactorAuthenti
      * @var array
      */
     protected $appends = [
-        'avatar'
+        'avatar',
+        'date_of_birth'
     ];
 
     /**

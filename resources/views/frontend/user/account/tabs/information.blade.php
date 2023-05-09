@@ -28,7 +28,7 @@
                 <label for="dob" class="col-md-3 col-form-label">@lang('Birth Date')</label>
 
                 <div class="col-md-9">
-                    <input type="date" name="dob" class="form-control" placeholder="{{ __('Birth Date') }}" value="{{ old('dob') ?? $logged_in_user->date_of_birth }}" required />
+                    <input type="date" name="dob" class="form-control" placeholder="{{ __('Birth Date') }}" value="{{ old('dob') ?? ($logged_in_user->date_of_birth ?? null) }}" required />
                 </div>
             </div><!--form-group-->
 

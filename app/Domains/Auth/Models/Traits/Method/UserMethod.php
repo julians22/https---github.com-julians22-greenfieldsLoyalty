@@ -12,7 +12,11 @@ trait UserMethod
 
     public function isHasDetail()
     {
-        return $this->has('detail')->exists();
+        if (empty($this->detail)) {
+            return false;
+        }
+
+        return true;
     }
 
     /**

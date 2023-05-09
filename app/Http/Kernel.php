@@ -59,6 +59,11 @@ class Kernel extends HttpKernel
             'password.expires',
             'is_admin',
         ],
+
+        'completes_detail' => [
+            'auth',
+            'user_complete_detail'
+        ]
     ];
 
     /**
@@ -87,6 +92,7 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'type' => \App\Domains\Auth\Http\Middleware\UserTypeCheck::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'user_complete_detail' => \App\Http\Middleware\UserCompleteDetail::class
     ];
 
     /**

@@ -4,4 +4,8 @@
             {{ $content }}
         </main><!--card-->
     @endif
+@else
+    <main>
+        {{ $content }}
+    </main>
 @endif

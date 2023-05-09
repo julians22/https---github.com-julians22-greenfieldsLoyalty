@@ -9,7 +9,7 @@
                     class="stretched-link text-dark ml-2"
                     :href="route('frontend.index')">
                     <div class="d-inline-block" style="line-height: 1;">
-                        KLUB IBU EXTRA <br> LOYALTY PROGRAM
+                        KLUB IBU EXTRA <br> <strong>LOYALTY PROGRAM</strong>
                     </div>
                 </x-utils.link>
             </div>

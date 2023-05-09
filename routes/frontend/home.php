@@ -17,7 +17,7 @@ Route::get('/', [HomeController::class, 'index'])
         $trail->push(__('Home'), route('frontend.index'));
     });
 
-Route::group(['middleware' => 'auth', 'as' => 'redeem.', 'prefix' => 'redeem'], function() {
+Route::group(['middleware' => ['auth', 'completes_detail'], 'as' => 'redeem.', 'prefix' => 'redeem'], function() {
     Route::get('/', [RedeemController::class, 'index'])->name('index');
 });
 
