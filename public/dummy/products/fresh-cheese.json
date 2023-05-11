@@ -1,0 +1,383 @@
+[
+    {
+        "productCategories": [
+            {
+                "name": "Fresh Cheese",
+                "slug": "fresh-cheese"
+            }
+        ],
+        "id": "63af435729590d08accdec9f",
+        "images": [
+            {
+                "filename": "1673633002000.jpg",
+                "altName": "Mozzarella Cheese",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673633002000.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673633002000.jpg"
+                },
+                "_id": "63c19cff9cfd4adb1670889e"
+            },
+            {
+                "filename": "1673633004675.jpg",
+                "altName": "Mozzarella Cheese",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673633004675.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673633004675.jpg"
+                },
+                "_id": "63c19cff9cfd4adb1670889f"
+            },
+            {
+                "filename": "1673633007197.jpg",
+                "altName": "Mozzarella Cheese",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673633007197.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673633007197.jpg"
+                },
+                "_id": "63c19cff9cfd4adb167088a0"
+            },
+            {
+                "filename": "1673633009756.jpg",
+                "altName": "Mozzarella Cheese",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673633009756.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673633009756.jpg"
+                },
+                "_id": "63c19cff9cfd4adb167088a1"
+            },
+            {
+                "filename": "1673633012391.jpg",
+                "altName": "Mozzarella Cheese",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673633012391.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673633012391.jpg"
+                },
+                "_id": "63c19cff9cfd4adb167088a2"
+            },
+            {
+                "filename": "1673633015931.jpg",
+                "altName": "Mozzarella Cheese",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673633015931.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673633015931.jpg"
+                },
+                "_id": "63c19cff9cfd4adb167088a3"
+            },
+            {
+                "filename": "1673633018961.jpg",
+                "altName": "Mozzarella Cheese",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673633018961.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673633018961.jpg"
+                },
+                "_id": "63c19cff9cfd4adb167088a4"
+            }
+        ],
+        "title": "Keju Mozzarella",
+        "slug": "mozarella-cheese",
+        "slogans": [
+            "EXTRA FRESH",
+            "EXTRA GOODNESS",
+            "EXTRA TASTY"
+        ],
+        "sizes": [
+            "200g"
+        ],
+        "description": "<p>Greenfields Mozzarella Cheese dalam bentuk blok berasal dari susu segar di peternakan Greenfields serta rennet nabati, rasa lembut &amp; creamy saat dilelehkan, serta memiliki efek stretch yang menggugah selera!</p>",
+        "nutrition": {
+            "filename": "file-1672430348948.svg",
+            "altName": "Nutrition facts for Mozzarella Cheese",
+            "url": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productNutrition/file-1672430348948.svg"
+        },
+        "ingredients": [
+            "Susu Segar (95.7%), Dadih Keju Mozzarella (4%, mengandung Lactobacillus lactis subsp. cremoris), Garam, Rennet Mikrobial (Aspergillus niger var. awamori), Kultur (Streptococcus thermophilus)."
+        ],
+        "isFeatured": true,
+        "totalReview": 1,
+        "reviewScore": 5
+    },
+    {
+        "productCategories": [
+            {
+                "name": "Fresh Cheese",
+                "slug": "fresh-cheese"
+            }
+        ],
+        "id": "63af448729590d08accdef10",
+        "images": [
+            {
+                "filename": "1673632918254.jpg",
+                "altName": "Mozzarella Shredded Cheese",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673632918254.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673632918254.jpg"
+                },
+                "_id": "63c19cae9cfd4adb16708827"
+            },
+            {
+                "filename": "1673632920918.jpg",
+                "altName": "Mozzarella Shredded Cheese",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673632920918.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673632920918.jpg"
+                },
+                "_id": "63c19cae9cfd4adb16708828"
+            },
+            {
+                "filename": "1673632923678.jpg",
+                "altName": "Mozzarella Shredded Cheese",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673632923678.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673632923678.jpg"
+                },
+                "_id": "63c19cae9cfd4adb16708829"
+            },
+            {
+                "filename": "1673632926201.jpg",
+                "altName": "Mozzarella Shredded Cheese",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673632926201.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673632926201.jpg"
+                },
+                "_id": "63c19cae9cfd4adb1670882a"
+            },
+            {
+                "filename": "1673632929892.jpg",
+                "altName": "Mozzarella Shredded Cheese",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673632929892.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673632929892.jpg"
+                },
+                "_id": "63c19cae9cfd4adb1670882b"
+            },
+            {
+                "filename": "1673632935361.jpg",
+                "altName": "Mozzarella Shredded Cheese",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673632935361.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673632935361.jpg"
+                },
+                "_id": "63c19cae9cfd4adb1670882c"
+            },
+            {
+                "filename": "1673632938622.jpg",
+                "altName": "Mozzarella Shredded Cheese",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673632938622.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673632938622.jpg"
+                },
+                "_id": "63c19cae9cfd4adb1670882d"
+            }
+        ],
+        "title": "Mozzarella Shredded Cheese",
+        "slug": "mozzarella-shredded-cheese",
+        "slogans": [
+            "EXTRA FRESH",
+            "EXTRA GOODNESS",
+            "EXTRA TASTY"
+        ],
+        "sizes": [
+            "200g"
+        ],
+        "description": "<p>Greenfields Mozzarella Cheese dalam bentuk blok berasal dari susu segar di peternakan Greenfields serta rennet nabati, rasa lembut &amp; creamy saat dilelehkan, serta memiliki efek stretch yang menggugah selera!</p>",
+        "nutrition": {
+            "filename": "file-1672430556632.svg",
+            "altName": "Nutrition facts for Mozzarella Shredded Cheese",
+            "url": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productNutrition/file-1672430556632.svg"
+        },
+        "ingredients": [
+            "Susu Segar (95.7%), Dadih Keju Mozzarella (4%, mengandung Lactobacillus lactis subsp. cremoris), Garam, Rennet Mikrobial (Aspergillus niger var. awamori), Kultur (Streptococcus thermophilus)."
+        ],
+        "isFeatured": true,
+        "reviewScore": null
+    },
+    {
+        "productCategories": [
+            {
+                "name": "Fresh Cheese",
+                "slug": "fresh-cheese"
+            }
+        ],
+        "id": "63af45de29590d08accdf3b5",
+        "images": [
+            {
+                "filename": "1673632877894.jpg",
+                "altName": "Ricotta Cheese",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673632877894.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673632877894.jpg"
+                },
+                "_id": "63c19c879cfd4adb167087ed"
+            },
+            {
+                "filename": "1673632880889.jpg",
+                "altName": "Ricotta Cheese",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673632880889.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673632880889.jpg"
+                },
+                "_id": "63c19c879cfd4adb167087ee"
+            },
+            {
+                "filename": "1673632889467.jpg",
+                "altName": "Ricotta Cheese",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673632889467.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673632889467.jpg"
+                },
+                "_id": "63c19c879cfd4adb167087ef"
+            },
+            {
+                "filename": "1673632892095.jpg",
+                "altName": "Ricotta Cheese",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673632892095.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673632892095.jpg"
+                },
+                "_id": "63c19c879cfd4adb167087f0"
+            },
+            {
+                "filename": "1673632894777.jpg",
+                "altName": "Ricotta Cheese",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673632894777.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673632894777.jpg"
+                },
+                "_id": "63c19c879cfd4adb167087f1"
+            },
+            {
+                "filename": "1673632897371.jpg",
+                "altName": "Ricotta Cheese",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673632897371.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673632897371.jpg"
+                },
+                "_id": "63c19c879cfd4adb167087f2"
+            },
+            {
+                "filename": "1673632900296.jpg",
+                "altName": "Ricotta Cheese",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673632900296.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673632900296.jpg"
+                },
+                "_id": "63c19c879cfd4adb167087f3"
+            }
+        ],
+        "title": "Keju Ricotta",
+        "slug": "ricotta-cheese",
+        "slogans": [
+            "EXTRA FRESH",
+            "EXTRA GOODNESS",
+            "EXTRA TASTY"
+        ],
+        "sizes": [
+            "250g"
+        ],
+        "description": "<p>Berasal dari susu segar di peternakan Greenfields sendiri. Mempunyai tekstur lembut dengan rasa segar, creamy, dan ringan untuk melengkapi berbagai masakan Italia seperti pasta, lasagna, dan cheesecakes. Tinggi protein, cocok untuk yang ingin diet atau ingin membentuk otot.</p>",
+        "nutrition": {
+            "filename": "file-1672431010351.svg",
+            "altName": "Nutrition facts for Keju Ricotta",
+            "url": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productNutrition/file-1672431010351.svg"
+        },
+        "ingredients": [
+            "Whey (90.48%), Susu Segar (9.05%), Garam, Pengatur Keasaman Asam Laktat."
+        ],
+        "isFeatured": false,
+        "reviewScore": null
+    },
+    {
+        "productCategories": [
+            {
+                "name": "Fresh Cheese",
+                "slug": "fresh-cheese"
+            }
+        ],
+        "id": "63af46be29590d08accdf576",
+        "images": [
+            {
+                "filename": "1673632707338.jpg",
+                "altName": "Bocconcini Cheese",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673632707338.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673632707338.jpg"
+                },
+                "_id": "63c19be19cfd4adb16708671"
+            },
+            {
+                "filename": "1673632719613.jpg",
+                "altName": "Bocconcini Cheese",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673632719613.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673632719613.jpg"
+                },
+                "_id": "63c19be19cfd4adb16708672"
+            },
+            {
+                "filename": "1673632722287.jpg",
+                "altName": "Bocconcini Cheese",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673632722287.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673632722287.jpg"
+                },
+                "_id": "63c19be19cfd4adb16708673"
+            },
+            {
+                "filename": "1673632724758.jpg",
+                "altName": "Bocconcini Cheese",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673632724758.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673632724758.jpg"
+                },
+                "_id": "63c19be19cfd4adb16708674"
+            },
+            {
+                "filename": "1673632727390.jpg",
+                "altName": "Bocconcini Cheese",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673632727390.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673632727390.jpg"
+                },
+                "_id": "63c19be19cfd4adb16708675"
+            },
+            {
+                "filename": "1673632730219.jpg",
+                "altName": "Bocconcini Cheese",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673632730219.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673632730219.jpg"
+                },
+                "_id": "63c19be19cfd4adb16708676"
+            },
+            {
+                "filename": "1673632732981.jpg",
+                "altName": "Bocconcini Cheese",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673632732981.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673632732981.jpg"
+                },
+                "_id": "63c19be19cfd4adb16708677"
+            }
+        ],
+        "title": "Keju Bocconcini",
+        "slug": "bocconcini-cheese",
+        "slogans": [
+            "EXTRA FRESH",
+            "EXTRA GOODNESS",
+            "EXTRA TASTY"
+        ],
+        "sizes": [
+            "330g"
+        ],
+        "description": "<p>Greenfields Bocconcini Cheese berasal dari susu segar di peternakan Greenfields sendiri. Mempunyai rasa yang nikmat dan ringan, cocok digunakan untuk salad ataupun pizza topping.</p>",
+        "nutrition": {
+            "filename": "file-1672431195939.svg",
+            "altName": "Nutrition facts for Bocconcini Cheese",
+            "url": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productNutrition/file-1672431195939.svg"
+        },
+        "ingredients": [
+            "Fresh MilkSusu Segar (99.47%), Garam, Pengatur Keasaman (Asam Sitrat, Asam Laktat), Rennet Mikrobial (Aspergillus niger var. awamori)."
+        ],
+        "isFeatured": false,
+        "reviewScore": null
+    }
+]

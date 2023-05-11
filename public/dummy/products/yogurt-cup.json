@@ -1,0 +1,796 @@
+[
+    {
+        "productCategories": [
+            {
+                "name": "Yogurt Cup",
+                "slug": "yogurt-cup"
+            }
+        ],
+        "id": "63afa80329590d08acce122b",
+        "images": [
+            {
+                "filename": "1673633601806.jpg",
+                "altName": "Yogurt Cup Blueberry",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673633601806.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673633601806.jpg"
+                },
+                "_id": "63c19f779cfd4adb16708a5b"
+            },
+            {
+                "filename": "1673633639264.jpg",
+                "altName": "Yogurt Cup Blueberry",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673633639264.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673633639264.jpg"
+                },
+                "_id": "63c19f779cfd4adb16708a5c"
+            },
+            {
+                "filename": "1673633641688.jpg",
+                "altName": "Yogurt Cup Blueberry",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673633641688.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673633641688.jpg"
+                },
+                "_id": "63c19f779cfd4adb16708a5d"
+            },
+            {
+                "filename": "1673633644117.jpg",
+                "altName": "Yogurt Cup Blueberry",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673633644117.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673633644117.jpg"
+                },
+                "_id": "63c19f779cfd4adb16708a5e"
+            },
+            {
+                "filename": "1673633646492.jpg",
+                "altName": "Yogurt Cup Blueberry",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673633646492.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673633646492.jpg"
+                },
+                "_id": "63c19f779cfd4adb16708a5f"
+            },
+            {
+                "filename": "1673633649990.jpg",
+                "altName": "Yogurt Cup Blueberry",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673633649990.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673633649990.jpg"
+                },
+                "_id": "63c19f779cfd4adb16708a60"
+            },
+            {
+                "filename": "1673633652223.jpg",
+                "altName": "Yogurt Cup Blueberry",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673633652223.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673633652223.jpg"
+                },
+                "_id": "63c19f779cfd4adb16708a61"
+            }
+        ],
+        "title": "Yogurt Cup Blueberry",
+        "slug": "yogurt-cup-blueberry",
+        "slogans": [
+            "EXTRA FRESH",
+            "EXTRA GOODNESS",
+            "EXTRA TASTY"
+        ],
+        "sizes": [
+            "1000g",
+            "500g",
+            "125g",
+            "500g (4x125g)"
+        ],
+        "description": "<p>Bluberi adalah buah yang terkenal dengan kandungan antioksidan dengan rasa yang menyegarkan. Kami memadukan kelezatannya dengan yogurt segar 100% kami untuk menghadirkan rasa manis yang lezat dan bergizi</p><p>Yogurt yang terbuat dari 100% susu segar alami dari peternakan Greenfields. Greenfields yogurt memiliki tekstur yang super smooth dan creamy dengan potongan buah asli! Greenfields yogurt mengandung kultur bakteri baik yang hidup dan serat pangan yang membantu melancarkan pencernaan, menjadikannya cemilan sehat dan enak yang cocok untuk melengkapi harimu!</p>",
+        "nutrition": {
+            "filename": "file-1672455869025.svg",
+            "altName": "Nutrition facts for Yogurt Cup Blueberry",
+            "url": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productNutrition/file-1672455869025.svg"
+        },
+        "ingredients": [
+            "Susu Segar (68%), Gula, Air, Nata De Coco (7%), Polidekstrosa, Susu Skim Bubuk, Krim Susu Cair, Pengental Nabati, Buah Bluberi (0.35%), Penstabil Gelatin Sapi, Pewarna Alami Karmin CI. No. 75470, Penstabil Nabati, Perisa Sintetik Cheesecake, Pengatur Keasaman (Asam Sitrat), Perisa Sintetik Bluberi, Pengawet Kalium Sorbat, Kultur Bakteri (Lactobacillus delbrueckii subsp. bulgaricus, Streptococcus thermophilus, Lactobacillus paracasei, Lactobacillus rhamnosus)"
+        ],
+        "isFeatured": true,
+        "reviewScore": null
+    },
+    {
+        "productCategories": [
+            {
+                "name": "Yogurt Cup",
+                "slug": "yogurt-cup"
+            }
+        ],
+        "id": "63afaf8c29590d08acce136b",
+        "images": [
+            {
+                "filename": "1673633929564.jpg",
+                "altName": "Yogurt Cup Mango & Peach",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673633929564.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673633929564.jpg"
+                },
+                "_id": "63c1a09a9cfd4adb16708b57"
+            },
+            {
+                "filename": "1673633932317.jpg",
+                "altName": "Yogurt Cup Mango & Peach",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673633932317.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673633932317.jpg"
+                },
+                "_id": "63c1a09a9cfd4adb16708b58"
+            },
+            {
+                "filename": "1673633934788.jpg",
+                "altName": "Yogurt Cup Mango & Peach",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673633934788.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673633934788.jpg"
+                },
+                "_id": "63c1a09a9cfd4adb16708b59"
+            },
+            {
+                "filename": "1673633937665.jpg",
+                "altName": "Yogurt Cup Mango & Peach",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673633937665.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673633937665.jpg"
+                },
+                "_id": "63c1a09a9cfd4adb16708b5a"
+            },
+            {
+                "filename": "1673633939841.jpg",
+                "altName": "Yogurt Cup Mango & Peach",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673633939841.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673633939841.jpg"
+                },
+                "_id": "63c1a09a9cfd4adb16708b5b"
+            },
+            {
+                "filename": "1673633942522.jpg",
+                "altName": "Yogurt Cup Mango & Peach",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673633942522.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673633942522.jpg"
+                },
+                "_id": "63c1a09a9cfd4adb16708b5c"
+            }
+        ],
+        "title": "Yogurt Cup Mango & Peach",
+        "slug": "yogurt-cup-mango-peach",
+        "slogans": [
+            "EXTRA FRESH",
+            "EXTRA GOODNESS",
+            "EXTRA TASTY"
+        ],
+        "sizes": [
+            "125g",
+            "500ml(4x125g)"
+        ],
+        "description": "<p>Sensasi buah mangga dan persik yang menyegarkan dengan kebaikan susu di dalamnya dapat menjadi semangat baru kamu! Kaya kandungan nutrisi dan sumber serat ini akan membantumu tetap fit dalam melakukan aktivitas.</p><p>Yogurt yang terbuat dari 100% susu segar alami dari peternakan Greenfields. Greenfields yogurt memiliki tekstur yang super smooth dan creamy dengan potongan buah asli! Greenfields yogurt mengandung kultur bakteri baik yang hidup dan serat pangan yang membantu melancarkan pencernaan, menjadikannya cemilan sehat dan enak yang cocok untuk melengkapi harimu!</p>",
+        "nutrition": {
+            "filename": "file-1672458120022.svg",
+            "altName": "Nutrition facts for Yogurt Cup Mango & Peach",
+            "url": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productNutrition/file-1672458120022.svg"
+        },
+        "ingredients": [
+            "Susu Segar (68%), Air, Gula, Polidekstrosa, Buah Mangga (2.80%),  Buah Persik (2.24%), Susu Skim Bubuk, Pengental Nabati, Krim Susu Cair, Penstabil Gelatin Sapi, Penstabil Nabati, Perisa Sintetik Persik, Perisa Sintetik Mangga, Pengatur Keasaman (Asam Sitrat), Pewarna Alami Beta Karoten CI. No. 75130 (Mengandung Antioksidan Tokoferol dan Asam Askorbat), Pengawet Kalium Sorbat, Kultur Bakteri (Lactobacillus delbrueckii subsp. bulgaricus, Streptococcus thermophilus, Lactobacillus paracasei, Lactobacillus rhamnosus)"
+        ],
+        "isFeatured": true,
+        "reviewScore": null
+    },
+    {
+        "productCategories": [
+            {
+                "name": "Yogurt Cup",
+                "slug": "yogurt-cup"
+            }
+        ],
+        "id": "63afb48a29590d08acce1808",
+        "images": [
+            {
+                "filename": "1673634901312.jpg",
+                "altName": "Yogurt Cup Strawberry",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673634901312.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673634901312.jpg"
+                },
+                "_id": "63c1a46e9cfd4adb16708f1c"
+            },
+            {
+                "filename": "1673634904775.jpg",
+                "altName": "Yogurt Cup Strawberry",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673634904775.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673634904775.jpg"
+                },
+                "_id": "63c1a46e9cfd4adb16708f1d"
+            },
+            {
+                "filename": "1673634907123.jpg",
+                "altName": "Yogurt Cup Strawberry",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673634907123.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673634907123.jpg"
+                },
+                "_id": "63c1a46e9cfd4adb16708f1e"
+            },
+            {
+                "filename": "1673634911066.jpg",
+                "altName": "Yogurt Cup Strawberry",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673634911066.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673634911066.jpg"
+                },
+                "_id": "63c1a46e9cfd4adb16708f1f"
+            },
+            {
+                "filename": "1673634913185.jpg",
+                "altName": "Yogurt Cup Strawberry",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673634913185.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673634913185.jpg"
+                },
+                "_id": "63c1a46e9cfd4adb16708f20"
+            },
+            {
+                "filename": "1673634916282.jpg",
+                "altName": "Yogurt Cup Strawberry",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673634916282.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673634916282.jpg"
+                },
+                "_id": "63c1a46e9cfd4adb16708f21"
+            },
+            {
+                "filename": "1673634918509.jpg",
+                "altName": "Yogurt Cup Strawberry",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673634918509.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673634918509.jpg"
+                },
+                "_id": "63c1a46e9cfd4adb16708f22"
+            },
+            {
+                "filename": "1673634920922.jpg",
+                "altName": "Yogurt Cup Strawberry",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673634920922.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673634920922.jpg"
+                },
+                "_id": "63c1a46e9cfd4adb16708f23"
+            }
+        ],
+        "title": "Yogurt Cup Strawberry",
+        "slug": "yogurt-cup-strawberry",
+        "slogans": [
+            "EXTRA FRESH",
+            "EXTRA GOODNESS",
+            "EXTRA TASTY"
+        ],
+        "sizes": [
+            "1000g",
+            "500g",
+            "125g",
+            "500g (4x125g)"
+        ],
+        "description": "<p>Kombinasi lezat dari kelembutan Yogurt Greenfields dan potongan buah stroberi, paduan terbaik rasa manis dan creamy!</p><p>Yogurt yang terbuat dari 100% susu segar alami dari peternakan Greenfields. Greenfields yogurt memiliki tekstur yang super smooth dan creamy dengan potongan buah asli! Greenfields yogurt mengandung kultur bakteri baik yang hidup dan serat pangan yang membantu melancarkan pencernaan, menjadikannya cemilan sehat dan enak yang cocok untuk melengkapi harimu!</p>",
+        "nutrition": {
+            "filename": "file-1672459328422.svg",
+            "altName": "Nutrition facts for Yogurt Cup Strawberry",
+            "url": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productNutrition/file-1672459328422.svg"
+        },
+        "ingredients": [
+            " Susu Segar (68%), Gula, Air, Buah Stroberi (4.2%), Polidekstrosa, Lidah Buaya, Susu Skim Bubuk, Krim Susu Cair, Pengental Nabati, Perisa Sintetik Stroberi, Penstabil Gelatin Sapi, Penstabil Nabati, Pewarna Alami Karmin CI. No. 75470, Pengatur Keasaman (Asam Sitrat), Pengawet Kalium Sorbat, Kultur Bakteri (Lactobacillus delbrueckii subsp. bulgaricus, Streptococcus thermophilus, Lactobacillus paracasei, Lactobacillus rhamnosus)"
+        ],
+        "isFeatured": true,
+        "reviewScore": null
+    },
+    {
+        "productCategories": [
+            {
+                "name": "Yogurt Cup",
+                "slug": "yogurt-cup"
+            }
+        ],
+        "id": "63afb09229590d08acce1487",
+        "images": [
+            {
+                "filename": "1673633760793.jpg",
+                "altName": "Yogurt Cup Mango",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673633760793.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673633760793.jpg"
+                },
+                "_id": "63c1a01c9cfd4adb16708ade"
+            },
+            {
+                "filename": "1673633767899.jpg",
+                "altName": "Yogurt Cup Mango",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673633767899.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673633767899.jpg"
+                },
+                "_id": "63c1a01c9cfd4adb16708adf"
+            },
+            {
+                "filename": "1673633775802.jpg",
+                "altName": "Yogurt Cup Mango",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673633775802.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673633775802.jpg"
+                },
+                "_id": "63c1a01c9cfd4adb16708ae0"
+            },
+            {
+                "filename": "1673633778155.jpg",
+                "altName": "Yogurt Cup Mango",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673633778155.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673633778155.jpg"
+                },
+                "_id": "63c1a01c9cfd4adb16708ae1"
+            },
+            {
+                "filename": "1673633781685.jpg",
+                "altName": "Yogurt Cup Mango",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673633781685.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673633781685.jpg"
+                },
+                "_id": "63c1a01c9cfd4adb16708ae2"
+            },
+            {
+                "filename": "1673633815335.jpg",
+                "altName": "Yogurt Cup Mango",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673633815335.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673633815335.jpg"
+                },
+                "_id": "63c1a01c9cfd4adb16708ae3"
+            },
+            {
+                "filename": "1673633817626.jpg",
+                "altName": "Yogurt Cup Mango",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673633817626.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673633817626.jpg"
+                },
+                "_id": "63c1a01c9cfd4adb16708ae4"
+            }
+        ],
+        "title": "Yogurt Cup Mango",
+        "slug": "yogurt-cup-mango",
+        "slogans": [
+            "EXTRA FRESH",
+            "EXTRA GOODNESS",
+            "EXTRA TASTY"
+        ],
+        "sizes": [
+            "500g",
+            "125g",
+            "500g(4x125g)"
+        ],
+        "description": "<p>Mangga! Buah tropis favorit ini kami padukan dengan Yogurt Greenfields yang kaya rasa dan creamy, yogurt mangga ini pasti akan menjadi favorit keluarga di rumah!</p><p>Yogurt yang terbuat dari 100% susu segar alami dari peternakan Greenfields. Greenfields yogurt memiliki tekstur yang super smooth dan creamy dengan potongan buah asli! Greenfields yogurt mengandung kultur bakteri baik yang hidup dan serat pangan yang membantu melancarkan pencernaan, menjadikannya cemilan sehat dan enak yang cocok untuk melengkapi harimu!</p>",
+        "nutrition": {
+            "filename": "file-1672458368300.svg",
+            "altName": "Nutrition facts for Yogurt Cup Mango",
+            "url": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productNutrition/file-1672458368300.svg"
+        },
+        "ingredients": [
+            "Fresh MilkSusu Segar (68%), Gula, Air, Buah Mangga (7%), Polidekstrosa, Susu Skim Bubuk, Krim Susu Cair, Pengental Nabati, Perisa Sintetik Mangga, Penstabil Gelatin Sapi, Penstabil  Nabati, Pewarna Alami Beta Karoten CI. No. 75130 (Mengandung Antioksidan Tokoferol dan Asam Askorbat), Pengatur Keasaman (Asam Sitrat), Pengawet Kalium Sorbat, Kultur Bakteri (Lactobacillus delbrueckii subsp. bulgaricus, Streptococcus thermophilus, Lactobacillus paracasei, Lactobacillus rhamnosus)"
+        ],
+        "isFeatured": false,
+        "reviewScore": null
+    },
+    {
+        "productCategories": [
+            {
+                "name": "Yogurt Cup",
+                "slug": "yogurt-cup"
+            }
+        ],
+        "id": "63afb14c29590d08acce1538",
+        "images": [
+            {
+                "filename": "1673634016719.jpg",
+                "altName": "Yogurt Cup Mixed Berry",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673634016719.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673634016719.jpg"
+                },
+                "_id": "63c1a1059cfd4adb16708bd3"
+            },
+            {
+                "filename": "1673634019374.jpg",
+                "altName": "Yogurt Cup Mixed Berry",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673634019374.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673634019374.jpg"
+                },
+                "_id": "63c1a1059cfd4adb16708bd4"
+            },
+            {
+                "filename": "1673634024587.jpg",
+                "altName": "Yogurt Cup Mixed Berry",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673634024587.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673634024587.jpg"
+                },
+                "_id": "63c1a1059cfd4adb16708bd5"
+            },
+            {
+                "filename": "1673634028524.jpg",
+                "altName": "Yogurt Cup Mixed Berry",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673634028524.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673634028524.jpg"
+                },
+                "_id": "63c1a1059cfd4adb16708bd6"
+            },
+            {
+                "filename": "1673634031340.jpg",
+                "altName": "Yogurt Cup Mixed Berry",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673634031340.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673634031340.jpg"
+                },
+                "_id": "63c1a1059cfd4adb16708bd7"
+            },
+            {
+                "filename": "1673634040400.jpg",
+                "altName": "Yogurt Cup Mixed Berry",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673634040400.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673634040400.jpg"
+                },
+                "_id": "63c1a1059cfd4adb16708bd8"
+            },
+            {
+                "filename": "1673634048628.jpg",
+                "altName": "Yogurt Cup Mixed Berry",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673634048628.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673634048628.jpg"
+                },
+                "_id": "63c1a1059cfd4adb16708bd9"
+            }
+        ],
+        "title": "Yogurt Cup Mixed Berry",
+        "slug": "yogurt-cup-mixed-berry",
+        "slogans": [
+            "EXTRA FRESH",
+            "EXTRA GOODNESS",
+            "EXTRA TASTY"
+        ],
+        "sizes": [
+            "125g",
+            "500g (4x125g)"
+        ],
+        "description": "<p>Rehat semakin seru dengan ditemani Greenfields Yogurt rasa kesukaanmu! Dengan aneka potongan buah beri asli, serta kandungan bakteri baik yang hidup dan sumber serat alaminya baik untuk jaga kesehatan pencernaanmu!</p><p>Yogurt yang terbuat dari 100% susu segar alami dari peternakan Greenfields. Greenfields yogurt memiliki tekstur yang super smooth dan creamy dengan potongan buah asli!</p><p>Greenfields yogurt mengandung kultur bakteri baik yang hidup dan serat pangan yang membantu melancarkan pencernaan, menjadikannya cemilan sehat dan enak yang cocok untuk melengkapi harimu!</p>",
+        "nutrition": {
+            "filename": "file-1672458448228.svg",
+            "altName": "Nutrition facts for Yogurt Cup Mixed Berry",
+            "url": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productNutrition/file-1672458448228.svg"
+        },
+        "ingredients": [
+            "Susu Segar (68%), Gula, Air, Polidekstrosa, Buah Stroberi (2.52%),  Susu Skim Bubuk, Buah Black Mulberry (1.68%), Pengental Nabati, Krim Susu Cair, Buah Raspberi (0.84%), Pewarna Alami Karmin CI. No. 75470, Perisa SIntetik Aneka Buah Beri, Penstabil Gelatin Sapi, Penstabil Nabati, Pengatur Keasaman (Asam Sitrat), Pengawet Kalium Sorbat, Kultur Bakteri (Lactobacillus delbrueckii subsp. bulgaricus, Streptococcus thermophilus, Lactobacillus paracasei, Lactobacillus rhamnosus)"
+        ],
+        "isFeatured": false,
+        "reviewScore": null
+    },
+    {
+        "productCategories": [
+            {
+                "name": "Yogurt Cup",
+                "slug": "yogurt-cup"
+            }
+        ],
+        "id": "63afb20d29590d08acce1650",
+        "images": [
+            {
+                "filename": "1673634125930.jpg",
+                "altName": "Yogurt Cup Original",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673634125930.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673634125930.jpg"
+                },
+                "_id": "63c1a1729cfd4adb16708c4e"
+            },
+            {
+                "filename": "1673634136001.jpg",
+                "altName": "Yogurt Cup Original",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673634136001.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673634136001.jpg"
+                },
+                "_id": "63c1a1729cfd4adb16708c4f"
+            },
+            {
+                "filename": "1673634141071.jpg",
+                "altName": "Yogurt Cup Original",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673634141071.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673634141071.jpg"
+                },
+                "_id": "63c1a1729cfd4adb16708c50"
+            },
+            {
+                "filename": "1673634143806.jpg",
+                "altName": "Yogurt Cup Original",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673634143806.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673634143806.jpg"
+                },
+                "_id": "63c1a1729cfd4adb16708c51"
+            },
+            {
+                "filename": "1673634146550.jpg",
+                "altName": "Yogurt Cup Original",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673634146550.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673634146550.jpg"
+                },
+                "_id": "63c1a1729cfd4adb16708c52"
+            },
+            {
+                "filename": "1673634150000.jpg",
+                "altName": "Yogurt Cup Original",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673634150000.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673634150000.jpg"
+                },
+                "_id": "63c1a1729cfd4adb16708c53"
+            },
+            {
+                "filename": "1673634152370.jpg",
+                "altName": "Yogurt Cup Original",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673634152370.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673634152370.jpg"
+                },
+                "_id": "63c1a1729cfd4adb16708c54"
+            },
+            {
+                "filename": "1673634158240.jpg",
+                "altName": "Yogurt Cup Original",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673634158240.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673634158240.jpg"
+                },
+                "_id": "63c1a1729cfd4adb16708c55"
+            }
+        ],
+        "title": "Yogurt Cup Original",
+        "slug": "yogurt-cup-original",
+        "slogans": [
+            "EXTRA FRESH",
+            "EXTRA GOODNESS",
+            "EXTRA TASTY"
+        ],
+        "sizes": [
+            "1000g",
+            "500g",
+            "125g",
+            "500g (4x125g)"
+        ],
+        "description": "<p>Sehat, alami, dan sarat kebaikan susu murni, Greenfields Yogurt cocok dinikmati dengan paduan apapun. Komposisi rasa asam &amp; manis yang seimbang dengan tekstur yang lembut dan creamy</p><p>Yogurt yang terbuat dari 100% susu segar alami dari peternakan Greenfields. Greenfields yogurt memiliki tekstur yang super smooth dan creamy dengan potongan buah asli! Greenfields yogurt mengandung kultur bakteri baik yang hidup dan serat pangan yang membantu melancarkan pencernaan, menjadikannya cemilan sehat dan enak yang cocok untuk melengkapi harimu!</p>",
+        "nutrition": {
+            "filename": "file-1672458664349.svg",
+            "altName": "Nutrition facts for Yogurt Cup Original",
+            "url": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productNutrition/file-1672458664349.svg"
+        },
+        "ingredients": [
+            "Fresh Milk",
+            "Susu Segar (79%), Gula, Air, Polidekstrosa, Susu Skim Bubuk, Krim Susu Cair, Pengental Nabati, Penstabil Gelatin Sapi, Penstabil Nabati, Kultur Bakteri (Lactobacillus delbrueckii subsp. bulgaricus, Streptococcus thermophilus, Lactobacillus paracasei, Lactobacillus rhamnosus), Perisa Sintetik Susu."
+        ],
+        "isFeatured": false,
+        "reviewScore": null
+    },
+    {
+        "productCategories": [
+            {
+                "name": "Yogurt Cup",
+                "slug": "yogurt-cup"
+            }
+        ],
+        "id": "63afb34c29590d08acce16eb",
+        "images": [
+            {
+                "filename": "1673634485947.jpg",
+                "altName": "Yogurt Cup Raspberry & Lychee",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673634485947.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673634485947.jpg"
+                },
+                "_id": "63c1a2e29cfd4adb16708e0f"
+            },
+            {
+                "filename": "1673634488793.jpg",
+                "altName": "Yogurt Cup Raspberry & Lychee",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673634488793.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673634488793.jpg"
+                },
+                "_id": "63c1a2e29cfd4adb16708e10"
+            },
+            {
+                "filename": "1673634491121.jpg",
+                "altName": "Yogurt Cup Raspberry & Lychee",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673634491121.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673634491121.jpg"
+                },
+                "_id": "63c1a2e29cfd4adb16708e11"
+            },
+            {
+                "filename": "1673634493244.jpg",
+                "altName": "Yogurt Cup Raspberry & Lychee",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673634493244.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673634493244.jpg"
+                },
+                "_id": "63c1a2e29cfd4adb16708e12"
+            },
+            {
+                "filename": "1673634495766.jpg",
+                "altName": "Yogurt Cup Raspberry & Lychee",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673634495766.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673634495766.jpg"
+                },
+                "_id": "63c1a2e29cfd4adb16708e13"
+            },
+            {
+                "filename": "1673634503545.jpg",
+                "altName": "Yogurt Cup Raspberry & Lychee",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673634503545.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673634503545.jpg"
+                },
+                "_id": "63c1a2e29cfd4adb16708e14"
+            },
+            {
+                "filename": "1673634520878.jpg",
+                "altName": "Yogurt Cup Raspberry & Lychee",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673634520878.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673634520878.jpg"
+                },
+                "_id": "63c1a2e29cfd4adb16708e15"
+            }
+        ],
+        "title": "Yogurt Cup Raspberry & Lychee",
+        "slug": "yogurt-cup-raspberry-lychee",
+        "slogans": [
+            "EXTRA FRESH",
+            "EXTRA GOODNESS",
+            "EXTRA TASTY"
+        ],
+        "sizes": [
+            "125g",
+            "500g(4x125g)"
+        ],
+        "description": "<p>Lengkapi nutrisi harian dengan Greenfields Yogurt setelah padat beraktivitas seharian. Dengan kombinasi serta potongan buah asli Raspberi dan Leci, hidup sehat makin seru!</p><p>Yogurt yang terbuat dari 100% susu segar alami dari peternakan Greenfields. Greenfields yogurt memiliki tekstur yang super smooth dan creamy dengan potongan buah asli!</p><p>Greenfields yogurt mengandung kultur bakteri baik yang hidup dan serat pangan yang membantu melancarkan pencernaan, menjadikannya cemilan sehat dan enak yang cocok untuk melengkapi harimu!</p>",
+        "nutrition": {
+            "filename": "file-1672458848001.svg",
+            "altName": "Nutrition facts for Yogurt Cup Raspberry & Lychee",
+            "url": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productNutrition/file-1672458848001.svg"
+        },
+        "ingredients": [
+            "Susu Segar (68%), Air, Gula, Polidekstrosa, Buah Leci (2.80%), Buah Raspberi (2.24%), Susu Skim Bubuk, Pengental Nabati, Krim Susu Cair, Penstabil Gelatin Sapi, Perisa Sintetik Leci, Penstabil Nabati, Perisa Sintetik Raspberi, Pengatur Keasaman (Asam Sitrat), Pewarna Alami Karmin CI. No. 75470, Pengawet Kalium Sorbat, Kultur Bakteri (Lactobacillus delbrueckii subsp. bulgaricus, Streptococcus thermophilus, Lactobacillus paracasei, Lactobacillus rhamnosus)"
+        ],
+        "isFeatured": false,
+        "reviewScore": null
+    },
+    {
+        "productCategories": [
+            {
+                "name": "Yogurt Cup",
+                "slug": "yogurt-cup"
+            }
+        ],
+        "id": "63daba71a93d788b67619278",
+        "images": [
+            {
+                "filename": "1675278591965.jpg",
+                "altName": "Yogurt Cup Plain",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1675278591965.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1675278591965.jpg"
+                },
+                "_id": "63daba71a93d788b67619279"
+            },
+            {
+                "filename": "1675278600624.jpg",
+                "altName": "Yogurt Cup Plain",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1675278600624.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1675278600624.jpg"
+                },
+                "_id": "63daba71a93d788b6761927a"
+            },
+            {
+                "filename": "1675278603366.jpg",
+                "altName": "Yogurt Cup Plain",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1675278603366.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1675278603366.jpg"
+                },
+                "_id": "63daba71a93d788b6761927b"
+            },
+            {
+                "filename": "1675278605794.jpg",
+                "altName": "Yogurt Cup Plain",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1675278605794.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1675278605794.jpg"
+                },
+                "_id": "63daba71a93d788b6761927c"
+            },
+            {
+                "filename": "1675278609956.jpg",
+                "altName": "Yogurt Cup Plain",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1675278609956.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1675278609956.jpg"
+                },
+                "_id": "63daba71a93d788b6761927d"
+            },
+            {
+                "filename": "1675278613317.jpg",
+                "altName": "Yogurt Cup Plain",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1675278613317.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1675278613317.jpg"
+                },
+                "_id": "63daba71a93d788b6761927e"
+            },
+            {
+                "filename": "1675278634279.jpg",
+                "altName": "Yogurt Cup Plain",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1675278634279.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1675278634279.jpg"
+                },
+                "_id": "63daba71a93d788b6761927f"
+            },
+            {
+                "filename": "1675278637486.jpg",
+                "altName": "Yogurt Cup Plain",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1675278637486.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1675278637486.jpg"
+                },
+                "_id": "63daba71a93d788b67619280"
+            }
+        ],
+        "title": "Yogurt Cup Plain",
+        "slug": "yogurt-cup-plain",
+        "slogans": [
+            "EXTRA FRESH",
+            "EXTRA GOODNESS",
+            "EXTRA TASTY"
+        ],
+        "sizes": [
+            "1000g",
+            "500g"
+        ],
+        "description": "<p>Greenfields Yogurt Plain memiliki tekstur yang super smooth dan creamy tanpa tambahan gula yang terbuat dari 100% susu susu segar. Greenfields Yogurt Plain mengandung kultur bakteri hidup dan serat pangan yang baik untuk pencernaan. Yogurt ini juga dapat dipadukan dengan buah-buahan atau oat sebagai pelengkap menu diet untuk melengkapi kebutuhan asupan makananmu.&nbsp;</p><p>Greenfields Yogurt Plain juga dapat menambah cita rasa masakan: untuk pembuatan pasta, untuk memarinasi daging agar empuk dan lembab sempurna, untuk membantu menghaluskan kue saat dipanggang, sebagai campuran untuk saus, atau untuk menjadikan tekstur sup lebih lembut.</p>",
+        "nutrition": {
+            "filename": "file-1675278145505.svg",
+            "altName": "Nutrition facts for Yogurt Cup Plain",
+            "url": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productNutrition/file-1675278145505.svg"
+        },
+        "ingredients": [
+            "Susu Segar (97%), Susu Skim Bubuk, Campuran Penstabil Nabati dan Hewani, Kultur Bakteri (Lactobacillus delbrueckii subsp. bulgaricus, Streptococcus thermophilus)"
+        ],
+        "isFeatured": false,
+        "reviewScore": null
+    }
+]

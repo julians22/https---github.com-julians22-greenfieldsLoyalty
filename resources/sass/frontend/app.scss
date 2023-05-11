@@ -4,16 +4,23 @@
 // Variables
 @import 'variables';
 
-// components
-@import 'components/form_customs';
-@import 'components/buttons';
 @import 'components/page_titles';
+
+// Select2 styles
+@import '~select2/dist/css/select2.min.css';
+@import '~@ttskch/select2-bootstrap4-theme/dist/select2-bootstrap4.min.css';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-// Default theme
+// Default Splide theme
 @import '~@splidejs/splide/css';
+
+// components
+@import 'components/form_customs';
+@import 'components/buttons';
+@import 'components/select2';
+
 
 .banner-container{
     height: 425px;

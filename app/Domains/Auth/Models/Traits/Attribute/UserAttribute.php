@@ -83,30 +83,6 @@ trait UserAttribute
     /**
      * @return null|string
      */
-    public function getProvinceAttribute()
-    {
-        if (! $this->isHasDetail()) {
-            return null;
-        }
-
-        return $this->detail->province;
-    }
-
-    /**
-     * @return null|string
-     */
-    public function getCityAttribute()
-    {
-        if (! $this->isHasDetail()) {
-            return null;
-        }
-
-        return $this->detail->city;
-    }
-
-    /**
-     * @return null|string
-     */
     public function getPhoneAttribute()
     {
         if (! $this->isHasDetail()) {
@@ -114,18 +90,6 @@ trait UserAttribute
         }
 
         return $this->detail->phone;
-    }
-
-    /**
-     * @return null|string
-     */
-    public function getAddressAttribute()
-    {
-        if (! $this->isHasDetail()) {
-            return null;
-        }
-
-        return $this->detail->address;
     }
 
     /**
@@ -157,10 +121,58 @@ trait UserAttribute
      */
     public function getPostalCodeAttribute()
     {
-        if (! $this->isHasDetail()) {
+        if (! $this->isHasAddressData()) {
             return null;
         }
 
-        return $this->detail->postal_code;
+        return $this->address_data->postal_code;
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getAddressAttribute()
+    {
+        if (! $this->isHasAddressData()) {
+            return null;
+        }
+
+        return $this->address_data->address;
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getProvinceAttribute()
+    {
+        if (! $this->isHasAddressData()) {
+            return null;
+        }
+
+        return $this->address_data->province;
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getCityAttribute()
+    {
+        if (! $this->isHasAddressData()) {
+            return null;
+        }
+
+        return $this->address_data->city;
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getDistrictAttribute()
+    {
+        if (! $this->isHasAddressData()) {
+            return null;
+        }
+
+        return $this->address_data->district;
     }
 }

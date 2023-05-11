@@ -74,13 +74,21 @@ class RegisterController
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:100'],
+            'phone' => ['required', 'string', 'max:20'],
+            'address' => ['required', 'string'],
+            'province' => ['required'],
+            'city' => ['required'],
+            'district' => ['required'],
+            'postal_code' => ['required'],
+            'date_of_birth' => ['required', 'date'],
+            'history_milk_category' => ['required'],
+            'history_milk_product' => ['required'],
+            'history_milk_packsize' => ['required'],
+            'child_name' => ['required'],
+            'child_date_of_birth' => ['required', 'date'],
             'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')],
             'password' => array_merge(['max:100'], PasswordRules::register($data['email'] ?? null)),
             'terms' => ['required', 'in:1'],
-            'g-recaptcha-response' => ['required_if:captcha_status,true', new Captcha],
-        ], [
-            'terms.required' => __('You must accept the Terms & Conditions.'),
-            'g-recaptcha-response.required_if' => __('validation.required', ['attribute' => 'captcha']),
         ]);
     }
 

@@ -1,0 +1,494 @@
+[
+    {
+        "productCategories": [
+            {
+                "name": "UHT Milk",
+                "slug": "uht-milk"
+            }
+        ],
+        "id": "63af177dc1cdf62b7e3b042d",
+        "images": [
+            {
+                "filename": "1681448238936.jpg",
+                "altName": "Strawberry UHT Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1681448238936.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1681448238936.jpg"
+                },
+                "_id": "6438dd7dfe562865af193abc"
+            },
+            {
+                "filename": "1681448263053.jpg",
+                "altName": "Strawberry UHT Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1681448263053.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1681448263053.jpg"
+                },
+                "_id": "6438dd7dfe562865af193abd"
+            },
+            {
+                "filename": "1681448269107.jpg",
+                "altName": "Strawberry UHT Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1681448269107.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1681448269107.jpg"
+                },
+                "_id": "6438dd7dfe562865af193abe"
+            },
+            {
+                "filename": "1681448278125.jpg",
+                "altName": "Strawberry UHT Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1681448278125.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1681448278125.jpg"
+                },
+                "_id": "6438dd7dfe562865af193abf"
+            },
+            {
+                "filename": "1681448289128.jpg",
+                "altName": "Strawberry UHT Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1681448289128.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1681448289128.jpg"
+                },
+                "_id": "6438dd7dfe562865af193ac0"
+            },
+            {
+                "filename": "1681448299908.jpg",
+                "altName": "Strawberry UHT Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1681448299908.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1681448299908.jpg"
+                },
+                "_id": "6438dd7dfe562865af193ac1"
+            },
+            {
+                "filename": "1681448313561.jpg",
+                "altName": "Strawberry UHT Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1681448313561.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1681448313561.jpg"
+                },
+                "_id": "6438dd7dfe562865af193ac2"
+            }
+        ],
+        "title": "Strawberry UHT Milk",
+        "slug": "strawberry-uht-milk",
+        "slogans": [
+            "EXTRA TASTY"
+        ],
+        "sizes": [
+            "250ml",
+            "200ml",
+            "125ml"
+        ],
+        "description": "<p>Kombinasi terbaik dari ekstrak stroberi dan susu segar dalam genggaman. Nikmati susu Greenfields stroberi untuk meningkatkan kebutuhan energi harianmu!</p><p>Susu UHT Greenfields berasal dari 100% susu segar di Peternakan Greenfields yang dikelola secara profesional menggunakan proses pasteurisasi dengan Ultra High Temperature untuk mematikan bakteri, namun tetap mempertahankan kandungan nutrisi alami baik yang ada pada susu.</p><p>Pilihan terbaik dan praktis untuk menikmati kebaikan dan kesegaran susu, dengan usia simpan yang lebih lama. Bawa kesegaran dan kelezatan susu UHT Greenfields di mana pun dan kapan pun menemani kegiatan kamu di luar rumah!</p>",
+        "nutrition": {
+            "filename": "file-1672418407479.svg",
+            "altName": "Nutrition facts for UHT Milk Strawberry",
+            "url": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productNutrition/file-1672418407479.svg"
+        },
+        "ingredients": [
+            "Susu Segar (85,3%), Air, Gula, Susu Bubuk Skim, Penstabil (Sayuran, Fosfat), Pengemulsi Nabati, Perisa Stroberi Sintetik, Ekstrak Stroberi (0,1%), Pengental Guar Gum, Pewarna Sintetik Ponceau 4R CI No. 16255"
+        ],
+        "isFeatured": true,
+        "reviewScore": null
+    },
+    {
+        "productCategories": [
+            {
+                "name": "UHT Milk",
+                "slug": "uht-milk"
+            }
+        ],
+        "id": "63af1971c1cdf62b7e3b0538",
+        "images": [
+            {
+                "filename": "1681449136484.jpg",
+                "altName": "Chocomalt UHT Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1681449136484.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1681449136484.jpg"
+                },
+                "_id": "6438e0e1fe562865af193d57"
+            },
+            {
+                "filename": "1681449154008.jpg",
+                "altName": "Chocomalt UHT Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1681449154008.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1681449154008.jpg"
+                },
+                "_id": "6438e0e1fe562865af193d58"
+            },
+            {
+                "filename": "1681449156844.jpg",
+                "altName": "Chocomalt UHT Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1681449156844.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1681449156844.jpg"
+                },
+                "_id": "6438e0e1fe562865af193d59"
+            },
+            {
+                "filename": "1681449160931.jpg",
+                "altName": "Chocomalt UHT Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1681449160931.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1681449160931.jpg"
+                },
+                "_id": "6438e0e1fe562865af193d5a"
+            },
+            {
+                "filename": "1681449163943.jpg",
+                "altName": "Chocomalt UHT Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1681449163943.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1681449163943.jpg"
+                },
+                "_id": "6438e0e1fe562865af193d5b"
+            },
+            {
+                "filename": "1681449175446.jpg",
+                "altName": "Chocomalt UHT Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1681449175446.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1681449175446.jpg"
+                },
+                "_id": "6438e0e1fe562865af193d5c"
+            },
+            {
+                "filename": "1681449178999.jpg",
+                "altName": "Chocomalt UHT Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1681449178999.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1681449178999.jpg"
+                },
+                "_id": "6438e0e1fe562865af193d5d"
+            },
+            {
+                "filename": "1681449182251.jpg",
+                "altName": "Chocomalt UHT Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1681449182251.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1681449182251.jpg"
+                },
+                "_id": "6438e0e1fe562865af193d5e"
+            }
+        ],
+        "title": "Chocomalt UHT Milk",
+        "slug": "chocomalt-uht-milk",
+        "slogans": [
+            "EXTRA TASTY"
+        ],
+        "sizes": [
+            "1000ml",
+            "250ml",
+            "200ml",
+            "125ml"
+        ],
+        "description": "<p>Susu Segar dengan rasa cokelat yang mengandung malt (gandum) adalah kombinasi yang sempurna! Rasa cokelat malt nya cocok untuk diminum apalagi setelah berolahraga karena proteinnya membantu memulihkan energi kembali. Nikmati rasanya yang lezat dan</p><p>Kesegaran dan nutrisi alami adalah hal yang terpenting untuk produk susu segar Greenfields. Greenfields memberikan kebaikan 100% susu sapi segar dengan rasa susu yang utuh melalui proses pasteurisasi. Susu berkualitas yang diproduksi oleh sapi Holstein kami berasal dari peternakan Greenfields sendiri melalui proses pemerahan otomatis dan steril tanpa sentuhan tangan manusia. Susu segarnya langsung diolah di pabrik Greenfields menggunakan teknologi modern dengan standar internasional. Oleh karena itulah, susu segar Greenfields mampu memberikan kesegaran alami yang terbaik. Berasal dari susu sapi langsung tanpa tambahan bahan pengawet apapun. Hanya yang terbaik untuk keluarga Indonesia.</p>",
+        "nutrition": {
+            "filename": "file-1672419512515.svg",
+            "altName": "Nutrition facts for UHT Chocomalt Milk",
+            "url": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productNutrition/file-1672419512515.svg"
+        },
+        "ingredients": [
+            "Susu Segar (81.5%), Air, Gula, Ekstrak Malt Bubuk (1.8%), Susu Skim Bubuk, Kakao Bubuk (0,8%), Pengemulsi Nabati, Penstabil Nabati, Perisa Sintetik Cokelat (Mengandung Pewarna Alami Karamel Kelas IV), Garam."
+        ],
+        "isFeatured": true,
+        "reviewScore": null
+    },
+    {
+        "productCategories": [
+            {
+                "name": "UHT Milk",
+                "slug": "uht-milk"
+            }
+        ],
+        "id": "63af1a73c1cdf62b7e3b05c0",
+        "images": [
+            {
+                "filename": "1681449219268.jpg",
+                "altName": "Full Cream UHT Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1681449219268.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1681449219268.jpg"
+                },
+                "_id": "6438e13cfe562865af193dd6"
+            },
+            {
+                "filename": "1681449230485.jpg",
+                "altName": "Full Cream UHT Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1681449230485.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1681449230485.jpg"
+                },
+                "_id": "6438e13cfe562865af193dd7"
+            },
+            {
+                "filename": "1681449235291.jpg",
+                "altName": "Full Cream UHT Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1681449235291.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1681449235291.jpg"
+                },
+                "_id": "6438e13cfe562865af193dd8"
+            },
+            {
+                "filename": "1681449247290.jpg",
+                "altName": "Full Cream UHT Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1681449247290.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1681449247290.jpg"
+                },
+                "_id": "6438e13cfe562865af193dd9"
+            },
+            {
+                "filename": "1681449254489.jpg",
+                "altName": "Full Cream UHT Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1681449254489.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1681449254489.jpg"
+                },
+                "_id": "6438e13cfe562865af193dda"
+            },
+            {
+                "filename": "1681449263030.jpg",
+                "altName": "Full Cream UHT Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1681449263030.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1681449263030.jpg"
+                },
+                "_id": "6438e13cfe562865af193ddb"
+            },
+            {
+                "filename": "1681449268844.jpg",
+                "altName": "Full Cream UHT Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1681449268844.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1681449268844.jpg"
+                },
+                "_id": "6438e13cfe562865af193ddc"
+            },
+            {
+                "filename": "1681449274314.jpg",
+                "altName": "Full Cream UHT Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1681449274314.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1681449274314.jpg"
+                },
+                "_id": "6438e13cfe562865af193ddd"
+            }
+        ],
+        "title": "Full Cream UHT Milk",
+        "slug": "full-cream-uht-milk",
+        "slogans": [
+            "EXTRA TASTY"
+        ],
+        "sizes": [
+            "1000ml",
+            "250ml",
+            "200ml",
+            "125ml"
+        ],
+        "description": "<p>Susu Full Cream dengan rasa yang yang segar tetapi tetap ringan dan tidak ‘enek’. Kandungan lemak utuh (3.5%) seperti pada kandungan susu segar tanpa pengurangan/penambahan apa pun bermanfaat untuk menjaga daya tahan tubuh.</p><p>Susu UHT Greenfields berasal dari 100% susu segar di Peternakan Greenfields yang dikelola secara profesional menggunakan proses pasteurisasi dengan Ultra High Temperature untuk mematikan bakteri, namun tetap mempertahankan kandungan nutrisi alami baik yang ada pada susu.</p><p>Pilihan terbaik dan praktis untuk menikmati kebaikan dan kesegaran susu, dengan usia simpan yang lebih lama. Bawa kesegaran dan kelezatan susu UHT Greenfields di mana pun dan kapan pun menemani kegiatan kamu di luar rumah!</p>",
+        "nutrition": {
+            "filename": "file-1672419900679.svg",
+            "altName": "Nutrition facts for UHT Full Cream Milk",
+            "url": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productNutrition/file-1672419900679.svg"
+        },
+        "ingredients": [
+            "100% Fresh Milk"
+        ],
+        "isFeatured": true,
+        "totalReview": 1,
+        "reviewScore": 5
+    },
+    {
+        "productCategories": [
+            {
+                "name": "UHT Milk",
+                "slug": "uht-milk"
+            }
+        ],
+        "id": "63c196449cfd4adb16707bf4",
+        "images": [
+            {
+                "filename": "1673631082891.jpg",
+                "altName": "UHT Low Fat Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673631082891.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673631082891.jpg"
+                },
+                "_id": "63c196449cfd4adb16707bf5"
+            },
+            {
+                "filename": "1673631086064.jpg",
+                "altName": "UHT Low Fat Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673631086064.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673631086064.jpg"
+                },
+                "_id": "63c196449cfd4adb16707bf6"
+            },
+            {
+                "filename": "1673631088116.jpg",
+                "altName": "UHT Low Fat Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673631088116.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673631088116.jpg"
+                },
+                "_id": "63c196449cfd4adb16707bf7"
+            },
+            {
+                "filename": "1673631090000.jpg",
+                "altName": "UHT Low Fat Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673631090000.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673631090000.jpg"
+                },
+                "_id": "63c196449cfd4adb16707bf8"
+            },
+            {
+                "filename": "1673631092320.jpg",
+                "altName": "UHT Low Fat Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673631092320.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673631092320.jpg"
+                },
+                "_id": "63c196449cfd4adb16707bf9"
+            },
+            {
+                "filename": "1673631095351.jpg",
+                "altName": "UHT Low Fat Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673631095351.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673631095351.jpg"
+                },
+                "_id": "63c196449cfd4adb16707bfa"
+            },
+            {
+                "filename": "1673631097677.jpg",
+                "altName": "UHT Low Fat Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673631097677.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673631097677.jpg"
+                },
+                "_id": "63c196449cfd4adb16707bfb"
+            }
+        ],
+        "title": "Low Fat UHT Milk",
+        "slug": "low-fat-uht-milk",
+        "slogans": [
+            "EXTRA TASTY"
+        ],
+        "sizes": [
+            "1000ml"
+        ],
+        "description": "<p>Mengandung semua kebaikan nutrisi yang dibutuhkan dengan kandungan lemak hanya sebesar 1.1%! Kamu tetap mendapatkan asupan kalsium yang sama seperti Fresh Milk, tetapi bisa menjaga asupan lemak!</p><p>Kesegaran dan nutrisi alami adalah hal yang terpenting untuk produk susu segar Greenfields. Greenfields memberikan kebaikan 100% susu sapi segar dengan rasa susu yang utuh melalui proses pasteurisasi. Susu berkualitas yang diproduksi oleh sapi Holstein kami berasal dari peternakan Greenfields sendiri melalui proses pemerahan otomatis dan steril tanpa sentuhan tangan manusia. Susu segarnya langsung diolah di pabrik Greenfields menggunakan teknologi modern dengan standar internasional. Oleh karena itulah, susu segar Greenfields mampu memberikan kesegaran alami yang terbaik. Berasal dari susu sapi langsung tanpa tambahan bahan pengawet apapun. Hanya yang terbaik untuk keluarga Indonesia.</p>",
+        "nutrition": {
+            "filename": "file-1673631129271.svg",
+            "altName": "Nutrition facts for UHT Low Fat Milk",
+            "url": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productNutrition/file-1673631129271.svg"
+        },
+        "ingredients": [
+            "100% Fresh Milk"
+        ],
+        "isFeatured": true,
+        "reviewScore": null
+    },
+    {
+        "productCategories": [
+            {
+                "name": "UHT Milk",
+                "slug": "uht-milk"
+            }
+        ],
+        "id": "63af186fc1cdf62b7e3b049d",
+        "images": [
+            {
+                "filename": "1673631425952.jpg",
+                "altName": "UHT Skimmed Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673631425952.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673631425952.jpg"
+                },
+                "_id": "63c196fc9cfd4adb16707dd7"
+            },
+            {
+                "filename": "1673631428379.jpg",
+                "altName": "UHT Skimmed Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673631428379.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673631428379.jpg"
+                },
+                "_id": "63c196fc9cfd4adb16707dd8"
+            },
+            {
+                "filename": "1673631430316.jpg",
+                "altName": "UHT Skimmed Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673631430316.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673631430316.jpg"
+                },
+                "_id": "63c196fc9cfd4adb16707dd9"
+            },
+            {
+                "filename": "1673631432199.jpg",
+                "altName": "UHT Skimmed Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673631432199.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673631432199.jpg"
+                },
+                "_id": "63c196fc9cfd4adb16707dda"
+            },
+            {
+                "filename": "1673631434067.jpg",
+                "altName": "UHT Skimmed Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673631434067.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673631434067.jpg"
+                },
+                "_id": "63c196fc9cfd4adb16707ddb"
+            },
+            {
+                "filename": "1673631436996.jpg",
+                "altName": "UHT Skimmed Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673631436996.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673631436996.jpg"
+                },
+                "_id": "63c196fc9cfd4adb16707ddc"
+            },
+            {
+                "filename": "1673631438999.jpg",
+                "altName": "UHT Skimmed Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673631438999.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673631438999.jpg"
+                },
+                "_id": "63c196fc9cfd4adb16707ddd"
+            }
+        ],
+        "title": "Skimmed UHT Milk",
+        "slug": "skimmed-uht-milk",
+        "slogans": [
+            "EXTRA TASTY"
+        ],
+        "sizes": [
+            "1000ml"
+        ],
+        "description": "<p>Dengan kandungan lemak 0%, susu skim Greenfields merupakan pilihan tepat untukmu yang sedang menghindari asupan lemak, tetapi tetap memerlukan kandungan nutrisi lain yang ada di dalam susu segar!</p><p>Susu UHT Greenfields berasal dari 100% susu segar di Peternakan Greenfields yang dikelola secara profesional menggunakan proses pasteurisasi dengan Ultra High Temperature untuk mematikan bakteri, namun tetap mempertahankan kandungan nutrisi alami baik yang ada pada susu.</p><p>Pilihan terbaik dan praktis untuk menikmati kebaikan dan kesegaran susu, dengan usia simpan yang lebih lama. Bawa kesegaran dan kelezatan susu UHT Greenfields di mana pun dan kapan pun menemani kegiatan kamu di luar rumah!</p>",
+        "nutrition": {
+            "filename": "file-1672419399894.svg",
+            "altName": "Nutrition facts for UHT Skimmed Milk",
+            "url": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productNutrition/file-1672419399894.svg"
+        },
+        "ingredients": [
+            "100% Fresh Milk"
+        ],
+        "isFeatured": false,
+        "reviewScore": null
+    }
+]

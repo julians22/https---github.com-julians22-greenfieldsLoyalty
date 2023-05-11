@@ -15,29 +15,29 @@
                 <x-forms.post :action="route('frontend.auth.register')" class="greenfields-form">
                     <div class="form-group row">
                         <div class="col-md-6">
-                            <input type="text" name="name" id="name" class="form-control" value="{{ old('name') }}" placeholder="{{ __('Name') }}" maxlength="100" required autofocus autocomplete="name" />
+                            <input type="text" name="name" id="name" class="form-control" value="{{ old('name') }}" placeholder="{{ __('Name') }}" maxlength="100" required autofocus autocomplete="false" />
                         </div>
                         <div class="col-md-6">
-                            <input type="text" name="child_name" id="child_name" class="form-control" value="{{ old('child_name') }}" placeholder="{{ __('Child Name') }}" maxlength="100" required autocomplete="child_name" />
-                        </div>
-                    </div><!--form-group-->
-
-                    <div class="form-group row">
-                        <div class="col-md-6">
-                            <input type="date" name="date_of_birth" id="date_of_birth" class="form-control" value="{{ old('date_of_birth') }}" data-placeholder="{{ __('Date Of Birth') }}" required autocomplete="date_of_birth">
-                        </div>
-
-                        <div class="col-md-6">
-                            <input type="date" data-placeholder="Child Date of birth" name="child date_of_birth" id="child date_of_birth" class="form-control" value="{{ old('child date_of_birth') }}" placeholder="{{ __('Child Date Of Birth') }}" required autocomplete="child date_of_birth">
+                            <input type="text" name="child_name" id="child_name" class="form-control" value="{{ old('child_name') }}" placeholder="{{ __('Child Name') }}" maxlength="100" required autocomplete="false" />
                         </div>
                     </div><!--form-group-->
 
                     <div class="form-group row">
                         <div class="col-md-6">
-                            <input type="phone" name="phone" id="phone" class="form-control" placeholder="{{ __('Phone Number') }}" value="{{ old('phone') }}" maxlength="15" required autocomplete="phone" />
+                            <input type="date" name="date_of_birth" id="date_of_birth" class="form-control" value="{{ old('date_of_birth') }}" data-placeholder="{{ __('Date Of Birth') }}" required autocomplete="false">
+                        </div>
+
+                        <div class="col-md-6">
+                            <input type="date" data-placeholder="Child Date of birth" name="child_date_of_birth" id="child_date_of_birth" class="form-control" value="{{ old('child_date_of_birth') }}" placeholder="{{ __('Child Date Of Birth') }}" required autocomplete="false date_of_birth">
+                        </div>
+                    </div><!--form-group-->
+
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <input type="text" name="phone" id="phone" class="form-control" placeholder="{{ __('Phone Number') }}" value="{{ old('phone') }}" maxlength="15" required autocomplete="false" />
                         </div>
                         <div class="col-md-6">
-                            <input type="email" name="email" id="email" class="form-control" placeholder="{{ __('E-mail Address') }}" value="{{ old('email') }}" maxlength="255" required autocomplete="email" />
+                            <input type="email" name="email" id="email" class="form-control" placeholder="{{ __('E-mail Address') }}" value="{{ old('email') }}" maxlength="255" required autocomplete="false" />
                         </div>
                     </div><!--form-group-->
 
@@ -51,13 +51,13 @@
 
                     <div class="form-group row">
                         <div class="col-md-6">
-                            <select name="province" id="province" class="form-control">
+                            <select name="province" id="province" class="form-control select-province">
                                 <option value="">{{__('Select Province')}}</option>
                             </select>
                         </div>
 
                         <div class="col-md-6">
-                            <select name="city" id="city" class="form-control">
+                            <select name="city" id="city" class="form-control select-city">
                                 <option value="">{{__('Select City')}}</option>
                             </select>
                         </div>
@@ -66,25 +66,55 @@
 
                     <div class="form-group row">
                         <div class="col-md-6">
-                            <select name="district" id="district" class="form-control">
+                            <select name="district" id="district" class="form-control select-district">
                                 <option value="">{{__('Select District')}}</option>
                             </select>
                         </div>
 
                         <div class="col-md-6">
-                            <input type="postal_code" name="postal_code" id="postal_code" class="form-control" placeholder="{{ __('Postal Code') }}" value="{{ old('postal_code') }}" required autocomplete="postal_code" />
+                            <input type="postal_code" name="postal_code" id="postal_code" class="form-control" placeholder="{{ __('Postal Code') }}" value="{{ old('postal_code') }}" required autocomplete="false" />
                         </div>
 
                     </div><!--form-group-->
 
                     <div class="form-group row">
                         <div class="col-md-6">
-                            <input type="password" name="password" id="password" class="form-control" placeholder="{{ __('Password') }}" maxlength="100" required autocomplete="new-password" />
+                            <input type="password" name="password" id="password" class="form-control" placeholder="{{ __('Password') }}" maxlength="100" required autocomplete="false-password" />
                         </div>
 
                         <div class="col-md-6">
-                            <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" placeholder="{{ __('Password Confirmation') }}" maxlength="100" required autocomplete="new-password" />
+                            <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" placeholder="{{ __('Password Confirmation') }}" maxlength="100" required autocomplete="false-password" />
                         </div>
+                    </div><!--form-group-->
+
+                    <div class="form-group row">
+
+                        <div class="col-md-4">
+                            <select name="history_milk_category" id="history_milk_category" class="form-control select-category">
+                                <option value="">{{__('Kategori susu yang dikonsumsi saat ini?')}}</option>
+                                @for ($i = 1; $i < 4; $i++)
+                                    <option value="Kategori {{$i}}">Kategori {{$i}}</option>
+                                @endfor
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <select name="history_milk_product" id="history_milk_product" class="form-control select-brand">
+                                <option value="">{{__('Brand susu yang dikonsumsi 3 bulan terakhir')}}</option>
+                                @for ($i = 1; $i < 4; $i++)
+                                    <option value="Brand {{$i}}">Brand {{$i}}</option>
+                                @endfor
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <select name="history_milk_packsize" id="history_milk_pack_size" class="form-control select-size">
+                                <option value="">{{__('Packsize susu')}}</option>
+                                <option value="1L">1 liter</option>
+                                <option value="500ML">500 ml</option>
+                                <option value="250ML">250 ml</option>
+                                <option value="250ML">250 ml</option>
+                            </select>
+                        </div>
+
                     </div><!--form-group-->
 
                     <div class="form-group row">

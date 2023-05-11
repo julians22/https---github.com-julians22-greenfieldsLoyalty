@@ -1,0 +1,434 @@
+[
+    {
+        "id": "63aee2c0f2478bc0c8c99562",
+        "imageCategory": {
+            "filename": "1672405632997.png",
+            "altName": "FRESH MILK",
+            "url": {
+                "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategory/large/1672405632997.png"
+            }
+        },
+        "imageBackground": {
+            "altName": "FRESH MILK",
+            "filename": "1672593596066.jpg",
+            "url": {
+                "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategoryBackground/large/1672593596066.jpg"
+            }
+        },
+        "imageCategoryMobile": {
+            "filename": "1672405641154.png",
+            "altName": "FRESH MILK",
+            "url": {
+                "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategoryMobile/large/1672405641154.png"
+            }
+        },
+        "imageBackgroundMobile": {
+            "altName": "FRESH MILK",
+            "filename": "1672595154766.jpg",
+            "url": {
+                "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategoryBackgroundMobile/large/1672595154766.jpg"
+            }
+        },
+        "name": "Fresh Milk",
+        "slug": "fresh-milk",
+        "description": "Semua kebaikan alami dari 100% susu segar dari peternakan Greenfields dengan rasa yang nikmat, asli, dan murni.",
+        "isParent": true,
+        "parentProduct": [],
+        "childProduct": [],
+        "order": 1,
+        "isFeatured": true,
+        "imageFeatured": {
+            "altName": "FRESH MILK",
+            "filename": "1672405692648.png",
+            "url": {
+                "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategoryFeatured/large/1672405692648.png"
+            }
+        },
+        "titleFeatured": "FRESH MILK",
+        "descFeatured": "Semua kebaikan alami dari 100% susu segar dari peternakan Greenfields"
+    },
+    {
+        "id": "63aee3bdf2478bc0c8c995e9",
+        "imageCategory": {
+            "altName": "UHT MILK",
+            "filename": "1673244953179.png",
+            "url": {
+                "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategory/large/1673244953179.png"
+            }
+        },
+        "imageBackground": {
+            "altName": "UHT MILK",
+            "filename": "1672593803695.jpg",
+            "url": {
+                "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategoryBackground/large/1672593803695.jpg"
+            }
+        },
+        "imageCategoryMobile": {
+            "altName": "UHT MILK",
+            "filename": "1673244958255.png",
+            "url": {
+                "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategoryMobile/large/1673244958255.png"
+            }
+        },
+        "imageBackgroundMobile": {
+            "filename": "1672405946078.jpg",
+            "altName": "UHT MILK",
+            "url": {
+                "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategoryBackgroundMobile/large/1672405946078.jpg"
+            }
+        },
+        "name": "UHT Milk",
+        "slug": "uht-milk",
+        "description": "Cara mudah untuk nikmati kebaikan dan kesegaran susu kami,  dengan umur simpan yang panjang!",
+        "isParent": true,
+        "parentProduct": [],
+        "childProduct": [],
+        "order": 2,
+        "isFeatured": true,
+        "imageFeatured": {
+            "altName": "UHT MILK",
+            "filename": "1672405906198.png",
+            "url": {
+                "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategoryFeatured/large/1672405906198.png"
+            }
+        },
+        "titleFeatured": "UHT MILK",
+        "descFeatured": "Cara yang praktis untuk menikmati kesegaran dan kelezatan susu Greenfields di manapun kapanpun"
+    },
+    {
+        "id": "63af59ed29590d08acce0ca2",
+        "imageCategory": {
+            "altName": "Yogurt Drink",
+            "filename": "1676864400615.png",
+            "url": {
+                "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategory/large/1676864400615.png"
+            }
+        },
+        "imageBackground": {
+            "altName": "Yogurt Drink",
+            "filename": "1676566598077.jpg",
+            "url": {
+                "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategoryBackground/large/1676566598077.jpg"
+            }
+        },
+        "imageCategoryMobile": {
+            "altName": "Yogurt Drink",
+            "filename": "1676864407059.png",
+            "url": {
+                "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategoryMobile/large/1676864407059.png"
+            }
+        },
+        "imageBackgroundMobile": {
+            "altName": "YOGURT DRINK",
+            "filename": "1672595752416.jpg",
+            "url": {
+                "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategoryBackgroundMobile/large/1672595752416.jpg"
+            }
+        },
+        "name": "Yogurt Drink",
+        "slug": "yogurt-drink",
+        "description": "Lezat, sehat, dan menggunakan susu segar Greenfields, yogurt kami adalah cara yang nyaman dan lezat untuk mendapatkan serat makanan harian kamu",
+        "isParent": false,
+        "parentProduct": {
+            "id": "63aee4acf2478bc0c8c99650",
+            "imageCategory": {
+                "altName": "Fresh Yogurt",
+                "filename": "1673599485402.png",
+                "url": {
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategory/large/1673599485402.png"
+                }
+            },
+            "imageBackground": {
+                "filename": "1672406063782.jpg",
+                "altName": "FRESH YOGURT",
+                "url": {
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategoryBackground/large/1672406063782.jpg"
+                }
+            },
+            "imageCategoryMobile": {
+                "altName": "Fresh Yogurt",
+                "filename": "1673599581381.png",
+                "url": {
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategoryMobile/large/1673599581381.png"
+                }
+            },
+            "imageBackgroundMobile": {
+                "filename": "1672406085925.jpg",
+                "altName": "FRESH YOGURT",
+                "url": {
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategoryBackgroundMobile/large/1672406085925.jpg"
+                }
+            },
+            "name": "Fresh Yogurt",
+            "slug": "fresh-yogurt",
+            "description": "Lezat, sehat, dan menggunakan susu segar Greenfields, yogurt kami adalah cara yang nyaman dan lezat untuk mendapatkan serat makanan harian kamu",
+            "order": 3,
+            "isFeatured": false,
+            "imageFeatured": "",
+            "titleFeatured": "",
+            "descFeatured": ""
+        },
+        "childProduct": [],
+        "order": 4,
+        "isFeatured": false,
+        "imageFeatured": "",
+        "titleFeatured": "",
+        "descFeatured": ""
+    },
+    {
+        "id": "63af595929590d08acce0bc0",
+        "imageCategory": {
+            "altName": "YOGURT POUCH",
+            "filename": "1672594277133.png",
+            "url": {
+                "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategory/large/1672594277133.png"
+            }
+        },
+        "imageBackground": {
+            "altName": "YOGURT POUCH",
+            "filename": "1672594510360.jpg",
+            "url": {
+                "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategoryBackground/large/1672594510360.jpg"
+            }
+        },
+        "imageCategoryMobile": {
+            "altName": "YOGURT POUCH",
+            "filename": "1672594280074.png",
+            "url": {
+                "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategoryMobile/large/1672594280074.png"
+            }
+        },
+        "imageBackgroundMobile": {
+            "altName": "YOGURT POUCH",
+            "filename": "1672595077257.jpg",
+            "url": {
+                "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategoryBackgroundMobile/large/1672595077257.jpg"
+            }
+        },
+        "name": "Yogurt Pouch",
+        "slug": "yogurt-pouch",
+        "description": "Lezat, sehat, dan menggunakan susu segar Greenfields, yogurt kami adalah cara yang nyaman dan lezat untuk mendapatkan serat makanan harian kamu",
+        "isParent": false,
+        "parentProduct": {
+            "id": "63aee4acf2478bc0c8c99650",
+            "imageCategory": {
+                "altName": "Fresh Yogurt",
+                "filename": "1673599485402.png",
+                "url": {
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategory/large/1673599485402.png"
+                }
+            },
+            "imageBackground": {
+                "filename": "1672406063782.jpg",
+                "altName": "FRESH YOGURT",
+                "url": {
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategoryBackground/large/1672406063782.jpg"
+                }
+            },
+            "imageCategoryMobile": {
+                "altName": "Fresh Yogurt",
+                "filename": "1673599581381.png",
+                "url": {
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategoryMobile/large/1673599581381.png"
+                }
+            },
+            "imageBackgroundMobile": {
+                "filename": "1672406085925.jpg",
+                "altName": "FRESH YOGURT",
+                "url": {
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategoryBackgroundMobile/large/1672406085925.jpg"
+                }
+            },
+            "name": "Fresh Yogurt",
+            "slug": "fresh-yogurt",
+            "description": "Lezat, sehat, dan menggunakan susu segar Greenfields, yogurt kami adalah cara yang nyaman dan lezat untuk mendapatkan serat makanan harian kamu",
+            "order": 3,
+            "isFeatured": false,
+            "imageFeatured": "",
+            "titleFeatured": "",
+            "descFeatured": ""
+        },
+        "childProduct": [],
+        "order": 5,
+        "isFeatured": false,
+        "imageFeatured": "",
+        "titleFeatured": "",
+        "descFeatured": ""
+    },
+    {
+        "id": "63aeff269b7f3bfc23de33b4",
+        "imageCategory": {
+            "altName": "YOGURT CUP",
+            "filename": "1672595880492.png",
+            "url": {
+                "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategory/large/1672595880492.png"
+            }
+        },
+        "imageBackground": {
+            "altName": "YOGURT CUP",
+            "filename": "1672596008813.jpg",
+            "url": {
+                "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategoryBackground/large/1672596008813.jpg"
+            }
+        },
+        "imageCategoryMobile": {
+            "altName": "YOGURT CUP",
+            "filename": "1672595882923.png",
+            "url": {
+                "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategoryMobile/large/1672595882923.png"
+            }
+        },
+        "imageBackgroundMobile": {
+            "altName": "YOGURT CUP",
+            "filename": "1672595891363.jpg",
+            "url": {
+                "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategoryBackgroundMobile/large/1672595891363.jpg"
+            }
+        },
+        "name": "Yogurt Cup",
+        "slug": "yogurt-cup",
+        "description": "Lezat, sehat, dan menggunakan susu segar Greenfields, yogurt kami adalah cara yang nyaman dan lezat untuk mendapatkan serat makanan harian kamu",
+        "isParent": false,
+        "parentProduct": {
+            "id": "63aee4acf2478bc0c8c99650",
+            "imageCategory": {
+                "altName": "Fresh Yogurt",
+                "filename": "1673599485402.png",
+                "url": {
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategory/large/1673599485402.png"
+                }
+            },
+            "imageBackground": {
+                "filename": "1672406063782.jpg",
+                "altName": "FRESH YOGURT",
+                "url": {
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategoryBackground/large/1672406063782.jpg"
+                }
+            },
+            "imageCategoryMobile": {
+                "altName": "Fresh Yogurt",
+                "filename": "1673599581381.png",
+                "url": {
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategoryMobile/large/1673599581381.png"
+                }
+            },
+            "imageBackgroundMobile": {
+                "filename": "1672406085925.jpg",
+                "altName": "FRESH YOGURT",
+                "url": {
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategoryBackgroundMobile/large/1672406085925.jpg"
+                }
+            },
+            "name": "Fresh Yogurt",
+            "slug": "fresh-yogurt",
+            "description": "Lezat, sehat, dan menggunakan susu segar Greenfields, yogurt kami adalah cara yang nyaman dan lezat untuk mendapatkan serat makanan harian kamu",
+            "order": 3,
+            "isFeatured": false,
+            "imageFeatured": "",
+            "titleFeatured": "",
+            "descFeatured": ""
+        },
+        "childProduct": [],
+        "order": 6,
+        "isFeatured": false,
+        "imageFeatured": "",
+        "titleFeatured": "",
+        "descFeatured": ""
+    },
+    {
+        "id": "63aefaf99b7f3bfc23de2c8d",
+        "imageCategory": {
+            "filename": "1672411803371.png",
+            "altName": "FRESH CHEESE",
+            "url": {
+                "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategory/large/1672411803371.png"
+            }
+        },
+        "imageBackground": {
+            "altName": "FRESH CHEESE",
+            "filename": "1672596279638.jpg",
+            "url": {
+                "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategoryBackground/large/1672596279638.jpg"
+            }
+        },
+        "imageCategoryMobile": {
+            "filename": "1672411842125.png",
+            "altName": "FRESH CHEESE",
+            "url": {
+                "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategoryMobile/large/1672411842125.png"
+            }
+        },
+        "imageBackgroundMobile": {
+            "filename": "1672411845850.jpg",
+            "altName": "FRESH CHEESE",
+            "url": {
+                "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategoryBackgroundMobile/large/1672411845850.jpg"
+            }
+        },
+        "name": "Fresh Cheese",
+        "slug": "fresh-cheese",
+        "description": "Dibuat dengan tangan dari susu segar kami, keju kami lembut, lezat, dan Menggoda. Teman yang sempurna untuk resep Italia yang gurih",
+        "isParent": true,
+        "parentProduct": [],
+        "childProduct": [],
+        "order": 7,
+        "isFeatured": true,
+        "imageFeatured": {
+            "altName": "FRESH CHEESE",
+            "filename": "1672411892720.png",
+            "url": {
+                "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategoryFeatured/large/1672411892720.png"
+            }
+        },
+        "titleFeatured": "FRESH CHEESE",
+        "descFeatured": "Dibuat dari susu segar peternakan Greenfields. Keju yang lembut dan creamy, untuk masakan Italiamu"
+    },
+    {
+        "id": "63aefc0f9b7f3bfc23de2e75",
+        "imageCategory": {
+            "filename": "1672412161756.png",
+            "altName": "WHIPPING CREAM",
+            "url": {
+                "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategory/large/1672412161756.png"
+            }
+        },
+        "imageBackground": {
+            "altName": "WHIPPING CREAM",
+            "filename": "1672596364172.jpg",
+            "url": {
+                "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategoryBackground/large/1672596364172.jpg"
+            }
+        },
+        "imageCategoryMobile": {
+            "filename": "1672412152817.png",
+            "altName": "WHIPPING CREAM",
+            "url": {
+                "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategoryMobile/large/1672412152817.png"
+            }
+        },
+        "imageBackgroundMobile": {
+            "filename": "1672412147961.jpg",
+            "altName": "WHIPPING CREAM",
+            "url": {
+                "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategoryBackgroundMobile/large/1672412147961.jpg"
+            }
+        },
+        "name": "Whipping Cream",
+        "slug": "whipping-cream",
+        "description": "Rasa yang ringan dengan tekstur yang lembut. Terkenal akan kemampuan hasil mengembangnya yang luar biasa",
+        "isParent": true,
+        "parentProduct": [],
+        "childProduct": [],
+        "order": 8,
+        "isFeatured": true,
+        "imageFeatured": {
+            "altName": "WHIPPING CREAM",
+            "filename": "1672412122614.png",
+            "url": {
+                "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productCategoryFeatured/large/1672412122614.png"
+            }
+        },
+        "titleFeatured": "WHIPPING CREAM",
+        "descFeatured": "Rasa yang ringan dengan tekstur yang lembut"
+    }
+]

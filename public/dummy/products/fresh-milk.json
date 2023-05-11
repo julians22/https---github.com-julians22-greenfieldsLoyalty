@@ -1,0 +1,704 @@
+[
+    {
+        "productCategories": [
+            {
+                "name": "Fresh Milk",
+                "slug": "fresh-milk"
+            }
+        ],
+        "id": "63af02b49b7f3bfc23de3740",
+        "images": [
+            {
+                "filename": "1673627492316.jpg",
+                "altName": "Fresh Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673627492316.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673627492316.jpg"
+                },
+                "_id": "63c1881e9cfd4adb16706cc1"
+            },
+            {
+                "filename": "1673627649041.jpg",
+                "altName": "Fresh Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673627649041.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673627649041.jpg"
+                },
+                "_id": "63c1881e9cfd4adb16706cc2"
+            },
+            {
+                "filename": "1673627651174.jpg",
+                "altName": "Fresh Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673627651174.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673627651174.jpg"
+                },
+                "_id": "63c1881e9cfd4adb16706cc3"
+            },
+            {
+                "filename": "1673627656026.jpg",
+                "altName": "Fresh Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673627656026.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673627656026.jpg"
+                },
+                "_id": "63c1881e9cfd4adb16706cc4"
+            },
+            {
+                "filename": "1673627664914.jpg",
+                "altName": "Fresh Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673627664914.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673627664914.jpg"
+                },
+                "_id": "63c1881e9cfd4adb16706cc5"
+            },
+            {
+                "filename": "1673627668718.jpg",
+                "altName": "Fresh Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673627668718.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673627668718.jpg"
+                },
+                "_id": "63c1881e9cfd4adb16706cc6"
+            },
+            {
+                "filename": "1673627672378.jpg",
+                "altName": "Fresh Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673627672378.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673627672378.jpg"
+                },
+                "_id": "63c1881e9cfd4adb16706cc7"
+            }
+        ],
+        "title": "Fresh Milk",
+        "slug": "fresh-milk-id",
+        "slogans": [
+            "THE EXTRA MILK",
+            "EXTRA FRESH",
+            "EXTRA GOODNESS",
+            "EXTRA TASTY"
+        ],
+        "sizes": [
+            "1890ml",
+            "1000ml",
+            "500ml",
+            "200ml"
+        ],
+        "description": "<p>Susu Full Cream dengan rasa yang segar tapi tetap ringan dan tidak ‘enek’. Kandungan lemak utuh (3.5%) seperti pada kandungan susu segar tanpa pengurangan/penambahan apa pun bermanfaat untuk menjaga daya tahan tubuh.</p><p>Kesegaran dan nutrisi alami adalah hal yang terpenting untuk produk susu segar Greenfields. Greenfields Fresh Milk memberikan kebaikan 100% susu sapi segar dengan rasa susu yang utuh melalui proses pasteurisasi. Susu berkualitas yang diproduksi oleh sapi Holstein kami berasal dari peternakan Greenfields sendiri melalui proses pemerahan otomatis dan steril tanpa sentuhan tangan manusia.</p><p>Susu segarnya langsung diolah di pabrik Greenfields menggunakan teknologi modern dengan standar internasional. Oleh karena itulah, susu segar Greenfields mampu memberikan kesegaran alami yang terbaik.</p><p>Berasal dari susu sapi langsung, tanpa tambahan bahan pengawet apa pun. Hanya yang terbaik untuk keluarga Indonesia.</p>",
+        "nutrition": {
+            "filename": "file-1672413799387.svg",
+            "altName": "Nutrition facts for Fresh Milk",
+            "url": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productNutrition/file-1672413799387.svg"
+        },
+        "ingredients": [
+            "100% Fresh Milk"
+        ],
+        "isFeatured": true,
+        "totalReview": 277,
+        "reviewScore": 5
+    },
+    {
+        "productCategories": [
+            {
+                "name": "Fresh Milk",
+                "slug": "fresh-milk"
+            }
+        ],
+        "id": "63af066d9b7f3bfc23de3caf",
+        "images": [
+            {
+                "filename": "1673628132837.jpg",
+                "altName": "Low Fat Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673628132837.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673628132837.jpg"
+                },
+                "_id": "63c18a1a9cfd4adb16706e82"
+            },
+            {
+                "filename": "1673628135497.jpg",
+                "altName": "Low Fat Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673628135497.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673628135497.jpg"
+                },
+                "_id": "63c18a1a9cfd4adb16706e83"
+            },
+            {
+                "filename": "1673628138159.jpg",
+                "altName": "Low Fat Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673628138159.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673628138159.jpg"
+                },
+                "_id": "63c18a1a9cfd4adb16706e84"
+            },
+            {
+                "filename": "1673628140441.jpg",
+                "altName": "Low Fat Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673628140441.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673628140441.jpg"
+                },
+                "_id": "63c18a1a9cfd4adb16706e85"
+            },
+            {
+                "filename": "1673628152703.jpg",
+                "altName": "Low Fat Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673628152703.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673628152703.jpg"
+                },
+                "_id": "63c18a1a9cfd4adb16706e86"
+            },
+            {
+                "filename": "1673628156140.jpg",
+                "altName": "Low Fat Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673628156140.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673628156140.jpg"
+                },
+                "_id": "63c18a1a9cfd4adb16706e87"
+            },
+            {
+                "filename": "1673628158720.jpg",
+                "altName": "Low Fat Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673628158720.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673628158720.jpg"
+                },
+                "_id": "63c18a1a9cfd4adb16706e88"
+            }
+        ],
+        "title": "Fresh Milk Low Fat ",
+        "slug": "fresh-milk-low-fat",
+        "slogans": [
+            "THE EXTRA MILK",
+            "EXTRA FRESH",
+            "EXTRA GOODNESS",
+            "EXTRA TASTY"
+        ],
+        "sizes": [
+            "1890ml",
+            "1000ml"
+        ],
+        "description": "<p>Mengandung semua kebaikan nutrisi yang dibutuhkan dengan kandungan lemak hanya sebesar 1.1%! Kamu tetap mendapatkan asupan kalsium yang sama seperti Fresh Milk, tetapi bisa menjaga asupan lemak!</p><p>Kesegaran dan nutrisi alami adalah hal yang terpenting untuk produk susu segar Greenfields. Greenfields Fresh Milk memberikan kebaikan 100% susu sapi segar dengan rasa susu yang utuh melalui proses pasteurisasi. Susu berkualitas yang diproduksi oleh sapi Holstein kami berasal dari peternakan Greenfields sendiri melalui proses pemerahan otomatis dan steril tanpa sentuhan tangan manusia.</p><p>Susu segarnya langsung diolah di pabrik Greenfields menggunakan teknologi modern dengan standar internasional. Oleh karena itulah, susu segar Greenfields mampu memberikan kesegaran alami yang terbaik.</p>",
+        "nutrition": {
+            "filename": "file-1672414783631.svg",
+            "altName": "Nutrition facts for Low Fat Milk",
+            "url": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productNutrition/file-1672414783631.svg"
+        },
+        "ingredients": [
+            "100% Fresh Milk"
+        ],
+        "isFeatured": true,
+        "totalReview": 2,
+        "reviewScore": 5
+    },
+    {
+        "productCategories": [
+            {
+                "name": "Fresh Milk",
+                "slug": "fresh-milk"
+            }
+        ],
+        "id": "63af08939b7f3bfc23de3f6e",
+        "images": [
+            {
+                "filename": "1673628577696.jpg",
+                "altName": "Skim Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673628577696.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673628577696.jpg"
+                },
+                "_id": "63c18bb89cfd4adb16706ffc"
+            },
+            {
+                "filename": "1673628579782.jpg",
+                "altName": "Skim Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673628579782.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673628579782.jpg"
+                },
+                "_id": "63c18bb89cfd4adb16706ffd"
+            },
+            {
+                "filename": "1673628582269.jpg",
+                "altName": "Skim Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673628582269.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673628582269.jpg"
+                },
+                "_id": "63c18bb89cfd4adb16706ffe"
+            },
+            {
+                "filename": "1673628584654.jpg",
+                "altName": "Skim Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673628584654.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673628584654.jpg"
+                },
+                "_id": "63c18bb89cfd4adb16706fff"
+            },
+            {
+                "filename": "1673628587073.jpg",
+                "altName": "Skim Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673628587073.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673628587073.jpg"
+                },
+                "_id": "63c18bb89cfd4adb16707000"
+            },
+            {
+                "filename": "1673628589882.jpg",
+                "altName": "Skim Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673628589882.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673628589882.jpg"
+                },
+                "_id": "63c18bb89cfd4adb16707001"
+            },
+            {
+                "filename": "1673628593625.jpg",
+                "altName": "Skim Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673628593625.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673628593625.jpg"
+                },
+                "_id": "63c18bb89cfd4adb16707002"
+            }
+        ],
+        "title": "Fresh Milk Skimmed ",
+        "slug": "fresh-milk-skimmed",
+        "slogans": [
+            "THE EXTRA MILK",
+            "EXTRA FRESH",
+            "EXTRA GOODNESS",
+            "EXTRA TASTY"
+        ],
+        "sizes": [
+            "1000ml"
+        ],
+        "description": "<p>Dengan kandungan lemak 0.1%, susu skim Greenfields merupakan pilihan tepat untukmu yang sedang menghindari asupan lemak, tetapi tetap memerlukan kandungan nutrisi lain yang ada di dalam susu segar!</p><p>Kesegaran dan nutrisi alami adalah hal yang terpenting untuk produk susu segar Greenfields. Greenfields Fresh Milk memberikan kebaikan 100% susu sapi segar dengan rasa susu yang utuh melalui proses pasteurisasi. Susu berkualitas yang diproduksi oleh sapi Holstein kami berasal dari peternakan Greenfields sendiri melalui proses pemerahan otomatis dan steril tanpa sentuhan tangan manusia.</p><p>Susu segarnya langsung diolah di pabrik Greenfields menggunakan teknologi modern dengan standar internasional. Oleh karena itulah, susu segar Greenfields mampu memberikan kesegaran alami yang terbaik.</p>",
+        "nutrition": {
+            "filename": "file-1672415282455.svg",
+            "altName": "Nutrition facts for Skim Milk",
+            "url": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productNutrition/file-1672415282455.svg"
+        },
+        "ingredients": [
+            "100% Fresh Milk"
+        ],
+        "isFeatured": true,
+        "totalReview": 1,
+        "reviewScore": 5
+    },
+    {
+        "productCategories": [
+            {
+                "name": "Fresh Milk",
+                "slug": "fresh-milk"
+            }
+        ],
+        "id": "63af05db9b7f3bfc23de3bdf",
+        "images": [
+            {
+                "filename": "1673628013416.jpg",
+                "altName": "Premium Fresh Jersey Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673628013416.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673628013416.jpg"
+                },
+                "_id": "63c1899e9cfd4adb16706e30"
+            },
+            {
+                "filename": "1673628016550.jpg",
+                "altName": "Premium Fresh Jersey Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673628016550.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673628016550.jpg"
+                },
+                "_id": "63c1899e9cfd4adb16706e31"
+            },
+            {
+                "filename": "1673628018976.jpg",
+                "altName": "Premium Fresh Jersey Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673628018976.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673628018976.jpg"
+                },
+                "_id": "63c1899e9cfd4adb16706e32"
+            },
+            {
+                "filename": "1673628023245.jpg",
+                "altName": "Premium Fresh Jersey Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673628023245.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673628023245.jpg"
+                },
+                "_id": "63c1899e9cfd4adb16706e33"
+            },
+            {
+                "filename": "1673628028760.jpg",
+                "altName": "Premium Fresh Jersey Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673628028760.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673628028760.jpg"
+                },
+                "_id": "63c1899e9cfd4adb16706e34"
+            },
+            {
+                "filename": "1673628033226.jpg",
+                "altName": "Premium Fresh Jersey Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673628033226.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673628033226.jpg"
+                },
+                "_id": "63c1899e9cfd4adb16706e35"
+            },
+            {
+                "filename": "1673628046005.jpg",
+                "altName": "Premium Fresh Jersey Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673628046005.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673628046005.jpg"
+                },
+                "_id": "63c1899e9cfd4adb16706e36"
+            }
+        ],
+        "title": "Fresh Milk Jersey",
+        "slug": "fresh-milk-jersey",
+        "slogans": [
+            "THE EXTRA MILK",
+            "EXTRA FRESH",
+            "EXTRA GOODNESS",
+            "EXTRA TASTY"
+        ],
+        "sizes": [
+            "1000ml"
+        ],
+        "description": "<p>Greenfields adalah satu–satunya merek yang memproduksi susu sapi Jersey dengan rasa yang lebih mantap, lembut, dan lezat (thicker, creamier, and tastier).</p><p>Susu sapi Jersey memiliki kandungan nutrisi 10% lebih tinggi daripada susu segar lainnya. Juga mengandung protein, kalsium, Vitamin A, B2 dan gizi yang penting untuk keluarga.</p><p>Kesegaran dan nutrisi alami adalah hal yang terpenting untuk produk susu segar Greenfields. Greenfields memberikan kebaikan 100% susu sapi segar dengan rasa susu yang utuh melalui proses pasteurisasi. Susu berkualitas yang diproduksi oleh sapi Jersey kami berasal dari peternakan Greenfields sendiri melalui proses pemerahan otomatis dan steril tanpa sentuhan tangan manusia.</p><p>Susu segarnya langsung diolah di pabrik Greenfields menggunakan teknologi modern dengan standar internasional. Oleh karena itulah, susu segar Greenfields mampu memberikan kesegaran alami yang terbaik. Berasal dari susu sapi langsung tanpa tambahan bahan pengawet apa pun. Hanya yang terbaik untuk keluarga Indonesia.</p>",
+        "nutrition": {
+            "filename": "file-1672414613506.svg",
+            "altName": "Nutrition facts for Premium Fresh Jersey Milk",
+            "url": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productNutrition/file-1672414613506.svg"
+        },
+        "ingredients": [
+            "100% Fresh Jersey Milk"
+        ],
+        "isFeatured": false,
+        "reviewScore": null
+    },
+    {
+        "productCategories": [
+            {
+                "name": "Fresh Milk",
+                "slug": "fresh-milk"
+            }
+        ],
+        "id": "63af0a896c9adcd0a67bed74",
+        "images": [
+            {
+                "filename": "1673627860705.jpg",
+                "altName": "Chocomalt Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673627860705.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673627860705.jpg"
+                },
+                "_id": "63c188e99cfd4adb16706d63"
+            },
+            {
+                "filename": "1673627864098.jpg",
+                "altName": "Chocomalt Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673627864098.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673627864098.jpg"
+                },
+                "_id": "63c188e99cfd4adb16706d64"
+            },
+            {
+                "filename": "1673627868733.jpg",
+                "altName": "Chocomalt Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673627868733.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673627868733.jpg"
+                },
+                "_id": "63c188e99cfd4adb16706d65"
+            },
+            {
+                "filename": "1673627870817.jpg",
+                "altName": "Chocomalt Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673627870817.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673627870817.jpg"
+                },
+                "_id": "63c188e99cfd4adb16706d66"
+            },
+            {
+                "filename": "1673627872865.jpg",
+                "altName": "Chocomalt Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673627872865.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673627872865.jpg"
+                },
+                "_id": "63c188e99cfd4adb16706d67"
+            },
+            {
+                "filename": "1673627875569.jpg",
+                "altName": "Chocomalt Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673627875569.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673627875569.jpg"
+                },
+                "_id": "63c188e99cfd4adb16706d68"
+            },
+            {
+                "filename": "1673627877820.jpg",
+                "altName": "Chocomalt Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673627877820.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673627877820.jpg"
+                },
+                "_id": "63c188e99cfd4adb16706d69"
+            }
+        ],
+        "title": "Fresh Milk Chocomalt",
+        "slug": "fresh-milk-chocomalt",
+        "slogans": [
+            "THE EXTRA MILK",
+            "EXTRA FRESH",
+            "EXTRA GOODNESS",
+            "EXTRA TASTY"
+        ],
+        "sizes": [
+            "1000ml",
+            "500ml",
+            "200ml"
+        ],
+        "description": "<p>Susu segar dengan rasa Coklat dan mengandung malt (gandum) adalah kombinasi yang sempurna! Memberikan rasa lezat dan mencukupi kebutuhan nutrisi anak dan orang dewasa.</p><p>Kesegaran dan nutrisi alami adalah hal yang terpenting untuk produk susu segar Greenfields. Greenfields Fresh Milk memberikan kebaikan 100% susu sapi segar dengan rasa susu yang utuh melalui proses pasteurisasi. Susu berkualitas yang diproduksi oleh sapi Holstein kami berasal dari peternakan Greenfields sendiri melalui proses pemerahan otomatis dan steril tanpa sentuhan tangan manusia.</p><p>Susu segarnya langsung diolah di pabrik Greenfields menggunakan teknologi modern dengan standar internasional. Oleh karena itulah, susu segar Greenfields mampu memberikan kesegaran alami yang terbaik.</p>",
+        "nutrition": {
+            "filename": "file-1672415525531.svg",
+            "altName": "Nutrition facts for Chocomalt Milk",
+            "url": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productNutrition/file-1672415525531.svg"
+        },
+        "ingredients": [
+            "Susu Segar (81.5%), Air, Gula, Ekstrak Malt Bubuk (1.8%), Susu Skim Bubuk, Kakao Bubuk (0,8%), Pengemulsi Nabati, Penstabil Nabati, Perisa Sintetik Cokelat (Mengandung Pewarna Alami Karamel Kelas IV), Garam."
+        ],
+        "isFeatured": false,
+        "totalReview": 2,
+        "reviewScore": 5
+    },
+    {
+        "productCategories": [
+            {
+                "name": "Fresh Milk",
+                "slug": "fresh-milk"
+            }
+        ],
+        "id": "63af0b4d6c9adcd0a67bef04",
+        "images": [
+            {
+                "filename": "1673628730996.jpg",
+                "altName": "Strawberry Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673628730996.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673628730996.jpg"
+                },
+                "_id": "63c18c549cfd4adb167070b2"
+            },
+            {
+                "filename": "1673628735094.jpg",
+                "altName": "Strawberry Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673628735094.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673628735094.jpg"
+                },
+                "_id": "63c18c549cfd4adb167070b3"
+            },
+            {
+                "filename": "1673628739084.jpg",
+                "altName": "Strawberry Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673628739084.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673628739084.jpg"
+                },
+                "_id": "63c18c549cfd4adb167070b4"
+            },
+            {
+                "filename": "1673628741273.jpg",
+                "altName": "Strawberry Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673628741273.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673628741273.jpg"
+                },
+                "_id": "63c18c549cfd4adb167070b5"
+            },
+            {
+                "filename": "1673628743212.jpg",
+                "altName": "Strawberry Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673628743212.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673628743212.jpg"
+                },
+                "_id": "63c18c549cfd4adb167070b6"
+            },
+            {
+                "filename": "1673628746549.jpg",
+                "altName": "Strawberry Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673628746549.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673628746549.jpg"
+                },
+                "_id": "63c18c549cfd4adb167070b7"
+            },
+            {
+                "filename": "1673628748608.jpg",
+                "altName": "Strawberry Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673628748608.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673628748608.jpg"
+                },
+                "_id": "63c18c549cfd4adb167070b8"
+            },
+            {
+                "filename": "1673628750564.jpg",
+                "altName": "Strawberry Milk",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673628750564.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673628750564.jpg"
+                },
+                "_id": "63c18c549cfd4adb167070b9"
+            }
+        ],
+        "title": "Fresh Milk Strawberry",
+        "slug": "fresh-milk-strawberry",
+        "slogans": [
+            "THE EXTRA MILK",
+            "EXTRA FRESH",
+            "EXTRA GOODNESS",
+            "EXTRA TASTY"
+        ],
+        "sizes": [
+            "1000ml",
+            "200ml"
+        ],
+        "description": "<p>Kombinasi terbaik dari ekstrak stroberi dan susu segar dalam genggaman. Nikmati susu Greenfields Strawberry untuk meningkatkan kebutuhan nutrisi harianmu!</p><p>Kesegaran dan nutrisi alami adalah hal yang terpenting untuk produk susu segar Greenfields. Greenfields Fresh Milk memberikan kebaikan 100% susu sapi segar dengan rasa susu yang utuh melalui proses pasteurisasi. Susu berkualitas yang diproduksi oleh sapi Holstein kami berasal dari peternakan Greenfields sendiri melalui proses pemerahan otomatis dan steril tanpa sentuhan tangan manusia.</p><p>Susu segarnya langsung diolah di pabrik Greenfields menggunakan teknologi modern dengan standar internasional. Oleh karena itulah, susu segar Greenfields mampu memberikan kesegaran alami yang terbaik.</p>",
+        "nutrition": {
+            "filename": "file-1672416021545.svg",
+            "altName": "Nutrition facts for Strawberry Milk",
+            "url": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productNutrition/file-1672416021545.svg"
+        },
+        "ingredients": [
+            "Susu Segar (85,3%), Air, Gula, Susu Bubuk Skim, Penstabil (Sayuran, Fosfat), Pengemulsi Nabati, Perisa Stroberi Sintetik, Ekstrak Stroberi (0,1%), Pengental Guar Gum, Pewarna Sintetik Ponceau 4R CI No. 16255"
+        ],
+        "isFeatured": false,
+        "reviewScore": null
+    },
+    {
+        "productCategories": [
+            {
+                "name": "Fresh Milk",
+                "slug": "fresh-milk"
+            }
+        ],
+        "id": "63af0c446c9adcd0a67beff2",
+        "images": [
+            {
+                "filename": "1673628338678.jpg",
+                "altName": "Low Fat Mochaccino",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673628338678.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673628338678.jpg"
+                },
+                "_id": "63c18b269cfd4adb16706f50"
+            },
+            {
+                "filename": "1673628342192.jpg",
+                "altName": "Low Fat Mochaccino",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673628342192.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673628342192.jpg"
+                },
+                "_id": "63c18b269cfd4adb16706f51"
+            },
+            {
+                "filename": "1673628434354.jpg",
+                "altName": "Low Fat Mochaccino",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673628434354.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673628434354.jpg"
+                },
+                "_id": "63c18b269cfd4adb16706f52"
+            },
+            {
+                "filename": "1673628440241.jpg",
+                "altName": "Low Fat Mochaccino",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673628440241.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673628440241.jpg"
+                },
+                "_id": "63c18b269cfd4adb16706f53"
+            },
+            {
+                "filename": "1673628442465.jpg",
+                "altName": "Low Fat Mochaccino",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673628442465.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673628442465.jpg"
+                },
+                "_id": "63c18b269cfd4adb16706f54"
+            },
+            {
+                "filename": "1673628444885.jpg",
+                "altName": "Low Fat Mochaccino",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673628444885.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673628444885.jpg"
+                },
+                "_id": "63c18b269cfd4adb16706f55"
+            },
+            {
+                "filename": "1673628447630.jpg",
+                "altName": "Low Fat Mochaccino",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673628447630.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673628447630.jpg"
+                },
+                "_id": "63c18b269cfd4adb16706f56"
+            },
+            {
+                "filename": "1673628449683.jpg",
+                "altName": "Low Fat Mochaccino",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673628449683.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673628449683.jpg"
+                },
+                "_id": "63c18b269cfd4adb16706f57"
+            }
+        ],
+        "title": "Fresh Milk Low Fat Mochaccino",
+        "slug": "fresh-milk-low-fat-mochaccino",
+        "slogans": [
+            "THE EXTRA MILK",
+            "EXTRA FRESH",
+            "EXTRA GOODNESS",
+            "EXTRA TASTY"
+        ],
+        "sizes": [
+            "1000ml",
+            "200ml"
+        ],
+        "description": "<p>Kopi atau coklat?Greenfields Mochaccino rendah lemak menghadirkan kombinasi terbaik dari kedua hal tersebut. Dengan kandungan lemak 1.1% serta paduan kelezatan kopi dan coklat, minuman ini tidak boleh kamu lewatkan!</p><p>Kesegaran dan nutrisi alami adalah hal yang terpenting untuk produk susu segar Greenfields. Greenfields Fresh Milk memberikan kebaikan 100% susu sapi segar dengan rasa susu yang utuh melalui proses pasteurisasi. Susu berkualitas yang diproduksi oleh sapi Holstein kami berasal dari peternakan Greenfields sendiri melalui proses pemerahan otomatis dan steril tanpa sentuhan tangan manusia.</p><p>Susu segarnya langsung diolah di pabrik Greenfields menggunakan teknologi modern dengan standar internasional. Oleh karena itulah, susu segar Greenfields mampu memberikan kesegaran alami yang terbaik.</p>",
+        "nutrition": {
+            "filename": "file-1672416174038.svg",
+            "altName": "Nutrition facts for Low Fat Mochaccino",
+            "url": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productNutrition/file-1672416174038.svg"
+        },
+        "ingredients": [
+            "Susu Segar (75.2%), Air, Gula, Susu Skim Bubuk, Kopi Bubuk (0,6%), Kakao Bubuk (0,1%), Perisa Sintetik, Penstabil (Nabati, Fosfat), Pengemulsi Nabati"
+        ],
+        "isFeatured": false,
+        "reviewScore": null
+    }
+]

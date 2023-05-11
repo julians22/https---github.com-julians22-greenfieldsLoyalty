@@ -19,6 +19,15 @@ trait UserMethod
         return true;
     }
 
+    public function isHasAddressData()
+    {
+        if (empty($this->address_data)) {
+            return false;
+        }
+
+        return true;
+    }
+
     /**
      * @return bool
      */

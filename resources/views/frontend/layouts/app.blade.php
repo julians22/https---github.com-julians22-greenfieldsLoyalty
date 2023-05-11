@@ -26,7 +26,6 @@
     <div id="app">
         <div>
             @include('frontend.includes.nav')
-            @include('includes.partials.messages')
 
             <x-frontend.main-section>
 

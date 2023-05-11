@@ -56,6 +56,26 @@ class UserService extends BaseService
 
         try {
             $user = $this->createUser($data);
+
+            $user->address_data()->create([
+                'address' => $data['address'],
+                'province' => $data['province'],
+                'city' => $data['city'],
+                'district' => $data['district'],
+                'postal_code' => $data['postal_code'],
+                'is_primary' => true
+            ]);
+
+            $user->detail()->create([
+                'phone' => $data['phone'],
+                'date_of_birth' => $data['date_of_birth'],
+                'child_name' => $data['child_name'],
+                'child_date_of_birth' => $data['child_date_of_birth'],
+                'history_milk_category' => $data['history_milk_category'],
+                'history_milk_product' => $data['history_milk_product'],
+                'history_milk_packsize' => $data['history_milk_packsize'],
+            ]);
+
         } catch (Exception $e) {
             DB::rollBack();
 
@@ -323,6 +343,7 @@ class UserService extends BaseService
             'type' => $data['type'] ?? $this->model::TYPE_USER,
             'name' => $data['name'] ?? null,
             'email' => $data['email'] ?? null,
+            'phone' => $data['phone'] ?? null,
             'password' => $data['password'] ?? null,
             'provider' => $data['provider'] ?? null,
             'provider_id' => $data['provider_id'] ?? null,

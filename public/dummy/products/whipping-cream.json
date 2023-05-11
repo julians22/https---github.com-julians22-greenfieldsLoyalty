@@ -1,0 +1,88 @@
+[
+    {
+        "productCategories": [
+            {
+                "name": "Whipping Cream",
+                "slug": "whipping-cream"
+            }
+        ],
+        "id": "63af1d19c1cdf62b7e3b0987",
+        "images": [
+            {
+                "filename": "1673633167198.jpg",
+                "altName": "Whipping Cream",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673633167198.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673633167198.jpg"
+                },
+                "_id": "63c19da39cfd4adb1670898a"
+            },
+            {
+                "filename": "1673633170205.jpg",
+                "altName": "Whipping Cream",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673633170205.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673633170205.jpg"
+                },
+                "_id": "63c19da39cfd4adb1670898b"
+            },
+            {
+                "filename": "1673633172898.jpg",
+                "altName": "Whipping Cream",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673633172898.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673633172898.jpg"
+                },
+                "_id": "63c19da39cfd4adb1670898c"
+            },
+            {
+                "filename": "1673633175146.jpg",
+                "altName": "Whipping Cream",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673633175146.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673633175146.jpg"
+                },
+                "_id": "63c19da39cfd4adb1670898d"
+            },
+            {
+                "filename": "1673633177677.jpg",
+                "altName": "Whipping Cream",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673633177677.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673633177677.jpg"
+                },
+                "_id": "63c19da39cfd4adb1670898e"
+            },
+            {
+                "filename": "1673633180284.jpg",
+                "altName": "Whipping Cream",
+                "url": {
+                    "small": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/small/1673633180284.jpg",
+                    "large": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/product/large/1673633180284.jpg"
+                },
+                "_id": "63c19da39cfd4adb1670898f"
+            }
+        ],
+        "title": "Whipping Cream",
+        "slug": "whipping-cream",
+        "slogans": [
+            "EXTRA MILK",
+            "EXTRA GOODNESS",
+            "EXTRA TASTY"
+        ],
+        "sizes": [
+            "1000ml"
+        ],
+        "description": "<p>Terbuat dari 100% susu segar Greenfields, memberikan foam yang baik, tekstur yang stabil dan lembut. Cocok untuk jadi campuran dan pelengkap beragam sajianmu.</p>",
+        "nutrition": {
+            "filename": "file-1672420543989.svg",
+            "altName": "Nutrition facts for Whipping Cream",
+            "url": "https://greenfields-prod.s3.ap-southeast-1.amazonaws.com/productNutrition/file-1672420543989.svg"
+        },
+        "ingredients": [
+            "Susu Segar (99.98%), Penstabil Nabati"
+        ],
+        "isFeatured": true,
+        "reviewScore": null
+    }
+]

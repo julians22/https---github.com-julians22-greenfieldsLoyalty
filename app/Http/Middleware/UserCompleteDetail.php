@@ -17,8 +17,8 @@ class UserCompleteDetail
     public function handle(Request $request, Closure $next)
     {
         if ($request->user()->detail) {
-            return redirect('complete-profile');
+            return $next($request);
         }
-        return $next($request);
+        return redirect()->route('frontend.user.account')->withFlashWarning('Lengkapi Profile untuk melakukan aksi sebelumnya');
     }
 }

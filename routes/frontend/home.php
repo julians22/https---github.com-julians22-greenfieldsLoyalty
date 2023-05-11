@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Ajax\AreaController;
+use App\Http\Controllers\Ajax\ProductController;
 use App\Http\Controllers\Frontend\FaqController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\PrivacyController;
@@ -29,3 +31,10 @@ Route::get('privacy-policy', [PrivacyController::class, 'index'])
 
 Route::get('faq', [FaqController::class, 'index'])
     ->name('pages.faq');
+
+Route::get('ajax/load-province', [AreaController::class, 'getProvince']);
+Route::get('ajax/load-city/{id}', [AreaController::class, 'getCity']);
+Route::get('ajax/load-district/{id}', [AreaController::class, 'getDistrict']);
+
+Route::get('ajax/load-category/{id?}', [ProductController::class, 'getCategory']);
+Route::get('ajax/load-product/{id?}', [ProductController::class, 'getProducts']);

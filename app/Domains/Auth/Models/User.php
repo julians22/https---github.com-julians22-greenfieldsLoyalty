@@ -62,6 +62,7 @@ class User extends Authenticatable implements MustVerifyEmail, TwoFactorAuthenti
         'to_be_logged_out',
         'provider',
         'provider_id',
+        'phone'
     ];
 
     /**
@@ -120,7 +121,7 @@ class User extends Authenticatable implements MustVerifyEmail, TwoFactorAuthenti
      */
     public function sendPasswordResetNotification($token): void
     {
-        $this->notify(new ResetPasswordNotification($token));
+        // $this->notify(new ResetPasswordNotification($token));
     }
 
     /**
@@ -128,7 +129,7 @@ class User extends Authenticatable implements MustVerifyEmail, TwoFactorAuthenti
      */
     public function sendEmailVerificationNotification(): void
     {
-        $this->notify(new VerifyEmail);
+        // $this->notify(new VerifyEmail);
     }
 
     /**
@@ -171,5 +172,15 @@ class User extends Authenticatable implements MustVerifyEmail, TwoFactorAuthenti
     public function detail(): HasOne
     {
         return $this->hasOne(UserDetail::class, 'user_id', 'id');
+    }
+
+    /**
+     * Get the detail that owns the User
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function address_data(): HasOne
+    {
+        return $this->hasOne(UserAddress::class, 'user_id', 'id');
     }
 }
