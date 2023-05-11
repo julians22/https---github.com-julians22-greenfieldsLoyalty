@@ -24,6 +24,13 @@ class CreateUserAddressesTable extends Migration
             $table->boolean('is_primary')->default(false);
             $table->timestamps();
         });
+
+        Schema::table('user_details', function (Blueprint $table) {
+            $table->dropColumn('address');
+            $table->dropColumn('city');
+            $table->dropColumn('province');
+            $table->dropColumn('postal_code');
+        });
     }
 
     /**
@@ -34,5 +41,11 @@ class CreateUserAddressesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('user_addresses');
+        Schema::table('user_details', function (Blueprint $table) {
+            $table->string('province')->nullable();
+            $table->string('city')->nullable();
+            $table->text('address')->nullable();
+            $table->string('postal_code', 10);
+        });
     }
 }

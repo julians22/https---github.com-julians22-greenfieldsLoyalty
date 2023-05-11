@@ -1,0 +1,25 @@
+input[type="date"]::before {
+    content: attr(data-placeholder);
+    width: 100%;
+}
+
+/* hide our custom/fake placeholder text when in focus to show the default
+ * 'mm/dd/yyyy' value and when valid to show the users' date of birth value.
+ */
+input[type="date"]:focus::before,
+input[type="date"]:valid::before { display: none }
+
+.greenfields-form .form-control,
+.greenfields-form .form-control:focus{
+    background-color: $dark-green;
+    color: white;
+    border-radius: .5rem;
+    font-size: 18px;
+}
+.greenfields-form .form-control:focus{
+    border-color: $dark-green-opacity;
+    box-shadow: 0 0 0 0.2rem $dark-green-opacity;
+}
+.greenfields-form .form-control::placeholder{
+    color: white;
+}

@@ -18,8 +18,11 @@ class CreateActivitiesTable extends Migration
             $table->string('title', 225);
             $table->string('slug', 225);
             $table->string('type', 50);
-            $table->text('content');
             $table->string('excerpt', 225);
+            $table->text('content');
+            $table->boolean('publish')->default(true);
+            $table->string('featured_image', 225);
+            $table->string('thumbnail_image', 225);
             $table->timestamp('start_date')->nullable();
             $table->timestamp('end_date')->nullable();
             $table->timestamps();

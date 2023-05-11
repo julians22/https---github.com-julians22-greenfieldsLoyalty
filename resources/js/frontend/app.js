@@ -6,6 +6,7 @@
 
 require('../bootstrap');
 require('../plugins');
+require('../frontend/carousel-plugin');
 
 import Vue from 'vue';
 

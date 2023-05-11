@@ -58,12 +58,14 @@ class LoginController
     protected function validateLogin(Request $request)
     {
         $request->validate([
-            $this->username() => ['required', 'max:255', 'string'],
+            $this->username() => ['required', 'max:15', 'string'],
             'password' => array_merge(['max:100'], PasswordRules::login()),
-            'g-recaptcha-response' => ['required_if:captcha_status,true', new Captcha],
-        ], [
-            'g-recaptcha-response.required_if' => __('validation.required', ['attribute' => 'captcha']),
         ]);
+    }
+
+    public function username()
+    {
+        return 'phone';
     }
 
     /**
