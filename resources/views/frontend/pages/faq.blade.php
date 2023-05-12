@@ -10,9 +10,9 @@
                 <x-slot name="body">
                     <div class="row">
                         <div class="col-md-12">
-                            <h2 class="font-weight-bold">
-                                FAQ
-                            </h2>
+                            <div class="page_title">
+                                <img src="{{ asset('img/decorations/faq_titletext.png') }}" alt="">
+                            </div>
                             <div class="accordion" id="accordionFaq">
                                 @for ($i = 0; $i < 5; $i++)
                                     <div class="card-faq">

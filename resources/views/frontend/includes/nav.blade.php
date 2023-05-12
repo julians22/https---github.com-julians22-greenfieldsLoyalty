@@ -21,24 +21,26 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
-                @if (
-                    Route::is('frontend.index')
-                    )
-                    <li class="nav-item">
-                        <x-utils.link
-                            :href="route('frontend.pages.terms')"
-                            :active="activeClass(Route::is('frontend.pages.terms'))"
-                            :text="__('Syarat Dan Ketentuan')"
-                            class="nav-link mr-2" />
-                    </li>
-                    <li class="nav-item">
-                        <x-utils.link
-                            :href="route('frontend.pages.privacy')"
-                            :active="activeClass(Route::is('frontend.pages.privacy'))"
-                            :text="__('Kebijakan Privasi')"
-                            class="nav-link mr-2" />
-                    </li>
-                @endif
+                @guest
+                    @if (
+                        Route::is('frontend.index')
+                        )
+                        <li class="nav-item">
+                            <x-utils.link
+                                :href="route('frontend.pages.terms')"
+                                :active="activeClass(Route::is('frontend.pages.terms'))"
+                                :text="__('Syarat Dan Ketentuan')"
+                                class="nav-link mr-2" />
+                        </li>
+                        <li class="nav-item">
+                            <x-utils.link
+                                :href="route('frontend.pages.privacy')"
+                                :active="activeClass(Route::is('frontend.pages.privacy'))"
+                                :text="__('Kebijakan Privasi')"
+                                class="nav-link mr-2" />
+                        </li>
+                    @endif
+                @endguest
                 @guest
                     <li class="nav-item">
                         <x-utils.link

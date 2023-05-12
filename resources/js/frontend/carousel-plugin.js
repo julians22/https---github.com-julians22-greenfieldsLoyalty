@@ -6,3 +6,13 @@ document.addEventListener( 'DOMContentLoaded', function() {
     });
     splide.mount();
 } );
+
+document.addEventListener( 'DOMContentLoaded', function() {
+    var splide = new Splide('.splide-b', {
+        pagination: false,
+        perPage: 3,
+        gap: 20,
+        padding: 40
+    });
+    splide.mount();
+} );

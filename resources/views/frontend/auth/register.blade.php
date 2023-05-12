@@ -4,7 +4,7 @@
 
 @section('content')
     @include('frontend.includes.banner')
-    <div class="container">
+    <div class="container mbb-4">
         <div class="row justify-content-center">
             <div class="col-md-4 text-center">
                 <img src="{{ asset('img/decorations/title_register.png') }}" alt="">

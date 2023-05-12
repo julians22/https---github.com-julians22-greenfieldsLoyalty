@@ -11,7 +11,7 @@ class RedeemController extends Controller
 
     public function index()
     {
-        $rewards = Reward::all();
+        $rewards = Reward::where('status', 1)->get();
 
         if (!count($rewards)) {
             $rewards = Reward::factory()->count(7)->create();

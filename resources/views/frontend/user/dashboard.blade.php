@@ -45,6 +45,39 @@
 
             </div>
         </div>
+
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-10">
+                <div class="row justify-content-center mb-3">
+                    <div class="col-md-3 text-center">
+                        <div class="bg-green p-1 rounded-pill text-white font-weight-bold">Tukar Poin Sekarang</div>
+                    </div>
+                </div>
+                <div id="katalog-carousel" class="splide splide-b" aria-label="Katalog Produk">
+                    <div class="splide__track">
+                          <div class="splide__list">
+                            @foreach ($rewards as $reward)
+                                <div class="splide__slide">
+                                    <div class="card card-reward">
+                                        <div class="card-body">
+                                            <div class="reward-img-wrapper">
+                                                <img src="{{ asset('img/'.$reward->image) }}" alt="{{ $reward->name }}" class="reward-img">
+                                            </div>
+
+                                            <div class="reward-detail-wrapper">
+                                                <h4 class="card-title text-center">{{ $reward->name }}</h4>
+                                                <p class="point">{{$reward->point}}pts</p>
+                                            </div>
+                                            <a class="btn mb-3 btn-rounded  {{ $reward->point > $logged_in_user->point ? 'disabled btn-secondary' : 'btn-green' }}" href="#">TUKAR HADIAH</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 @endsection

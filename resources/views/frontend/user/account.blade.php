@@ -98,6 +98,53 @@
                             <div class="page_title">
                                 <img src="{{ asset('img/decorations/title_activity.png') }}" alt="">
                             </div>
+
+                            <div class="row">
+                                <div class="col-md-8">
+
+                                    <table class="table table-sm table-bordered table-striped">
+                                        <thead class="bg-dark-green text-white">
+                                            <tr>
+                                                <th>Tanggal</th>
+                                                <th>Aktivitas</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Senin, 11-12-2023</td>
+                                                <td>Tote Bag -50pts</td>
+                                                <td>Menunggu Approval</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Senin, 11-12-2023</td>
+                                                <td>Tote Bag -50pts</td>
+                                                <td>Menunggu Approval</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Senin, 11-12-2023</td>
+                                                <td>Tote Bag -50pts</td>
+                                                <td>Menunggu Approval</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Senin, 11-12-2023</td>
+                                                <td>Tote Bag -50pts</td>
+                                                <td>Menunggu Approval</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Senin, 11-12-2023</td>
+                                                <td>Tote Bag -50pts</td>
+                                                <td>Menunggu Approval</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Senin, 11-12-2023</td>
+                                                <td>Tote Bag -50pts</td>
+                                                <td>Menunggu Approval</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="col-md-12 mb-2">
