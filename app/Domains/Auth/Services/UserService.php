@@ -66,13 +66,20 @@ class UserService extends BaseService
                 'is_primary' => true
             ]);
 
+            $brand_history = "";
+
+            if (!empty($data['history_milk_product'])) {
+                $brand_history = implode("|",$data['history_milk_product']);
+            }
+
+
             $user->detail()->create([
                 'phone' => $data['phone'],
                 'date_of_birth' => $data['date_of_birth'],
                 'child_name' => $data['child_name'],
                 'child_date_of_birth' => $data['child_date_of_birth'],
                 'history_milk_category' => $data['history_milk_category'],
-                'history_milk_product' => $data['history_milk_product'],
+                'history_milk_product' => $brand_history,
                 'history_milk_packsize' => $data['history_milk_packsize'],
             ]);
 

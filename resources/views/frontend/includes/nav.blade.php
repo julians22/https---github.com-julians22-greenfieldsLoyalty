@@ -61,7 +61,7 @@
                     @endif
                 @else
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript.void()">
+                        <a class="nav-link" href="#">
                             Selamat datang, {{ $logged_in_user->name }}
                         </a>
                     </li>
@@ -106,8 +106,8 @@
                     <li class="nav-item {{ activeClass(Route::is('frontend.redeem.index')) }}">
                         <a class="nav-link" href="{{ route('frontend.redeem.index') }}">Tukar<br>Hadiah</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Promo & <br> Aktivitas</a>
+                    <li class="nav-item {{ activeClass(Route::is('frontend.promo.index')) }}">
+                        <a class="nav-link" href="{{ route('frontend.promo.index') }}">Promo & <br> Aktivitas</a>
                     </li>
                     <li class="nav-item {{ activeClass(Route::is('frontend.pages.faq')) }}">
                         <a class="nav-link" href="{{ route('frontend.pages.faq') }}">FAQ</a>

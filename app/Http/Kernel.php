@@ -55,7 +55,7 @@ class Kernel extends HttpKernel
              * This is configurable, disable boilerplate.access.user.admin_requires_2fa instead of removing this
              */
             '2fa:enabled',
-            'auth',
+            'auth_admin',
             'password.expires',
             'is_admin',
         ],
@@ -76,6 +76,7 @@ class Kernel extends HttpKernel
     protected $routeMiddleware = [
         '2fa' => \App\Domains\Auth\Http\Middleware\TwoFactorAuthenticationStatus::class,
         'auth' => \App\Http\Middleware\Authenticate::class,
+        'auth_admin' => \App\Http\Middleware\AuthenticateAdmin::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
         'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,

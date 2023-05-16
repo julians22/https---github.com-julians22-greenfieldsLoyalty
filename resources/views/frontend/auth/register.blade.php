@@ -91,27 +91,25 @@
 
                         <div class="col-md-4">
                             <select name="history_milk_category" id="history_milk_category" class="form-control select-category">
-                                <option value="">{{__('Kategori susu yang dikonsumsi saat ini?')}}</option>
-                                @for ($i = 1; $i < 4; $i++)
-                                    <option value="Kategori {{$i}}">Kategori {{$i}}</option>
-                                @endfor
+                                <option value="" disabled selected>{{__('Kategori susu yang dikonsumsi saat ini?')}}</option>
+                                @foreach ($survey_categories as $category)
+                                    <option value="{{ $category }}">{{ $category }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="col-md-4">
-                            <select name="history_milk_product" id="history_milk_product" class="form-control select-brand">
-                                <option value="">{{__('Brand susu yang dikonsumsi 3 bulan terakhir')}}</option>
-                                @for ($i = 1; $i < 4; $i++)
-                                    <option value="Brand {{$i}}">Brand {{$i}}</option>
-                                @endfor
+                            <select name="history_milk_product[]" id="history_milk_product" class="form-control select-brand" data-placeholder="{{__('Brand susu yang dikonsumsi 3 bulan terakhir')}}" multiple="multiple">
+                                @foreach ($survey_brands as $brand)
+                                    <option value="{{ $brand }}">{{ $brand }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="col-md-4">
                             <select name="history_milk_packsize" id="history_milk_pack_size" class="form-control select-size">
-                                <option value="">{{__('Packsize susu')}}</option>
-                                <option value="1L">1 liter</option>
-                                <option value="500ML">500 ml</option>
-                                <option value="250ML">250 ml</option>
-                                <option value="250ML">250 ml</option>
+                                <option value="" selected disabled>{{__('Packsize susu')}}</option>
+                                @foreach ($survey_packsizes as $packsize)
+                                    <option value="{{ $packsize }}">{{ $packsize }}</option>
+                                @endforeach
                             </select>
                         </div>
 

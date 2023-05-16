@@ -34,7 +34,7 @@
     },
     "dependencies": {
         "@splidejs/splide": "^4.1.4",
-        "@ttskch/select2-bootstrap4-theme": "^1.5.2",
-        "select2": "^4.1.0-rc.0"
+        "select2": "^4.0.13",
+        "select2-theme-bootstrap4": "^1.0.2"
     }
 }

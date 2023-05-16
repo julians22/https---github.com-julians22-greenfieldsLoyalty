@@ -83,6 +83,7 @@ Route::group(['as' => 'auth.'], function () {
     Route::group(['middleware' => 'guest'], function () {
         // Authentication
         Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
+        Route::get('admin/login', [LoginController::class, 'showLoginAdminForm'])->name('login_admin');
         Route::post('login', [LoginController::class, 'login']);
 
         // Registration

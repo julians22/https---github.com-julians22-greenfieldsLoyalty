@@ -2,13 +2,14 @@ const { default: axios } = require("axios");
 
 let province_select = '.select-province',
     city_select = '.select-city',
-    district_select = '.select-district';
+    district_select = '.select-district',
+    brand_select = '.select-brand',
+    category_select = '.select-category',
+    size_select = '.select-size';
 
 let provinces, city, district;
 
-const defaultConfig = {
-    theme : "bootstrap4"
-}
+$.fn.select2.defaults.set( "theme", "bootstrap" );
 
 $(document).ready(function() {
 
@@ -25,7 +26,6 @@ $(document).ready(function() {
 
 function disable_select(selects) {
     const configs = {
-        theme: defaultConfig.theme,
         disabled: true,
         data: []
     }
@@ -37,20 +37,25 @@ function disable_select(selects) {
 
 function initSelect2(){
 
-    const configs = defaultConfig;
-
-    $(province_select).select2(configs);
-
+    // Load Area Select
+    $(province_select).select2();
     disable_select([city_select, district_select]);
-
     loadProvince();
+
+    // Load Servey Select
+    $(brand_select).select2({
+        allowClear: true,
+        maximumSelectionLength: 2
+    });
+
+    $(category_select).select2();
+    $(size_select).select2();
 }
 
 async function loadProvince(){
     const res = await axios.get('/ajax/load-province');
 
     const configs = {
-        theme: defaultConfig.theme,
         data: res.data
     }
 
@@ -70,7 +75,6 @@ async function loadCity(id) {
     const res = await axios.get('/ajax/load-city/'+id);
 
     const configs = {
-        theme: defaultConfig.theme,
         data: res.data,
         disabled: false
     }
@@ -91,7 +95,6 @@ async function loadDistrict(id){
     const res = await axios.get('/ajax/load-district/'+id);
 
     const configs = {
-        theme: defaultConfig.theme,
         data: res.data,
         disabled: false
     }

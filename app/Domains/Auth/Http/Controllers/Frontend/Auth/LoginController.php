@@ -48,6 +48,16 @@ class LoginController
     }
 
     /**
+     * Show the application's login form.
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function showLoginAdminForm()
+    {
+        return view('frontend.auth.login_admin');
+    }
+
+    /**
      * Validate the user login request.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -57,10 +67,30 @@ class LoginController
      */
     protected function validateLogin(Request $request)
     {
-        $request->validate([
-            $this->username() => ['required', 'max:15', 'string'],
-            'password' => array_merge(['max:100'], PasswordRules::login()),
-        ]);
+        $emailInput = $request->has('email');
+
+        if ($emailInput) {
+            $request->validate([
+                'email' => ['required', 'max:100', 'string'],
+                'password' => array_merge(['max:100'], PasswordRules::login()),
+            ]);
+        }else{
+            $request->validate([
+                $this->username() => ['required', 'max:15', 'string'],
+                'password' => array_merge(['max:100'], PasswordRules::login()),
+            ]);
+        }
+    }
+
+    protected function credentials(Request $request)
+    {
+        $emailInput = $request->has('email');
+
+        if ($emailInput) {
+            return $request->only('email', 'password');
+        }
+        return $request->only($this->username(), 'password');
+
     }
 
     public function username()

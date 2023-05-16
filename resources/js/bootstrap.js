@@ -12,6 +12,7 @@ try {
     window.$ = window.jQuery = require('jquery');
 
     require('select2');
+    require('select2/src/js/select2/selection/placeholder');
     require('bootstrap');
 } catch (e) {}
 

@@ -7,8 +7,8 @@
 @import 'components/page_titles';
 
 // Select2 styles
-@import '~select2/dist/css/select2.min.css';
-@import '~@ttskch/select2-bootstrap4-theme/dist/select2-bootstrap4.min.css';
+@import '~select2/dist/css/select2.css';
+@import '~select2-theme-bootstrap4/src/build.scss';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
@@ -219,6 +219,59 @@
             margin: 0;
             font-weight: 500;
             color: black;
+        }
+    }
+
+}
+
+.card-activity{
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 0;
+    // create simple box shadow css
+    box-shadow: -3px 10px 1rem rgba(0, 0, 0, 0.15);
+
+
+    .card-body{
+        padding: 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .activity-img-wrapper{
+        width: 100%;
+        padding: 10px 10px 5px 10px;
+        .activity-img{
+            width: 100%;
+            height: auto;
+            margin-bottom: .2rem;
+        }
+    }
+
+    .activity-detail-wrapper{
+        height: 160px;
+        width: 100%;
+        padding: 10px 10px 10px 10px;
+        .card-title{
+            color: $dark-green;
+            font-weight: 600;
+            margin-bottom: 1px;
+        }
+
+        .schedule-badge{
+            font-size: 14px;
+            margin-bottom: 1rem;
+        }
+
+        .excerpt{
+            margin: 0;
+            font-weight: 500;
+            color: black;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            display: block;
         }
     }
 

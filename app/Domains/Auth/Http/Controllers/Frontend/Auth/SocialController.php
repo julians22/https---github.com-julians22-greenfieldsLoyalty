@@ -29,7 +29,10 @@ class SocialController
      */
     public function callback($provider, UserService $userService)
     {
-        $user = $userService->registerProvider(Socialite::driver($provider)->stateless()->user(), $provider);
+        $user = $userService->registerProvider(
+                Socialite::driver($provider)->stateless()->user(),
+                $provider
+            );
 
         if (! $user->isActive()) {
             auth()->logout();

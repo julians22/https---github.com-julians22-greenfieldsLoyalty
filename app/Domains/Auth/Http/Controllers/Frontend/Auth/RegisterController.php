@@ -61,7 +61,16 @@ class RegisterController
     {
         abort_unless(config('boilerplate.access.user.registration'), 404);
 
-        return view('frontend.auth.register');
+        $survey_categories = config('survey.categories');
+        $survey_brands = config('survey.brands');
+        $survey_packsizes = config('survey.packsizes');
+
+        return view('frontend.auth.register', compact(
+            "survey_categories",
+            "survey_brands",
+            "survey_packsizes"
+            )
+        );
     }
 
     /**

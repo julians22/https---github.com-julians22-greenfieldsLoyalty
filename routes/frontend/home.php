@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Ajax\AreaController;
 use App\Http\Controllers\Ajax\ProductController;
+use App\Http\Controllers\Frontend\ActivityController;
 use App\Http\Controllers\Frontend\FaqController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\PrivacyController;
@@ -19,8 +20,14 @@ Route::get('/', [HomeController::class, 'index'])
         $trail->push(__('Home'), route('frontend.index'));
     });
 
-Route::group(['middleware' => ['auth', 'completes_detail'], 'as' => 'redeem.', 'prefix' => 'redeem'], function() {
-    Route::get('/', [RedeemController::class, 'index'])->name('index');
+Route::group(['middleware' => ['auth', 'completes_detail']], function() {
+    Route::group(['as' => 'redeem.', 'prefix' => 'redeem'], function(){
+        Route::get('/', [RedeemController::class, 'index'])->name('index');
+    });
+
+    Route::group(['prefix' => 'promo', 'as' => 'promo.'], function() {
+        Route::get('/', [ActivityController::class, 'index'])->name('index');
+    });
 });
 
 Route::get('term-and-condition', [TermsController::class, 'index'])
