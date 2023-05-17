@@ -200,5 +200,8 @@
     "Province": "Provinsi",
     "City": "Kota/Kabupaten",
     "District": "Kecamatan",
-    "Postal Code": "Kode Pos"
+    "Postal Code": "Kode Pos",
+    "Select Province": "Pilih Provinsi",
+    "Select City": "Pilih Kota/Kabupaten",
+    "Select District": "Pilih Kecamatan"
 }
