@@ -189,5 +189,16 @@
     "These credentials do not match our records.": "Kredensial ini tidak cocok dengan catatan kami.",
     "Editing :role": "Mengedit :role",
     "Home": "Beranda",
-    "Your account information is incomplete, please complete it on the My Account page" : "Informasi akun anda belum lengkap, silahkan lengkapi pada halaman Akun Saya"
+    "Your account information is incomplete, please complete it on the My Account page" : "Informasi akun anda belum lengkap, silahkan lengkapi pada halaman Akun Saya",
+    "Change Profile": "Ubah Profil",
+    "Full Name": "Nama Lengkap",
+    "Child Name": "Nama Anak",
+    "Date Of Birth": "Tanggal Lahir",
+    "Child Date Of Birth": "Tanggal Lahir Anak",
+    "Phone Number": "Nomor Telepon",
+    "Full Address": "Alamat Lengkap",
+    "Province": "Provinsi",
+    "City": "Kota/Kabupaten",
+    "District": "Kecamatan",
+    "Postal Code": "Kode Pos"
 }

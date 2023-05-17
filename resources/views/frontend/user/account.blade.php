@@ -16,82 +16,67 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-md-8">
-                                    <x-forms.post :action="route('frontend.auth.register')" class="greenfields-form">
-                                        <div class="form-group row">
-                                            <div class="col-md-6">
-                                                <input type="text" name="name" id="name" class="form-control" value="{{ $logged_in_user->name }}" placeholder="{{ __('Name') }}" maxlength="100" required autocomplete="name" />
-                                            </div>
-                                            <div class="col-md-6">
-                                                <input type="text" name="child_name" id="child_name" class="form-control" value="{{ $logged_in_user->child_name }}" placeholder="{{ __('Child Name') }}" maxlength="100" required autocomplete="child_name" />
-                                            </div>
-                                        </div><!--form-group-->
+                                <div class="col-md-8 col-12">
+                                    <div class="table-responsive">
+                                        <table class="table table-borderless table-hover table-striped">
+                                            <tbody>
+                                                <tr>
+                                                    <th style="width: 25%">{{ __('Full Name') }}</th>
+                                                    <td style="width: 25%">{{ $logged_in_user->name ?? "-" }}</td>
 
-                                        <div class="form-group row">
-                                            <div class="col-md-6">
-                                                <input type="date" name="date_of_birth" id="date_of_birth" class="form-control" value="{{ $logged_in_user->date_of_birth }}" data-placeholder="{{ __('Date Of Birth') }}" required autocomplete="date_of_birth">
-                                            </div>
+                                                    <th>{{ __('Child Name') }}</th>
+                                                    <td>{{ $logged_in_user->child_name ?? "-" }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>{{ __('Date Of Birth') }}</th>
+                                                    <td>{{ $logged_in_user->date_of_birth ?? "-" }}</td>
 
-                                            <div class="col-md-6">
-                                                <input type="date" data-placeholder="Child Date of birth" name="child date_of_birth" id="child date_of_birth" class="form-control" value="{{ $logged_in_user->child_date_of_birth }}" placeholder="{{ __('Child Date Of Birth') }}" required autocomplete="child date_of_birth">
-                                            </div>
-                                        </div><!--form-group-->
+                                                    <th>{{ __('Child Date Of Birth') }}</th>
+                                                    <td>{{ $logged_in_user->child_date_of_birth ?? "-" }}</td>
+                                                </tr>
 
-                                        <div class="form-group row">
-                                            <div class="col-md-6">
-                                                <input type="phone" name="phone" id="phone" class="form-control" placeholder="{{ __('Phone Number') }}" value="{{ $logged_in_user->phone }}" maxlength="15" required autocomplete="phone" />
-                                            </div>
-                                            <div class="col-md-6">
-                                                <input type="email" name="email" id="email" class="form-control" placeholder="{{ __('E-mail Address') }}" value="{{ $logged_in_user->email }}" maxlength="255" required autocomplete="email" />
-                                            </div>
-                                        </div><!--form-group-->
+                                                <tr>
+                                                    <th>{{ __('Phone Number') }}</th>
+                                                    <td>{{ $logged_in_user->phone ?? "-" }}</td>
 
-                                        <div class="form-group row">
+                                                    <th>{{ __('E-mail Address') }}</th>
+                                                    <td>{{ $logged_in_user->email ?? "-" }}</td>
+                                                </tr>
 
-                                            <div class="col-md-12">
-                                                <textarea name="address" id="address" rows="1" class="form-control" placeholder="{{__('Full Address')}}" value="{{ $logged_in_user->address }}">{{ $logged_in_user->address }}</textarea>
-                                            </div>
+                                                <tr>
+                                                    <th>{{__('Full Address')}}</th>
+                                                    <td colspan="3">{{ $logged_in_user->address ?? "-" }}</td>
+                                                </tr>
 
-                                        </div><!--form-group-->
+                                                <tr>
+                                                    <th>{{ __('Province') }}</th>
+                                                    <td>{{ $logged_in_user->province ? $logged_in_user->address_data->rel_province->name : "-" }}</td>
 
-                                        <div class="form-group row">
-                                            <div class="col-md-6">
-                                                <select name="province" id="province" class="form-control">
-                                                    <option value="">{{__('Select Province')}}</option>
-                                                </select>
-                                            </div>
+                                                    <th>{{ __('City') }}</th>
+                                                    <td>{{ $logged_in_user->city ? $logged_in_user->address_data->rel_city->name : "-" }}</td>
+                                                </tr>
 
-                                            <div class="col-md-6">
-                                                <select name="city" id="city" class="form-control">
-                                                    <option value="">{{__('Select City')}}</option>
-                                                </select>
-                                            </div>
+                                                <tr>
+                                                    <th>{{ __('District') }}</th>
+                                                    <td>{{ $logged_in_user->city ? $logged_in_user->address_data->rel_district->name : "-" }}</td>
 
-                                        </div><!--form-group-->
+                                                    <th>{{ __('Postal Code') }}</th>
+                                                    <td>{{ $logged_in_user->postal_code ?? "-" }}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
 
-                                        <div class="form-group row">
-                                            <div class="col-md-6">
-                                                <select name="district" id="district" class="form-control">
-                                                    <option value="">{{__('Select District')}}</option>
-                                                </select>
-                                            </div>
+                                    <div class="col-md-6 offset-md-6 text-right">
+                                        <button class="btn btn-rounded btn-green" type="button">@lang('Change Password')</button>
 
-                                            <div class="col-md-6">
-                                                <input type="postal_code" name="postal_code" id="postal_code" class="form-control" placeholder="{{ __('Postal Code') }}" value="{{ $logged_in_user->postal_code }}" required autocomplete="postal_code" />
-                                            </div>
-
-                                        </div><!--form-group-->
-
-                                        <div class="form-group row">
-
-                                            <div class="col-md-6 offset-md-6 text-right">
-                                                <button class="btn btn-rounded btn-green" type="button">@lang('Change Password')</button>
-                                                <button class="btn btn-rounded btn-green ml-2" type="submit">@lang('Change Profile')</button>
-                                            </div>
-                                        </div><!--form-group-->
-                                    </x-forms.post>
-                                </div><!--col-md-10-->
-                            </div><!--row-->
+                                        <x-utils.link
+                                            class="btn btn-green btn-rounded ml-2"
+                                            :href="route('frontend.user.edit-account')"
+                                            :text="__('Change Profile')"/>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="col-md-12 mb-2">

@@ -219,6 +219,22 @@ class UserService extends BaseService
     public function updateProfile(User $user, array $data = []): User
     {
         $user->name = $data['name'] ?? null;
+        $user->phone = $data['phone'] ?? null;
+
+        $user->detail()->update([
+            "child_name" => $data['child_name'] ?? null,
+            "date_of_birth" => $data['date_of_birth'] ?? null,
+            "child_date_of_birth" => $data['child_date_of_birth'] ?? null,
+            "phone" => $data['phone'] ?? null
+        ]);
+
+        $user->address_data()->create([
+            "address" => $data["address"] ?? null,
+            "province" => $data["province"] ?? null,
+            "city" => $data["city"] ?? null,
+            "district" => $data["district"] ?? null,
+            "postal_code" => $data["postal_code"] ?? null
+        ]);
 
         if ($user->canChangeEmail() && $user->email !== $data['email']) {
             $user->email = $data['email'];

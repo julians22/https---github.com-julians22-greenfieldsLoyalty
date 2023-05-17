@@ -17,18 +17,13 @@ class ProfileController
      */
     public function update(UpdateProfileRequest $request, UserService $userService)
     {
-        // dd($request->all());
         $user = $userService->updateProfile($request->user(), $request->validated());
 
         $user_detail = [
-            "date_of_birth" => $request->dob,
-            "phone" => $request->phone,
-            "province" => $request->province,
-            "city" => $request->city,
-            "child_name" => $request->child_name,
-            "child_date_of_birth" => $request->child_dob,
-            "address" => $request->address,
-            "postal_code" => $request->postal_code
+            "child_name" => $request->child_name ?? null,
+            "date_of_birth" => $request->date_of_birth ?? null,
+            "child_date_of_birth" => $request->child_date_of_birth ?? null,
+            "phone" => $request->phone ?? null
         ];
 
         if ($user && !$user->isHasDetail()) {
@@ -37,11 +32,25 @@ class ProfileController
 
         $user->detail()->update($user_detail);
 
+        $user_address = [
+            "address" => $request->address ?? null,
+            "province" => $request->province ?? null,
+            "city" => $request->city ?? null,
+            "district" => $request->district ?? null,
+            "postal_code" => $request->postal_code ?? null
+        ];
 
-        if (session()->has('resent')) {
-            return redirect()->route('frontend.auth.verification.notice')->withFlashInfo(__('You must confirm your new e-mail address before you can go any further.'));
+        if ($user && !$user->isHasAddressData()) {
+            $user->address_data()->create($user_address);
         }
 
-        return redirect()->route('frontend.user.account', ['#information'])->withFlashSuccess(__('Profile successfully updated.'));
+        $user->address_data()->update($user_address);
+
+
+        // if (session()->has('resent')) {
+        //     return redirect()->route('frontend.auth.verification.notice')->withFlashInfo(__('You must confirm your new e-mail address before you can go any further.'));
+        // }
+
+        return redirect()->route('frontend.user.account')->withFlashSuccess(__('Profile successfully updated.'));
     }
 }

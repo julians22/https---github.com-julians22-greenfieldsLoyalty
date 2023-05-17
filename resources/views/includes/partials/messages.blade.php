@@ -30,6 +30,30 @@
     </x-utils.alert>
 @endif
 
+@if(session()->get('toast_success'))
+    <span class="toast-alert" data-type="success" style="visibility: hidden;">
+        {{ session()->get('toast_success') }}
+    </span>
+@endif
+
+@if(session()->get('toast_warning'))
+<span class="toast-alert" data-type="warning" style="visibility: hidden;">
+    {{ session()->get('toast_warning') }}
+</span>
+@endif
+
+@if(session()->get('toast_info') || session()->get('toast_message'))
+<span class="toast-alert" data-type="info" style="visibility: hidden;">
+    {{ session()->get('toast_info') }}
+</span>
+@endif
+
+@if(session()->get('toast_danger'))
+<span class="toast-alert" data-type="danger" style="visibility: hidden;">
+    {{ session()->get('toast_danger') }}
+</span>
+@endif
+
 @if(session()->get('status'))
     <x-utils.alert type="success" class="header-message">
         {{ session()->get('status') }}

@@ -1,7 +1,7 @@
 <div class="form-group">
     <x-utils.link
         :href="route('frontend.auth.social.login', 'facebook')"
-        class="btn btn-block btn-blue btn-login btn-rounded"
+        class="btn btn-block btn-blue btn-login btn-rounded d-none"
         icon="fab fa-facebook"
         :text="__('Login with Facebook')"
         :hide="!config('services.facebook.active')" />

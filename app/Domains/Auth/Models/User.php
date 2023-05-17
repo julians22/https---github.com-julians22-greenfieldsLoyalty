@@ -111,6 +111,7 @@ class User extends Authenticatable implements MustVerifyEmail, TwoFactorAuthenti
         'permissions',
         'roles',
         'detail',
+        'address_data'
     ];
 
     /**

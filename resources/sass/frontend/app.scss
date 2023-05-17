@@ -16,6 +16,9 @@
 // Default Splide theme
 @import '~@splidejs/splide/css';
 
+// Toasts
+@import "~toastr";
+
 // components
 @import 'components/form_customs';
 @import 'components/buttons';

@@ -26,5 +26,8 @@ Route::group(['as' => 'user.', 'middleware' => ['auth', 'password.expires', conf
                 ->push(__('My Account'), route('frontend.user.account'));
         });
 
+    Route::get('account/edit', [AccountController::class, 'edit'])
+        ->name('edit-account');
+
     Route::patch('profile/update', [ProfileController::class, 'update'])->name('profile.update');
 });

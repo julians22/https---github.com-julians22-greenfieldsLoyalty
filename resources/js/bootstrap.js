@@ -1,6 +1,6 @@
 window._ = require('lodash');
 window.Swal = require('sweetalert2');
-
+window.toastr = require('toastr');
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
  * for JavaScript based Bootstrap features such as modals and tabs. This
@@ -14,6 +14,8 @@ try {
     require('select2');
     require('select2/src/js/select2/selection/placeholder');
     require('bootstrap');
+
+    require('./toast');
 } catch (e) {}
 
 /**

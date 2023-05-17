@@ -14,7 +14,14 @@ class AccountController
      */
     public function index()
     {
-        $provinces = Indonesia::all();
         return view('frontend.user.account');
+    }
+
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function edit()
+    {
+        return view('frontend.user.edit-account');
     }
 }
