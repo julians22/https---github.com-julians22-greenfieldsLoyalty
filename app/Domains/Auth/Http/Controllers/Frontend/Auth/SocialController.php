@@ -44,6 +44,6 @@ class SocialController
 
         event(new UserLoggedIn($user));
 
-        return redirect()->route(homeRoute());
+        return redirect()->route('frontend.user.account')->withFlashWarning('Lengkapi Profile untuk melakukan aksi sebelumnya');
     }
 }
