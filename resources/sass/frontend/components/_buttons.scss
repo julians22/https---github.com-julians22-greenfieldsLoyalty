@@ -5,3 +5,8 @@
 .btn.btn-rounded{
     border-radius: .5rem;
 }
+
+.splide__arrow:focus-visible{
+    outline: 3px solid $dark-green-opacity;
+    outline-offset: 3px;
+}

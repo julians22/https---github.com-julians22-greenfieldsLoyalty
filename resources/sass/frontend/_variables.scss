@@ -15,7 +15,8 @@ $red: #e3342f;
 $orange: #f6993f;
 $yellow: #ffed4a;
 $green: #228E5B;
-$dark-green: #256146;
+$dark-green: #006341;
+$dark-green-old: #256146;
 $dark-green-dis: #3d6151;
 $dark-green-opacity: #25614683;
 $teal: #4dc0b5;
@@ -23,11 +24,14 @@ $cyan: #48a2b1;
 $gold: #C49A6C;
 $gray-light: #E6E7E8;
 
+$enable-responsive-font-sizes: true;
+
 $theme-colors: (
   "cyan": $cyan,
   "green": $green,
   "dark-green": $dark-green,
   "blue": $blue,
   "gray-light": $gray-light,
-  "warning" : $yellow
+  "warning" : $yellow,
+  "gold": $gold
 );

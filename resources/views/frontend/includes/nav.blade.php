@@ -1,4 +1,26 @@
-<nav class="navbar navbar-expand-md navbar-light bg-white py-md-4" style="z-index: 2;">
+@php
+    $fixedStyle = "";
+    $fixedStyleSecond = "position-relative";
+@endphp
+@guest
+@php
+$fixedStyle = "position-fixed w-100";
+@endphp
+@push('after-scripts')
+    <script>
+        $(document).ready(function(){
+            const white_nav_height = $('#white-navbar').innerHeight();
+            $('#main-single-nav').css('paddingTop', `${white_nav_height}px`)
+        })
+    </script>
+@endpush
+@else
+@php
+$fixedStyleSecond = "position-sticky w-100";
+@endphp
+@endguest
+
+<nav class="navbar navbar-expand-md navbar-light bg-white py-1 py-md-2 {{ $fixedStyle }}" style="z-index: 2;" id="white-navbar">
     <div class="container-fluid">
         <div class="navbar-brand">
             <div class="d-flex items-center position-relative">
@@ -8,7 +30,7 @@
                 <x-utils.link
                     class="stretched-link text-dark ml-2"
                     :href="route('frontend.index')">
-                    <div class="d-inline-block" style="line-height: 1;">
+                    <div class="d-md-inline-block d-none" style="line-height: 1;">
                         KLUB IBU EXTRA <br> <strong>LOYALTY PROGRAM</strong>
                     </div>
                 </x-utils.link>
@@ -29,7 +51,7 @@
                             <x-utils.link
                                 :href="route('frontend.pages.terms')"
                                 :active="activeClass(Route::is('frontend.pages.terms'))"
-                                :text="__('Syarat Dan Ketentuan')"
+                                :text="__('Syarat & Ketentuan')"
                                 class="nav-link mr-2" />
                         </li>
                         <li class="nav-item">
@@ -94,7 +116,7 @@
 
 @auth
 
-<div style="z-index: 1;" class="shadow-lg position-relative">
+<div style="z-index: 2; top: 0;" class="shadow-lg  d-none d-md-block {{ $fixedStyleSecond }}">
     <nav class="navbar navbar-expand-md navbar-light py-0 navbar-stack">
 
         <div class="container-fluid justify-content-between">
@@ -119,7 +141,7 @@
                         <a class="nav-link" href="{{ route('frontend.pages.privacy') }}">Kebijakan<br>Privasi</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#beli-sekarang">Beli<br>Sekarang</a>
+                        <a data-toggle="modal" data-target="#buyNowModal" class="nav-link" href="#beli-sekarang">Beli<br>Sekarang</a>
                     </li>
                 </ul>
 
@@ -135,7 +157,7 @@
                             <div class="point">
                                 8,000
                             </div>
-                            <button class="btn btn-green btn-rounded">UPLOAD STRUK</button>
+                            <button class="btn btn-gold btn-rounded font-weight-bold text-white">UPLOAD STRUK & <br> TUKARKAN HADIAH</button>
                         </div>
                     </div>
                 </div>

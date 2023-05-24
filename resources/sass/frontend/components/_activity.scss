@@ -1,0 +1,38 @@
+.activity-popup{
+    flex-direction: column;
+    justify-content: center;
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(0, 0, 0);
+    z-index: 10;
+    transition: transform 0.3s ease-out;
+    transform: translate(0, -50px);
+
+    &.popup-show{
+        display: flex;
+        transform: none;
+    }
+
+    .activity-item{
+        width: 800px;
+        margin: 40px auto;
+        position: relative;
+        .close-activity{
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            cursor: pointer;
+        }
+        .activity-detail-wrapper{
+            padding-bottom: 40px;
+            padding-top: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+            height: auto;
+        }
+    }
+}

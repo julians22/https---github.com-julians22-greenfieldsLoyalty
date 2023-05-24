@@ -36,14 +36,14 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="date_of_birth">{{ __('Date Of Birth') }}</label>
-                                                    <input type="date" name="date_of_birth" id="date_of_birth" class="form-control" value="{{ $logged_in_user->date_of_birth }}" data-placeholder="{{ __('Date Of Birth') }}" required autocomplete="false">
+                                                    <input type="date" name="date_of_birth" id="date_of_birth" class="form-control" value="{{ $logged_in_user->date_of_birth }}"  required autocomplete="false">
                                                 </div>
                                             </div>
 
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="child_date_of_birth">{{ __('Child Date Of Birth') }}</label>
-                                                    <input type="date" data-placeholder="Child Date of birth" name="child_date_of_birth" id="child_date_of_birth" class="form-control" value="{{ $logged_in_user->child_date_of_birth }}" placeholder="{{ __('Child Date Of Birth') }}" required autocomplete="false">
+                                                    <input type="date"  name="child_date_of_birth" id="child_date_of_birth" class="form-control" value="{{ $logged_in_user->child_date_of_birth }}" placeholder="{{ __('Child Date Of Birth') }}" required autocomplete="false">
                                                 </div>
                                             </div>
 
@@ -73,6 +73,9 @@
                                                     <label for="provinve">{{__('Select Province')}}</label>
                                                     <select name="province" id="province" class="form-control select-province" autocomplete="false">
                                                         <option value="">{{__('Select Province')}}</option>
+                                                        @foreach ($provinces as $province)
+                                                            <option value="{{ $province->id }}">{{$province->name}}</option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
                                             </div>

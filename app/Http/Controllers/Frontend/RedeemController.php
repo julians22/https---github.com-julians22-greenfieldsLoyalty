@@ -13,10 +13,6 @@ class RedeemController extends Controller
     {
         $rewards = Reward::where('status', 1)->get();
 
-        if (!count($rewards)) {
-            $rewards = Reward::factory()->count(7)->create();
-        }
-
         return view('frontend.redeem.index', compact('rewards'));
 
     }

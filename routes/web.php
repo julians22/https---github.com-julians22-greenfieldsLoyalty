@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LocaleController;
+use App\Http\Controllers\Test\OtpController;
 
 /*
  * Global Routes
@@ -25,4 +26,14 @@ Route::group(['as' => 'frontend.'], function () {
  */
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'admin'], function () {
     includeRouteFiles(__DIR__.'/backend/');
+});
+
+Route::group(['prefix' => 'test', 'as' => 'test.'], function() {
+    Route::get('otp', function(){
+        return view('test.otps.index');
+    });
+
+    Route::post('otp', [OtpController::class, 'send_otp']);
+
+    Route::post('validate', [OtpController::class, 'validate_otp'])->name('validate');
 });

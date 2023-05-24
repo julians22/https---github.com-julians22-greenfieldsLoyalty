@@ -1,14 +1,24 @@
+const { default: Swal } = require("sweetalert2");
 
 
-const alertClasses = document.querySelectorAll('.toast-alert');
+const swalAlertClasses = document.querySelectorAll('.swal-alert');
+const toastAletsClasses = document.querySelectorAll('.toast-alert');
 
-if (alertClasses) {
-    // openToast(alertClasses);
-    alertClasses.forEach(element => {
+if (toastAletsClasses) {
+    // openToast(toastAletsClasses);
+    toastAletsClasses.forEach(element => {
         const type = element.getAttribute('data-type');
         const text = element.innerHTML;
         openToast(text, type);
     });
+}
+
+if (swalAlertClasses) {
+    swalAlertClasses.forEach(element => {
+        const type = element.getAttribute('data-type');
+        const text = element.innerHTML;
+        Swal.fire('', text, type);
+    })
 }
 
 function openToast(text, type){

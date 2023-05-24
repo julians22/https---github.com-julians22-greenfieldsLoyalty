@@ -7,6 +7,7 @@ use App\Rules\Captcha;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
+use Indonesia;
 use LangleyFoxall\LaravelNISTPasswordRules\PasswordRules;
 
 /**
@@ -65,10 +66,13 @@ class RegisterController
         $survey_brands = config('survey.brands');
         $survey_packsizes = config('survey.packsizes');
 
+        $provinces = Indonesia::allProvinces();
+
         return view('frontend.auth.register', compact(
             "survey_categories",
             "survey_brands",
-            "survey_packsizes"
+            "survey_packsizes",
+            "provinces"
             )
         );
     }

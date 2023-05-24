@@ -19,6 +19,8 @@ class UserCompleteDetail
         if ($request->user()->detail) {
             return $next($request);
         }
-        return redirect()->route('frontend.user.account')->withToastWarning('Lengkapi Profil Bunda untuk dapat mendapatkan hadiah menarik dari Greenfields');
+        return redirect()->route('frontend.user.account')
+            ->withSwalWarning(' Lengkapi profil ibu untuk mendapatkan hadiah dan aktivitas menarik dari greenfields');
+            // ->withToastWarning(' Lengkapi profil ibu untuk mendapatkan hadiah dan aktivitas menarik dari greenfields');
     }
 }

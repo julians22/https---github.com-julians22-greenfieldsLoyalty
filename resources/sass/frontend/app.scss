@@ -23,10 +23,28 @@
 @import 'components/form_customs';
 @import 'components/buttons';
 @import 'components/select2';
+@import 'components/activity';
 
 
 .banner-container{
-    height: 425px;
+    height: auto;
+    position: relative;
+    .banner-shape{
+        display: none;
+    }
+
+    @media (min-width: 768px) {
+        // height: 425px;
+        .banner-shape{
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            width: 100%;
+            position: absolute;
+            display: block;
+        }
+    }
+
 }
 
 .main-section{
@@ -157,6 +175,7 @@
                     margin-left: 8px;
                     margin-right: 8px;
                     font-size: 12px;
+                    color: white;
                 }
             }
 
@@ -165,6 +184,10 @@
                     font-size: 35px;
                     font-weight: 500;
                     line-height: 1.4;
+                }
+
+                button{
+                    line-height: 1;
                 }
             }
         }
@@ -316,19 +339,47 @@
 }
 
 .landing-deck{
-    margin-top: 7rem;
-    padding-bottom: 5rem;
+    margin-top: 0px;
+    padding-bottom: 2rem;
+
     .deck-icon{
         width: auto;
         height: 200px;
+    }
+
+    @media (min-width: 768px) {
+        margin-top: 7rem;
+        padding-bottom: 5rem;
+    }
+}
+
+.splide__arrows.dark-green{
+    .splide__arrow{
+        background-color: $dark-green;
+
+        svg{
+            color: white;
+            fill: white;
+        }
     }
 }
 
 .step_box{
     display: flex;
-    width: 300px;
-    flex-direction: row;
     flex-wrap: nowrap;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @media (min-width: 768px) {
+        margin: 0 20px;
+    }
+
+    @media (min-width: 992px) {
+        width: 300px;
+        flex-direction: row;
+    }
 
     .illustration{
         width: 120px;
@@ -337,6 +388,7 @@
 
     .description{
         flex: auto;
+        text-align: center;
         p{
             margin-left: 1rem;
             font-size: 12px;

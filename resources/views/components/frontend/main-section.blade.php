@@ -12,7 +12,7 @@
         </main><!--card-->
     @endif
 @else
-    <main>
+    <main id="main-single-nav">
         @include('includes.partials.messages')
 
         {{ $content }}

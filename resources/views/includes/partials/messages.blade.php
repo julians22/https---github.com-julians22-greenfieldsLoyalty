@@ -54,6 +54,30 @@
 </span>
 @endif
 
+@if(session()->get('swal_success'))
+    <span class="swal-alert" data-type="success" style="visibility: hidden;">
+        {{ session()->get('swal_success') }}
+    </span>
+@endif
+
+@if(session()->get('swal_warning'))
+<span class="swal-alert" data-type="warning" style="visibility: hidden;">
+    {{ session()->get('swal_warning') }}
+</span>
+@endif
+
+@if(session()->get('swal_info') || session()->get('swal_message'))
+<span class="swal-alert" data-type="info" style="visibility: hidden;">
+    {{ session()->get('swal_info') }}
+</span>
+@endif
+
+@if(session()->get('swal_danger'))
+<span class="swal-alert" data-type="danger" style="visibility: hidden;">
+    {{ session()->get('swal_danger') }}
+</span>
+@endif
+
 @if(session()->get('status'))
     <x-utils.alert type="success" class="header-message">
         {{ session()->get('status') }}

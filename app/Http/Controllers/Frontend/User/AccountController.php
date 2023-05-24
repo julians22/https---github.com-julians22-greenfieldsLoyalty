@@ -22,6 +22,7 @@ class AccountController
      */
     public function edit()
     {
-        return view('frontend.user.edit-account');
+        $provinces = Indonesia::allProvinces();
+        return view('frontend.user.edit-account', compact('provinces'));
     }
 }

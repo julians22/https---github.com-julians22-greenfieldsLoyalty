@@ -22,6 +22,10 @@ $(document).ready(function() {
             initSelect2();
 
         }
+
+        $(".form-control").focus((e) => {
+            $(e).attr("autocomplete", "off");
+        })
 })
 
 function disable_select(selects) {
@@ -38,9 +42,19 @@ function disable_select(selects) {
 function initSelect2(){
 
     // Load Area Select
-    $(province_select).select2();
+    $(province_select).select2()
+    // .on('select2:select', function (e) {
+    //     console.log(e);
+    //     var data = e.params.data;
+    //     if (data.selected == true) {
+    //         loadCity(data.id);
+    //     }
+    // })
+    .on('change.select2', function (e) {
+        loadCity($(province_select).val());
+    });
     disable_select([city_select, district_select]);
-    loadProvince();
+    // loadProvince();
 
     // Load Servey Select
     $(brand_select).select2({
@@ -69,8 +83,8 @@ async function loadProvince(){
 }
 
 async function loadCity(id) {
-    disable_select([city_select, district_select]);
     $(city_select).empty();
+    disable_select([city_select, district_select]);
 
     const res = await axios.get('/ajax/load-city/'+id);
 
@@ -79,13 +93,9 @@ async function loadCity(id) {
         disabled: false
     }
 
-    $(city_select).select2(configs).on('select2:select', function (e) {
-        var data = e.params.data;
-
-        if (data.selected == true) {
-            loadDistrict(data.id);
-        }
-    });
+    $(city_select).select2(configs).on('change.select2', function (e) {
+        loadDistrict($(city_select).val());
+    }).trigger('change');
 }
 
 async function loadDistrict(id){
