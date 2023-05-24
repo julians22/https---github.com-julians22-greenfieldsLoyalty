@@ -12,11 +12,16 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="login-container row justify-content-between">
-                    <div class="social-login col-md-6">
+                <div class="login-container justify-content-between">
+                    <div class="social-login">
                         @include('frontend.auth.includes.social')
                     </div>
-                    <div class="form-login col-md-6">
+                    <div class="borders">
+                        <span class="line"></span>
+                        <span class="round">OR</span>
+                        <span class="line"></span>
+                    </div>
+                    <div class="form-login">
                         <x-forms.post :action="route('frontend.auth.login')" class="greenfields-form">
                             <div class="form-group">
                                 <input type="phone" name="phone" id="phone" class="form-control" placeholder="{{ __('Phone Number') }}" value="{{ old('phone') }}" required autofocus autocomplete="phone" />
@@ -39,7 +44,7 @@
             <div class="col-md-8">
                 <div class="form-group row mb-0">
                     <div class="col-md-8 offset-md-2 text-center">
-                        <p>@lang('Belum mendaftar?') <a href="{{ route('frontend.auth.register') }}">@lang('Daftar Sekarang')</a></p>
+                        <p class="mb-1">@lang('Belum mendaftar?') <a href="{{ route('frontend.auth.register') }}">@lang('Daftar Sekarang')</a></p>
                         <x-utils.link :href="route('frontend.auth.password.request')" class="btn btn-link" :text="__('Forgot Your Password?')" />
                     </div>
                 </div><!--form-group-->

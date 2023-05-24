@@ -20,6 +20,7 @@
 @import "~toastr";
 
 // components
+@import 'components/login';
 @import 'components/form_customs';
 @import 'components/buttons';
 @import 'components/select2';
@@ -343,13 +344,17 @@
     padding-bottom: 2rem;
 
     .deck-icon{
-        width: auto;
-        height: 200px;
+        width: 100%;
+        height: auto;
     }
 
     @media (min-width: 768px) {
         margin-top: 7rem;
         padding-bottom: 5rem;
+        .deck-icon{
+            width: auto;
+            height: 200px;
+        }
     }
 }
 

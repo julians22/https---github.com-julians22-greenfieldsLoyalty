@@ -19,13 +19,14 @@
 
     <div class="container-fluid landing-deck">
         <div class="row justify-content-center">
-            <div class="col-md-7">
-                <div class="d-flex justify-content-around w-100">
+            <div class="col-md-7 col-10">
+                <div class="d-flex flex-md-row flex-column justify-content-around w-100">
                     <img class="deck-icon" src="{{ asset('img/decorations/exchange_icon.png') }}" alt="">
                     <img class="deck-icon" src="{{ asset('img/decorations/promo_icon.png') }}" alt="">
                     <img class="deck-icon" src="{{ asset('img/decorations/special_icon.png') }}" alt="">
                 </div>
-
+            </div>
+            <div class="col-md-7">
                 @guest
                     <div class="row mt-4">
                         <div class="col-md-6">
