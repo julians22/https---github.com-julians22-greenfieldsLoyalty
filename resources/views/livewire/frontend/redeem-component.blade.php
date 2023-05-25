@@ -32,7 +32,18 @@
                                 <h4 class="card-title text-center">{{ $reward->name }}</h4>
                                 <p class="point">{{number_format($reward->point, 0, ".", ".")}} pts</p>
                             </div>
-                            <a class="btn mb-3 btn-rounded  {{ $reward->point > $logged_in_user->point ? 'disabled btn-secondary' : 'btn-green' }}" href="#">TUKAR HADIAH</a>
+                            @if ($reward->point > $logged_in_user->point)
+                                <a class="btn mb-3 btn-rounded disabled btn-secondary btn-green" href="javascript:void(0)">TUKAR HADIAH</a>
+                            @else
+                                <a class="btn mb-3 btn-rounded btn-green" href="#"
+                                    data-toggle="modal"
+                                    data-target="#redeemModal"
+                                    data-reward-id="{{ $reward->id }}"
+                                    data-reward-image="{{ asset('img/'.$reward->image) }}" alt="{{ $reward->name }}"
+                                    data-reward-name="{{ $reward->name }}"
+                                    data-reward-current-point="{{ $logged_in_user->point }}"
+                                    data-reward-point="{{ $reward->point }}">TUKAR HADIAH</a>
+                            @endif
                         </div>
                     </div>
                 </div>

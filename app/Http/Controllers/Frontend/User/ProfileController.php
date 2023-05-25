@@ -37,7 +37,8 @@ class ProfileController
             "province" => $request->province ?? null,
             "city" => $request->city ?? null,
             "district" => $request->district ?? null,
-            "postal_code" => $request->postal_code ?? null
+            "postal_code" => $request->postal_code ?? null,
+            "is_primary" => 1
         ];
 
         if ($user && !$user->isHasAddressData()) {

@@ -8,6 +8,7 @@ use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\PrivacyController;
 use App\Http\Controllers\Frontend\RedeemController;
 use App\Http\Controllers\Frontend\TermsController;
+use App\Http\Controllers\Frontend\TopupController;
 use Tabuna\Breadcrumbs\Trail;
 
 /*
@@ -27,6 +28,10 @@ Route::group(['middleware' => ['auth', 'completes_detail']], function() {
 
     Route::group(['prefix' => 'promo', 'as' => 'promo.'], function() {
         Route::get('/', [ActivityController::class, 'index'])->name('index');
+    });
+
+    Route::group(['prefix' => 'toptup', 'as' => 'toptup.'], function() {
+        Route::post('/', [TopupController::class, 'store'])->name('store');
     });
 });
 

@@ -155,9 +155,9 @@ $fixedStyleSecond = "position-sticky w-100";
 
                         <div class="body">
                             <div class="point">
-                                8,000
+                                {{ number_format($logged_in_user->point, 0, ".", ".") }}
                             </div>
-                            <button class="btn btn-gold btn-rounded font-weight-bold text-white">UPLOAD STRUK & <br> TUKARKAN HADIAH</button>
+                            <button class="btn btn-gold btn-rounded font-weight-bold text-white" data-toggle="modal" data-target="#uploadReceiptModal" type="button">UPLOAD STRUK & <br> TUKARKAN HADIAH</button>
                         </div>
                     </div>
                 </div>

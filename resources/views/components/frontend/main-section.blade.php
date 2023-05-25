@@ -5,7 +5,7 @@
     Route::is('frontend.user.account') ||
     Route::is('frontend.user.edit-account'))
     @if (isset($content))
-        <main class="main-section">
+        <main class="main-section" id="main-single-nav">
             @include('includes.partials.messages')
 
             {{ $content }}

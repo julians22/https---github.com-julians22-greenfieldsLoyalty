@@ -15,6 +15,16 @@ try {
     require('select2/src/js/select2/selection/placeholder');
     require('bootstrap');
 
+
+    // filepont
+
+    window.FilePond = require('filepond/dist/filepond');
+    const filepondPluginImagePreview = require('filepond-plugin-image-preview/dist/filepond-plugin-image-preview');
+
+    require('jquery-filepond/filepond.jquery');
+
+    $.fn.filepond.registerPlugin(filepondPluginImagePreview);
+
     require('./toast');
 } catch (e) {}
 

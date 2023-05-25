@@ -182,6 +182,6 @@ class User extends Authenticatable implements MustVerifyEmail, TwoFactorAuthenti
      */
     public function address_data(): HasOne
     {
-        return $this->hasOne(UserAddress::class, 'user_id', 'id');
+        return $this->hasOne(UserAddress::class, 'user_id', 'id')->where('is_primary', 1);
     }
 }

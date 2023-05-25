@@ -26,6 +26,24 @@
 @import 'components/select2';
 @import 'components/activity';
 
+.receipt-preview{
+    display: block;
+    width: 100%;
+    margin: auto;
+
+    @media (min-width: 768px) {
+        width: 500px;
+    }
+
+    img{
+        width: 100%;
+        height: auto;
+    }
+}
+
+#redeemModal{
+    ,o
+}
 
 .banner-container{
     height: auto;
@@ -401,6 +419,18 @@
             margin: 0;
             margin-left: 10px;
         }
+    }
+}
+
+#footer{
+    padding: 3rem 0;
+    background-color: $dark-green;
+    color: white;
+
+    .socials-box{
+        display: grid;
+        grid-template-columns: repeat(6, 40px);
+        justify-content: center;
     }
 }
 

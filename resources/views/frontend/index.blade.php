@@ -1,6 +1,6 @@
 @extends('frontend.layouts.app')
 
-@section('title', __('Welcome'))
+@section('title', __('Greenfields Klub Ibu Extra'))
 
 @section('content')
 <div class="position-relative">

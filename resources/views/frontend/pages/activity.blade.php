@@ -1,6 +1,6 @@
 @extends('frontend.layouts.app')
 
-@section('title', __('Promo & Activities'))
+@section('title', __('Promo & Aktivitas'))
 
 @section('content')
     <div class="container-fluid pt-5 pb-4">

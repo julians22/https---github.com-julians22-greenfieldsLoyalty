@@ -8,6 +8,7 @@ require('../bootstrap');
 require('../plugins');
 require('../frontend/carousel-plugin');
 require('../frontend/select2-plugin');
+require('../frontend/redeem-modal-plugin');
 
 require('alpinejs');
 

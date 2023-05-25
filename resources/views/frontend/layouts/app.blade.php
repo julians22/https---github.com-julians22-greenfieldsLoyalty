@@ -39,6 +39,8 @@
 
             </x-frontend.main-section>
 
+            @include('frontend.includes.footer')
+
         </div>
     </div>
     <!--app-->
@@ -261,6 +263,8 @@
             </div>
         </div>
     </div>
+
+    @include('frontend.includes.modals.upload-receipt')
 
     @stack('before-scripts')
     <livewire:scripts />
