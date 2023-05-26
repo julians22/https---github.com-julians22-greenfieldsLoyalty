@@ -10,7 +10,7 @@
                     <img src="{{ asset('img/decorations/promo_titletext.png') }}" alt="">
                 </div>
 
-                <div class="row row-cols-md-3">
+                <div class="row row-cols-1 row-cols-md-3">
                     @for ($i = 0; $i < 4; $i++)
                         <div class="col mb-4">
                             <div class="card card-activity" data-target="{{$i}}" data-toggle="activity-popup">

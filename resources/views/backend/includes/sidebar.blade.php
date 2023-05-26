@@ -18,6 +18,26 @@
                 :text="__('Dashboard')" />
         </li>
 
+        {{-- Reward Menu --}}
+        <li class="c-sidebar-nav-item">
+            <x-utils.link
+                class="c-sidebar-nav-link"
+                :href="route('admin.reward.index')"
+                :active="activeClass(Route::is('admin.reward*'), 'c-active')"
+                icon="c-sidebar-nav-icon cil-speedometer"
+                :text="__('Rewards Management')" />
+        </li>
+
+        {{-- Top ups Menu --}}
+        <li class="c-sidebar-nav-item">
+            <x-utils.link
+                class="c-sidebar-nav-link"
+                :href="route('admin.topup.index')"
+                :active="activeClass(Route::is('admin.topup*'), 'c-active')"
+                icon="c-sidebar-nav-icon cil-speedometer"
+                :text="__('Top up Management')" />
+        </li>
+
         @if (
             $logged_in_user->hasAllAccess() ||
             (

@@ -165,6 +165,8 @@ return [
         /*
          * Package Service Providers...
          */
+        UniSharp\LaravelFilemanager\LaravelFilemanagerServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -235,7 +237,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         // Vendor Alias
-        'Indonesia' => Laravolt\Indonesia\Facade::class
+        'Indonesia' => Laravolt\Indonesia\Facade::class,
+        'Image' => Intervention\Image\Facades\Image::class,
 
     ],
 

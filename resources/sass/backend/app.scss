@@ -3,3 +3,15 @@
 // Coreui
 @import '~@coreui/coreui/scss/coreui';
 @import '~@coreui/icons/css/free.min.css';
+
+.preview-image-wrapper{
+    margin-top:15px;
+    img{
+        aspect-ratio: 5/5;
+        object-fit: scale-down;
+        height: 7rem;
+        margin: auto;
+        display: block;
+        width: 100%;
+    }
+}

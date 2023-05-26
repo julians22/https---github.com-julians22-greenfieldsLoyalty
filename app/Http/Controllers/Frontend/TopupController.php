@@ -16,12 +16,18 @@ class TopupController extends Controller
             'receipt' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10240',
         ]);
 
+        $waitiingTopUp = TopUp::where('user_id', auth()->user()->id)->where('status', TopUp::STATUS_CREATED)->where('status', TopUp::STATUS_PROCESS)->get();
+
+        if ($waitiingTopUp) {
+            return redirect()->route('frontend.user.account')->withSwalWarning('Mohon maaf, bunda masih ada permintaan top up yang belum terselesaikan silahkan menunggu hingga proses topup sebelumnya selesai.');
+        }
+
         $imagePath = "uploads/receipt/";
         $imageName = time().'.'.$request->receipt->extension();
 
         $request->receipt->move(public_path($imagePath), $imageName);
 
-        $topup = TopUp::create([
+        TopUp::create([
             'user_id' => auth()->user()->id,
             'filepath' => $imagePath.$imageName,
             'point' => 0

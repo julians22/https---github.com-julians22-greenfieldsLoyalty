@@ -5,7 +5,7 @@
 @section('content')
 <div class="container-fluid pt-5 pb-4">
     <div class="row">
-        <div class="col-md-10 ml-5">
+        <div class="col-md-10 ml-0 ml-md-5">
             <x-frontend.card>
                 <x-slot name="body">
                     <div class="row">

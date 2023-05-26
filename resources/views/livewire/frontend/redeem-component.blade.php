@@ -19,13 +19,13 @@
         </div>
     </div>
     @if ($rewards->count())
-        <div class="row row-cols-md-3">
+        <div class="row row-cols-1 row-cols-md-3">
             @foreach ($rewards as $reward)
                 <div class="col mb-4">
                     <div class="card card-reward">
                         <div class="card-body">
                             <div class="reward-img-wrapper">
-                                <img src="{{ asset('img/'.$reward->image) }}" alt="{{ $reward->name }}" class="reward-img">
+                                <img src="{{ $reward->image }}" alt="{{ $reward->name }}" class="reward-img">
                             </div>
 
                             <div class="reward-detail-wrapper">
@@ -39,7 +39,7 @@
                                     data-toggle="modal"
                                     data-target="#redeemModal"
                                     data-reward-id="{{ $reward->id }}"
-                                    data-reward-image="{{ asset('img/'.$reward->image) }}" alt="{{ $reward->name }}"
+                                    data-reward-image="{{ $reward->image }}" alt="{{ $reward->name }}"
                                     data-reward-name="{{ $reward->name }}"
                                     data-reward-current-point="{{ $logged_in_user->point }}"
                                     data-reward-point="{{ $reward->point }}">TUKAR HADIAH</a>

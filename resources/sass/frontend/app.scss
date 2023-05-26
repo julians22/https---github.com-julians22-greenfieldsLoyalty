@@ -292,9 +292,15 @@
     }
 
     .activity-detail-wrapper{
-        height: 160px;
+
+
+        height: auto;
         width: 100%;
         padding: 10px 10px 10px 10px;
+
+        @media (min-width: 768px) {
+            height: 160px;
+        }
         .card-title{
             color: $dark-green;
             font-weight: 600;

@@ -14,11 +14,7 @@ class DashboardController
      */
     public function index()
     {
-        $rewards = Reward::where('status', 1)->get();
-
-        if (!count($rewards)) {
-            $rewards = Reward::factory()->count(7)->create();
-        }
+        $rewards = Reward::where('status', 1)->latest()->take(5)->get();
 
         return view('frontend.user.dashboard', compact('rewards'));
     }
