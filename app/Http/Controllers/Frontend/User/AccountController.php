@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Frontend\User;
 
 use App\Models\Redeem;
 use App\Models\TopUp;
-use Arr;
+use Illuminate\Support\Arr;
 use Indonesia;
+
+use function PHPUnit\Framework\returnSelf;
 
 /**
  * Class AccountController.
@@ -17,6 +19,16 @@ class AccountController
      */
     public function index()
     {
+        // $tranasctions = [];
+
+        // $topup = TopUp::where('user_id', auth()->user()->id)->get();
+
+        // $redeem = Redeem::where('user_id', auth()->user()->id)->get();
+
+        // Arr::
+
+        // dd($this->extract_data($topup, 'topup'));
+
         return view('frontend.user.account');
     }
 
@@ -27,11 +39,6 @@ class AccountController
     {
         $provinces = Indonesia::allProvinces();
 
-        $tranasctions = [];
-
-        $topup = TopUp::where('user_id'. auth()->id)->get();
-
-        $redeem = Redeem::where('user_id', auth()->id)->get();
 
         return view('frontend.user.edit-account', compact('provinces'));
     }
@@ -39,34 +46,36 @@ class AccountController
 
     private function extract_data($data, $type = 'topup'): array
     {
-        $arrray = [];
+        $array = [];
 
         switch ($type) {
             case 'redeem':
-
                 foreach ($data as $key => $value) {
-
-                    $this->generate_column($tyoe, $value);
-
-
+                    $array[] = $this->generate_column($type, $value);
                 }
-
+                return $array;
                 break;
-
+            case 'topup':
+                foreach ($data as $key => $value) {
+                    $array[] = $this->generate_column($type, $value);
+                }
+                return $array;
+                break;
             default:
-                # code...
+                return $array;
                 break;
         }
-
-
-
         return [];
     }
 
-    private function generate_column($tyoe, $value)
+    private function generate_column($type, $value)
     {
-        $amountText = $value->reward->point;
-        $activity_name = $value->reward->name;
+        if ($type == 'topup') {
+            $amountText = $this->amount_generator('topup', $value);
+        }
+
+        // $amountText = $value->reward->point;
+        $activity_name = $type;
 
         return [
             'id' => $value->id,
@@ -76,5 +85,24 @@ class AccountController
         ];
     }
 
-    // private fun
+    private function amount_generator($type, $value)
+    {
+        $status = $value->status;
+        if ($type == 'topup') {
+            switch ($status) {
+                case TopUp::STATUS_CREATED:
+                    return __('Menunggu untuk di proses.');
+                    break;
+                case TopUp::STATUS_PROCESS;
+                    return __('Sedang di proses.');
+                    break;
+                case TopUp::STATUS_SUCCESS;
+                    return $value->point ? $value->point . " Pts" : __('Kesalahan Kalkulasi');
+                    break;
+                default:
+                    return __('Kesalahan Kalkulasi');
+                    break;
+            }
+        }
+    }
 }
