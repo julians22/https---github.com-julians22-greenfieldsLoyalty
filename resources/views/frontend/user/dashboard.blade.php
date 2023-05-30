@@ -25,7 +25,7 @@
                     </div>
                 @else
                     <div class="alert alert-warning">
-                        Ayo, lengkapi profil bunda sekarang untuk mendapatkan promo khusu anggota baru dari greenfields!, <a href="{{ route('frontend.user.edit-account') }}">Klik disini</a>
+                        Ayo, lengkapi profil kamu sekarang untuk mendapatkan promo khusus anggota baru dari greenfields!, <a href="{{ route('frontend.user.edit-account') }}">Klik disini</a>
                     </div>
                 @endif
                 <div class="d-flex flex-md-column flex-lg-row flex-column justify-content-between w-100">
