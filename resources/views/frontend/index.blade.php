@@ -19,7 +19,7 @@
 
     <div class="container-fluid landing-deck">
         <div class="row justify-content-center">
-            <div class="col-md-7 col-10">
+            <div class="col-md-7 col-12">
                 @auth
                 @if ($logged_in_user->isHasDetail() && $logged_in_user->isHasAddressData() && $logged_in_user->isWhatsappVerified())
                     <div class="alert alert-dark-green heartbeat">

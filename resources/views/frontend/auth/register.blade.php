@@ -7,13 +7,15 @@
     <div class="container mb-md-4">
         <div class="row justify-content-center">
             <div class="col-md-4 text-center">
-                <img src="{{ asset('img/decorations/title_register.png') }}" alt="">
+                <div class="page_title">
+                    <img src="{{ asset('img/decorations/title_register.png') }}" alt="">
+                </div>
             </div>
         </div>
         <div class="row justify-content-center">
             <div class="col-md-10">
-                <x-forms.post autocomplete="on" :action="route('frontend.auth.register')" class="greenfields-form">
-                    <div class="form-group row">
+                <x-forms.post autocomplete="on" :action="route('frontend.auth.register')" class="greenfields-form register-form">
+                    <div class="form-group row mb-md-3 mb-0">
                         <div class="col-md-6">
                             <input autocomplete="off" type="text" name="name" id="name" class="form-control" value="{{ old('name') }}" placeholder="{{ __('Full Name') }}" maxlength="100" required autofocus  />
                         </div>
@@ -22,7 +24,7 @@
                         </div>
                     </div><!--form-group-->
 
-                    <div class="form-group row">
+                    <div class="form-group row mb-md-3 mb-0">
                         <div class="col-md-6">
                             <input autocomplete="off" type="date" name="date_of_birth" id="date_of_birth" class="form-control" value="{{ old('date_of_birth') }}" data-placeholder="{{ __('Date Of Birth') }}" required >
                         </div>
@@ -32,7 +34,7 @@
                         </div>
                     </div><!--form-group-->
 
-                    <div class="form-group row">
+                    <div class="form-group row mb-md-3 mb-0">
                         <div class="col-md-6">
                             <input autocomplete="off" type="text" name="phone" id="phone" class="form-control" placeholder="No HP (sesuai nomor Whatsapp)" value="{{ old('phone') }}" maxlength="15" required  />
                         </div>
@@ -41,7 +43,7 @@
                         </div>
                     </div><!--form-group-->
 
-                    <div class="form-group row">
+                    <div class="form-group row mb-md-3 mb-0">
 
                         <div class="col-md-12">
                             <textarea autocomplete="off" name="address" id="address" rows="1" class="form-control" placeholder="{{__('Full Address')}}"></textarea>
@@ -49,7 +51,7 @@
 
                     </div><!--form-group-->
 
-                    <div class="form-group row">
+                    <div class="form-group row mb-md-3 mb-0">
                         <div class="col-md-6">
                             <select autocomplete="off" name="province" id="province" class="form-control select-province">
                                 <option value="">{{__('Select Province')}}</option>
@@ -67,7 +69,7 @@
 
                     </div><!--form-group-->
 
-                    <div class="form-group row">
+                    <div class="form-group row mb-md-3 mb-0">
                         <div class="col-md-6">
                             <select autocomplete="off" name="district" id="district" class="form-control select-district">
                                 <option value="">{{__('Select District')}}</option>
@@ -80,7 +82,7 @@
 
                     </div><!--form-group-->
 
-                    <div class="form-group row">
+                    <div class="form-group row mb-md-3 mb-0">
                         <div class="col-md-6">
                             <input autocomplete="off" type="password" name="password" id="password" class="form-control" placeholder="{{ __('Password') }}" maxlength="100" required autocomplete="false-password" />
                         </div>

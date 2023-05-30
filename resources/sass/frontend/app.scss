@@ -219,6 +219,22 @@
     left: 0;
 }
 
+.mobile-nav-item.nav-item{
+    display: list-item;
+
+    @media (min-width: 768px) {
+        display: none;
+    }
+}
+
+.desktop-nav-item.nav-item{
+    display: none;
+
+    @media (min-width: 768px) {
+        display: list-item;
+    }
+}
+
 .card-reward{
     border-radius: 1rem;
     overflow: hidden;
@@ -365,8 +381,9 @@
     padding-bottom: 2rem;
 
     .deck-icon{
-        width: 100%;
-        height: auto;
+        width: auto;
+        height: 200px;
+        object-fit: contain;
     }
 
     @media (min-width: 768px) {
@@ -375,6 +392,7 @@
         .deck-icon{
             width: auto;
             height: 200px;
+            object-fit: none;
         }
     }
 }

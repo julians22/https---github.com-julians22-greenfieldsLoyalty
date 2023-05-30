@@ -7,12 +7,14 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-4 text-center">
-                <img src="{{ asset('img/decorations/title_login.png') }}" alt="">
+                <div class="page_title">
+                    <img src="{{ asset('img/decorations/title_login.png') }}" alt="">
+                </div>
             </div>
         </div>
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="login-container justify-content-between">
+                <div class="login-container">
                     <div class="social-login">
                         @include('frontend.auth.includes.social')
                     </div>
@@ -31,8 +33,8 @@
                                 <input type="password" name="password" id="password" class="form-control" placeholder="{{ __('Password') }}" maxlength="100" required autocomplete="current-password" />
                             </div>
 
-                            <div class="text-right">
-                                <button class="btn btn-green btn-rounded" type="submit">@lang('Login')</button>
+                            <div class="text-md-right mb-2 mb-md-0">
+                                <button class="btn btn-green btn-rounded btn-block d-block d-md-inline-block" type="submit">@lang('Login')</button>
                             </div>
                         </x-forms.post>
                     </div>

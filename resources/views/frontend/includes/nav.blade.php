@@ -82,13 +82,63 @@ $fixedStyleSecond = "position-sticky w-100";
                         </li>
                     @endif
                 @else
-                    <li class="nav-item">
+                    <li class="mobile-nav-item nav-item {{ activeClass(Route::is('frontend.user.dashboard')) }}">
+                        <a class="nav-link" href="{{ route('frontend.user.dashboard') }}">Beranda</a>
+                    </li>
+                    <li class="mobile-nav-item nav-item {{ activeClass(Route::is('frontend.redeem.index')) }}">
+                        <a class="nav-link" href="{{ route('frontend.redeem.index') }}">Tukar Hadiah</a>
+                    </li>
+                    <li class="mobile-nav-item nav-item {{ activeClass(Route::is('frontend.promo.index')) }}">
+                        <a class="nav-link" href="{{ route('frontend.promo.index') }}">Promo &   Aktivitas</a>
+                    </li>
+                    <li class="mobile-nav-item nav-item {{ activeClass(Route::is('frontend.pages.faq')) }}">
+                        <a class="nav-link" href="{{ route('frontend.pages.faq') }}">FAQ</a>
+                    </li>
+                    <li class="mobile-nav-item nav-item {{ activeClass(Route::is('frontend.pages.terms')) }}">
+                        <a class="nav-link" href="{{ route('frontend.pages.terms') }}">Syarat & Ketentuan</a>
+                    </li>
+                    <li class="mobile-nav-item nav-item {{ activeClass(Route::is('frontend.pages.privacy')) }}">
+                        <a class="nav-link" href="{{ route('frontend.pages.privacy') }}">Kebijakan Privasi</a>
+                    </li>
+                    <li class="mobile-nav-item nav-item">
+                        <a data-toggle="modal" data-target="#buyNowModal" class="nav-link" href="#beli-sekarang">Beli Sekarang</a>
+                    </li>
+                    <li class="mobile-nav-item nav-item mb-2">
+                        <div class="bg-dark-green p-2 rounded-lg">
+                            <div class="point text-center">
+                                <p class="text-white"><strong>POINT KAMU</strong></p>
+                                <p class="text-white"><strong>{{ number_format($logged_in_user->point, 0, ".", ".") }}</strong></p>
+                            </div>
+                            <button class="btn btn-gold btn-block btn-rounded font-weight-bold text-white" data-toggle="modal" data-target="#uploadReceiptModal" type="button">UPLOAD STRUK & TUKARKAN HADIAH</button>
+                        </div>
+                    </li>
+                    <li class="mobile-nav-item nav-item">
+                        <x-utils.link
+                            :href="route('frontend.user.account')"
+                            :active="activeClass(Route::is('frontend.user.account'))"
+                            :text="__('Profile')"
+                            class="btn btn-block btn-dark-green btn-rounded mr-2" />
+                    </li>
+
+
+                    <li class="mobile-nav-item nav-item">
+                        <x-utils.link
+                            :text="__('Logout')"
+                            class="btn btn-block btn-dark-green my-2 my-sm-0 btn-rounded"
+                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                            <x-slot name="text">
+                                @lang('Logout')
+                                <x-forms.post :action="route('frontend.auth.logout')" id="logout-form" class="d-none" />
+                            </x-slot>
+                        </x-utils.link>
+                    </li>
+                    <li class="desktop-nav-item nav-item">
                         <a class="nav-link" href="#">
                             Selamat datang, {{ $logged_in_user->name }}
                         </a>
                     </li>
 
-                    <li class="nav-item">
+                    <li class="desktop-nav-item nav-item">
                         <x-utils.link
                             :href="route('frontend.user.account')"
                             :active="activeClass(Route::is('frontend.user.account'))"
@@ -97,7 +147,7 @@ $fixedStyleSecond = "position-sticky w-100";
                     </li>
 
 
-                    <li class="nav-item">
+                    <li class="desktop-nav-item nav-item">
                         <x-utils.link
                             :text="__('Logout')"
                             class="btn btn-dark-green my-2 my-sm-0 btn-rounded"
@@ -108,6 +158,19 @@ $fixedStyleSecond = "position-sticky w-100";
                             </x-slot>
                         </x-utils.link>
                     </li>
+
+                    <div class="point-card-wrapper">
+                        <div class="card-wrapper">
+                            <div class="header">
+                                <div></div>
+                                <div></div>
+                            </div>
+
+                            <div class="body">
+
+                            </div>
+                        </div>
+                    </div>
                 @endguest
             </ul>
         </div><!--navbar-collapse-->

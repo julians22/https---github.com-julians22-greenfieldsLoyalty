@@ -3,7 +3,7 @@
 @section('title', __('Promo & Aktivitas'))
 
 @section('content')
-    <div class="container-fluid pt-5 pb-4">
+    <div class="container-fluid pt-md-5 pb-md-4">
         <div class="row justify-content-center">
             <div class="col-md-10">
                 <div class="page_title">

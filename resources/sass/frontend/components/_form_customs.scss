@@ -25,6 +25,18 @@ input[type="date"]:valid::before { display: none }
     border-radius: .5rem;
     font-size: 18px;
     position: relative;
+
+}
+.greenfields-form {
+    &.register-form{
+
+        .form-control, .select2-container{
+            margin-bottom: .75rem;
+            @media (min-width: 768px) {
+                margin-bottom: 0px;
+            }
+        }
+    }
 }
 .greenfields-form .form-control:focus{
     border-color: $dark-green-opacity;
