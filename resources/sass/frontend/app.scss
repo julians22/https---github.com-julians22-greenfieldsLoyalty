@@ -392,7 +392,7 @@
         .deck-icon{
             width: auto;
             height: 200px;
-            object-fit: none;
+            object-fit: contain;
         }
     }
 }
