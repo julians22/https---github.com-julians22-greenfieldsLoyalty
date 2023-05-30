@@ -97,6 +97,7 @@ class RegisterController
             'history_milk_category' => ['required'],
             'history_milk_product' => ['required'],
             'history_milk_packsize' => ['required'],
+            'others_packsize' => ['sometimes'],
             'child_name' => ['required'],
             'child_date_of_birth' => ['required', 'date'],
             'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')],

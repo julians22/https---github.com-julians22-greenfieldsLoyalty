@@ -4,7 +4,7 @@
 
 @section('content')
     @include('frontend.includes.banner')
-    <div class="container mbb-4">
+    <div class="container mb-md-4">
         <div class="row justify-content-center">
             <div class="col-md-4 text-center">
                 <img src="{{ asset('img/decorations/title_register.png') }}" alt="">
@@ -34,7 +34,7 @@
 
                     <div class="form-group row">
                         <div class="col-md-6">
-                            <input autocomplete="off" type="text" name="phone" id="phone" class="form-control" placeholder="{{ __('Phone Number') }}" value="{{ old('phone') }}" maxlength="15" required  />
+                            <input autocomplete="off" type="text" name="phone" id="phone" class="form-control" placeholder="No HP (sesuai nomor Whatsapp)" value="{{ old('phone') }}" maxlength="15" required  />
                         </div>
                         <div class="col-md-6">
                             <input autocomplete="off" type="email" name="email" id="email" class="form-control" placeholder="{{ __('E-mail Address') }}" value="{{ old('email') }}" maxlength="255" required  />
@@ -90,33 +90,36 @@
                         </div>
                     </div><!--form-group-->
 
-                    <div class="form-group row">
+                    <div class="form-group">
+                        <label for="history_milk_category"><p class="mb-0 font-weight-bold ml-md-2">Kategori produk yang dikonsumsi 3 bulan terakhir?</p></label>
+                        <select autocomplete="off" name="history_milk_category" id="history_milk_category" class="form-control select-category">
+                            <option value="" disabled selected>{{__('Kategori susu yang dikonsumsi 3 bulan terakhir?')}}</option>
+                            @foreach ($survey_categories as $category)
+                                <option value="{{ $category }}">{{ $category }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="history_milk_product"><p class="mb-0 font-weight-bold ml-md-2">Brand susu yang dikonsumsi 3 bulan terakhir?</p></label>
+                        <select autocomplete="off" name="history_milk_product[]" id="history_milk_product" class="form-control select-brand" data-placeholder="{{__('Brand susu yang dikonsumsi 3 bulan terakhir')}}" multiple="multiple">
+                            @foreach ($survey_brands as $brand)
+                            <option value="{{ $brand }}">{{ $brand }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="history_milk_pack_size"><p class="mb-0 font-weight-bold ml-md-2">{{__('Packsize')}}</p></label>
+                        <select autocomplete="off" name="history_milk_packsize" id="history_milk_pack_size" class="form-control select-size">
+                            <option value="" selected disabled>{{__('Packsize')}}</option>
+                            @foreach ($survey_packsizes as $packsize)
+                                <option value="{{ $packsize }}">{{ $packsize }}</option>
+                            @endforeach
+                        </select>
+                    </div>
 
-                        <div class="col-md-4">
-                            <select autocomplete="off" name="history_milk_category" id="history_milk_category" class="form-control select-category">
-                                <option value="" disabled selected>{{__('Kategori susu yang dikonsumsi 3 bulan terakhir?')}}</option>
-                                @foreach ($survey_categories as $category)
-                                    <option value="{{ $category }}">{{ $category }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="col-md-4">
-                            <select autocomplete="off" name="history_milk_product[]" id="history_milk_product" class="form-control select-brand" data-placeholder="{{__('Brand susu yang dikonsumsi 3 bulan terakhir')}}" multiple="multiple">
-                                @foreach ($survey_brands as $brand)
-                                    <option value="{{ $brand }}">{{ $brand }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="col-md-4">
-                            <select autocomplete="off" name="history_milk_packsize" id="history_milk_pack_size" class="form-control select-size">
-                                <option value="" selected disabled>{{__('Packsize')}}</option>
-                                @foreach ($survey_packsizes as $packsize)
-                                    <option value="{{ $packsize }}">{{ $packsize }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-
-                    </div><!--form-group-->
+                    <div class="form-group">
+                        <input type="text" name="others_packsize" id="others_packsize" placeholder="Ukuran Kemasan lain" class="form-control">
+                    </div>
 
                     <div class="form-group row">
                         <div class="col-md-6">

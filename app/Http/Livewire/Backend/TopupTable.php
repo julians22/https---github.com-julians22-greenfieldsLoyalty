@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Backend;
 
+use App\Domains\Auth\Models\User;
 use App\Models\TopUp;
 use Illuminate\Database\Eloquent\Builder;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
@@ -12,6 +13,10 @@ class TopupTable extends DataTableComponent
 {
 
     public array $perPageAccepted = [5, 10, 50, 100];
+
+    public string $defaultSortColumn = 'created_at';
+    public string $defaultSortDirection = 'desc';
+
 
     /**
      * @return array
@@ -38,7 +43,9 @@ class TopupTable extends DataTableComponent
                 ->sortable(),
             Column::make(__('Name'), 'user.name')
                 ->searchable()
-                ->sortable(),
+                ->sortable(function(Builder $query, $direction) {
+                    return $query->orderBy(User::select('name')->whereColumn('users.id', 'top_ups.user_id'), $direction);
+                }),
             Column::make(__('Status'), 'status')
                 ->sortable(),
             Column::make(__('Created Date'), 'created_at')
@@ -49,7 +56,7 @@ class TopupTable extends DataTableComponent
 
     public function query(): Builder
     {
-        $query = TopUp::with('user');
+        $query = TopUp::with('user')->whereHas('user');
 
         return $query
             ->when($this->getFilter('status'), fn ($query, $status) => $query->where('status', $status));

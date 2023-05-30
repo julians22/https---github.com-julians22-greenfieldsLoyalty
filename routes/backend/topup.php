@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\TopupController;
-use App\Models\TopUp;
+use App\Models\TopUp as Topup;
 use Tabuna\Breadcrumbs\Trail;
 
 Route::group(['prefix' => 'topup', 'as' => 'topup.'], function() {
@@ -22,24 +22,27 @@ Route::group(['prefix' => 'topup', 'as' => 'topup.'], function() {
     Route::post('/create', [TopupController::class, 'store'])
         ->name('store');
 
-    Route::group(['prefix' => '{topUp}'], function() {
+    Route::group(['prefix' => '{topup}'], function() {
         Route::get('show', [TopupController::class, 'show'])
             ->name('show')
-            ->breadcrumbs(function (Trail $trail, TopUp $topUp) {
+            ->breadcrumbs(function (Trail $trail, Topup $topup) {
                 $trail->parent('admin.topup.index')
-                    ->push(__('Show TopUp'), route('admin.topup.show', $topUp));
+                    ->push(__('Show TopUp'), route('admin.topup.show', $topup));
             });
 
         Route::get('edit', [TopupController::class, 'edit'])
             ->name('edit')
-            ->breadcrumbs(function (Trail $trail, TopUp $topUp) {
+            ->breadcrumbs(function (Trail $trail, Topup $topup) {
                 $trail->parent('admin.topup.index')
-                    ->push(__('Edit TopUp'), route('admin.topup.edit', $topUp));
+                    ->push(__('Edit TopUp'), route('admin.topup.edit', $topup));
             });
 
-        Route::get('process', function(TopUp $topUp){
-            $topUp->update(['status' => TopUp::STATUS_PROCESS]);
-            return redirect()->route('admin.topup.edit', ['topUp' => $topUp])->withFlash('success', 'Silahkan lanjutkan proses topup');
+        Route::get('process', function(Topup $topup){
+            if ($topup->isCompleted() && $topup->isFailed()) {
+                return redirect()->route('admin.topup.show', ['topup' => $topup])->withFlash('warning', 'Anda tidak dapat melakukan proses topup kepada item yang sudah di konfirmasi atau di tolak');
+            }
+            $topup->update(['status' => Topup::STATUS_PROCESS]);
+            return redirect()->route('admin.topup.edit', ['topup' => $topup])->withFlash('success', 'Silahkan lanjutkan proses topup');
         })->name('process');
 
         Route::patch('/reject', [TopupController::class, 'reject'])

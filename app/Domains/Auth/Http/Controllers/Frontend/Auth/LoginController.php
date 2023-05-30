@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Http\Request;
 use LangleyFoxall\LaravelNISTPasswordRules\PasswordRules;
+use Propaganistas\LaravelPhone\PhoneNumber;
 
 /**
  * Class LoginController.
@@ -76,7 +77,7 @@ class LoginController
             ]);
         }else{
             $request->validate([
-                $this->username() => ['required', 'max:15', 'string'],
+                $this->username() => ['required', 'max:15', 'string', 'phone:ID'],
                 'password' => array_merge(['max:100'], PasswordRules::login()),
             ]);
         }
@@ -89,7 +90,12 @@ class LoginController
         if ($emailInput) {
             return $request->only('email', 'password');
         }
-        return $request->only($this->username(), 'password');
+
+        // Change the phone number before attempin login
+        return [
+            'phone' => PhoneNumber::make($request->phone, 'ID'),
+            'password' => $request->password
+        ];
 
     }
 

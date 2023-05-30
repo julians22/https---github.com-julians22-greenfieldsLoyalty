@@ -11,6 +11,7 @@ use App\Domains\Auth\Http\Controllers\Frontend\Auth\SocialController;
 use App\Domains\Auth\Http\Controllers\Frontend\Auth\TwoFactorAuthenticationController;
 use App\Domains\Auth\Http\Controllers\Frontend\Auth\UpdatePasswordController;
 use App\Domains\Auth\Http\Controllers\Frontend\Auth\VerificationController;
+use App\Http\Controllers\Frontend\WhatsappVerificationController;
 use Tabuna\Breadcrumbs\Trail;
 
 /*
@@ -28,6 +29,13 @@ Route::group(['as' => 'auth.'], function () {
 
         // These routes can not be hit if the password is expired
         Route::group(['middleware' => 'password.expires'], function () {
+
+            // Whatsapp OTP Verification
+            Route::get('whatsapp/verify', [WhatsappVerificationController::class, 'show'])
+                ->name('verification.whatsapp.notice');
+            Route::post('whatsapp/verify', [WhatsappVerificationController::class, 'validate_otp'])
+                ->name('verification.whatsapp.validate');
+
             // E-mail Verification
             Route::get('email/verify', [VerificationController::class, 'show'])->name('verification.notice');
             Route::get('email/verify/{id}/{hash}', [VerificationController::class, 'verify'])

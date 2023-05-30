@@ -13,7 +13,10 @@ class RedeemController extends Controller
     {
         $rewards = Reward::where('status', 1)->get();
 
-        return view('frontend.redeem.index', compact('rewards'));
+        $address_data = auth()->user()->address_data;
+        $addresses_data = auth()->user()->addresses_data;
+
+        return view('frontend.redeem.index', compact('rewards', 'address_data', 'addresses_data'));
 
     }
 }

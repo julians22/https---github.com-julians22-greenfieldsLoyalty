@@ -16,11 +16,19 @@
 </div>
 
 <div>
-
     <div class="container-fluid landing-deck">
         <div class="row justify-content-center">
-            <div class="col-md-12">
-                <div class="d-flex flex-md-column flex-lg-row flex-column justify-content-center w-100">
+            <div class="col-md-8 col-10">
+                @if ($logged_in_user->isHasDetail() && $logged_in_user->isHasAddressData() && $logged_in_user->isWhatsappVerified())
+                    <div class="alert alert-dark-green heartbeat">
+                        Kamu berhak mendapatkan promo khusus anggota baru: <strong>{{ $logged_in_user->voucher->code }}</strong>.  <a href="{{ route('frontend.pages.terms') }}">Cek syarat & ketentuan disini.</a>
+                    </div>
+                @else
+                    <div class="alert alert-warning">
+                        Ayo, lengkapi profil bunda sekarang untuk mendapatkan promo khusu anggota baru dari greenfields!, <a href="{{ route('frontend.user.edit-account') }}">Klik disini</a>
+                    </div>
+                @endif
+                <div class="d-flex flex-md-column flex-lg-row flex-column justify-content-between w-100">
                     @for ($i = 1; $i <= 3; $i++)
                         <div class="step_box">
                             <img src="{{ asset('img/decorations/steps/step_'.$i.'_icon.png') }}" alt="" class="illustration illustration-{{$i}}">

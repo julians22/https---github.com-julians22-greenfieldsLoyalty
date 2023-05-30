@@ -13,6 +13,9 @@ class RewardsTable extends DataTableComponent
 
     public array $perPageAccepted = [5, 10, 50, 100];
 
+    public string $defaultSortColumn = 'updated_at';
+    public string $defaultSortDirection = 'desc';
+
     public function query(): Builder
     {
         $query = Reward::query();

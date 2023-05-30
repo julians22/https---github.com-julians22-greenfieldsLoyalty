@@ -24,7 +24,7 @@
                     <div class="form-login">
                         <x-forms.post :action="route('frontend.auth.login')" class="greenfields-form">
                             <div class="form-group">
-                                <input type="phone" name="phone" id="phone" class="form-control" placeholder="{{ __('Phone Number') }}" value="{{ old('phone') }}" required autofocus autocomplete="phone" />
+                                <input type="phone" name="phone" id="phone" class="form-control" placeholder="{{ __('Phone Number') }}" value="{{ old('phone') }}" required autofocus autocomplete="tel" />
                             </div><!--form-group-->
 
                             <div class="form-group">

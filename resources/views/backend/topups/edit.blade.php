@@ -69,7 +69,7 @@
                 <div class="row">
                     @if ($topup->isProcessed())
                     <div class="col-md-6">
-                        <x-forms.patch :action="route('admin.topup.update.accept', ['topUp'=>$topup])">
+                        <x-forms.patch :action="route('admin.topup.update.accept', ['topup' => $topup])">
                             <h4>Fill This form to accept</h4>
                             <div class="form-group">
                                 <label for="point">@lang('Point Calculated')</label>
@@ -83,7 +83,7 @@
                         </x-forms.patch>
                     </div>
                         <div class="col-md-6">
-                            <x-forms.patch :action="route('admin.topup.update.reject', ['topUp'=>$topup])">
+                            <x-forms.patch :action="route('admin.topup.update.reject', ['topup' => $topup])">
                                 <h4>Fill This form to reject</h4>
                                 <div class="form-group">
                                     <label for="failed_reason">@lang('Failed Reason'):</label>

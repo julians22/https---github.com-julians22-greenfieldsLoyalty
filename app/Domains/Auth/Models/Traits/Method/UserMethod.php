@@ -97,6 +97,14 @@ trait UserMethod
     /**
      * @return bool
      */
+    public function isWhatsappVerified(): bool
+    {
+        return $this->whatsapp_validate_at !== null;
+    }
+
+    /**
+     * @return bool
+     */
     public function isSocial(): bool
     {
         return $this->provider && $this->provider_id;

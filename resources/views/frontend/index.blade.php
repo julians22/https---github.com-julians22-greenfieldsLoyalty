@@ -20,6 +20,17 @@
     <div class="container-fluid landing-deck">
         <div class="row justify-content-center">
             <div class="col-md-7 col-10">
+                @auth
+                @if ($logged_in_user->isHasDetail() && $logged_in_user->isHasAddressData() && $logged_in_user->isWhatsappVerified())
+                    <div class="alert alert-dark-green heartbeat">
+                        Kamu berhak mendapatkan promo khusus anggota baru: <strong>{{ $logged_in_user->voucher->code }}</strong>.  <a href="{{ route('frontend.pages.terms') }}">Cek syarat & ketentuan disini.</a>
+                    </div>
+                @else
+                    <div class="alert alert-warning">
+                        Ayo, lengkapi profil bunda sekarang untuk mendapatkan promo khusu anggota baru dari greenfields!, <a href="{{ route('frontend.user.edit-account') }}">Klik disini</a>
+                    </div>
+                @endif
+                @endauth
                 <div class="d-flex flex-md-row flex-column justify-content-around w-100">
                     <img class="deck-icon" src="{{ asset('img/decorations/exchange_icon.png') }}" alt="">
                     <img class="deck-icon" src="{{ asset('img/decorations/promo_icon.png') }}" alt="">

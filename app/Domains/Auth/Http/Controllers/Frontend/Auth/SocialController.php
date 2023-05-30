@@ -45,8 +45,9 @@ class SocialController
         event(new UserLoggedIn($user));
 
         if ($user->isHasDetail()) {
-            return redirect()->route('frontend.user.account');
+            return redirect()->route('frontend.user.dashboard');
         }
-        return redirect()->route('frontend.user.account')->withFlashWarning('Lengkapi Profil Bunda untuk dapat mendapatkan hadiah menarik dari Greenfields');
+
+        return redirect()->route('frontend.user.edit-account')->withSwalWarning('Lengkapi Profil Bunda untuk dapat mendapatkan hadiah menarik dari Greenfields');
     }
 }

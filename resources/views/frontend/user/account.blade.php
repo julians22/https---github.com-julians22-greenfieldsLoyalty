@@ -18,7 +18,7 @@
                             <div class="row">
                                 <div class="col-md-8 col-12">
                                     <div class="table-responsive">
-                                        <table class="table table-borderless table-hover table-striped">
+                                        <table class="table table-borderless table-hover table-striped table-sm">
                                             <tbody>
                                                 <tr>
                                                     <th style="width: 25%">{{ __('Full Name') }}</th>
@@ -41,6 +41,12 @@
 
                                                     <th>{{ __('E-mail Address') }}</th>
                                                     <td>{{ $logged_in_user->email ?? "-" }}</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <th colspan="4" class="bg-dark-green text-white">
+                                                        @lang('Alamat Domisili')
+                                                    </th>
                                                 </tr>
 
                                                 <tr>
@@ -67,14 +73,17 @@
                                         </table>
                                     </div>
 
-                                    <div class="col-md-6 offset-md-6 text-right">
-                                        <button class="btn btn-rounded btn-green" type="button">@lang('Change Password')</button>
+                                    <div class="row">
+                                        <div class="col-md-6 offset-md-6 text-md-right text-left">
+                                            <button class="btn btn-rounded btn-green btn-sm" type="button">@lang('Change Password')</button>
 
-                                        <x-utils.link
-                                            class="btn btn-green btn-rounded ml-2"
-                                            :href="route('frontend.user.edit-account')"
-                                            :text="__('Change Profile')"/>
+                                            <x-utils.link
+                                                class="btn btn-green btn-rounded ml-md-2 btn-sm"
+                                                :href="route('frontend.user.edit-account')"
+                                                :text="__('Change Profile')"/>
+                                        </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
@@ -87,47 +96,50 @@
                             <div class="row">
                                 <div class="col-md-8">
 
-                                    <table class="table table-sm table-bordered table-striped">
-                                        <thead class="bg-dark-green text-white">
-                                            <tr>
-                                                <th>Tanggal</th>
-                                                <th>Aktivitas</th>
-                                                <th>Status</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Senin, 11-12-2023</td>
-                                                <td>Tote Bag -50pts</td>
-                                                <td>Menunggu Approval</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Senin, 11-12-2023</td>
-                                                <td>Tote Bag -50pts</td>
-                                                <td>Menunggu Approval</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Senin, 11-12-2023</td>
-                                                <td>Tote Bag -50pts</td>
-                                                <td>Menunggu Approval</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Senin, 11-12-2023</td>
-                                                <td>Tote Bag -50pts</td>
-                                                <td>Menunggu Approval</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Senin, 11-12-2023</td>
-                                                <td>Tote Bag -50pts</td>
-                                                <td>Menunggu Approval</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Senin, 11-12-2023</td>
-                                                <td>Tote Bag -50pts</td>
-                                                <td>Menunggu Approval</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                    <div class="table-responsive">
+                                        <table class="table table-sm table-bordered table-striped">
+                                            <thead class="bg-dark-green text-white">
+                                                <tr>
+                                                    <th>Tanggal</th>
+                                                    <th>Aktivitas</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Senin, 11-12-2023</td>
+                                                    <td>Tote Bag -50pts</td>
+                                                    <td>Menunggu Approval</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Senin, 11-12-2023</td>
+                                                    <td>Tote Bag -50pts</td>
+                                                    <td>Menunggu Approval</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Senin, 11-12-2023</td>
+                                                    <td>Tote Bag -50pts</td>
+                                                    <td>Menunggu Approval</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Senin, 11-12-2023</td>
+                                                    <td>Tote Bag -50pts</td>
+                                                    <td>Menunggu Approval</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Senin, 11-12-2023</td>
+                                                    <td>Tote Bag -50pts</td>
+                                                    <td>Menunggu Approval</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Senin, 11-12-2023</td>
+                                                    <td>Tote Bag -50pts</td>
+                                                    <td>Menunggu Approval</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -136,20 +148,29 @@
                             <div class="page_title">
                                 <img src="{{ asset('img/decorations/title_voucher.png') }}" alt="">
                             </div>
+                            <p>Kamu bisa melihat hadiah unuk pengguna baru si sini!</p>
 
-                            <div x-data="{ displayVoucher: false }">
-                                <button class="btn btn-dark-green btn-rounded" type="button" @click="displayVoucher = !displayVoucher">Lihat Voucher</button>
+                            @if ($logged_in_user->isHasDetail() && $logged_in_user->isHasAddressData() && $logged_in_user->isWhatsappVerified())
+                                <div x-data="{ displayVoucher: false }">
+                                    <button class="btn btn-dark-green btn-rounded" type="button" @click="displayVoucher = !displayVoucher">Lihat Voucher</button>
 
-                                <div x-show="displayVoucher" style="display: none" >
-                                    <div class="row mt-4">
-                                        <div class="col-md-3">
-                                            <div class="rounded bg-secondary p-2">
-                                                <p class="h4 mb-0 font-weight-bolder text-white text-center">{{ Str::random(10) }}</p>
+                                    <div x-show="displayVoucher" style="display: none" >
+                                        <div class="row my-md-4 my-2">
+                                            <div class="col-md-3">
+                                                <div class="rounded bg-secondary p-2">
+                                                    <p class="h4 mb-0 font-weight-bolder text-white text-center">{{ $logged_in_user->voucher->code }}</p>
+                                                </div>
                                             </div>
                                         </div>
+                                        <p>Cek <a href="{{ route('frontend.pages.terms') }}">syarat & ketentuannya disini!</a></p>
                                     </div>
                                 </div>
-                            </div>
+                            @else
+                                <div class="alert alert-warning">
+                                    Ayo, lengkapi profil bunda sekarang untuk mendapatkan promo khusu anggota baru dari greenfields!, <a href="{{ route('frontend.user.edit-account') }}">Klik disini</a>
+                                </div>
+                            @endif
+
                         </div>
                     </div>
                 </x-slot>

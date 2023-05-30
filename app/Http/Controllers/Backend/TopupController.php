@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\Topups\AcceptTopupRequest;
 use App\Http\Requests\Backend\Topups\RejectTopupRequest;
-use App\Models\TopUp;
+use App\Models\TopUp as Topup;
 use Illuminate\Http\Request;
 
 class TopupController extends Controller
@@ -15,43 +15,43 @@ class TopupController extends Controller
         return view('backend.topups.index');
     }
 
-    public function show(TopUp $topUp)
+    public function show(Topup $topup)
     {
         return view('backend.topups.show')
-            ->with('topup', $topUp);
+            ->with('topup', $topup);
     }
 
-    public function edit(Request $request, TopUp $topUp)
+    public function edit(Request $request, Topup $topup)
     {
         return view('backend.topups.edit')
-            ->with('topup', $topUp);
+            ->with('topup', $topup);
     }
 
-    public function accept(AcceptTopupRequest $request, TopUp $topUp)
+    public function accept(AcceptTopupRequest $request, Topup $topup)
     {
-        $topUp->update([
+        $topup->update([
             'point' => $request->point,
-            'status' => TopUp::STATUS_SUCCESS,
+            'status' => Topup::STATUS_SUCCESS,
             'success_at' => now(),
             'note' => $request->note ?? null
         ]);
 
-        $topUp->user()->update([
-            'point' => $topUp->user->point + $request->point
+        $topup->user()->update([
+            'point' => $topup->user->point + $request->point
         ]);
 
-        return redirect()->route('admin.topup.show')->withFlashSuccess('Topup finished');
+        return redirect()->route('admin.topup.show', ['topup' => $topup])->withFlashSuccess('Topup finished');
     }
 
-    public function reject (RejectTopupRequest $request, TopUp $topUp)
+    public function reject (RejectTopupRequest $request, Topup $topup)
     {
-        $topUp->update([
-            'status' => TopUp::STATUS_FAILED,
+        $topup->update([
+            'status' => Topup::STATUS_FAILED,
             'success_at' => NULL,
             'failed_at' => now(),
             'failed_reason' => $request->failed_reason ?? null
         ]);
 
-        return redirect()->route('admin.topup.show')->withFlashSuccess('Topup Rejected');
+        return redirect()->route('admin.topup.show', ['topup' => $topup])->withFlashSuccess('Topup Rejected');
     }
 }

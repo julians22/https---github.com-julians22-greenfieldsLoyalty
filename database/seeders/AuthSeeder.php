@@ -38,6 +38,9 @@ class AuthSeeder extends Seeder
             'users',
             'password_histories',
             'password_resets',
+            'user_details',
+            'user_addresses',
+            'top_ups'
         ]);
 
         $this->call(UserSeeder::class);

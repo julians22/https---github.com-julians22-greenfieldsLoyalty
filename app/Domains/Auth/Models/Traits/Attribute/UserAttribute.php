@@ -83,18 +83,6 @@ trait UserAttribute
     /**
      * @return null|string
      */
-    public function getPhoneAttribute()
-    {
-        if (! $this->isHasDetail()) {
-            return null;
-        }
-
-        return $this->detail->phone;
-    }
-
-    /**
-     * @return null|string
-     */
     public function getChildNameAttribute()
     {
         if (! $this->isHasDetail()) {

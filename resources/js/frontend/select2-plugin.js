@@ -21,11 +21,21 @@ $(document).ready(function() {
 
             initSelect2();
 
+            setTimeout(() => {
+                const province_val = $(province_select).data('current-value');
+                if (province_val) {
+                    $(province_select).val(province_val);
+                    $(province_select).trigger('change');
+                }
+            }, 500);
+
         }
 
         $(".form-control").focus((e) => {
             $(e).attr("autocomplete", "off");
-        })
+        });
+
+
 })
 
 function disable_select(selects) {
@@ -63,7 +73,14 @@ function initSelect2(){
     });
 
     $(category_select).select2();
-    $(size_select).select2();
+    $('#others_packsize').hide();
+    $(size_select).select2().on('change.select2', (e) => {
+        if (e.target.value == 'Others') {
+            $('#others_packsize').show();
+        }else{
+            $('#others_packsize').hide();
+        }
+    });
 }
 
 async function loadProvince(){
@@ -96,10 +113,20 @@ async function loadCity(id) {
     $(city_select).select2(configs).on('change.select2', function (e) {
         loadDistrict($(city_select).val());
     }).trigger('change');
+
+    const city_val = $(city_select).data('current-value');
+    setTimeout(() => {
+        if (city_val) {
+            $(city_select).val(city_val);
+            $(city_select).trigger('change');
+            $(city_select).data('current-value', 0);
+        }
+    }, 500);
 }
 
 async function loadDistrict(id){
     disable_select([district_select]);
+
     $(district_select).empty();
 
     const res = await axios.get('/ajax/load-district/'+id);
@@ -110,6 +137,18 @@ async function loadDistrict(id){
     }
 
     $(district_select).select2(configs);
+
+    const district_val = $(district_select).data('current-value');
+    setTimeout(() => {
+        if (district_val) {
+            $(district_select).val(district_val);
+            $(district_select).trigger('change');
+            $(district_select).data('current-value', 0);
+        }
+    }, 1000);
+
+
+
 }
 
 

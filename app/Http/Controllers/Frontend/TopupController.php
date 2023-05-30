@@ -18,7 +18,7 @@ class TopupController extends Controller
 
         $waitiingTopUp = TopUp::where('user_id', auth()->user()->id)->where('status', TopUp::STATUS_CREATED)->where('status', TopUp::STATUS_PROCESS)->get();
 
-        if ($waitiingTopUp) {
+        if ($waitiingTopUp->count()) {
             return redirect()->route('frontend.user.account')->withSwalWarning('Mohon maaf, bunda masih ada permintaan top up yang belum terselesaikan silahkan menunggu hingga proses topup sebelumnya selesai.');
         }
 

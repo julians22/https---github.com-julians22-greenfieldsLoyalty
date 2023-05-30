@@ -10,10 +10,12 @@ use App\Domains\Auth\Events\User\UserStatusChanged;
 use App\Domains\Auth\Events\User\UserUpdated;
 use App\Domains\Auth\Models\User;
 use App\Exceptions\GeneralException;
+use App\Models\Voucher;
 use App\Services\BaseService;
 use Exception;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Propaganistas\LaravelPhone\PhoneNumber;
 
 /**
  * Class UserService.
@@ -72,6 +74,11 @@ class UserService extends BaseService
                 $brand_history = implode("|",$data['history_milk_product']);
             }
 
+            $packsize = $data['history_milk_packsize'];
+
+            if ($packsize == 'Others' && !empty($data['others_packsize'])) {
+                $packsize = $data['others_packsize'];
+            }
 
             $user->detail()->create([
                 'phone' => $data['phone'],
@@ -80,9 +87,17 @@ class UserService extends BaseService
                 'child_date_of_birth' => $data['child_date_of_birth'],
                 'history_milk_category' => $data['history_milk_category'],
                 'history_milk_product' => $brand_history,
-                'history_milk_packsize' => $data['history_milk_packsize'],
+                'history_milk_packsize' => $packsize,
             ]);
 
+            $voucherInUser = Voucher::where('user_id', $user->id)->get();
+            if (!$voucherInUser->count()) {
+                $voucher = Voucher::whereNull('given_at')->first();
+                $voucher->update([
+                    'user_id' => $user->id,
+                    'given_at' => now()
+                ]);
+            }
         } catch (Exception $e) {
             DB::rollBack();
 
@@ -116,6 +131,16 @@ class UserService extends BaseService
                     'provider_id' => $info->id,
                     'email_verified_at' => now(),
                 ]);
+
+                $voucherInUser = Voucher::where('user_id', $user->id)->get();
+                if (!$voucherInUser->count()) {
+                    $voucher = Voucher::whereNull('given_at')->first();
+                    $voucher->update([
+                        'user_id' => $user->id,
+                        'given_at' => now()
+                    ]);
+                }
+
             } catch (Exception $e) {
                 DB::rollBack();
 
@@ -218,27 +243,48 @@ class UserService extends BaseService
      */
     public function updateProfile(User $user, array $data = []): User
     {
+        $phoneChanged = false;
+        $phone = PhoneNumber::make($data['phone'], 'ID');
+        $phoneChanged = $phone != $user->phone;
+
         $user->name = $data['name'] ?? null;
-        $user->phone = $data['phone'] ?? null;
+        $user->phone = $phone;
+
+        if ($phoneChanged) {
+            $user->whatsapp_validate_at = null;
+        }
 
         $user->detail()->update([
             "child_name" => $data['child_name'] ?? null,
             "date_of_birth" => $data['date_of_birth'] ?? null,
             "child_date_of_birth" => $data['child_date_of_birth'] ?? null,
-            "phone" => $data['phone'] ?? null
+            "phone" => $phone
         ]);
 
-        $user->address_data()->create([
-            "address" => $data["address"] ?? null,
-            "province" => $data["province"] ?? null,
-            "city" => $data["city"] ?? null,
-            "district" => $data["district"] ?? null,
-            "postal_code" => $data["postal_code"] ?? null
-        ]);
+        if ($user && !$user->isHasAddressData()) {
+            $user->address_data()->create([
+                "address" => $data["address"] ?? null,
+                "province" => $data["province"] ?? null,
+                "city" => $data["city"] ?? null,
+                "district" => $data["district"] ?? null,
+                "postal_code" => $data["postal_code"] ?? null,
+                "is_primary" => 1
+            ]);
+            $user->completed_at = now();
+        }else{
+            $user->address_data()->update([
+                "address" => $data["address"] ?? null,
+                "province" => $data["province"] ?? null,
+                "city" => $data["city"] ?? null,
+                "district" => $data["district"] ?? null,
+                "postal_code" => $data["postal_code"] ?? null
+            ]);
+            $user->completed_at = now();
+        }
 
         if ($user->canChangeEmail() && $user->email !== $data['email']) {
             $user->email = $data['email'];
-            $user->email_verified_at = null;
+            // $user->email_verified_at = null;
             $user->sendEmailVerificationNotification();
             session()->flash('resent', true);
         }
@@ -372,6 +418,7 @@ class UserService extends BaseService
             'provider_id' => $data['provider_id'] ?? null,
             'email_verified_at' => now(),
             'active' => $data['active'] ?? true,
+            'completed_at' => now(),
         ]);
     }
 }

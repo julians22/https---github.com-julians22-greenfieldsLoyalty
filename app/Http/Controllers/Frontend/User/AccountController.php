@@ -39,8 +39,13 @@ class AccountController
     {
         $provinces = Indonesia::allProvinces();
 
+        $address = null;
+        if (auth()->user()->isHasAddressData()) {
+            $address = auth()->user()->address_data;
+        }
 
-        return view('frontend.user.edit-account', compact('provinces'));
+
+        return view('frontend.user.edit-account', compact('provinces', 'address'));
     }
 
 

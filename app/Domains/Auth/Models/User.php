@@ -8,12 +8,14 @@ use App\Domains\Auth\Models\Traits\Relationship\UserRelationship;
 use App\Domains\Auth\Models\Traits\Scope\UserScope;
 use App\Domains\Auth\Notifications\Frontend\ResetPasswordNotification;
 use App\Domains\Auth\Notifications\Frontend\VerifyEmail;
+use App\Models\Voucher;
 use DarkGhostHunter\Laraguard\Contracts\TwoFactorAuthenticatable;
 use DarkGhostHunter\Laraguard\TwoFactorAuthentication;
 use Database\Factories\UserFactory;
 use Illuminate\Auth\MustVerifyEmail as MustVerifyEmailTrait;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -62,7 +64,9 @@ class User extends Authenticatable implements MustVerifyEmail, TwoFactorAuthenti
         'to_be_logged_out',
         'provider',
         'provider_id',
-        'phone'
+        'phone',
+        'whatsapp_validate_at',
+        'completed_at'
     ];
 
     /**
@@ -82,6 +86,8 @@ class User extends Authenticatable implements MustVerifyEmail, TwoFactorAuthenti
         'last_login_at',
         'email_verified_at',
         'password_changed_at',
+        'whatsapp_validate_at',
+        'completed_at'
     ];
 
     /**
@@ -111,7 +117,8 @@ class User extends Authenticatable implements MustVerifyEmail, TwoFactorAuthenti
         'permissions',
         'roles',
         'detail',
-        'address_data'
+        'address_data',
+        'addresses_data'
     ];
 
     /**
@@ -183,5 +190,25 @@ class User extends Authenticatable implements MustVerifyEmail, TwoFactorAuthenti
     public function address_data(): HasOne
     {
         return $this->hasOne(UserAddress::class, 'user_id', 'id')->where('is_primary', 1);
+    }
+
+    /**
+     * Get all of the addresses_data for the User
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function addresses_data(): HasMany
+    {
+        return $this->hasMany(UserAddress::class, 'user_id', 'id');
+    }
+
+    /**
+     * Get the voucher associated with the User
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function voucher(): HasOne
+    {
+        return $this->hasOne(Voucher::class, 'user_id', 'id');
     }
 }
