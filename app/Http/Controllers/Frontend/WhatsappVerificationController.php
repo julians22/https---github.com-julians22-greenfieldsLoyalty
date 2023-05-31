@@ -44,15 +44,15 @@ class WhatsappVerificationController extends Controller
     {
         $otp =  Otp::generate($phone);
 
+        $token = env('WHATSAPP_SENDER_TOKEN');
+        $phone = $phone;
+        $messageSend = "Kode OTP Anda adalah : " . $otp->token . "\n Mohon untuk tidak membalas pesan ini. \n Terima Kasih, \n Greenfields Support";
+        $url = env('WHATSAPP_BASE_URL');
+        $endpoint = "/api/send-message?phone=$phone&message=$messageSend&token=$token";
+        $messageSend = "Kde OTP Anda adalah : " . $otp->token;
+        $url .= $endpoint;
+        $response = Http::get($url);
         return $otp;
-
-        // $token = env('WHATSAPP_SENDER_TOKEN');
-        // $phone = $phone;
-        // $messageSend = "Kode OTP Anda adalah : " . $otp->token;
-        // $url = "https://pati.wablas.com/api/send-message?phone=$phone&message=$messageSend&token=$token";
-
-        // $response = Http::get($url);
-
         // return $response;
     }
 }
