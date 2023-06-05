@@ -14,7 +14,7 @@ class DashboardController
      */
     public function index()
     {
-        $rewards = Reward::where('status', 1)->latest()->take(5)->get();
+        $rewards = Reward::active()->latest()->take(5)->get();
 
         return view('frontend.user.dashboard', compact('rewards'));
     }

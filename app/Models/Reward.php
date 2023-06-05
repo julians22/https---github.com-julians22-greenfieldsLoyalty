@@ -25,7 +25,8 @@ class Reward extends Model
      */
     public function scopeActive($query)
     {
-        return $query->where('status', 1);
+        return $query->where('status', 1)
+            ->where('stock', '>', 0);
     }
 
     /**
@@ -43,5 +44,10 @@ class Reward extends Model
     public function isPublished()
     {
         return $this->status === 1;
+    }
+
+    public function isAvailable()
+    {
+        return $this->stock >= 1;
     }
 }
