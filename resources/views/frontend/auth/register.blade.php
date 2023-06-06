@@ -123,6 +123,25 @@
                         <input type="text" name="others_packsize" id="others_packsize" placeholder="Ukuran Kemasan lain" class="form-control">
                     </div>
 
+                    <div class="row d-flex justify-content-center mb-2">
+                        <div class="col-md-4">
+                            <x-utils.link
+                                :href="route('frontend.auth.social.login', 'facebook')"
+                                class="btn btn-block btn-blue btn-login "
+                                icon="fab fa-facebook"
+                                :text="__('Login with Facebook')"
+                                :hide="!config('services.facebook.active')" />
+                        </div>
+                        <div class="col-md-4">
+                            <x-utils.link
+                                :href="route('frontend.auth.social.login', 'google')"
+                                class="btn btn-block btn-outline-dark btn-login "
+                                icon="fab fa-google"
+                                :text="__('Login with Google')"
+                                :hide="!config('services.google.active')" />
+                        </div>
+                    </div>
+
                     <div class="form-group row">
                         <div class="col-md-6">
                             <div class="form-check">
@@ -143,18 +162,9 @@
                         </div>
 
                         <div class="col-md-6 text-right">
-                            <button class="btn btn-rounded btn-green" type="submit">@lang('Register')</button>
+                            <button class="btn btn-rounded btn-dark-green" type="submit">@lang('Register')</button>
                         </div>
                     </div><!--form-group-->
-
-                    @if(config('boilerplate.access.captcha.registration'))
-                        <div class="row">
-                            <div class="col">
-                                @captcha
-                                <input type="hidden" name="captcha_status" value="true" />
-                            </div><!--col-->
-                        </div><!--row-->
-                    @endif
                 </x-forms.post>
             </div><!--col-md-10-->
         </div><!--row-->
