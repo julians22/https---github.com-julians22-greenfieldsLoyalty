@@ -69,12 +69,20 @@ function initSelect2(){
     // Load Servey Select
     $(brand_select).select2({
         allowClear: true,
-        maximumSelectionLength: 2
+        maximumSelectionLength: 2,
+        placeholder: "Kategori produk yang dikonsumsi 3 bulan terakhir?"
     });
 
-    $(category_select).select2();
+    $(category_select).select2({
+        placeholder: "Brand susu yang dikonsumsi 3 bulan terakhir?"
+    });
+
     $('#others_packsize').hide();
-    $(size_select).select2().on('change.select2', (e) => {
+
+    $(size_select).select2({
+        placeholder: "Ukuran Kemasan"
+    })
+    .on('change.select2', (e) => {
         if (e.target.value == 'Others') {
             $('#others_packsize').show();
         }else{

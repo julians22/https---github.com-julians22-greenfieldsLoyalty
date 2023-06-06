@@ -27,7 +27,7 @@
                     </div>
                 @else
                     <div class="alert alert-warning">
-                        Ayo, lengkapi profil kamu sekarang untuk mendapatkan promo khusus anggota baru dari greenfields!, <a href="{{ route('frontend.user.edit-account') }}">Klik disini</a>
+                        Ayo, lengkapi profil kamu sekarang untuk mendapatkan promo khusus anggota baru dari greenfields! <a href="{{ route('frontend.user.edit-account') }}">Klik disini</a>
                     </div>
                 @endif
                 @endauth
@@ -77,24 +77,7 @@
 
             </div>
         </div>
-        <div class="container">
-            <div class="row mt-5">
-                <div class="col-md-12 text-center text-dark-green">
-                    <h2>
-                        <div class="page_title">
-                            <img src="{{ asset('img/decorations/about_titletext.png') }}" alt="">
-                        </div>
-                    </h2>
-                    <p class="font-weight-bold text-center">
-                        Greenfields Klub Ibu Extra merupakan loyalty program yang diselenggarakan oleh PT Greenfields Dairy Indonesia sebagai bentuk apresiasi bagi para ibu Indonesia yang sudah setia memilih Greenfields sebagai pilihan nutrisi keluarga.
-
-                        Kami juga berdedikasi untuk mengedukasi para ibu Indonesia supaya lebih bijak dalam memilih susu berkualitas terbaik dengan menyediakan berbagai aktivitas menarik, mulai dari artikel yang dapat diakses serta program Webinar/Kulwap. Yuk #StartFresh dengan Greenfields!
-
-                        Kumpulkan poin sebanyak-banyaknya & dapatkan hadiah favoritmu.
-                    </p>
-                </div>
-            </div>
-        </div>
+        @include('frontend.includes.about-us')
     </div>
 
 </div>

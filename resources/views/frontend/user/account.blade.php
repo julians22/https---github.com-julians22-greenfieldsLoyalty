@@ -167,7 +167,7 @@
                                 </div>
                             @else
                                 <div class="alert alert-warning">
-                                    Ayo, lengkapi profil bunda sekarang untuk mendapatkan promo khusu anggota baru dari greenfields!, <a href="{{ route('frontend.user.edit-account') }}">Klik disini</a>
+                                    Ayo, lengkapi profil bunda sekarang untuk mendapatkan promo khusu anggota baru dari greenfields! <a href="{{ route('frontend.user.edit-account') }}">Klik disini</a>
                                 </div>
                             @endif
 

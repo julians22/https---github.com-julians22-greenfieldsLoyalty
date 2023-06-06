@@ -68,11 +68,15 @@ class LoginController
      */
     protected function validateLogin(Request $request)
     {
-        $emailInput = $request->has('email');
+        $emailInput = false;
+
+        if(filter_var($request->get('phone'), FILTER_VALIDATE_EMAIL)) {
+            $emailInput = true;
+        }
 
         if ($emailInput) {
             $request->validate([
-                'email' => ['required', 'max:100', 'string'],
+                $this->username() => ['required', 'max:100', 'string'],
                 'password' => array_merge(['max:100'], PasswordRules::login()),
             ]);
         }else{
@@ -85,10 +89,17 @@ class LoginController
 
     protected function credentials(Request $request)
     {
-        $emailInput = $request->has('email');
+        $emailInput = false;
+
+        if(filter_var($request->get('phone'), FILTER_VALIDATE_EMAIL)) {
+            $emailInput = true;
+        }
 
         if ($emailInput) {
-            return $request->only('email', 'password');
+            return [
+                'email' => $request->phone,
+                'password' => $request->password
+            ];
         }
 
         // Change the phone number before attempin login

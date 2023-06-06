@@ -94,7 +94,7 @@
 
                     <div class="form-group">
                         <label for="history_milk_category"><p class="mb-0 font-weight-bold ml-md-2">Kategori produk yang dikonsumsi 3 bulan terakhir?</p></label>
-                        <select autocomplete="off" name="history_milk_category" id="history_milk_category" class="form-control select-category">
+                        <select autocomplete="off" name="history_milk_category" id="history_milk_category" class="form-control select-category" data-placeholder="{{ __('Kategori produk yang dikonsumsi 3 bulan terakhir?') }}">
                             <option value="" disabled selected>{{__('Kategori susu yang dikonsumsi 3 bulan terakhir?')}}</option>
                             @foreach ($survey_categories as $category)
                                 <option value="{{ $category }}">{{ $category }}</option>
@@ -111,7 +111,7 @@
                     </div>
                     <div class="form-group">
                         <label for="history_milk_pack_size"><p class="mb-0 font-weight-bold ml-md-2">{{__('Packsize')}}</p></label>
-                        <select autocomplete="off" name="history_milk_packsize" id="history_milk_pack_size" class="form-control select-size">
+                        <select autocomplete="off" name="history_milk_packsize" id="history_milk_pack_size" class="form-control select-size" data-placeholder="{{__('Packsize')}}">
                             <option value="" selected disabled>{{__('Packsize')}}</option>
                             @foreach ($survey_packsizes as $packsize)
                                 <option value="{{ $packsize }}">{{ $packsize }}</option>

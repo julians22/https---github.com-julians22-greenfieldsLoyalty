@@ -18,14 +18,14 @@
 <div>
     <div class="container-fluid landing-deck">
         <div class="row justify-content-center">
-            <div class="col-md-8 col-12">
+            <div class="col-12 col-xl-8">
                 @if ($logged_in_user->isHasDetail() && $logged_in_user->isHasAddressData() && $logged_in_user->isWhatsappVerified())
                     <div class="alert alert-dark-green heartbeat">
                         Kamu berhak mendapatkan promo khusus anggota baru: <strong>{{ $logged_in_user->voucher->code }}</strong>.  <a href="{{ route('frontend.pages.terms') }}">Cek syarat & ketentuan disini.</a>
                     </div>
                 @else
                     <div class="alert alert-warning">
-                        Ayo, lengkapi profil kamu sekarang untuk mendapatkan promo khusus anggota baru dari greenfields!, <a href="{{ route('frontend.user.edit-account') }}">Klik disini</a>
+                        Ayo, lengkapi profil kamu sekarang untuk mendapatkan promo khusus anggota baru dari greenfields! <a href="{{ route('frontend.user.edit-account') }}">Klik disini</a>
                     </div>
                 @endif
                 <div class="d-flex flex-md-column flex-lg-row flex-column justify-content-between w-100">
@@ -58,7 +58,7 @@
             <div class="col-md-10">
                 <div class="row justify-content-center mb-3">
                     <div class="col-md-3 text-center">
-                        <a href="{{ route('frontend.redeem.index') }}" class="btn-green btn py-1 px-5 rounded-pill text-white font-weight-bold">Tukar Poin Sekarang</a>
+                        <a href="{{ route('frontend.redeem.index') }}" class="btn-dark-green btn py-1 px-5 rounded-pill text-white font-weight-bold">Tukar Poin Sekarang</a>
                     </div>
                 </div>
                 <div id="katalog-carousel" class="splide splide-b" aria-label="Katalog Produk">
@@ -96,24 +96,7 @@
                     </div>
                 </div>
 
-                <div class="container">
-                    <div class="row mt-5">
-                        <div class="col-md-12 text-center text-dark-green">
-                            <h2>
-                                <div class="page_title">
-                                    <img src="{{ asset('img/decorations/about_titletext.png') }}" alt="">
-                                </div>
-                            </h2>
-                            <p class="font-weight-bold text-center">
-                                Greenfields Klub Ibu Extra merupakan loyalty program yang diselenggarakan oleh PT Greenfields Dairy Indonesia sebagai bentuk apresiasi bagi para ibu Indonesia yang sudah setia memilih Greenfields sebagai pilihan nutrisi keluarga.
-
-                                Kami juga berdedikasi untuk mengedukasi para ibu Indonesia supaya lebih bijak dalam memilih susu berkualitas terbaik dengan menyediakan berbagai aktivitas menarik, mulai dari artikel yang dapat diakses serta program Webinar/Kulwap. Yuk #StartFresh dengan Greenfields!
-
-                                Kumpulkan poin sebanyak-banyaknya & dapatkan hadiah favoritmu.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                @include('frontend.includes.about-us')
             </div>
         </div>
     </div>

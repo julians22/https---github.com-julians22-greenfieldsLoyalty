@@ -45,12 +45,24 @@
 .banner-container{
     height: auto;
     position: relative;
+
+    .banner-image{
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        object-position: center;
+    }
     .banner-shape{
         display: none;
     }
 
+
     @media (min-width: 768px) {
         // height: 425px;
+        .banner-image{
+            aspect-ratio: 1530/428;
+            object-fit: cover;
+            object-position: top;
+        }
         .banner-shape{
             bottom: -1px;
             left: 0;
@@ -60,6 +72,7 @@
             display: block;
         }
     }
+
 
 }
 
