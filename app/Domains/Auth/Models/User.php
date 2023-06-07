@@ -66,7 +66,8 @@ class User extends Authenticatable implements MustVerifyEmail, TwoFactorAuthenti
         'provider_id',
         'phone',
         'whatsapp_validate_at',
-        'completed_at'
+        'completed_at',
+        'point'
     ];
 
     /**

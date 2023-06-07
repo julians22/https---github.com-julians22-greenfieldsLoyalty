@@ -45,7 +45,7 @@
                         </div>
                     </div>
 
-                    <div class="d-flex justify-content-center align-items-center mt-4">
+                    <div class="d-flex flex-column flex-md-row justify-content-center align-items-center mt-4">
                         <div class="text-black font-weight-bold px-4 text-center reedem_cur_user_point"></div>
                         <div class="text-black font-weight-bold px-4 text-center"> - </div>
                         <div class="text-black font-weight-bold px-4 text-center reedem_reward_point"></div>
@@ -57,6 +57,7 @@
                         <div class="col-md-12">
                             <h5 class="text-black text-center">Hadiah akan dikirim ke alamat:</h5>
                             <input type="hidden" name="address_id" id="current_address_id" value="{{ $address_data->id }}">
+                            <input type="hidden" name="redeem_id" id="current_redeem_id">
                             <div class="row mt-2">
                                 <div class="col-md-6 offset-md-3">
                                     <p id="current_address" class="text-black font-weight-bold text-center mb-0">{{ $address_data->address }},</p>
@@ -72,18 +73,70 @@
                         </div>
                     </div>
 
-                    {{-- @livewire('frontend.address-selector-component', [], key($logged_in_user->id)) --}}
-
                     <div class="row d-flex justify-content-between">
-                        <div class="col-md-2">
+                        <div class="col-6 col-md-2">
                             <button data-dismiss="modal" class="btn btn-secondary btn-rounded">Batal</button>
                         </div>
-                        <div class="col-md-2 text-right">
-                            <button class="btn btn-dark-green btn-rounded">Setuju</button>
+                        <div class="col-6 col-md-2 text-right">
+                            <button class="btn btn-dark-green btn-rounded" id="submit-reward" data-submit-url="{{ route('frontend.ajax.redeem.store') }}">Setuju</button>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+
+
+    <div class="modal fade" id="resultModal" data-backdrop="static" tabindex="-1" aria-labelledby="resultModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="img-header" style="background-image: url('{{ asset('img/decorations/cows.png') }}')">
+                        <div class="page_title">
+                            <img src="{{ asset('img/decorations/thanks_titletext.png') }}" alt="">
+                        </div>
+                        <p class="text-center text-white">telah melakukan penukaran hadiah</p>
+
+                        <div class="remaining-points-wrapper">
+                            <div class="d-flex flex-column flex-md-row align-items-center">SISA POIN KAMU SAAT INI: <span id="remaining-poin"></span>PTS</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="row pt-5 justify-content-center">
+                        <div class="col-md-12">
+                            <h4 class="text-center">Yuk tukarkan poin dengan produk lainnya</h4>
+                        </div>
+                        <div class="col-md-10">
+                            <div id="katalog-carousel" class="splide splide-b" aria-label="Katalog Produk">
+                                <div class="splide__track">
+                                      <div class="splide__list">
+                                        @foreach ($rewardsRecommendation as $reward)
+                                            <div class="splide__slide">
+                                                <div class="card card-reward">
+                                                    <div class="card-body">
+                                                        <div class="reward-img-wrapper">
+                                                            <img src="{{ $reward->image }}" alt="{{ $reward->name }}" class="reward-img">
+                                                        </div>
+
+                                                        <div class="reward-detail-wrapper">
+                                                            <h4 class="card-title text-center" style="font-size: 16px">{{ $reward->name }}</h4>
+                                                            <p class="point" style="font-size: 12px">{{$reward->point}}pts</p>
+                                                        </div>
+                                                        <a class="btn btn-sm mb-3 btn-rounded btn-secondary btn-green" href="{{ route('frontend.redeem.index') }}">TUKAR HADIAH</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                      </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 

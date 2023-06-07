@@ -11,12 +11,14 @@ class RedeemController extends Controller
 
     public function index()
     {
-        $rewards = Reward::where('status', 1)->get();
+        $rewards = Reward::active()->get();
+
+        $rewardsRecommendation = Reward::active()->where('point', '<', auth()->user()->point)->take(5)->get();
 
         $address_data = auth()->user()->address_data;
         $addresses_data = auth()->user()->addresses_data;
 
-        return view('frontend.redeem.index', compact('rewards', 'address_data', 'addresses_data'));
+        return view('frontend.redeem.index', compact('rewards', 'rewardsRecommendation', 'address_data', 'addresses_data'));
 
     }
 }

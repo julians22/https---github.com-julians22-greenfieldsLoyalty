@@ -27,6 +27,63 @@
 @import 'components/activity';
 @import 'components/animation';
 
+#resultModal{
+    .modal-header{
+        padding: 0;
+        border-width: 0;
+        .img-header{
+            background-position: center;
+            background-size: cover;
+            height: 200px;
+            width: 100%;
+
+            position: relative;
+
+            .page_title{
+                padding-top: .5rem;
+                text-align: center;
+                margin-bottom: 0;
+            }
+
+            // @media (min-width: 768px) {
+            //     height: 200px;
+            // }
+        }
+
+        .remaining-points-wrapper{
+            position: absolute;
+            width: 90%;
+            left: 0;
+            right: 0;
+            bottom: -30px;
+            height: max-content;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $dark-green;
+            border-radius: .5rem;
+            color: white;
+            font-size: 15px;
+            margin: auto;
+
+            #remaining-poin{
+                font-size: 30px;
+                color: $gold;
+                margin: 0 10px;
+            }
+
+            @media (min-width: 768px) {
+                font-size: 25px;
+                height: 70px;
+                #remaining-poin{
+                    font-size: 40px;
+                }
+            }
+        }
+    }
+
+}
+
 .receipt-preview{
     display: block;
     width: 100%;

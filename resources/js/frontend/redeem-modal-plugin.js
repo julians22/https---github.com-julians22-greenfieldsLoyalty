@@ -42,6 +42,7 @@ $('#redeemModal').on('show.bs.modal', function (event) {
         `<p class="mb-0">SISA POIN</p><p>${total.toLocaleString("de-DE")} pts</p>`
     );
 
+    modal.find('#current_redeem_id').val(reward_id);
 
 });
 
@@ -68,7 +69,42 @@ window.addEventListener('address-changed', event => {
 
 $('#save_current_address').on('click', () => {
     $('#addressModal').modal('hide');
-})
+});
+
+$('#submit-reward').on('click', function(e) {
+    // $('#resultModal').modal('show');
+    $(this).attr('disabled', true);
+
+    const url = $(this).attr('data-submit-url');
+    const reward_id = window.reward_id;
+    const address_id = $('#current_address_id').val();
+
+    axios.post(url, {
+        reward_id: reward_id,
+        address_id: address_id
+    })
+    .then(function (response) {
+        if (response.status == 200) {
+            $(this).attr('disabled', false);
+            $('#redeemModal').modal('hide');
+            $('#resultModal').find('#remaining-poin').text(response.data.point_now);
+            $('#resultModal').modal('show');
+        }else{
+            window.location.reload();
+        }
+    })
+    .catch(function (error) {
+        console.log(error);
+        $(this).attr('disabled', false);
+
+        alert('Sistem sibuk, cobalah beberapa saat lagi');
+        window.location.reload();
+    });
+});
+
+$('#resultModal').on('hidden.bs.modal', function (event) {
+    window.location.reload();
+});
 
 
 

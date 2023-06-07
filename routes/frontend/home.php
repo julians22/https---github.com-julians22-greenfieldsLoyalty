@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Ajax\AreaController;
 use App\Http\Controllers\Ajax\ProductController;
+use App\Http\Controllers\Ajax\RedeemController as AjaxRedeemController;
 use App\Http\Controllers\Frontend\ActivityController;
 use App\Http\Controllers\Frontend\FaqController;
 use App\Http\Controllers\Frontend\HomeController;
@@ -50,3 +51,6 @@ Route::get('ajax/load-district/{id}', [AreaController::class, 'getDistrict']);
 
 Route::get('ajax/load-category/{id?}', [ProductController::class, 'getCategory']);
 Route::get('ajax/load-product/{id?}', [ProductController::class, 'getProducts']);
+
+Route::post('ajax/submit-reward', [AjaxRedeemController::class, 'store'])
+    ->name('ajax.redeem.store');
