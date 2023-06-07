@@ -135,6 +135,8 @@
                                 </ul>
                             </p>
 
+                            <span id="upload-receipt"></span>
+
                             <h2><strong><u>Contoh Struk Valid</u></strong></h2>
 
                             <p>Pembelian Greenfields di Toko Offline yang bekerjasama:</p>

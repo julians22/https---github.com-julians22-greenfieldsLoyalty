@@ -18,6 +18,8 @@
                             <img id="output"/>
                         </div>
 
+                        <p>Pastikan foto struk yang kamu masukkan sudah sesuai dengan <a target="_blank" href="{{ route('frontend.pages.terms') }}#upload-receipt">Syarat & Ketentuan</a> Foto Struk</p>
+
                         <button type="button" class="btn btn-danger btn-rounded" data-dismiss="modal" aria-label="Close">Kembali</button>
                         <button type="submit" class="btn btn-dark-green btn-rounded">Kirim!</button>
                     </x-forms.post>

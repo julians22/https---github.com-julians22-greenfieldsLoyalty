@@ -13,7 +13,7 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-10">
                 <div class="login-container">
                     <div class="social-login">
                         @include('frontend.auth.includes.social')
@@ -26,7 +26,7 @@
                     <div class="form-login">
                         <x-forms.post :action="route('frontend.auth.login')" class="greenfields-form">
                             <div class="form-group">
-                                <input type="phone" name="phone" id="phone" class="form-control" placeholder="{{ __('Phone Number') }}" value="{{ old('phone') }}" required autofocus autocomplete="tel" />
+                                <input type="phone" name="phone" id="phone" class="form-control" placeholder="{{ __('Email / Phone Number (Whatsapp Registered)') }}" value="{{ old('phone') }}" required autofocus autocomplete="tel" />
                             </div><!--form-group-->
 
                             <div class="form-group">
@@ -42,7 +42,7 @@
             </div><!--col-md-8-->
         </div><!--row-->
 
-        <div class="row justify-content-center">
+        <div class="row justify-content-center mt-4">
             <div class="col-md-8">
                 <div class="form-group row mb-0">
                     <div class="col-md-8 offset-md-2 text-center">
