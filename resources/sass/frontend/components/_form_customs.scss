@@ -8,6 +8,11 @@ input[type="date"]::before {
     bottom: 0;
     padding: 0.375rem 0.75rem;
     border-radius: .5rem;
+    display: none;
+
+    @media (min-width: 768px) {
+        display: block;
+    }
 }
 
 /* hide our custom/fake placeholder text when in focus to show the default
@@ -20,11 +25,15 @@ input[type="date"]:valid::before { display: none }
 .greenfields-form .form-control:focus,
 .greenfields-form .form-control:-internal-autofill-selected,
 .greenfields-form .form-control:-webkit-autofill{
-    background-color: $dark-green !important;
+    background-color: $white !important;
     color: white !important;
     border-radius: .5rem;
     font-size: 18px;
     position: relative;
+
+    @media (min-width: 768px) {
+        background-color: $dark-green !important;
+    }
 
 }
 .greenfields-form {

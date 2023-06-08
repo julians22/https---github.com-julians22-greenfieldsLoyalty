@@ -118,6 +118,7 @@ class RegisterController
     {
         abort_unless(config('boilerplate.access.user.registration'), 404);
 
+        $data['completed_at'] = now();
         return $this->userService->registerUser($data);
     }
 }

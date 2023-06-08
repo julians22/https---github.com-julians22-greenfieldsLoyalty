@@ -19,7 +19,7 @@
                         </div>
 
                         <p>Pastikan foto struk yang kamu masukkan sudah sesuai dengan <a target="_blank" href="{{ route('frontend.pages.terms') }}#upload-receipt">Syarat & Ketentuan</a> Foto Struk</p>
-
+                        <p>Struk akan kami validasi dalam waktu 3x24 jam. Poin akan otomatis terupdate di Profil. Mohon menunggu dan secara berkala melakukan cek poin. Jika lebih dari 3x24 jam poin belum terupdate, mohon menghubungi customer service kami di Whatsapp ini 0851-7210-0967. </p>
                         <button type="button" class="btn btn-danger btn-rounded" data-dismiss="modal" aria-label="Close">Kembali</button>
                         <button type="submit" class="btn btn-dark-green btn-rounded">Kirim!</button>
                     </x-forms.post>

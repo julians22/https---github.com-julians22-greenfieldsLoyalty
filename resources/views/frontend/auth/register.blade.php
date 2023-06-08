@@ -17,28 +17,34 @@
                 <x-forms.post autocomplete="on" :action="route('frontend.auth.register')" class="greenfields-form register-form">
                     <div class="form-group row mb-md-3 mb-0">
                         <div class="col-md-6">
+                            <label for="" class="d-block d-md-none">{{ __('Full Name') }}</label>
                             <input autocomplete="off" type="text" name="name" id="name" class="form-control" value="{{ old('name') }}" placeholder="{{ __('Full Name') }}" maxlength="100" required autofocus  />
                         </div>
                         <div class="col-md-6">
+                            <label for="" class="d-block d-md-none">{{ __('Child Full Name') }}</label>
                             <input autocomplete="off" type="text" name="child_name" id="child_name" class="form-control" value="{{ old('child_name') }}" placeholder="{{ __('Child Full Name') }}" maxlength="100" required  />
                         </div>
                     </div><!--form-group-->
 
                     <div class="form-group row mb-md-3 mb-0">
                         <div class="col-md-6">
+                            <label for="" class="d-block d-md-none">{{ __('Date Of Birth') }}</label>
                             <input autocomplete="off" type="date" name="date_of_birth" id="date_of_birth" class="form-control" value="{{ old('date_of_birth') }}" data-placeholder="{{ __('Date Of Birth') }}" required >
                         </div>
 
                         <div class="col-md-6">
+                            <label for="" class="d-block d-md-none">{{ __('Child Date Of Birth') }}</label>
                             <input autocomplete="off" type="date" data-placeholder="{{ __('Child Date Of Birth') }}" name="child_date_of_birth" id="child_date_of_birth" class="form-control" value="{{ old('child_date_of_birth') }}" placeholder="{{ __('Child Date Of Birth') }}" required>
                         </div>
                     </div><!--form-group-->
 
                     <div class="form-group row mb-md-3 mb-0">
                         <div class="col-md-6">
+                            <label for="" class="d-block d-md-none">{{ __('Email / Phone Number (Whatsapp Registered)') }}</label>
                             <input autocomplete="off" type="text" name="phone" id="phone" class="form-control" placeholder="No HP (sesuai nomor Whatsapp)" value="{{ old('phone') }}" maxlength="15" required  />
                         </div>
                         <div class="col-md-6">
+                            <label for="" class="d-block d-md-none">{{ __('E-mail Address') }}</label>
                             <input autocomplete="off" type="email" name="email" id="email" class="form-control" placeholder="{{ __('E-mail Address') }}" value="{{ old('email') }}" maxlength="255" required  />
                         </div>
                     </div><!--form-group-->
@@ -46,6 +52,7 @@
                     <div class="form-group row mb-md-3 mb-0">
 
                         <div class="col-md-12">
+                            <label for="" class="d-block d-md-none">{{ __('Full Address') }}</label>
                             <textarea autocomplete="off" name="address" id="address" rows="1" class="form-control" placeholder="{{__('Full Address')}}"></textarea>
                         </div>
 
@@ -53,6 +60,7 @@
 
                     <div class="form-group row mb-md-3 mb-0">
                         <div class="col-md-6">
+                            <label for="" class="d-block d-md-none">{{ __('Select Province') }}</label>
                             <select autocomplete="off" name="province" id="province" class="form-control select-province">
                                 <option value="">{{__('Select Province')}}</option>
                                 @foreach ($provinces as $province)
@@ -62,6 +70,7 @@
                         </div>
 
                         <div class="col-md-6">
+                            <label for="" class="d-block d-md-none">{{ __('Select City') }}</label>
                             <select autocomplete="off" name="city" id="city" class="form-control select-city">
                                 <option value="">{{__('Select City')}}</option>
                             </select>
@@ -71,12 +80,14 @@
 
                     <div class="form-group row mb-md-3 mb-0">
                         <div class="col-md-6">
+                            <label for="" class="d-block d-md-none">{{ __('Select District') }}</label>
                             <select autocomplete="off" name="district" id="district" class="form-control select-district">
                                 <option value="">{{__('Select District')}}</option>
                             </select>
                         </div>
 
                         <div class="col-md-6">
+                            <label for="" class="d-block d-md-none">{{ __('Postal Code') }}</label>
                             <input autocomplete="off" type="postal_code" name="postal_code" id="postal_code" class="form-control" placeholder="{{ __('Postal Code') }}" value="{{ old('postal_code') }}" required  />
                         </div>
 
@@ -84,10 +95,12 @@
 
                     <div class="form-group row mb-md-3 mb-0">
                         <div class="col-md-6">
+                            <label for="" class="d-block d-md-none">{{ __('Password') }}</label>
                             <input autocomplete="off" type="password" name="password" id="password" class="form-control" placeholder="{{ __('Password') }}" maxlength="100" required autocomplete="false-password" />
                         </div>
 
                         <div class="col-md-6">
+                            <label for="" class="d-block d-md-none">{{ __('Password Confirmation') }}</label>
                             <input autocomplete="off" type="password" name="password_confirmation" id="password_confirmation" class="form-control" placeholder="{{ __('Password Confirmation') }}" maxlength="100" required autocomplete="false-password" />
                         </div>
                     </div><!--form-group-->

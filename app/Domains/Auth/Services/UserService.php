@@ -90,14 +90,14 @@ class UserService extends BaseService
                 'history_milk_packsize' => $packsize,
             ]);
 
-            $voucherInUser = Voucher::where('user_id', $user->id)->get();
-            if (!$voucherInUser->count()) {
-                $voucher = Voucher::whereNull('given_at')->first();
-                $voucher->update([
-                    'user_id' => $user->id,
-                    'given_at' => now()
-                ]);
-            }
+            // $voucherInUser = Voucher::where('user_id', $user->id)->get();
+            // if (!$voucherInUser->count()) {
+            //     $voucher = Voucher::whereNull('given_at')->first();
+            //     $voucher->update([
+            //         'user_id' => $user->id,
+            //         'given_at' => now()
+            //     ]);
+            // }
         } catch (Exception $e) {
             DB::rollBack();
 
@@ -132,18 +132,8 @@ class UserService extends BaseService
                     'email_verified_at' => now(),
                 ]);
 
-                $voucherInUser = Voucher::where('user_id', $user->id)->get();
-                if (!$voucherInUser->count()) {
-                    $voucher = Voucher::whereNull('given_at')->first();
-                    $voucher->update([
-                        'user_id' => $user->id,
-                        'given_at' => now()
-                    ]);
-                }
-
             } catch (Exception $e) {
                 DB::rollBack();
-
                 throw new GeneralException(__('There was a problem connecting to :provider', ['provider' => $provider]));
             }
 
@@ -408,7 +398,15 @@ class UserService extends BaseService
      */
     protected function createUser(array $data = []): User
     {
-        $phone = PhoneNumber::make($data['phone'], 'ID');
+        $phone = null;
+
+        try {
+            $phone = PhoneNumber::make($data['phone'], 'ID');
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+
+
         return $this->model::create([
             'type' => $data['type'] ?? $this->model::TYPE_USER,
             'name' => $data['name'] ?? null,
@@ -417,9 +415,8 @@ class UserService extends BaseService
             'password' => $data['password'] ?? null,
             'provider' => $data['provider'] ?? null,
             'provider_id' => $data['provider_id'] ?? null,
-            'email_verified_at' => now(),
             'active' => $data['active'] ?? true,
-            'completed_at' => now(),
+            'completed_at' => $data['completed_at'] ?? null,
         ]);
     }
 }
