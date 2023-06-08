@@ -22,7 +22,7 @@ Route::get('/', [HomeController::class, 'index'])
         $trail->push(__('Home'), route('frontend.index'));
     });
 
-Route::group(['middleware' => ['auth', 'completes_detail']], function() {
+Route::group(['middleware' => ['auth', config('boilerplate.access.middleware.verified')]], function() {
     Route::group(['as' => 'redeem.', 'prefix' => 'redeem'], function(){
         Route::get('/', [RedeemController::class, 'index'])->name('index');
     });
@@ -44,6 +44,8 @@ Route::get('privacy-policy', [PrivacyController::class, 'index'])
 
 Route::get('faq', [FaqController::class, 'index'])
     ->name('pages.faq');
+
+// Ajax Routes
 
 Route::get('ajax/load-province', [AreaController::class, 'getProvince']);
 Route::get('ajax/load-city/{id}', [AreaController::class, 'getCity']);
