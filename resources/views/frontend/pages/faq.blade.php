@@ -20,7 +20,7 @@
                                             <h2 class="mb-0" style="max-width: 70%">
                                                 Collapsible Group Item #{{$i}}
                                             </h2>
-                                            <button class="collapsed shadow" type="button" data-toggle="collapse" data-target="#collapse{{$i}}"
+                                            <button class="collapsed" type="button" data-toggle="collapse" data-target="#collapse{{$i}}"
                                                 aria-expanded="true" aria-controls="collapse{{$i}}">
                                                 <i class="fas fa-chevron-right"></i>
                                             </button>

@@ -93,6 +93,7 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'type' => \App\Domains\Auth\Http\Middleware\UserTypeCheck::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'whatsapp_verified' => \App\Http\Middleware\EnsureWhatsappIsVerified::class,
         'user_complete_detail' => \App\Http\Middleware\UserCompleteDetail::class
     ];
 

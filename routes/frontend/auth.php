@@ -19,7 +19,7 @@ use Tabuna\Breadcrumbs\Trail;
  * All route names are prefixed with 'frontend.auth'.
  */
 Route::group(['as' => 'auth.'], function () {
-    Route::group(['middleware' => 'auth'], function () {
+    Route::group(['middleware' => ['auth']], function () {
         // Authentication
         Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 

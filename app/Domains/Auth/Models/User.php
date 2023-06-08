@@ -8,7 +8,9 @@ use App\Domains\Auth\Models\Traits\Relationship\UserRelationship;
 use App\Domains\Auth\Models\Traits\Scope\UserScope;
 use App\Domains\Auth\Notifications\Frontend\ResetPasswordNotification;
 use App\Domains\Auth\Notifications\Frontend\VerifyEmail;
+use App\Mail\OtpMail;
 use App\Models\Voucher;
+use App\Notifications\OtpNotification;
 use DarkGhostHunter\Laraguard\Contracts\TwoFactorAuthenticatable;
 use DarkGhostHunter\Laraguard\TwoFactorAuthentication;
 use Database\Factories\UserFactory;
@@ -139,6 +141,11 @@ class User extends Authenticatable implements MustVerifyEmail, TwoFactorAuthenti
     public function sendEmailVerificationNotification(): void
     {
         // $this->notify(new VerifyEmail);
+    }
+
+    public function sendOtpNotification($otp)
+    {
+        $this->notify(new OtpNotification($otp));
     }
 
     /**

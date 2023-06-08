@@ -25,7 +25,7 @@ $fixedStyleSecond = "position-sticky w-100";
         <div class="navbar-brand">
             <div class="d-flex items-center position-relative">
                 <div class="d-inline-flex align-items-center mr-1">
-                    <img src="{{ asset('img/brand/1x/Logo.png') }}" alt="" width="160" height="36">
+                    <img src="{{ asset('img/brand/Greenfields Logo_Green.png') }}" alt="" width="180" height="51">
                 </div>
                 <x-utils.link
                     class="stretched-link text-dark ml-2"

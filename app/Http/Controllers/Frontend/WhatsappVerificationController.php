@@ -13,7 +13,11 @@ class WhatsappVerificationController extends Controller
 {
     public function show(Request $request)
     {
-        $otp = $this->send_otp(auth()->user()->phone);
+        try {
+            $otp = $this->send_otp(auth()->user()->phone);
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
 
         // dd($otp);
 
@@ -43,6 +47,8 @@ class WhatsappVerificationController extends Controller
     protected function send_otp($phone)
     {
         $otp =  Otp::generate($phone);
+
+        $mail = auth()->user()->sendOtpNotification($otp->token);
 
         $token = env('WHATSAPP_SENDER_TOKEN');
         $phone = $phone;

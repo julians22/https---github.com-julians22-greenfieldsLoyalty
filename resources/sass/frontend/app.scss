@@ -428,7 +428,7 @@
             justify-content: center;
             width: 2rem;
             height: 2rem;
-            background-color: $gray-700;
+            background-color: $dark-green;
             text-decoration: none;
             outline: 0;
             border-width: 0;
@@ -436,9 +436,11 @@
             border-radius: 10rem;
             transition: all ease-in .2s;
             transform: rotate(90deg);
+            box-shadow: 0.5rem 0 1rem $dark-green-opacity;
 
             &.collapsed{
                 transform: rotate(0deg);
+                box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
             }
         }
     }

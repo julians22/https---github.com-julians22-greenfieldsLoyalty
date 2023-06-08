@@ -90,7 +90,7 @@ trait UserMethod
      */
     public function isVerified(): bool
     {
-        return true;
+        return $this->whatsapp_validate_at != null;
         return $this->email_verified_at !== null;
     }
 

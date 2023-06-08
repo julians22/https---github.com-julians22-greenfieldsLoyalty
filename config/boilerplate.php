@@ -31,6 +31,7 @@ return [
         'middleware' => [
             'confirm' => 'password.confirm:frontend.auth.password.confirm',
             'verified' => 'verified:frontend.auth.verification.notice',
+            'whatsapp_verified' => 'whatsapp_verified'
         ],
 
         'user' => [

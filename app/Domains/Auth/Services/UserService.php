@@ -408,11 +408,12 @@ class UserService extends BaseService
      */
     protected function createUser(array $data = []): User
     {
+        $phone = PhoneNumber::make($data['phone'], 'ID');
         return $this->model::create([
             'type' => $data['type'] ?? $this->model::TYPE_USER,
             'name' => $data['name'] ?? null,
             'email' => $data['email'] ?? null,
-            'phone' => $data['phone'] ?? null,
+            'phone' => $phone,
             'password' => $data['password'] ?? null,
             'provider' => $data['provider'] ?? null,
             'provider_id' => $data['provider_id'] ?? null,
