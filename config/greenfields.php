@@ -24,7 +24,7 @@ return [
             'name' => 'Bananas',
             'title' => 'Bananas',
             'url' => 'https://www.bananas.id/',
-            'image' => '/img/online-stores/japfa.png'
+            'image' => '/img/online-stores/bananas.jpg'
         ],
         [
             'name' => 'Shopee',

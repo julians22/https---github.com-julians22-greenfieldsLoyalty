@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 <h3 class="text-center mb-4">
-                    CONTACT US
+                    HUBUNGI KAMI
                 </h3>
 
                 <h5 class="font-weight-bold text-center">
@@ -30,7 +30,7 @@
                             </a>
                         </div>
                     <div class="items">
-                        <a target="_blank" href="https://www.linkedin.com/company/greenfieldsdairygroup" rel="noopener noreferrer">
+                        <a target="_blank" href="https://web.facebook.com/GreenfieldsID" rel="noopener noreferrer">
                             <img alt="FBSocialMedia"
                                 src="{{ asset('img/brand/social/FBSocialMedia.svg') }}" width="1000" height="0"
                                 decoding="async" data-nimg="1" class="social-media-logo" loading="lazy"
