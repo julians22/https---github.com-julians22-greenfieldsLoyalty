@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Frontend\User\AccountController;
+use App\Http\Controllers\Frontend\User\CompleteAccountController;
 use App\Http\Controllers\Frontend\User\DashboardController;
 use App\Http\Controllers\Frontend\User\ProfileController;
 use Tabuna\Breadcrumbs\Trail;
@@ -17,7 +18,7 @@ Route::group([
         ]
     ], function () {
     Route::get('dashboard', [DashboardController::class, 'index'])
-        ->middleware('is_user')
+        ->middleware(['is_user', 'whatsapp_verified'])
         ->name('dashboard')
         ->breadcrumbs(function (Trail $trail) {
             $trail->parent('frontend.index')
@@ -33,6 +34,12 @@ Route::group([
 
     Route::get('account/edit', [AccountController::class, 'edit'])
         ->name('edit-account');
+
+    Route::get('account/completion', [AccountController::class, 'show_completion'])
+        ->name('completion-account');
+
+    Route::patch('account/completion/submit', [CompleteAccountController::class, 'submit_completion'])
+        ->name('completion-account-submit');
 
     Route::patch('profile/update', [ProfileController::class, 'update'])->name('profile.update');
 });

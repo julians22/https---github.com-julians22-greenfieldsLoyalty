@@ -3,6 +3,7 @@
 namespace App\Domains\Auth\Models\Traits\Method;
 
 use Illuminate\Support\Collection;
+use PhpOffice\PhpSpreadsheet\Writer\Ods\Thumbnails;
 
 /**
  * Trait UserMethod.
@@ -83,6 +84,11 @@ trait UserMethod
     public function isActive(): bool
     {
         return $this->active;
+    }
+
+    public function isCompleteRegister()
+    {
+        return $this->completed_at != null;
     }
 
     /**

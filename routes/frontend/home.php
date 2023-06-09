@@ -22,7 +22,7 @@ Route::get('/', [HomeController::class, 'index'])
         $trail->push(__('Home'), route('frontend.index'));
     });
 
-Route::group(['middleware' => ['auth', config('boilerplate.access.middleware.verified')]], function() {
+Route::group(['middleware' => ['auth', 'user_complete_detail', config('boilerplate.access.middleware.verified')]], function() {
     Route::group(['as' => 'redeem.', 'prefix' => 'redeem'], function(){
         Route::get('/', [RedeemController::class, 'index'])->name('index');
     });
@@ -35,6 +35,8 @@ Route::group(['middleware' => ['auth', config('boilerplate.access.middleware.ver
         Route::post('/', [TopupController::class, 'store'])->name('store');
     });
 });
+
+// Pages routes
 
 Route::get('term-and-condition', [TermsController::class, 'index'])
     ->name('pages.terms');

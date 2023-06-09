@@ -48,6 +48,22 @@ class AccountController
         return view('frontend.user.edit-account', compact('provinces', 'address'));
     }
 
+    public function show_completion()
+    {
+        $provinces = Indonesia::allProvinces();
+
+        $survey_categories = config('survey.categories');
+        $survey_brands = config('survey.brands');
+        $survey_packsizes = config('survey.packsizes');
+
+        return view('frontend.user.complete-account', compact(
+            "survey_categories",
+            "survey_brands",
+            "survey_packsizes",
+            "provinces"
+            ));
+    }
+
 
     private function extract_data($data, $type = 'topup'): array
     {

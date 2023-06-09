@@ -45,7 +45,7 @@
                         </div>
                         <div class="col-md-6">
                             <label for="" class="d-block d-md-none">{{ __('E-mail Address') }}</label>
-                            <input autocomplete="off" type="email" name="email" id="email" class="form-control" placeholder="{{ __('E-mail Address') }}" value="{{ old('email') }}" maxlength="255" required  />
+                            <input autocomplete="off" type="email" name="email" id="email" class="form-control disabled" placeholder="{{ __('E-mail Address') }}" value="{{ old('email') }}" maxlength="255" required  />
                         </div>
                     </div><!--form-group-->
 
@@ -136,26 +136,7 @@
                         <input type="text" name="others_packsize" id="others_packsize" placeholder="Ukuran Kemasan lain" class="form-control">
                     </div>
 
-                    <div class="row d-flex justify-content-center mb-2">
-                        <div class="col-md-4">
-                            <x-utils.link
-                                :href="route('frontend.auth.social.login', 'facebook')"
-                                class="btn btn-block btn-blue btn-login "
-                                icon="fab fa-facebook"
-                                :text="__('Login with Facebook')"
-                                :hide="!config('services.facebook.active')" />
-                        </div>
-                        <div class="col-md-4">
-                            <x-utils.link
-                                :href="route('frontend.auth.social.login', 'google')"
-                                class="btn btn-block btn-outline-dark btn-login "
-                                icon="fab fa-google"
-                                :text="__('Login with Google')"
-                                :hide="!config('services.google.active')" />
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
+                    <div class="form-group row mb-4">
                         <div class="col-md-6">
                             <div class="form-check">
                                 <input type="checkbox" name="terms" value="1" id="terms" class="form-check-input" required>
@@ -178,6 +159,25 @@
                             <button class="btn btn-rounded btn-dark-green" type="submit">@lang('Register')</button>
                         </div>
                     </div><!--form-group-->
+
+                    <div class="row d-flex justify-content-center mb-2">
+                        <div class="col-md-4">
+                            <x-utils.link
+                                :href="route('frontend.auth.social.login', 'facebook')"
+                                class="btn btn-block btn-blue btn-login "
+                                icon="fab fa-facebook"
+                                :text="__('Login with Facebook')"
+                                :hide="!config('services.facebook.active')" />
+                        </div>
+                        <div class="col-md-4">
+                            <x-utils.link
+                                :href="route('frontend.auth.social.login', 'google')"
+                                class="btn btn-block btn-outline-dark btn-login "
+                                icon="fab fa-google"
+                                :text="__('Login with Google')"
+                                :hide="!config('services.google.active')" />
+                        </div>
+                    </div>
                 </x-forms.post>
             </div><!--col-md-10-->
         </div><!--row-->

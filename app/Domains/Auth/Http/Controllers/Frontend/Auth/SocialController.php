@@ -34,6 +34,8 @@ class SocialController
                 $provider
             );
 
+
+
         if (! $user->isActive()) {
             auth()->logout();
 
@@ -43,6 +45,10 @@ class SocialController
         auth()->login($user);
 
         event(new UserLoggedIn($user));
+
+        if (! $user->isCompleteRegister()) {
+            return redirect()->route('frontend.user.completion-account')->withFlashSuccess('Berhasil mendaftar, mohon lengkapi data diri kamu!');
+        }
 
         if ($user->isHasDetail()) {
             return redirect()->route('frontend.user.dashboard');
