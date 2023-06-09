@@ -13,7 +13,7 @@
                     </select>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-4 mt-2 mt-md-0">
                     <label for="range_point" class="d-md-hidden d-block">Cari Hadiah</label>
                     <input type="text" name="keyword" wire:model.debounce.1000ms="keyword"  wire:loading.attr="disabled" wire:target="keyword" placeholder="Masukkan Pencarian" class="form-control">
                 </div>
