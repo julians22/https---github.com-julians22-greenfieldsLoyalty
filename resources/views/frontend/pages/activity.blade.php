@@ -12,8 +12,11 @@
 
                 <div class="row row-cols-1 row-cols-md-3">
                     @for ($i = 0; $i < 4; $i++)
+                        @php
+                            $text = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel blanditiis pariatur excepturi corporis debitis aut voluptatibus harum saepe dolore, velit, illum nobis. Suscipit, officia! Totam doloribus quibusdam ducimus placeat tempore! Nemo quidem repellat eos vitae dolorem nostrum delectus quo amet quibusdam voluptate pariatur, veniam dolor porro, tempora consectetur possimus quam?';
+                        @endphp
                         <div class="col mb-4">
-                            <div class="card card-activity" data-target="{{$i}}" data-toggle="activity-popup">
+                            <div class="card card-activity" data-title="Webinar" data-times="Coming Soon" data-content="{{$text}}">
                                 <div class="card-body">
                                     <div class="activity-img-wrapper">
                                         <img src="{{ asset('dummy/activities/act-1.jpg') }}" class="activity-img">
@@ -23,9 +26,6 @@
                                         <h4 class="card-title">Webinar</h4>
                                         <span class="badge badge-dark-green schedule-badge">Coming Soon</span>
                                         <p class="excerpt">
-                                            @php
-                                                $text = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, veritatis cupiditate harum dolores laudantium, dolorem quia in saepe sed unde ex culpa provident qui hic molestias amet recusandae ea tempore.';
-                                            @endphp
                                             {{ Str::limit($text, 110, '...') }}
                                         </p>
                                     </div>
@@ -38,41 +38,56 @@
             </div>
         </div>
     </div>
+@endsection
 
-    <div class="activity-popup">
-        <div class="row">
-            <div class="col-md-8 offset-md-2">
-                <div id="activity-carousel" class="splide splide-activity" aria-label="Activity Carousel">
-                    <div class="splide__track">
-                        <div class="splide__list">
-                            @for ($i = 0; $i < 4; $i++)
-                            <div class="splide__slide">
-                                <div class="activity-item">
-                                    <span class="h4 text-white close-activity">
-                                        <i class="fas fa-close"></i>
-                                    </span>
-                                    <div class="card card-activity">
-                                        <div class="card-body">
+@push('before-scripts')
+<div class="modal fade" id="activityModal" tabindex="-1" aria-labelledby="activityModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="page_title mb-1">
+                        <h1 class="title_text" title="Activity">Activity</h1>
+                    </div>
+                </div>
+                <div class="col">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
 
-                                            <div class="activity-detail-wrapper">
-                                                <h1 class="card-title">Webinar {{$i}}</h1>
-                                                <span class="badge badge-dark-green schedule-badge">Coming Soon</span>
-                                                <p class="excerpt">
-                                                    @php
-                                                        $text = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, veritatis cupiditate harum dolores laudantium, dolorem quia in saepe sed unde ex culpa provident qui hic molestias amet recusandae ea tempore.';
-                                                    @endphp
-                                                    {{ $text }}
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            @endfor
-                        </div>
+                    <div id="times" class="mb-2"></div>
+                    <div id="content">
+
                     </div>
                 </div>
             </div>
         </div>
+      </div>
     </div>
-@endsection
+  </div>
+@endpush
+
+@push('after-scripts')
+    <script>
+        $('.card-activity').on('click', function(event){
+            $('#activityModal').modal('show');
+            const card = $(event.delegateTarget);
+            const content = $(card).data('content');
+            const times = $(card).data('times');
+            const title = $(card).data('title');
+
+            const ModalItem = $('#activityModal');
+
+            $(ModalItem).find('.title_text').text(`${title}`).attr('title', title)
+            $(ModalItem).find('#content').html(`${content}`)
+            $(ModalItem).find('#times').html(`<span class="badge badge-dark-green schedule-badge">${times}</span>`)
+            console.log(content);
+
+        })
+    </script>
+@endpush

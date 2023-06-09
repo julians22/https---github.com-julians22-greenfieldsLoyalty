@@ -13,7 +13,7 @@
                         <div class="col-md-12 mb-2">
                             <div class="page_title">
                                 {{-- <img src="{{ asset('img/decorations/snk_titletext.png') }}" alt=""> --}}
-                                <h1 class="title_text" title="Syarat dan Ketentuan Greenfields Klub Ibu Extra (Loyalty Program)">Syarat dan Ketentuan Greenfields Klub Ibu Extra (Loyalty Program)</h1>
+                                <h1 class="title_text" title="Syarat dan Ketentuan Program">Syarat dan Ketentuan Program</h1>
                             </div>
                             <p>
                                 Greenfields Klub Ibu Extra adalah <i>loyalty program</i> yang diselenggarakan oleh PT Greenfields Dairy Indonesia (“Penyelenggara”) sebagai bentuk apresiasi bagi konsumen yang sudah setia memilih Greenfields sebagai pilihan nutrisi terbaik bagi keluarga. Greenfields Klub Ibu Extra dilakukan dengan mekanisme pengumpulan poin dan penukaran hadiah. Program efektif berjalan pada tahun 2023.

@@ -360,6 +360,12 @@
     border: 0;
     // create simple box shadow css
     box-shadow: -3px 10px 1rem rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: all 500ms ease-in-out;
+
+    &:hover{
+        transform: scale(1.1);
+    }
 
 
     .card-body{

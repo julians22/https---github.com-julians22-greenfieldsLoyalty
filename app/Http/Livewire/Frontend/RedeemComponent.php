@@ -28,7 +28,8 @@ class RedeemComponent extends Component
             "max" => 100000
         ],
         "100001-max" => [
-            "min" => 100001
+            "min" => 100001,
+            "max" => null
         ],
     ];
 

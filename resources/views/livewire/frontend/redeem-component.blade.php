@@ -7,7 +7,7 @@
                     <select name="range_point" id="range_point" wire:model="range_point" class="form-control">
                         <option value="" disabled selected>Rentang Poin</option>
                         @foreach ($pointRangesData as $key => $item)
-                            <option value="{{$key}}">{{ $item['min'] }} - {{ $item['max'] ?? "Ke atas" }}</option>
+                            <option value="{{$key}}">{{ number_format($item['min']) }} - {{ $item['max'] ? number_format($item['max']) : "Ke atas" }}</option>
                         @endforeach
                     </select>
                 </div>
