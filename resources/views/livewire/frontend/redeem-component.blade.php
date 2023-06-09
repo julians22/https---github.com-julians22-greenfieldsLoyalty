@@ -4,6 +4,7 @@
         <div class="col-md-12 greenfields-form">
             <div class="form-group row">
                 <div class="col-md-4">
+                    <label for="range_point" class="d-md-hidden d-block">Rentang Poin</label>
                     <select name="range_point" id="range_point" wire:model="range_point" class="form-control">
                         <option value="" disabled selected>Rentang Poin</option>
                         @foreach ($pointRangesData as $key => $item)
@@ -13,6 +14,7 @@
                 </div>
 
                 <div class="col-md-4">
+                    <label for="range_point" class="d-md-hidden d-block">Cari Hadiah</label>
                     <input type="text" name="keyword" wire:model.debounce.1000ms="keyword"  wire:loading.attr="disabled" wire:target="keyword" placeholder="Masukkan Pencarian" class="form-control">
                 </div>
             </div>
