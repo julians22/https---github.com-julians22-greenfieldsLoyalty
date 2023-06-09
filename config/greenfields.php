@@ -80,5 +80,27 @@ return [
             'url' => 'https://alfagift.id/find/Greenfields',
             'image' => '/img/online-stores/alfagift.png'
         ],
+    ],
+    'courier' => [
+        [
+            'name' => 'JNE',
+            'value' => 'JNE'
+        ],
+        [
+            'name' => 'Gojek',
+            'value' => 'Gojek'
+        ],
+        [
+            'name' => 'Gosend',
+            'value' => 'Gosend'
+        ],
+        [
+            'name' => 'J&T',
+            'value' => 'J&T'
+        ],
+        [
+            'name' => 'Tiki',
+            'value' => 'Tiki'
+        ],
     ]
 ];

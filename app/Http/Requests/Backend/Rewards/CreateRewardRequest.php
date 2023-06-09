@@ -29,6 +29,7 @@ class CreateRewardRequest extends FormRequest
             "point" => 'numeric',
             "image" => 'required',
             "status" => 'sometimes',
+            "stock" => 'required|numeric'
         ];
     }
 }

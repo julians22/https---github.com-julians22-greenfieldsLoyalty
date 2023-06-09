@@ -51,6 +51,11 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="stock">@lang('Stock')</label>
+                            <input type="number" name="stock" id="stock" class="form-control" value="{{old('stock')}}">
+                        </div>
+
+                        <div class="form-group">
                             <label for="status">Publish:</label>
                             <div>
                                 <label class="c-switch c-switch-pill c-switch-label c-switch-success">

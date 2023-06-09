@@ -38,7 +38,17 @@
                 :text="__('Top up Management')" />
         </li>
 
-        {{-- Top ups Menu --}}
+        {{-- Redeems Menu --}}
+        <li class="c-sidebar-nav-item">
+            <x-utils.link
+                class="c-sidebar-nav-link"
+                :href="route('admin.redeem.index')"
+                :active="activeClass(Route::is('admin.redeem*'), 'c-active')"
+                icon="c-sidebar-nav-icon cil-speedometer"
+                :text="__('Redeem Management')" />
+        </li>
+
+        {{-- Vouchers Menu --}}
         <li class="c-sidebar-nav-item">
             <x-utils.link
                 class="c-sidebar-nav-link"

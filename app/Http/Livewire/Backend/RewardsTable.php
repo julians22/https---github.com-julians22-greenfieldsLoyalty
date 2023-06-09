@@ -50,6 +50,8 @@ class RewardsTable extends DataTableComponent
                 ->sortable(),
             Column::make(__('Point'), 'point')
                 ->sortable(),
+            Column::make(__('Stock'), 'stock')
+                ->sortable(),
             Column::make(__('Status'), 'status')
                 ->sortable(),
             Column::make(__('Created Date'), 'created_at')
