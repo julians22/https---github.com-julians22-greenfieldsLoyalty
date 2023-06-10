@@ -37,9 +37,7 @@
                                 <label for="rejected">Item ini sudah di tolak pada @displayDate($topup->failed_at) ({{ $topup->failed_at->diffForHumans() }})</label>
                                 <div>
                                     <label for="rejected">Dengan catatan:</label>
-                                    <textarea name="note" id="note" rows="10" class="form-control">
-                                        {{ $topup->failed_reason }}
-                                    </textarea>
+                                    <textarea name="note" id="note" rows="4" class="form-control" disabled>{{ $topup->failed_reason }}</textarea>
                                 </div>
                             </div>
                         @endif
@@ -53,9 +51,7 @@
                                 </div>
                                 <div>
                                     <label for="successed">Dengan catatan:</label>
-                                    <textarea name="note" id="note" rows="10" class="form-control" disabled value="{{$topup->failed_reason}}">
-                                        {{-- {{ $topup->failed_reason }} --}}
-                                    </textarea>
+                                    <textarea name="note" id="note" rows="4" class="form-control" disabled>{!! $topup->note !!}</textarea>
                                 </div>
                             </div>
                         @endif

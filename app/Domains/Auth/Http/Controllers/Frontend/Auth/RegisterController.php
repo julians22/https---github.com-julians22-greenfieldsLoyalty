@@ -7,6 +7,7 @@ use App\Rules\Captcha;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
+use Illuminate\Validation\Rules\Password;
 use Indonesia;
 use LangleyFoxall\LaravelNISTPasswordRules\PasswordRules;
 
@@ -101,7 +102,7 @@ class RegisterController
             'child_name' => ['required'],
             'child_date_of_birth' => ['required', 'date'],
             'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')],
-            'password' => array_merge(['max:100'], PasswordRules::register($data['email'] ?? null)),
+            'password' => ['max:100', Password::min(8)->numbers()->mixedCase(), 'confirmed'],
             'terms' => ['required', 'in:1'],
         ]);
     }

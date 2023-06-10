@@ -11,29 +11,30 @@
                 </div>
 
                 <div class="row row-cols-1 row-cols-md-3">
-                    @for ($i = 0; $i < 4; $i++)
-                        @php
-                            $text = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel blanditiis pariatur excepturi corporis debitis aut voluptatibus harum saepe dolore, velit, illum nobis. Suscipit, officia! Totam doloribus quibusdam ducimus placeat tempore! Nemo quidem repellat eos vitae dolorem nostrum delectus quo amet quibusdam voluptate pariatur, veniam dolor porro, tempora consectetur possimus quam?';
-                        @endphp
-                        <div class="col mb-4">
-                            <div class="card card-activity" data-title="Webinar" data-times="Coming Soon" data-content="{{$text}}">
-                                <div class="card-body">
-                                    <div class="activity-img-wrapper">
-                                        <img src="{{ asset('dummy/activities/act-1.jpg') }}" class="activity-img">
-                                    </div>
-
-                                    <div class="activity-detail-wrapper">
-                                        <h4 class="card-title">Webinar</h4>
-                                        <span class="badge badge-dark-green schedule-badge">Coming Soon</span>
-                                        <p class="excerpt">
-                                            {{ Str::limit($text, 110, '...') }}
-                                        </p>
-                                    </div>
-                                    {{-- <a class="btn mb-3 btn-rounded  {{ $reward->point > $logged_in_user->point ? 'disabled btn-secondary' : 'btn-green' }}" href="#">TUKAR HADIAH</a> --}}
+                    @foreach ($activities as $item)
+                    <div class="col mb-4">
+                        <div class="card card-activity" data-title="{{$item->title}}" data-times="{{$item->isComingSoon() ? 'Coming soon' : $item->date_ranges }}" data-content="{{$item->content}}">
+                            <div class="card-body">
+                                <div class="activity-img-wrapper">
+                                    <img src="{{ asset($item->thumbnail_image) }}" class="activity-img">
                                 </div>
+
+                                <div class="activity-detail-wrapper">
+                                    <h4 class="card-title">{{ $item->title }}</h4>
+                                    @if ($item->isComingSoon())
+                                        <span class="badge badge-dark-green schedule-badge">Coming Soon</span>
+                                    @else
+                                        <span class="badge badge-dark-green schedule-badge">{{$item->date_ranges}}</span>
+                                    @endif
+                                    <p class="excerpt">
+                                        {{ Str::limit($item->excerpt, 110, '...') }}
+                                    </p>
+                                </div>
+                                {{-- <a class="btn mb-3 btn-rounded  {{ $reward->point > $logged_in_user->point ? 'disabled btn-secondary' : 'btn-green' }}" href="#">TUKAR HADIAH</a> --}}
                             </div>
                         </div>
-                    @endfor
+                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -42,7 +43,7 @@
 
 @push('before-scripts')
 <div class="modal fade" id="activityModal" tabindex="-1" aria-labelledby="activityModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-dialog  modal-lg modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-body">
             <div class="row">
@@ -60,7 +61,7 @@
             <div class="row">
                 <div class="col">
 
-                    <div id="times" class="mb-2"></div>
+                    <div id="times" class="mb-4"></div>
                     <div id="content">
 
                     </div>

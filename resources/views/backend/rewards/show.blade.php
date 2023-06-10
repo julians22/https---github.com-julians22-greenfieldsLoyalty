@@ -43,7 +43,7 @@
 
     <x-slot name="footer">
         <small class="float-right text-muted">
-            <strong>@lang('Account Created'):</strong> @displayDate($reward->created_at) ({{ $reward->created_at->diffForHumans() }}),
+            <strong>@lang('Created'):</strong> @displayDate($reward->created_at) ({{ $reward->created_at->diffForHumans() }}),
             <strong>@lang('Last Updated'):</strong> @displayDate($reward->updated_at) ({{ $reward->updated_at->diffForHumans() }})
         </small>
     </x-slot>

@@ -32,6 +32,7 @@
         "seshac/otp-generator": "^0.0.7",
         "spatie/laravel-activitylog": "^3.14",
         "spatie/laravel-permission": "^3.11",
+        "spatie/laravel-sluggable": "^3.5",
         "tabuna/breadcrumbs": "^2.2",
         "unisharp/laravel-filemanager": "^2.6"
     },

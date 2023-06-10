@@ -1,9 +1,10 @@
 <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
 
 <script>
+    var route_prefix = "{{ env('APP_URL') }}/admin/laravel-filemanager";
+
     $('#lfm').filemanager('image');
 
-    var route_prefix = "{{ env('APP_URL') }}/admin/laravel-filemanager";
     $('#lfm').filemanager('image', {prefix: route_prefix});
 
     $(document).ready(() => {

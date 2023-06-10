@@ -28,6 +28,27 @@
                 :text="__('Rewards Management')" />
         </li>
 
+        {{-- Activity Menu --}}
+        <li class="c-sidebar-nav-item">
+            <x-utils.link
+                class="c-sidebar-nav-link"
+                :href="route('admin.activity.index')"
+                :active="activeClass(Route::is('admin.activity*'), 'c-active')"
+                icon="c-sidebar-nav-icon cil-speedometer"
+                :text="__('Activities Management')" />
+        </li>
+
+        {{-- Faq Menu --}}
+        <li class="c-sidebar-nav-item">
+            <x-utils.link
+                class="c-sidebar-nav-link"
+                :href="route('admin.faq.index')"
+                :active="activeClass(Route::is('admin.faq*'), 'c-active')"
+                icon="c-sidebar-nav-icon cil-speedometer"
+                :text="__('Faqs Management')" />
+        </li>
+
+
         {{-- Top ups Menu --}}
         <li class="c-sidebar-nav-item">
             <x-utils.link
