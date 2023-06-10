@@ -59,6 +59,13 @@ class Activity extends Model
 
     public function getDateRangesAttribute(): string
     {
-        return $this->start_date->format('d F Y') ." - ". $this->end_date->format('d F Y');
+        $year_start = $this->start_date->format('Y');
+        $year_end = $this->end_date->format('Y');
+
+        if ($year_start == $year_end) {
+            return $this->start_date->isoFormat('D MMMM') ." - ". $this->end_date->isoFormat('D MMMM Y');
+        }
+        return $this->start_date->isoFormat('D MMMM Y') ." - ". $this->end_date->isoFormat('D MMMM Y');
+
     }
 }
