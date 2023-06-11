@@ -18,7 +18,7 @@ class UserCompleteDetail
     {
         if (! $request->user()->isCompleteRegister()) {
             return redirect()->route('frontend.user.completion-account')
-                ->withSwalWarning(' Lengkapi profil ibu untuk mendapatkan hadiah dan aktivitas menarik dari greenfields');
+                ->withSwalWarning(' Lengkapi profil kamu untuk mendapatkan hadiah dan aktivitas menarik dari greenfields');
 
         }
         return $next($request);

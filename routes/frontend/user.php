@@ -15,10 +15,11 @@ Route::group([
     'as' => 'user.',
     'middleware' => [
         'auth',
+        'user_complete_detail'
         ]
     ], function () {
     Route::get('dashboard', [DashboardController::class, 'index'])
-        ->middleware(['is_user', 'user_complete_detail', config('boilerplate.access.middleware.verified')])
+        ->middleware(['is_user', config('boilerplate.access.middleware.verified')])
         ->name('dashboard')
         ->breadcrumbs(function (Trail $trail) {
             $trail->parent('frontend.index')
