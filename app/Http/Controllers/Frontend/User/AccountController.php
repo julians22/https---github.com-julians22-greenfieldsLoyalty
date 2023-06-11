@@ -27,7 +27,9 @@ class AccountController
 
         $transactions = array_merge($this->extract_data($topup, 'topup'), $this->extract_data($redeem, 'redeem'));
 
-        $transactions = collect($transactions)->sortByDesc('date');
+        $transactions = collect($transactions)->sortByDesc('date')->toArray();
+
+        // dd($transactions);
 
         return view('frontend.user.account', compact('transactions'));
     }
