@@ -18,7 +18,7 @@ Route::group([
         ]
     ], function () {
     Route::get('dashboard', [DashboardController::class, 'index'])
-        ->middleware(['is_user', 'whatsapp_verified'])
+        ->middleware(['is_user', 'user_complete_detail', config('boilerplate.access.middleware.verified')])
         ->name('dashboard')
         ->breadcrumbs(function (Trail $trail) {
             $trail->parent('frontend.index')
