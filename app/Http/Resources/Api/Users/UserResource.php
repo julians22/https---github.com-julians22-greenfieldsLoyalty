@@ -1,0 +1,28 @@
+<?php
+
+namespace App\Http\Resources\Api\Users;
+
+use Illuminate\Http\Resources\Json\JsonResource;
+
+class UserResource extends JsonResource
+{
+    /**
+     * Transform the resource into an array.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return array|\Illuminate\Contracts\Support\Arrayable|\JsonSerializable
+     */
+    public function toArray($request)
+    {
+        return [
+            'name' => $this->name,
+            'email' => $this->email,
+            'no_hp' => $this->phone,
+            'alamat' => $this->address_data->address,
+            'provinsi' => $this->address_data->rel_province->name,
+            'kota' => $this->address_data->rel_city->name,
+            'kecamatan' => $this->address_data->rel_district->name,
+            'created_at' => $this->created_at->format('Y-m-d h:i:s'),
+        ];
+    }
+}

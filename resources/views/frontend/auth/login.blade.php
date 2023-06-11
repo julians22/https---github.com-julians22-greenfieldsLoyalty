@@ -26,10 +26,12 @@
                     <div class="form-login">
                         <x-forms.post :action="route('frontend.auth.login')" class="greenfields-form">
                             <div class="form-group">
+                                <label for="phone" class="d-md-none d-block">{{ __('Email / Phone Number (Whatsapp Registered)') }}</label>
                                 <input type="phone" name="phone" id="phone" class="form-control" placeholder="{{ __('Email / Phone Number (Whatsapp Registered)') }}" value="{{ old('phone') }}" required autofocus autocomplete="tel" />
                             </div><!--form-group-->
 
                             <div class="form-group">
+                                <label for="password" class="d-md-none d-block">{{ __('Password') }}</label>
                                 <input type="password" name="password" id="password" class="form-control" placeholder="{{ __('Password') }}" maxlength="100" required autocomplete="current-password" />
                             </div>
 

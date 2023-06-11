@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\UserController;
 use Illuminate\Http\Request;
 
 /*
@@ -16,3 +17,7 @@ use Illuminate\Http\Request;
 //Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //    return $request->user();
 //});
+
+Route::prefix('v1')->group(function () {
+    Route::get('/check_user', [UserController::class, 'check_user']);
+});

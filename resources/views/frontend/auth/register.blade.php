@@ -161,7 +161,7 @@
                     </div><!--form-group-->
 
                     <div class="row d-flex justify-content-center mb-2">
-                        <div class="col-md-4">
+                        <div class="col-md-4 mb-2 mb-md-0">
                             <x-utils.link
                                 :href="route('frontend.auth.social.login', 'facebook')"
                                 class="btn btn-block btn-blue btn-login "
