@@ -19,17 +19,17 @@ class AccountController
      */
     public function index()
     {
-        // $tranasctions = [];
+        $transactions = [];
 
-        // $topup = TopUp::where('user_id', auth()->user()->id)->get();
+        $topup = TopUp::where('user_id', auth()->user()->id)->take(5)->get();
 
-        // $redeem = Redeem::where('user_id', auth()->user()->id)->get();
+        $redeem = Redeem::where('user_id', auth()->user()->id)->take(5)->get();
 
-        // Arr::
+        $transactions = array_merge($this->extract_data($topup, 'topup'), $this->extract_data($redeem, 'redeem'));
 
-        // dd($this->extract_data($topup, 'topup'));
+        $transactions = collect($transactions)->sortByDesc('date');
 
-        return view('frontend.user.account');
+        return view('frontend.user.account', compact('transactions'));
     }
 
     /**
@@ -91,19 +91,71 @@ class AccountController
 
     private function generate_column($type, $value)
     {
-        if ($type == 'topup') {
-            $amountText = $this->amount_generator('topup', $value);
+        $amountText = $this->amount_generator($type, $value);
+
+        switch ($type) {
+            case 'topup':
+                $activity_name = 'Upload Struk |';
+                break;
+            case 'redeem':
+                $activity_name = 'Klaim Hadiah |';
+                break;
+            default:
+                $activity_name = $type;
+                break;
         }
 
-        // $amountText = $value->reward->point;
-        $activity_name = $type;
 
         return [
             'id' => $value->id,
+            'kode' => $value->transaction_code,
             'date' => $value->created_at,
             'activity' => $activity_name . " " . $amountText,
-            'status' => $value->status
+            'status' => $this->status_generator($value->status, $type),
+            'type' => $type
         ];
+    }
+
+    private function status_generator($status, $type){
+        switch ($type) {
+            case 'topup':
+                if ($status == TopUp::STATUS_CREATED) {
+                    return 'Menunggu Konfirmasi';
+                }
+                if ($status == TopUp::STATUS_FAILED) {
+                    return 'Gagal';
+                }
+                if ($status == TopUP::STATUS_PROCESS) {
+                    return 'Sedang diproses';
+                }
+                if ($status == TopUp::STATUS_SUCCESS) {
+                    return 'Sedang diproses';
+                }
+                return $status;
+                break;
+            case 'redeem':
+                if ($status == TopUp::STATUS_CREATED) {
+                    return 'Menunggu Konfirmasi';
+                }
+                if ($status == TopUp::STATUS_FAILED) {
+                    return 'Gagal';
+                }
+                if ($status == TopUP::STATUS_PROCESS) {
+                    return 'Sedang diproses';
+                }
+                if ($status == TopUp::STATUS_SUCCESS) {
+                    return 'Sedang diproses';
+                }
+                if ($status == TopUp::STATUS_SEND) {
+                    return 'Sedang dikirim';
+                }
+                return $status;
+                break;
+
+            default:
+                return $status;
+                break;
+        }
     }
 
     private function amount_generator($type, $value)
@@ -119,6 +171,27 @@ class AccountController
                     break;
                 case TopUp::STATUS_SUCCESS;
                     return $value->point ? $value->point . " Pts" : __('Kesalahan Kalkulasi');
+                    break;
+                case TopUp::STATUS_FAILED;
+                    return __('Gagal') . " ". $value->failed_reason;
+                    break;
+                default:
+                    return __('Kesalahan Kalkulasi');
+                    break;
+            }
+        }elseif ($type == 'redeem') {
+            switch ($status) {
+                case Redeem::STATUS_CREATED:
+                    return __('Menunggu untuk di proses.');
+                    break;
+                case Redeem::STATUS_PROCESS;
+                    return __('Sedang di proses.');
+                    break;
+                case Redeem::STATUS_SUCCESS;
+                    return $value->reward->name . " (" .$value->reward->point . " Pts ) Sudah diterima";
+                    break;
+                case Redeem::STATUS_SEND;
+                    return "<strong>".$value->reward->name . " (" .$value->reward->point . " Pts ) </strong> Sedang dikirim";
                     break;
                 default:
                     return __('Kesalahan Kalkulasi');

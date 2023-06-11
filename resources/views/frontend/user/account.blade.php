@@ -106,36 +106,19 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td>Senin, 11-12-2023</td>
-                                                    <td>Tote Bag -50pts</td>
-                                                    <td>Menunggu Approval</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Senin, 11-12-2023</td>
-                                                    <td>Tote Bag -50pts</td>
-                                                    <td>Menunggu Approval</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Senin, 11-12-2023</td>
-                                                    <td>Tote Bag -50pts</td>
-                                                    <td>Menunggu Approval</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Senin, 11-12-2023</td>
-                                                    <td>Tote Bag -50pts</td>
-                                                    <td>Menunggu Approval</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Senin, 11-12-2023</td>
-                                                    <td>Tote Bag -50pts</td>
-                                                    <td>Menunggu Approval</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Senin, 11-12-2023</td>
-                                                    <td>Tote Bag -50pts</td>
-                                                    <td>Menunggu Approval</td>
-                                                </tr>
+                                                @if ($transactions)
+                                                    @foreach ($transactions as $item)
+                                                        <tr>
+                                                            <td>{{ $item['date']->isoFormat('dddd, D MMMM Y') }}</td>
+                                                            <td>{!! $item['activity'] !!}</td>
+                                                            <td>{{ $item['status'] }}</td>
+                                                        </tr>
+                                                    @endforeach
+                                                @else
+                                                    <tr>
+                                                        <td colspan="3"><p class="text-center my-2">Belum ada aktivitas</p></td>
+                                                    </tr>
+                                                @endif
                                             </tbody>
                                         </table>
                                     </div>
@@ -148,7 +131,7 @@
                             <div class="page_title">
                                 <img src="{{ asset('img/decorations/title_voucher.png') }}" alt="">
                             </div>
-                            <p>Kamu bisa melihat hadiah unuk pengguna baru si sini!</p>
+                            <p>Kamu bisa melihat hadiah khusus pengguna baru si sini!</p>
 
                             @if ($logged_in_user->isHasDetail() && $logged_in_user->isHasAddressData() && $logged_in_user->isWhatsappVerified())
                                 <div x-data="{ displayVoucher: false }">

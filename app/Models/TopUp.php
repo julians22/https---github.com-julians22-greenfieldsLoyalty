@@ -14,7 +14,7 @@ class TopUp extends Model
     use HasFactory, HasSku;
 
     const STATUS_SUCCESS = 'success';
-    const STATUS__SEND = 'send';
+    const STATUS_SEND = 'send';
     const STATUS_PROCESS = 'process';
     const STATUS_FAILED = 'failed';
     const STATUS_CREATED = 'created';

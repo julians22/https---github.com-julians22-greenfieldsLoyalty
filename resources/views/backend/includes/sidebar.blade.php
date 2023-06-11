@@ -18,15 +18,29 @@
                 :text="__('Dashboard')" />
         </li>
 
+        <li class="c-sidebar-nav-title">@lang('Master')</li>
+
         {{-- Reward Menu --}}
         <li class="c-sidebar-nav-item">
             <x-utils.link
                 class="c-sidebar-nav-link"
                 :href="route('admin.reward.index')"
                 :active="activeClass(Route::is('admin.reward*'), 'c-active')"
-                icon="c-sidebar-nav-icon cil-speedometer"
+                icon="c-sidebar-nav-icon fas fa-gifts"
                 :text="__('Rewards Management')" />
         </li>
+
+        {{-- Vouchers Menu --}}
+        <li class="c-sidebar-nav-item">
+            <x-utils.link
+                class="c-sidebar-nav-link"
+                :href="route('admin.voucher.index')"
+                :active="activeClass(Route::is('admin.voucher*'), 'c-active')"
+                icon="c-sidebar-nav-icon fas fa-table"
+                :text="__('Voucher Management')" />
+        </li>
+
+        <li class="c-sidebar-nav-title">@lang('CMS')</li>
 
         {{-- Activity Menu --}}
         <li class="c-sidebar-nav-item">
@@ -34,7 +48,7 @@
                 class="c-sidebar-nav-link"
                 :href="route('admin.activity.index')"
                 :active="activeClass(Route::is('admin.activity*'), 'c-active')"
-                icon="c-sidebar-nav-icon cil-speedometer"
+                icon="c-sidebar-nav-icon fas fa-pager"
                 :text="__('Activities Management')" />
         </li>
 
@@ -44,10 +58,11 @@
                 class="c-sidebar-nav-link"
                 :href="route('admin.faq.index')"
                 :active="activeClass(Route::is('admin.faq*'), 'c-active')"
-                icon="c-sidebar-nav-icon cil-speedometer"
+                icon="c-sidebar-nav-icon fas fa-pager"
                 :text="__('Faqs Management')" />
         </li>
 
+        <li class="c-sidebar-nav-title">@lang('Transactions')</li>
 
         {{-- Top ups Menu --}}
         <li class="c-sidebar-nav-item">
@@ -55,7 +70,7 @@
                 class="c-sidebar-nav-link"
                 :href="route('admin.topup.index')"
                 :active="activeClass(Route::is('admin.topup*'), 'c-active')"
-                icon="c-sidebar-nav-icon cil-speedometer"
+                icon="c-sidebar-nav-icon fas fa-exchange-alt"
                 :text="__('Top up Management')" />
         </li>
 
@@ -65,19 +80,11 @@
                 class="c-sidebar-nav-link"
                 :href="route('admin.redeem.index')"
                 :active="activeClass(Route::is('admin.redeem*'), 'c-active')"
-                icon="c-sidebar-nav-icon cil-speedometer"
+                icon="c-sidebar-nav-icon fas fa-exchange-alt fa-flip-horizontal"
                 :text="__('Redeem Management')" />
         </li>
 
-        {{-- Vouchers Menu --}}
-        <li class="c-sidebar-nav-item">
-            <x-utils.link
-                class="c-sidebar-nav-link"
-                :href="route('admin.voucher.index')"
-                :active="activeClass(Route::is('admin.voucher*'), 'c-active')"
-                icon="c-sidebar-nav-icon cil-speedometer"
-                :text="__('Voucher Management')" />
-        </li>
+
 
         @if (
             $logged_in_user->hasAllAccess() ||
