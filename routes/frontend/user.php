@@ -14,8 +14,7 @@ use Tabuna\Breadcrumbs\Trail;
 Route::group([
     'as' => 'user.',
     'middleware' => [
-        'auth',
-        'user_complete_detail'
+        'auth'
         ]
     ], function () {
     Route::get('dashboard', [DashboardController::class, 'index'])
@@ -28,12 +27,14 @@ Route::group([
 
     Route::get('account', [AccountController::class, 'index'])
         ->name('account')
+        ->middleware(['user_complete_detail'])
         ->breadcrumbs(function (Trail $trail) {
             $trail->parent('frontend.index')
                 ->push(__('My Account'), route('frontend.user.account'));
         });
 
     Route::get('account/edit', [AccountController::class, 'edit'])
+        ->middleware(['user_complete_detail'])
         ->name('edit-account');
 
     Route::get('account/completion', [AccountController::class, 'show_completion'])
@@ -42,5 +43,7 @@ Route::group([
     Route::patch('account/completion/submit', [CompleteAccountController::class, 'submit_completion'])
         ->name('completion-account-submit');
 
-    Route::patch('profile/update', [ProfileController::class, 'update'])->name('profile.update');
+    Route::patch('profile/update', [ProfileController::class, 'update'])
+        ->middleware(['user_complete_detail'])
+        ->name('profile.update');
 });
