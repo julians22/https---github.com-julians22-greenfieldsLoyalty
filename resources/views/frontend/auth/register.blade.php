@@ -40,7 +40,7 @@
 
                     <div class="form-group row mb-md-3 mb-0">
                         <div class="col-md-6">
-                            <label for="" class="d-block d-md-none">{{ __('Email / Phone Number (Whatsapp Registered)') }}</label>
+                            <label for="" class="d-block d-md-none">{{ __('No HP (sesuai nomor Whatsapp)') }}</label>
                             <input autocomplete="off" type="text" name="phone" id="phone" class="form-control" placeholder="No HP (sesuai nomor Whatsapp)" value="{{ old('phone') }}" maxlength="15" required  />
                         </div>
                         <div class="col-md-6">
