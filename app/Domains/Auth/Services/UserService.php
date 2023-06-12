@@ -101,7 +101,7 @@ class UserService extends BaseService
         } catch (Exception $e) {
             DB::rollBack();
 
-            throw new GeneralException(__('There was a problem creating your account.'));
+            throw new GeneralException($e->getMessage());
         }
 
         DB::commit();
