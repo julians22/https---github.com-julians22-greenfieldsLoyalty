@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Ajax\AreaController;
+use App\Http\Controllers\Ajax\PasswordValidation;
 use App\Http\Controllers\Ajax\ProductController;
 use App\Http\Controllers\Ajax\RedeemController as AjaxRedeemController;
 use App\Http\Controllers\Frontend\ActivityController;
@@ -58,3 +59,5 @@ Route::get('ajax/load-product/{id?}', [ProductController::class, 'getProducts'])
 
 Route::post('ajax/submit-reward', [AjaxRedeemController::class, 'store'])
     ->name('ajax.redeem.store');
+
+Route::post('ajax/password-validate', [PasswordValidation::class, 'validate_password']);

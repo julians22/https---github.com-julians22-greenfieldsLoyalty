@@ -96,12 +96,13 @@
                     <div class="form-group row mb-md-3 mb-0">
                         <div class="col-md-6">
                             <label for="" class="d-block d-md-none">{{ __('Password') }}</label>
-                            <input autocomplete="off" type="password" name="password" id="password" class="form-control" placeholder="{{ __('Password') }}" maxlength="100" required autocomplete="false-password" />
+                            <input autocomplete="off" onkeyup="validate_password()" type="password" name="password" id="password" class="form-control" placeholder="{{ __('Password') }}" maxlength="100" required autocomplete="false-password" />
+                            <small id="password-errors"></small>
                         </div>
 
                         <div class="col-md-6">
                             <label for="" class="d-block d-md-none">{{ __('Password Confirmation') }}</label>
-                            <input autocomplete="off" type="password" name="password_confirmation" id="password_confirmation" class="form-control" placeholder="{{ __('Password Confirmation') }}" maxlength="100" required autocomplete="false-password" />
+                            <input autocomplete="off" onkeyup="validate_password()" type="password" name="password_confirmation" id="password_confirmation" class="form-control" placeholder="{{ __('Password Confirmation') }}" maxlength="100" required autocomplete="false-password" />
                         </div>
                     </div><!--form-group-->
 
@@ -183,4 +184,76 @@
         </div><!--row-->
     </div><!--container-->
 @endsection
+
+@push('after-scripts')
+    <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        function validate_password() {
+
+        }
+
+        $('#password').keyup(delay(function (e) {
+            if ($('#password').val()) {
+                $.ajax({
+                    url: '/ajax/password-validate',
+                    method: 'POST',
+                    data: { 'password' : $('#password').val(), 'password_confirmation' : $('#password_confirmation').val() },
+                    beforeSend: function(){
+                        $('#password-errors').empty()
+                        $('#password-errors').removeClass('text-danger')
+                    },
+                    success: function(result){
+                        console.log(result);
+                    },
+                    error: function(xhr,status,error){
+                        if (xhr.status == 422) {
+                            const errors = xhr.responseJSON.errors.password;
+                            $('#password-errors').addClass('text-danger').text(errors[0])
+                        }
+                    }
+                })
+            }
+        }, 1000))
+
+        $('#password_confirmation').keyup(delay(function (e) {
+            if ($('#password').val()) {
+                $.ajax({
+                    url: '/ajax/password-validate',
+                    method: 'POST',
+                    data: { 'password' : $('#password').val(), 'password_confirmation' : $('#password_confirmation').val() },
+                    beforeSend: function(){
+                        $('#password-errors').empty()
+                        $('#password-errors').removeClass('text-danger')
+                    },
+                    success: function(result){
+                        console.log(result);
+                    },
+                    error: function(xhr,status,error){
+                        if (xhr.status == 422) {
+                            const errors = xhr.responseJSON.errors.password;
+                            $('#password-errors').addClass('text-danger').text(errors[0])
+                        }
+                    }
+
+                })
+            }
+        }, 1000))
+
+        function delay(callback, ms) {
+            var timer = 0;
+            return function() {
+                var context = this, args = arguments;
+                clearTimeout(timer);
+                timer = setTimeout(function () {
+                    callback.apply(context, args);
+                }, ms || 0);
+            };
+        }
+    </script>
+@endpush
 
