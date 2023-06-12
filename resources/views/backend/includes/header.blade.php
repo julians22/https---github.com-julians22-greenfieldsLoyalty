@@ -5,7 +5,7 @@
 
     <a class="c-header-brand d-lg-none" href="#">
         <svg width="118" height="46" alt="CoreUI Logo">
-            <use xlink:href="{{ asset('img/brand/coreui.svg#full') }}"></use>
+            <use xlink:href="{{ asset('img/brand/GreenfieldsLogoGreen.svg') }}"></use>
         </svg>
     </a>
 

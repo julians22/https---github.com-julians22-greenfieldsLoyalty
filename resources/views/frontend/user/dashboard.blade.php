@@ -20,9 +20,11 @@
         <div class="row justify-content-center">
             <div class="col-12 col-xl-10">
                 @if ($logged_in_user->isHasDetail() && $logged_in_user->isHasAddressData() && $logged_in_user->isWhatsappVerified())
-                    <div class="alert alert-dark-green heartbeat">
-                        Kamu berhak mendapatkan promo khusus anggota baru: <strong>{{ $logged_in_user->voucher->code }}</strong>.  <a href="{{ route('frontend.pages.terms') }}">Cek syarat & ketentuan disini.</a>
-                    </div>
+                    @if ($logged_in_user->voucher)
+                        <div class="alert alert-dark-green heartbeat">
+                            Kamu berhak mendapatkan promo khusus anggota baru: <strong>{{ $logged_in_user->voucher->code }}</strong>.  <a href="{{ route('frontend.pages.terms') }}">Cek syarat & ketentuan disini.</a>
+                        </div>
+                    @endif
                 @else
                     <div class="alert alert-warning">
                         Ayo, lengkapi profil kamu sekarang untuk mendapatkan promo khusus anggota baru dari greenfields! <a href="{{ route('frontend.user.edit-account') }}">Klik disini</a>

@@ -22,7 +22,10 @@ class VoucherTable extends DataTableComponent
             Column::make(__('Used?'), 'given_at')
                 ->format(function($value, $column, $row) {
                     if ($value) {
-                        return '<strong>'.$value.' Used by '. $row->user->name .' ('. $row->user->phone .')</strong>';
+                        if (!empty($row->user->name)) {
+                            return '<strong>'.$value.' Used by '. $row->user->name .' ('. $row->user->phone .')</strong>';
+                        }
+                        return '<strong>'.$value.'</strong>';
                     }
                     return '<span class="badge badge-success">Available</span>';
                 })

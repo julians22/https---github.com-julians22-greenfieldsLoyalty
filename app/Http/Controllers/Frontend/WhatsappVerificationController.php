@@ -48,8 +48,6 @@ class WhatsappVerificationController extends Controller
                     'given_at' => now()
                 ]);
             }
-
-
             return response()->json($status);
         }
 
