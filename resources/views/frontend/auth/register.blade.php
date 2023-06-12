@@ -100,7 +100,7 @@
                             <div class="form-check mt-2">
                                 <input type="checkbox" id="password_show" class="form-check-input">
                                 <label class="form-check-label" for="password_show">
-                                    Tampilkan Password
+                                    Tampilkan Kata Sandi
                                 </label>
                             </div>
                             <small id="password-errors"></small>
