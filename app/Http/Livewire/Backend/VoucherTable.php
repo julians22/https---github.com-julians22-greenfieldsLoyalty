@@ -20,9 +20,9 @@ class VoucherTable extends DataTableComponent
             Column::make(__('Expiry Date'), 'expired_at'),
             Column::make(__('Created Date'), 'created_at'),
             Column::make(__('Used?'), 'given_at')
-                ->format(function($value) {
+                ->format(function($value, $column, $row) {
                     if ($value) {
-                        return '<strong>'.$value.'</strong>';
+                        return '<strong>'.$value.' Used by'. $row->user->name .'</strong>';
                     }
                     return '<span class="badge badge-success">Available</span>';
                 })
