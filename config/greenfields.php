@@ -29,7 +29,7 @@ return [
         [
             'name' => 'Shopee',
             'title' => 'Shopee',
-            'url' => 'https://shopee.co.id/mall/search?keyword=greenfields&shop=379357698&trackingId=searchhint-1637205374-e305af3d-481d-11ec-b754-2cea7f471917',
+            'url' => 'https://shopee.co.id/mall/search?keyword=greenfields&shop=269483414',
             'image' => '/img/online-stores/shopee.png'
         ],
         [
@@ -59,7 +59,7 @@ return [
         [
             'name' => 'Segari',
             'title' => 'Segari',
-            'url' => '#',
+            'url' => 'https://segari.id/search?query=greenfields',
             'image' => '/img/online-stores/segari.png'
         ],
         [
