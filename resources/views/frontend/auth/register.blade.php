@@ -96,13 +96,20 @@
                     <div class="form-group row mb-md-3 mb-0">
                         <div class="col-md-6">
                             <label for="" class="d-block d-md-none">{{ __('Password') }}</label>
-                            <input autocomplete="off" onkeyup="validate_password()" type="password" name="password" id="password" class="form-control" placeholder="{{ __('Password') }}" maxlength="100" required autocomplete="false-password" />
+                            <input autocomplete="off" type="password" name="password" id="password" class="form-control" placeholder="{{ __('Password') }}" maxlength="100" required autocomplete="false-password" />
+                            <div class="form-check mt-2">
+                                <input type="checkbox" id="password_show" class="form-check-input">
+                                <label class="form-check-label" for="password_show">
+                                    Tampilkan Password
+                                </label>
+                            </div>
                             <small id="password-errors"></small>
+
                         </div>
 
                         <div class="col-md-6">
                             <label for="" class="d-block d-md-none">{{ __('Password Confirmation') }}</label>
-                            <input autocomplete="off" onkeyup="validate_password()" type="password" name="password_confirmation" id="password_confirmation" class="form-control" placeholder="{{ __('Password Confirmation') }}" maxlength="100" required autocomplete="false-password" />
+                            <input autocomplete="off" type="password" name="password_confirmation" id="password_confirmation" class="form-control" placeholder="{{ __('Password Confirmation') }}" maxlength="100" required autocomplete="false-password" />
                         </div>
                     </div><!--form-group-->
 
@@ -193,10 +200,6 @@
             }
         });
 
-        function validate_password() {
-
-        }
-
         $('#password').keyup(delay(function (e) {
             if ($('#password').val()) {
                 $.ajax({
@@ -218,7 +221,17 @@
                     }
                 })
             }
-        }, 1000))
+        }, 1000));
+
+        $('#password_show').on('change', function(e){
+            if(this.checked){
+                $('#password').attr('type', 'text')
+                $('#password_confirmation').attr('type', 'text')
+            }else{
+                $('#password').attr('type', 'password')
+                $('#password_confirmation').attr('type', 'password')
+            }
+        });
 
         $('#password_confirmation').keyup(delay(function (e) {
             if ($('#password').val()) {
