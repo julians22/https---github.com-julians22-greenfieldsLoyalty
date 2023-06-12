@@ -97,7 +97,7 @@
                         <div class="col-md-6">
                             <label for="" class="d-block d-md-none">{{ __('Password') }}</label>
                             <input autocomplete="off" type="password" name="password" id="password" class="form-control" placeholder="{{ __('Password') }}" maxlength="100" required autocomplete="false-password" />
-                            <div class="form-check mt-2">
+                            <div class="form-check mt-2 mb-md-0 mb-2">
                                 <input type="checkbox" id="password_show" class="form-check-input">
                                 <label class="form-check-label" for="password_show">
                                     Tampilkan Kata Sandi
