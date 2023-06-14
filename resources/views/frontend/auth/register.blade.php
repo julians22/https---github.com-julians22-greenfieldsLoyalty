@@ -41,11 +41,38 @@
                     <div class="form-group row mb-md-3 mb-0">
                         <div class="col-md-6">
                             <label for="" class="d-block d-md-none">{{ __('No HP (sesuai nomor Whatsapp)') }}</label>
-                            <input autocomplete="off" type="text" name="phone" id="phone" class="form-control" placeholder="No HP (sesuai nomor Whatsapp)" value="{{ old('phone') }}" maxlength="15" required  />
+                            <input autocomplete="off" type="text" name="phone" id="phone" class="form-control {{($errors->register->has('phone') || $errors->register->has('phone_field')) ? 'is-invalid' : ''}}" placeholder="No HP (sesuai nomor Whatsapp)" value="{{ old('phone') }}" maxlength="20" required  />
+                            {{-- Error Message --}}
+                            @if ($errors->register->has('phone'))
+                                <div id="phoneFeedback" class="invalid-feedback">
+                                    {{ $errors->register->first('phone') }}
+                                </div>
+                            @endif
+                            @if ($errors->register->has('phone_field'))
+                                <div id="phoneFeedback" class="invalid-feedback">
+                                    {{ $errors->register->first('phone_field') }}
+                                </div>
+                            @endif
                         </div>
                         <div class="col-md-6">
                             <label for="" class="d-block d-md-none">{{ __('E-mail Address') }}</label>
-                            <input autocomplete="off" type="email" name="email" id="email" class="form-control disabled" placeholder="{{ __('E-mail Address') }}" value="{{ old('email') }}" maxlength="255" required  />
+                            <input
+                                autocomplete="off"
+                                type="email"
+                                name="email"
+                                id="email"
+                                class="form-control disabled {{$errors->register->has('email') ? 'is-invalid' : ''}}"
+                                placeholder="{{ __('E-mail Address') }}"
+                                value="{{ old('email') }}"
+                                maxlength="255"
+                                required
+                                />
+                            {{-- Error Message --}}
+                            @if ($errors->register->has('email'))
+                                <div id="emailFeedback" class="invalid-feedback">
+                                    {{ $errors->register->first('email') }}
+                                </div>
+                            @endif
                         </div>
                     </div><!--form-group-->
 
@@ -53,7 +80,7 @@
 
                         <div class="col-md-12">
                             <label for="" class="d-block d-md-none">{{ __('Full Address') }}</label>
-                            <textarea autocomplete="off" name="address" id="address" rows="1" class="form-control" placeholder="{{__('Full Address')}}"></textarea>
+                            <textarea autocomplete="off" name="address" id="address" rows="1" class="form-control" placeholder="{{__('Full Address')}}">{{ old('address') }}</textarea>
                         </div>
 
                     </div><!--form-group-->
@@ -61,7 +88,7 @@
                     <div class="form-group row mb-md-3 mb-0">
                         <div class="col-md-6">
                             <label for="" class="d-block d-md-none">{{ __('Select Province') }}</label>
-                            <select autocomplete="off" name="province" id="province" class="form-control select-province">
+                            <select autocomplete="off" name="province" id="province" class="form-control select-province" data-current-value={{old('province')}}>
                                 <option value="">{{__('Select Province')}}</option>
                                 @foreach ($provinces as $province)
                                     <option value="{{ $province->id }}">{{ $province->name }}</option>
@@ -71,7 +98,7 @@
 
                         <div class="col-md-6">
                             <label for="" class="d-block d-md-none">{{ __('Select City') }}</label>
-                            <select autocomplete="off" name="city" id="city" class="form-control select-city">
+                            <select autocomplete="off" name="city" id="city" class="form-control select-city" data-current-value={{old('city')}}>
                                 <option value="">{{__('Select City')}}</option>
                             </select>
                         </div>
@@ -81,7 +108,7 @@
                     <div class="form-group row mb-md-3 mb-0">
                         <div class="col-md-6">
                             <label for="" class="d-block d-md-none">{{ __('Select District') }}</label>
-                            <select autocomplete="off" name="district" id="district" class="form-control select-district">
+                            <select autocomplete="off" name="district" id="district" class="form-control select-district" data-current-value={{old('district')}}>
                                 <option value="">{{__('Select District')}}</option>
                             </select>
                         </div>
@@ -115,8 +142,7 @@
 
                     <div class="form-group">
                         <label for="history_milk_category"><p class="mb-0 font-weight-bold ml-md-2">Kategori produk yang dikonsumsi 3 bulan terakhir?</p></label>
-                        <select autocomplete="off" name="history_milk_category" id="history_milk_category" class="form-control select-category" data-placeholder="{{ __('Kategori produk yang dikonsumsi 3 bulan terakhir?') }}">
-                            <option value="" disabled selected>{{__('Kategori susu yang dikonsumsi 3 bulan terakhir?')}}</option>
+                        <select autocomplete="off" name="history_milk_category[]" id="history_milk_category" class="form-control select-category" data-current-value="{{ old('history_milk_category') ? json_encode(old('history_milk_category')) : '' }}" data-placeholder="{{ __('Kategori produk yang dikonsumsi 3 bulan terakhir?') }}" multiple="multiple">
                             @foreach ($survey_categories as $category)
                                 <option value="{{ $category }}">{{ $category }}</option>
                             @endforeach
@@ -124,7 +150,7 @@
                     </div>
                     <div class="form-group">
                         <label for="history_milk_product"><p class="mb-0 font-weight-bold ml-md-2">Brand susu yang dikonsumsi 3 bulan terakhir?</p></label>
-                        <select autocomplete="off" name="history_milk_product[]" id="history_milk_product" class="form-control select-brand" data-placeholder="{{__('Brand susu yang dikonsumsi 3 bulan terakhir')}}" multiple="multiple">
+                        <select autocomplete="off" name="history_milk_product[]" id="history_milk_product" class="form-control select-brand" data-current-value="{{ old('history_milk_product') ? json_encode(old('history_milk_product')) : '' }}" data-placeholder="{{__('Brand susu yang dikonsumsi 3 bulan terakhir')}}" multiple="multiple">
                             @foreach ($survey_brands as $brand)
                             <option value="{{ $brand }}">{{ $brand }}</option>
                             @endforeach
@@ -132,7 +158,7 @@
                     </div>
                     <div class="form-group">
                         <label for="history_milk_pack_size"><p class="mb-0 font-weight-bold ml-md-2">{{__('Packsize')}}</p></label>
-                        <select autocomplete="off" name="history_milk_packsize" id="history_milk_pack_size" class="form-control select-size" data-placeholder="{{__('Packsize')}}">
+                        <select autocomplete="off" name="history_milk_packsize" id="history_milk_pack_size" class="form-control select-size" data-current-value="{{ old('history_milk_pack_size') ? json_encode(old('history_milk_pack_size')) : '' }}" data-placeholder="{{__('Packsize')}}">
                             <option value="" selected disabled>{{__('Packsize')}}</option>
                             @foreach ($survey_packsizes as $packsize)
                                 <option value="{{ $packsize }}">{{ $packsize }}</option>

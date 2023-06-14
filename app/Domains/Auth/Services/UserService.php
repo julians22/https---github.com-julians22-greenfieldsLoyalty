@@ -69,6 +69,11 @@ class UserService extends BaseService
             ]);
 
             $brand_history = "";
+            $category_history = "";
+
+            if (!empty($data['history_milk_category'])) {
+                $category_history = implode("|",$data['history_milk_category']);
+            }
 
             if (!empty($data['history_milk_product'])) {
                 $brand_history = implode("|",$data['history_milk_product']);
@@ -85,7 +90,7 @@ class UserService extends BaseService
                 'date_of_birth' => $data['date_of_birth'],
                 'child_name' => $data['child_name'],
                 'child_date_of_birth' => $data['child_date_of_birth'],
-                'history_milk_category' => $data['history_milk_category'],
+                'history_milk_category' => $category_history,
                 'history_milk_product' => $brand_history,
                 'history_milk_packsize' => $packsize,
             ]);

@@ -31,6 +31,43 @@ $(document).ready(function() {
 
         }
 
+        if (
+            brand_select.length||
+            category_select.length||
+            size_select.length
+            ) {
+
+            initSelect2();
+
+            setTimeout(() => {
+                const brand_val = $(brand_select).data('current-value');
+                const category_val = $(category_select).data('current-value');
+                const size_val = $(size_select).data('current-value');
+
+                console.log(
+                    brand_val,
+                    category_val,
+                    size_val
+                );
+                if (category_val) {
+                    $(category_select).val(category_val);
+                    $(category_select).trigger('change');
+                }
+
+                if (brand_val) {
+                    $(brand_select).val(brand_val);
+                    $(brand_select).trigger('change');
+                }
+
+                if (size_val) {
+                    $(size_select).val(size_val);
+                    $(size_select).trigger('change');
+                }
+
+            }, 500);
+
+        }
+
         $(".form-control").focus((e) => {
             $(e).attr("autocomplete", "off");
         });
@@ -70,11 +107,17 @@ function initSelect2(){
     $(brand_select).select2({
         allowClear: true,
         maximumSelectionLength: 2,
-        placeholder: "Kategori produk yang dikonsumsi 3 bulan terakhir?"
+        closeOnSelect: false,
+        placeholder: "Kategori produk yang dikonsumsi 3 bulan terakhir?",
+        templateResult: formatStateCategory
     });
 
     $(category_select).select2({
-        placeholder: "Brand susu yang dikonsumsi 3 bulan terakhir?"
+        placeholder: "Brand susu yang dikonsumsi 3 bulan terakhir?",
+        allowClear: true,
+        maximumSelectionLength: 2,
+        closeOnSelect: false,
+        templateResult: formatStateCategory
     });
 
     $('#others_packsize').hide();
@@ -154,9 +197,32 @@ async function loadDistrict(id){
             $(district_select).data('current-value', 0);
         }
     }, 1000);
-
-
-
 }
+
+function formatStateCategory (state) {
+    if (!state.id) {
+        return state.text;
+    }
+
+    let checked = state.selected;
+
+    var $state = $(`
+        <div class="form-check">
+            <input checked class="form-check-input" type="checkbox" id="inlineCheckbox-${state._resultId}">
+            <label class=form-check-label" for="inlineCheckbox-${state._resultId}">${state.text}</label>
+        </div>
+    `);
+
+    if (!checked) {
+        var $state = $(`
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox-${state._resultId}">
+                <label class=form-check-label" for="inlineCheckbox-${state._resultId}">${state.text}</label>
+            </div>
+            `);
+    }
+
+    return $state;
+};
 
 

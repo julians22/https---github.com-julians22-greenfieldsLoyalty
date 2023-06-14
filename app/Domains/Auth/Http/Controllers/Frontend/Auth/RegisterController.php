@@ -2,14 +2,17 @@
 
 namespace App\Domains\Auth\Http\Controllers\Frontend\Auth;
 
+use App\Domains\Auth\Models\User;
 use App\Domains\Auth\Services\UserService;
-use App\Rules\Captcha;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Illuminate\Validation\Rules\Password;
 use Indonesia;
-use LangleyFoxall\LaravelNISTPasswordRules\PasswordRules;
+use Propaganistas\LaravelPhone\PhoneNumber;
 
 /**
  * Class RegisterController.
@@ -86,9 +89,8 @@ class RegisterController
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
+        $rules = [
             'name' => ['required', 'string', 'max:100'],
-            'phone' => ['required', 'string', 'max:20'],
             'address' => ['required', 'string'],
             'province' => ['required'],
             'city' => ['required'],
@@ -104,7 +106,13 @@ class RegisterController
             'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')],
             'password' => ['max:100', Password::min(8)->numbers()->mixedCase(), 'confirmed'],
             'terms' => ['required', 'in:1'],
-        ]);
+        ];
+
+        $messages = [
+            'email.unique' => ':attribute sudah digunakan'
+        ];
+
+        return Validator::make($data, $rules, $messages);
     }
 
     /**
@@ -121,5 +129,52 @@ class RegisterController
 
         $data['completed_at'] = now();
         return $this->userService->registerUser($data);
+    }
+
+     /**
+     * Handle a registration request for the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\JsonResponse
+     */
+    public function register(Request $request)
+    {
+        $validator = $this->validator($request->all());
+
+        if ($validator->fails()) {
+            return redirect()
+                ->back()
+                ->withInput($request->except('password'))
+                ->withErrors($validator, 'register');
+        }
+
+        $phoneField = phone($request->phone, 'ID');
+
+        $validatorPhone = Validator::make([
+            'phone_field' => $phoneField->formatE164(),
+        ], [
+            'phone_field' => 'unique:users,phone'
+        ], [
+            'phone_field.unique' => 'No Whatsapp sudah di gunakan'
+        ]);
+
+        if ($validatorPhone->fails()) {
+            return redirect()
+                ->back()
+                ->withInput($request->except('password'))
+                ->withErrors($validatorPhone, 'register');
+        }
+
+        event(new Registered($user = $this->create($request->all())));
+
+        $this->guard()->login($user);
+
+        if ($response = $this->registered($request, $user)) {
+            return $response;
+        }
+
+        return $request->wantsJson()
+                    ? new JsonResponse([], 201)
+                    : redirect($this->redirectPath());
     }
 }
