@@ -43,4 +43,10 @@ class ActivityController extends Controller
 
         return redirect()->route('admin.activity.index')->withFlashSuccess(__('The activity was successfully updated.'));
     }
+
+    public function destroy(Activity $activity)
+    {
+        $activity->delete();
+        return redirect()->route('admin.activity.index')->withFlashSuccess(__('The activity was successfully deleted.'));
+    }
 }

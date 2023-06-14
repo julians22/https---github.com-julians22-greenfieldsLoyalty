@@ -28,18 +28,18 @@ $('#redeemModal').on('show.bs.modal', function (event) {
     var modal = $(this)
     modal.find('.modal-body .reward-img').attr('src', reward_image);
     modal.find('.modal-body .card-title').text(reward_name)
-    modal.find('.modal-body .point').text(`${reward_point.toLocaleString("de-DE")} pts`);
+    modal.find('.modal-body .point').text(`${reward_point.toLocaleString("de-DE")} poin`);
     modal.find('.modal-body .reedem_cur_user_point').html(
         `<p class="mb-0">POIN KAMU</p><p>${reward_current_point.toLocaleString("de-DE")}</p>`
     );
     modal.find('.modal-body .reedem_reward_point').html(
-        `<p class="mb-0">TUKAR HADIAH</p><p>${reward_point.toLocaleString("de-DE")} pts</p>`
+        `<p class="mb-0">TUKAR HADIAH</p><p>${reward_point.toLocaleString("de-DE")} poin</p>`
     );
 
     let total = reward_current_point - reward_point;
 
     modal.find('.modal-body .reedem_total_user_point').html(
-        `<p class="mb-0">SISA POIN</p><p>${total.toLocaleString("de-DE")} pts</p>`
+        `<p class="mb-0">SISA POIN</p><p>${total.toLocaleString("de-DE")} poin</p>`
     );
 
     modal.find('#current_redeem_id').val(reward_id);
@@ -87,7 +87,7 @@ $('#submit-reward').on('click', function(e) {
         if (response.status == 200) {
             $(this).attr('disabled', false);
             $('#redeemModal').modal('hide');
-            $('#resultModal').find('#remaining-poin').text(response.data.point_now);
+            $('#resultModal').find('#remaining-poin').text(response.data.point_now.toLocaleString("de-DE"));
             $('#resultModal').modal('show');
         }else{
             window.location.reload();

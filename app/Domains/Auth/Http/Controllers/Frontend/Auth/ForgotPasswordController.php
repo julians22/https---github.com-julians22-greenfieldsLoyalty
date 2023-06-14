@@ -3,6 +3,8 @@
 namespace App\Domains\Auth\Http\Controllers\Frontend\Auth;
 
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 
 /**
  * Class ForgotPasswordController.
@@ -30,5 +32,19 @@ class ForgotPasswordController
     public function showLinkRequestForm()
     {
         return view('frontend.auth.passwords.email');
+    }
+
+    /**
+     * Get the response for a successful password reset link.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  string  $response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\JsonResponse
+     */
+    protected function sendResetLinkResponse(Request $request, $response)
+    {
+        return $request->wantsJson()
+                    ? new JsonResponse(['message' => trans($response)], 200)
+                    : back()->withSwalSuccess(trans('Kami sudah mengirim email yang berisi tautan untuk mereset kata sandi anda. Mohon cek Spam Inbox apabila tidak ada di Inbox utamamu.'));
     }
 }

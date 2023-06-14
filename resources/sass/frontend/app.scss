@@ -355,6 +355,14 @@
 
 }
 
+.point-wrapper-mobile{
+    display: block;
+    @media (min-width: 768px) {
+        display: none;
+    }
+
+}
+
 .card-activity{
     border-radius: 1rem;
     overflow: hidden;

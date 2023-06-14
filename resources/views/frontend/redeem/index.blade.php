@@ -23,7 +23,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="page_title text-center">
-                                <img src="{{ asset('img/decorations/grats_titletext.png') }}" alt="">
+                                <h1 class="title_text" title="Selamat">Selamat</h1>
                                 <h4 class="text-black">Kamu bisa menukarkan poinmu dengan</h4>
                             </div>
                         </div>
@@ -88,18 +88,16 @@
 
 
 
-    <div class="modal fade" id="resultModal" data-backdrop="static" tabindex="-1" aria-labelledby="resultModalLabel" aria-hidden="true">
+    <div class="modal fade" id="resultModal" tabindex="-1" aria-labelledby="resultModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <div class="img-header" style="background-image: url('{{ asset('img/decorations/cows.png') }}')">
-                        <div class="page_title">
-                            <img src="{{ asset('img/decorations/thanks_titletext.png') }}" alt="">
-                        </div>
-                        <p class="text-center text-white">telah melakukan penukaran hadiah</p>
+                    <div class="img-header d-flex align-items-center">
+
+                        <h5 class="text-center text-dark-green mx-auto" style="width: 75%">Terima kasih telah melakukan penukaran hadiah. Mohon menunggu 7x24 jam untuk pengiriman hadiah langsung ke rumahmu ya.</h5>
 
                         <div class="remaining-points-wrapper">
-                            <div class="d-flex flex-column flex-md-row align-items-center">SISA POIN KAMU SAAT INI: <span id="remaining-poin"></span>PTS</div>
+                            <div class="d-flex flex-column flex-md-row align-items-center">SISA POIN KAMU SAAT INI: <span id="remaining-poin"></span> Poin</div>
                         </div>
                     </div>
                 </div>
@@ -122,7 +120,7 @@
 
                                                         <div class="reward-detail-wrapper">
                                                             <h4 class="card-title text-center" style="font-size: 16px">{{ $reward->name }}</h4>
-                                                            <p class="point" style="font-size: 12px">{{$reward->point}}pts</p>
+                                                            <p class="point" style="font-size: 12px">{{number_format($reward->point, 0, '.', '.')}} poin</p>
                                                         </div>
                                                         <a class="btn btn-sm mb-3 btn-rounded btn-secondary btn-green" href="{{ route('frontend.redeem.index') }}">TUKAR HADIAH</a>
                                                     </div>

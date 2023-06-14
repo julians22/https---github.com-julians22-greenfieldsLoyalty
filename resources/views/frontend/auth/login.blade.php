@@ -15,15 +15,15 @@
         <div class="row justify-content-center">
             <div class="col-md-10">
                 <div class="login-container">
-                    <div class="social-login">
+                    {{-- <div class="social-login">
                         @include('frontend.auth.includes.social')
                     </div>
                     <div class="borders">
                         <span class="line"></span>
                         <span class="round">OR</span>
                         <span class="line"></span>
-                    </div>
-                    <div class="form-login">
+                    </div> --}}
+                    <div class="form-login mx-auto">
                         <x-forms.post :action="route('frontend.auth.login')" class="greenfields-form">
                             <div class="form-group">
                                 <label for="phone" class="d-md-none d-block">{{ __('Email / Phone Number (Whatsapp Registered)') }}</label>

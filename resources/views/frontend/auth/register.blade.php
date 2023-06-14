@@ -18,23 +18,47 @@
                     <div class="form-group row mb-md-3 mb-0">
                         <div class="col-md-6">
                             <label for="" class="d-block d-md-none">{{ __('Full Name') }}</label>
-                            <input autocomplete="off" type="text" name="name" id="name" class="form-control" value="{{ old('name') }}" placeholder="{{ __('Full Name') }}" maxlength="100" required autofocus  />
+                            <input autocomplete="off" type="text" name="name" id="name" class="form-control {{$errors->register->has('name') ? 'is-invalid' : ''}}" value="{{ old('name') }}" placeholder="{{ __('Full Name') }}" maxlength="100" required autofocus  />
+                            {{-- Error Message --}}
+                            @if ($errors->register->has('name'))
+                                <div id="nameFeedback" class="invalid-feedback">
+                                    {{ $errors->register->first('name') }}
+                                </div>
+                            @endif
                         </div>
                         <div class="col-md-6">
                             <label for="" class="d-block d-md-none">{{ __('Child Full Name') }}</label>
-                            <input autocomplete="off" type="text" name="child_name" id="child_name" class="form-control" value="{{ old('child_name') }}" placeholder="{{ __('Child Full Name') }}" maxlength="100" required  />
+                            <input autocomplete="off" type="text" name="child_name" id="child_name" class="form-control {{$errors->register->has('child_name') ? 'is-invalid' : ''}}" value="{{ old('child_name') }}" placeholder="{{ __('Child Full Name') }}" maxlength="100" required  />
+                            {{-- Error Message --}}
+                            @if ($errors->register->has('child_name'))
+                                <div id="child_nameFeedback" class="invalid-feedback">
+                                    {{ $errors->register->first('child_name') }}
+                                </div>
+                            @endif
                         </div>
                     </div><!--form-group-->
 
                     <div class="form-group row mb-md-3 mb-0">
                         <div class="col-md-6">
                             <label for="" class="d-block d-md-none">{{ __('Date Of Birth') }}</label>
-                            <input autocomplete="off" type="date" name="date_of_birth" id="date_of_birth" class="form-control" value="{{ old('date_of_birth') }}" data-placeholder="{{ __('Date Of Birth') }}" required >
+                            <input autocomplete="off" type="date" name="date_of_birth" id="date_of_birth" class="form-control {{$errors->register->has('date_of_birth') ? 'is-invalid' : ''}}" value="{{ old('date_of_birth') }}" data-placeholder="{{ __('Date Of Birth') }}" required >
+                            {{-- Error Message --}}
+                            @if ($errors->register->has('date_of_birth'))
+                                <div id="date_of_birthFeedback" class="invalid-feedback">
+                                    {{ $errors->register->first('date_of_birth') }}
+                                </div>
+                            @endif
                         </div>
 
                         <div class="col-md-6">
                             <label for="" class="d-block d-md-none">{{ __('Child Date Of Birth') }}</label>
-                            <input autocomplete="off" type="date" data-placeholder="{{ __('Child Date Of Birth') }}" name="child_date_of_birth" id="child_date_of_birth" class="form-control" value="{{ old('child_date_of_birth') }}" placeholder="{{ __('Child Date Of Birth') }}" required>
+                            <input autocomplete="off" type="date" data-placeholder="{{ __('Child Date Of Birth') }}" name="child_date_of_birth" id="child_date_of_birth" class="form-control {{$errors->register->has('child_date_of_birth') ? 'is-invalid' : ''}}" value="{{ old('child_date_of_birth') }}" placeholder="{{ __('Child Date Of Birth') }}" required>
+                            {{-- Error Message --}}
+                            @if ($errors->register->has('child_date_of_birth'))
+                                <div id="child_date_of_birthFeedback" class="invalid-feedback">
+                                    {{ $errors->register->first('child_date_of_birth') }}
+                                </div>
+                            @endif
                         </div>
                     </div><!--form-group-->
 
@@ -79,8 +103,13 @@
                     <div class="form-group row mb-md-3 mb-0">
 
                         <div class="col-md-12">
-                            <label for="" class="d-block d-md-none">{{ __('Full Address') }}</label>
-                            <textarea autocomplete="off" name="address" id="address" rows="1" class="form-control" placeholder="{{__('Full Address')}}">{{ old('address') }}</textarea>
+                            <label for="" class="d-block d-md-none">{{ __('Alamat Rumah Lengkap') }}</label>
+                            <textarea autocomplete="off" name="address" id="address" rows="1" class="form-control {{$errors->register->has('address') ? 'is-invalid' : ''}}" placeholder="{{__('Alamat Rumah Lengkap')}}">{{ old('address') }}</textarea>
+                            @if ($errors->register->has('address'))
+                                <div id="addressFeedback" class="invalid-feedback">
+                                    {{ $errors->register->first('address') }}
+                                </div>
+                            @endif
                         </div>
 
                     </div><!--form-group-->
@@ -94,6 +123,11 @@
                                     <option value="{{ $province->id }}">{{ $province->name }}</option>
                                 @endforeach
                             </select>
+                            @if ($errors->register->has('province'))
+                                <div class="text-danger">
+                                    {{ $errors->register->first('province') }}
+                                </div>
+                            @endif
                         </div>
 
                         <div class="col-md-6">
@@ -101,6 +135,11 @@
                             <select autocomplete="off" name="city" id="city" class="form-control select-city" data-current-value={{old('city')}}>
                                 <option value="">{{__('Select City')}}</option>
                             </select>
+                            @if ($errors->register->has('city'))
+                                <div class="text-danger">
+                                    {{ $errors->register->first('city') }}
+                                </div>
+                            @endif
                         </div>
 
                     </div><!--form-group-->
@@ -111,6 +150,12 @@
                             <select autocomplete="off" name="district" id="district" class="form-control select-district" data-current-value={{old('district')}}>
                                 <option value="">{{__('Select District')}}</option>
                             </select>
+
+                            @if ($errors->register->has('district'))
+                                <div class="text-danger">
+                                    {{ $errors->register->first('district') }}
+                                </div>
+                            @endif
                         </div>
 
                         <div class="col-md-6">
@@ -183,6 +228,21 @@
                                         'tnc' => $tnc,
                                         'policy' => $policy
                                     ])
+
+                                    <br>
+
+                                    Saya bersedia menerima segala penawaran, promosi, sampel dan komunikasi pemasaran terbaru lainnya melalui:
+                                    <ul>
+                                        <li>
+                                            Newsletter dan email
+                                        </li>
+                                        <li>
+                                            SMS
+                                        </li>
+                                        <li>
+                                            Nomor telepon
+                                        </li>
+                                    </ul>
                                     {{-- @lang('I agree to the') <a href="{{ route('frontend.pages.terms') }}" target="_blank">@lang('Terms & Conditions')</a> --}}
                                 </label>
                             </div>
@@ -194,7 +254,7 @@
                         </div>
                     </div><!--form-group-->
 
-                    <div class="row d-flex justify-content-center mb-2">
+                    {{-- <div class="row d-flex justify-content-center mb-2">
                         <div class="col-md-4 mb-2 mb-md-0">
                             <x-utils.link
                                 :href="route('frontend.auth.social.login', 'facebook')"
@@ -211,7 +271,7 @@
                                 :text="__('Login with Google')"
                                 :hide="!config('services.google.active')" />
                         </div>
-                    </div>
+                    </div> --}}
                 </x-forms.post>
             </div><!--col-md-10-->
         </div><!--row-->

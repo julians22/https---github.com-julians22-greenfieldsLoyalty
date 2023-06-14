@@ -103,15 +103,6 @@ $fixedStyleSecond = "position-sticky w-100";
                     <li class="mobile-nav-item nav-item">
                         <a data-toggle="modal" data-target="#buyNowModal" class="nav-link" href="#beli-sekarang">Beli Sekarang</a>
                     </li>
-                    <li class="mobile-nav-item nav-item mb-2">
-                        <div class="bg-dark-green p-2 rounded-lg">
-                            <div class="point text-center">
-                                <p class="text-white"><strong>POIN KAMU</strong></p>
-                                <p class="text-white"><strong>{{ number_format($logged_in_user->point, 0, ".", ".") }}</strong></p>
-                            </div>
-                            <button class="btn btn-gold btn-block btn-rounded font-weight-bold text-white" data-toggle="modal" data-target="#uploadReceiptModal" type="button">UPLOAD STRUK & TUKARKAN HADIAH</button>
-                        </div>
-                    </li>
                     <li class="mobile-nav-item nav-item">
                         <x-utils.link
                             :href="route('frontend.user.account')"
@@ -174,6 +165,15 @@ $fixedStyleSecond = "position-sticky w-100";
                 @endguest
             </ul>
         </div><!--navbar-collapse-->
+        <div class="point-wrapper-mobile">
+            <div class="bg-dark-green p-2 rounded-lg">
+                <div class="point text-center">
+                    <p class="text-white"><strong>POIN KAMU</strong></p>
+                    <p class="text-white"><strong>{{ number_format($logged_in_user->point, 0, ".", ".") }}</strong></p>
+                </div>
+                <button class="btn btn-gold btn-block btn-rounded font-weight-bold text-white" data-toggle="modal" data-target="#uploadReceiptModal" type="button">UPLOAD STRUK & TUKARKAN HADIAH</button>
+            </div>
+        </div>
     </div><!--container-->
 </nav>
 

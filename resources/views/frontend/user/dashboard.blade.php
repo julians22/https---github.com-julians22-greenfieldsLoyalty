@@ -22,7 +22,7 @@
                 @if ($logged_in_user->isHasDetail() && $logged_in_user->isHasAddressData() && $logged_in_user->isWhatsappVerified())
                     @if ($logged_in_user->voucher)
                         <div class="alert alert-dark-green heartbeat">
-                            Kamu berhak mendapatkan promo khusus anggota baru: <strong>{{ $logged_in_user->voucher->code }}</strong>.  <a href="{{ route('frontend.pages.terms') }}">Cek syarat & ketentuan disini.</a>
+                            Kamu berhak mendapatkan promo khusus anggota baru: <strong>{{ $logged_in_user->voucher->code }}</strong>.  <a href="{{ route('frontend.promo.index') }}?show=promo-khusus-anggota-baru">Cek syarat & ketentuan disini.</a>
                         </div>
                     @endif
                 @else
@@ -76,7 +76,7 @@
 
                                             <div class="reward-detail-wrapper">
                                                 <h4 class="card-title text-center">{{ $reward->name }}</h4>
-                                                <p class="point">{{number_format($reward->point, 0, ".", ".")}} pts</p>
+                                                <p class="point">{{number_format($reward->point, 0, ".", ".")}} poin</p>
                                             </div>
                                             @if ($reward->point > $logged_in_user->point)
                                                 <a class="btn mb-3 btn-rounded disabled btn-secondary btn-green" href="javascript:void(0)">TUKAR HADIAH</a>

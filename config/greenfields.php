@@ -28,7 +28,7 @@ return [
         ],
         [
             'name' => 'Shopee',
-            'title' => 'Shopee',
+            'title' => 'Japfa Best Official Shop',
             'url' => 'https://shopee.co.id/mall/search?keyword=greenfields&shop=269483414',
             'image' => '/img/online-stores/shopee.png'
         ],

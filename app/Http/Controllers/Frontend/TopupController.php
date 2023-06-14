@@ -33,7 +33,7 @@ class TopupController extends Controller
             'point' => 0
         ]);
 
-        return redirect()->route('frontend.user.account')->withSwalSuccess('Selamat, Extra Mom! Kamu berhasil melakukan upload struk. Mohon menunggu 3x24 jam untuk update poin ya.');
+        return redirect()->route('frontend.user.account')->withSwalSuccess('Selamat, Ibu Extra! Kamu berhasil melakukan upload struk. Mohon menunggu 3x24 jam untuk update poin ya.');
 
     }
 }

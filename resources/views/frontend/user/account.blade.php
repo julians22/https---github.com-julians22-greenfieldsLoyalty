@@ -129,13 +129,14 @@
 
                         <div class="col-md-12 mb-2">
                             <div class="page_title">
-                                <img src="{{ asset('img/decorations/title_voucher.png') }}" alt="">
+                                {{-- <img src="{{ asset('img/decorations/title_voucher.png') }}" alt=""> --}}
+                                <h1 class="title_text" title="Hadiah Kamu">Hadiah Kamu</h1>
                             </div>
-                            <p>Kamu bisa melihat hadiah khusus pengguna baru si sini!</p>
+                            <p>Kamu bisa melihat hadiah khusus pengguna baru si sini.</p>
 
                             @if ($logged_in_user->isHasDetail() && $logged_in_user->isHasAddressData() && $logged_in_user->isWhatsappVerified())
                                 <div x-data="{ displayVoucher: false }">
-                                    <button class="btn btn-dark-green btn-rounded" type="button" @click="displayVoucher = !displayVoucher">Lihat Voucher</button>
+                                    <button class="btn btn-dark-green btn-rounded" type="button" @click="displayVoucher = !displayVoucher">Lihat Hadiah</button>
 
                                     <div x-show="displayVoucher" style="display: none" >
                                         <div class="row my-md-4 my-2">
@@ -145,6 +146,7 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <p>Voucher dapat digunakan untuk pembelian di Ecommerce Tokopedia Greenfields Official Store untuk etalase berikut: <a target="blank" href="https://www.tokopedia.com/greenfields/twinpack-susu-segar-greenfields-fresh-milk-full-cream-1l?extParam=whid%3D14167728">Tokopedia</a></p>
                                         <p>Cek <a href="{{ route('frontend.pages.terms') }}">syarat & ketentuannya disini!</a></p>
                                     </div>
                                 </div>

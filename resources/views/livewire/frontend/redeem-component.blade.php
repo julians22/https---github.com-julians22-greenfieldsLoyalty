@@ -32,7 +32,7 @@
 
                             <div class="reward-detail-wrapper">
                                 <h4 class="card-title text-center">{{ $reward->name }}</h4>
-                                <p class="point">{{number_format($reward->point, 0, ".", ".")}} pts</p>
+                                <p class="point">{{number_format($reward->point, 0, ".", ".")}} poin</p>
                             </div>
                             @if ($reward->point > $logged_in_user->point)
                                 <a class="btn mb-3 btn-rounded disabled btn-secondary btn-green" href="javascript:void(0)">TUKAR HADIAH</a>

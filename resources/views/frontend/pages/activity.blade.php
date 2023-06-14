@@ -13,7 +13,7 @@
                 <div class="row row-cols-1 row-cols-md-3">
                     @foreach ($activities as $item)
                     <div class="col mb-4">
-                        <div class="card card-activity" data-title="{{$item->title}}" data-times="{{$item->isComingSoon() ? 'Coming soon' : $item->date_ranges }}" data-content="{{$item->content}}">
+                        <div class="card card-activity" data-slug="{{$item->slug}}" data-title="{{$item->title}}" data-times="{{$item->isComingSoon() ? 'Coming soon' : $item->date_ranges }}" data-content="{{$item->content}}">
                             <div class="card-body">
                                 <div class="activity-img-wrapper">
                                     <img src="{{ asset($item->thumbnail_image) }}" class="activity-img">
@@ -87,8 +87,30 @@
             $(ModalItem).find('.title_text').text(`${title}`).attr('title', title)
             $(ModalItem).find('#content').html(`${content}`)
             $(ModalItem).find('#times').html(`<span class="badge badge-dark-green schedule-badge">${times}</span>`)
-            console.log(content);
+        })
 
+        $(document).ready(function () {
+            let searchParams = new URLSearchParams(window.location.search)
+
+            if (searchParams.has('show')) {
+                let param = searchParams.get('show')
+
+                if (param == 'promo-khusus-anggota-baru') {
+                    $('#activityModal').modal('show');
+                    const card = $('.card-activity[data-slug="promo-khusus-anggota-baru"]');
+                    console.log(card);
+                    const content = $(card).data('content');
+                    const times = $(card).data('times');
+                    const title = $(card).data('title');
+
+                    const ModalItem = $('#activityModal');
+
+                    $(ModalItem).find('.title_text').text(`${title}`).attr('title', title)
+                    $(ModalItem).find('#content').html(`${content}`)
+                    $(ModalItem).find('#times').html(`<span class="badge badge-dark-green schedule-badge">${times}</span>`)
+                }
+
+            }
         })
     </script>
 @endpush
