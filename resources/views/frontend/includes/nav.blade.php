@@ -165,6 +165,7 @@ $fixedStyleSecond = "position-sticky w-100";
                 @endguest
             </ul>
         </div><!--navbar-collapse-->
+        @auth
         <div class="point-wrapper-mobile">
             <div class="bg-dark-green p-2 rounded-lg">
                 <div class="point text-center">
@@ -174,6 +175,8 @@ $fixedStyleSecond = "position-sticky w-100";
                 <button class="btn btn-gold btn-block btn-rounded font-weight-bold text-white" data-toggle="modal" data-target="#uploadReceiptModal" type="button">UPLOAD STRUK & TUKARKAN HADIAH</button>
             </div>
         </div>
+        @endauth
+
     </div><!--container-->
 </nav>
 
