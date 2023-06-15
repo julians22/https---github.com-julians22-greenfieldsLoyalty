@@ -29,6 +29,18 @@ class RedeemController extends Controller
 
     }
 
+    public function reject (Request $request, Redeem $redeem)
+    {
+        $redeem->update([
+            'status' => Redeem::STATUS_FAILED,
+            'success_at' => NULL,
+            'failed_at' => now(),
+            'failed_reason' => $request->failed_reason ?? null
+        ]);
+
+        return redirect()->route('admin.redeem.show', ['redeem' => $redeem])->withFlashSuccess('Redeem Rejected');
+    }
+
     public function send(Request $request, Redeem $redeem)
     {
         $request->validate([
