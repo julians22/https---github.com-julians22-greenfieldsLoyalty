@@ -40,6 +40,13 @@
 
 .select2-container--bootstrap .select2-results__option--highlighted[aria-selected]{
     background-color: $dark-green-opacity;
+
+}
+
+.select2-container--bootstrap .select2-results__option{
+    label.form-check-label{
+        display: block;
+    }
 }
 
 // .select2-container--bootstrap .select2-results__option--highlighted[aria-selected]{

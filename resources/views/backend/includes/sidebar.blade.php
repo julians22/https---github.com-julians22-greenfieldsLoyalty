@@ -46,6 +46,16 @@
         <li class="c-sidebar-nav-item">
             <x-utils.link
                 class="c-sidebar-nav-link"
+                :href="route('admin.banner.index')"
+                :active="activeClass(Route::is('admin.banner*'), 'c-active')"
+                icon="c-sidebar-nav-icon fas fa-pager"
+                :text="__('Banners Management')" />
+        </li>
+
+        {{-- Activity Menu --}}
+        <li class="c-sidebar-nav-item">
+            <x-utils.link
+                class="c-sidebar-nav-link"
                 :href="route('admin.activity.index')"
                 :active="activeClass(Route::is('admin.activity*'), 'c-active')"
                 icon="c-sidebar-nav-icon fas fa-pager"

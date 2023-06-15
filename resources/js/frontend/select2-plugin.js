@@ -44,11 +44,6 @@ $(document).ready(function() {
                 const category_val = $(category_select).data('current-value');
                 const size_val = $(size_select).data('current-value');
 
-                console.log(
-                    brand_val,
-                    category_val,
-                    size_val
-                );
                 if (category_val) {
                     $(category_select).val(category_val);
                     $(category_select).trigger('change');
@@ -106,7 +101,7 @@ function initSelect2(){
     // Load Servey Select
     $(brand_select).select2({
         allowClear: true,
-        maximumSelectionLength: 2,
+        // maximumSelectionLength: 2,
         closeOnSelect: false,
         placeholder: "Kategori produk yang dikonsumsi 3 bulan terakhir?",
         templateResult: formatStateCategory
@@ -115,7 +110,7 @@ function initSelect2(){
     $(category_select).select2({
         placeholder: "Brand susu yang dikonsumsi 3 bulan terakhir?",
         allowClear: true,
-        maximumSelectionLength: 2,
+        // maximumSelectionLength: 2,
         closeOnSelect: false,
         templateResult: formatStateCategory
     });
@@ -123,7 +118,11 @@ function initSelect2(){
     $('#others_packsize').hide();
 
     $(size_select).select2({
-        placeholder: "Ukuran Kemasan"
+        placeholder: "Ukuran Kemasan",
+        allowClear: true,
+        // maximumSelectionLength: 2,
+        closeOnSelect: false,
+        templateResult: formatStateCategory
     })
     .on('change.select2', (e) => {
         if (e.target.value == 'Others') {
@@ -209,7 +208,7 @@ function formatStateCategory (state) {
     var $state = $(`
         <div class="form-check">
             <input checked class="form-check-input" type="checkbox" id="inlineCheckbox-${state._resultId}">
-            <label class=form-check-label" for="inlineCheckbox-${state._resultId}">${state.text}</label>
+            <label class="form-check-label" for="inlineCheckbox-${state._resultId}">${state.text}</label>
         </div>
     `);
 
@@ -217,7 +216,7 @@ function formatStateCategory (state) {
         var $state = $(`
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="inlineCheckbox-${state._resultId}">
-                <label class=form-check-label" for="inlineCheckbox-${state._resultId}">${state.text}</label>
+                <label class="form-check-label" for="inlineCheckbox-${state._resultId}">${state.text}</label>
             </div>
             `);
     }

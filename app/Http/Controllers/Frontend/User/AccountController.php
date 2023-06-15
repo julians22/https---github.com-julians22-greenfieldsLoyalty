@@ -20,13 +20,9 @@ class AccountController
     public function index()
     {
         $transactions = [];
-
         $topup = TopUp::where('user_id', auth()->user()->id)->take(5)->get();
-
         $redeem = Redeem::where('user_id', auth()->user()->id)->take(5)->get();
-
         $transactions = array_merge($this->extract_data($topup, 'topup'), $this->extract_data($redeem, 'redeem'));
-
         $transactions = collect($transactions)->sortByDesc('date')->toArray();
 
         // dd($transactions);

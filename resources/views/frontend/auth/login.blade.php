@@ -24,6 +24,11 @@
                         <span class="line"></span>
                     </div> --}}
                     <div class="form-login mx-auto">
+                        @if(isset($errors) && $errors->login->has('phone'))
+                            <x-utils.alert type="danger" class="header-message">
+                                {{ $errors->login->first('phone') }}
+                            </x-utils.alert>
+                        @endif
                         <x-forms.post :action="route('frontend.auth.login')" class="greenfields-form">
                             <div class="form-group">
                                 <label for="phone" class="d-md-none d-block">{{ __('Email / Phone Number (Whatsapp Registered)') }}</label>

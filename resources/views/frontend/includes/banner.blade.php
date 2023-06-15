@@ -2,18 +2,12 @@
     <div id="image-carousel" class="splide splide-a" aria-label="Banner Images">
         <div class="splide__track">
               <ul class="splide__list">
-                  <li class="splide__slide">
-                      <img src="{{ asset('dummy/banner/banner.jpg') }}" alt="" class="w-100 d-none d-md-block banner-image">
-                      <img src="{{ asset('dummy/banner/Mobile-bandummy/banner/banner.png') }}" alt="" class="w-100 d-block d-md-none banner-image">
-                  </li>
-                  <li class="splide__slide">
-                      <img src="{{ asset('dummy/banner/Resize-Top-Spender.jpg') }}" alt="" class="w-100 d-none d-md-block banner-image">
-                      <img src="{{ asset('dummy/banner/Mobile-Resize-Top-Spender.jpg') }}" alt="" class="w-100 d-block d-md-none banner-image">
-                  </li>
-                  <li class="splide__slide">
-                      <img src="{{ asset('dummy/banner/Resize-Club-Ibu-Extra.jpg') }}" alt="" class="w-100 d-none d-md-block banner-image">
-                      <img src="{{ asset('dummy/banner/Mobile-Resize-Club-Ibu-Extra.jpg') }}" alt="" class="w-100 d-block d-md-none banner-image">
-                  </li>
+                @foreach ($banners as $banner)
+                    <li class="splide__slide">
+                        <img src="{{ asset($banner->image['desktopBanner']) }}" alt="" class="w-100 d-none d-md-block banner-image">
+                        <img src="{{ asset($banner->image['mobileBanner']) }}" alt="" class="w-100 d-block d-md-none banner-image">
+                    </li>
+                @endforeach
               </ul>
         </div>
     </div>

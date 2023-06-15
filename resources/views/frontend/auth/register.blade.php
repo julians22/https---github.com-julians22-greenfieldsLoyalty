@@ -202,9 +202,9 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="history_milk_pack_size"><p class="mb-0 font-weight-bold ml-md-2">{{__('Packsize')}}</p></label>
-                        <select autocomplete="off" name="history_milk_packsize" id="history_milk_pack_size" class="form-control select-size" data-current-value="{{ old('history_milk_pack_size') ? json_encode(old('history_milk_pack_size')) : '' }}" data-placeholder="{{__('Packsize')}}">
-                            <option value="" selected disabled>{{__('Packsize')}}</option>
+                        <label for="history_milk_packsize"><p class="mb-0 font-weight-bold ml-md-2">{{__('Packsize')}}</p></label>
+                        <select autocomplete="off" name="history_milk_packsize" id="history_milk_packsize" class="form-control select-size" data-current-value="{{ old('history_milk_packsize') ? json_encode(old('history_milk_packsize')) : '' }}" data-placeholder="{{__('Packsize')}}" multiple="multiple">
+                            {{-- <option value="" selected disabled>{{__('Packsize')}}</option> --}}
                             @foreach ($survey_packsizes as $packsize)
                                 <option value="{{ $packsize }}">{{ $packsize }}</option>
                             @endforeach

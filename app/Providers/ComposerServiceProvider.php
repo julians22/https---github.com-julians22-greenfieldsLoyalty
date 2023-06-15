@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Domains\Announcement\Services\AnnouncementService;
+use App\Models\Banner;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -24,6 +25,11 @@ class ComposerServiceProvider extends ServiceProvider
 
         View::composer(['frontend.index', 'frontend.layouts.app'], function ($view) use ($announcementService) {
             $view->with('announcements', $announcementService->getForFrontend());
+        });
+
+        View::composer(['frontend.includes.banner'], function ($view) {
+            $banners = Banner::active()->get();
+            $view->with('banners', $banners);
         });
 
         View::composer(['backend.layouts.app'], function ($view) use ($announcementService) {

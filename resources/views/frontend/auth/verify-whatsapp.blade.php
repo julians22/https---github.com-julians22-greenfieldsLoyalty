@@ -13,7 +13,7 @@
                             @lang('Verifikasi Nomor Whatsapp')
                         </h4>
                         <p>Sebelum melanjutkan, kami telah mengirimkan 4 digit kode OTP ke nomor whatsapp <strong>{{ $logged_in_user->phone }}</strong>.</p>
-                        <p>Kami juga mengirim OTP ke dalam email kamu <strong>{{ $logged_in_user->email }}</strong></p>
+                        <p>Kami juga mengirim OTP ke dalam email kamu <strong>{{ $logged_in_user->email }}</strong> (Mohon cek Spam Inbox kamu)</p>
                         <div class="row">
                             <div class="col-md-4 offset-md-4">
                                 <div class="form-group text-center">

@@ -96,6 +96,12 @@
                             <div class="row">
                                 <div class="col-md-8">
 
+                                    <div class="row mb-1 mb-md-3">
+                                        <div class="col">
+                                            @livewire('frontend.widgets.user-top-up')
+                                        </div>
+                                    </div>
+
                                     <div class="table-responsive">
                                         <table class="table table-sm table-bordered table-striped">
                                             <thead class="bg-dark-green text-white">
