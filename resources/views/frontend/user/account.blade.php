@@ -138,7 +138,7 @@
                                 {{-- <img src="{{ asset('img/decorations/title_voucher.png') }}" alt=""> --}}
                                 <h1 class="title_text" title="Hadiah Kamu">Hadiah Kamu</h1>
                             </div>
-                            <p>Kamu bisa melihat hadiah khusus pengguna baru si sini.</p>
+                            <p>Kamu bisa melihat hadiah khusus pengguna baru disini.</p>
 
                             @if ($logged_in_user->isHasDetail() && $logged_in_user->isHasAddressData() && $logged_in_user->isWhatsappVerified())
                                 <div x-data="{ displayVoucher: false }">
@@ -153,7 +153,7 @@
                                             </div>
                                         </div>
                                         <p>Voucher dapat digunakan untuk pembelian di Ecommerce Tokopedia Greenfields Official Store untuk etalase berikut: <a target="blank" href="https://www.tokopedia.com/greenfields/twinpack-susu-segar-greenfields-fresh-milk-full-cream-1l?extParam=whid%3D14167728">Tokopedia</a></p>
-                                        <p>Cek <a href="{{ route('frontend.pages.terms') }}">syarat & ketentuannya disini!</a></p>
+                                        <p>Cek <a href="{{ route('frontend.promo.index') }}?show=promo-khusus-anggota-baru">syarat & ketentuannya di sini!</a></p>
                                     </div>
                                 </div>
                             @else

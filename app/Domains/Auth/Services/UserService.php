@@ -70,6 +70,7 @@ class UserService extends BaseService
 
             $brand_history = "";
             $category_history = "";
+            $packsize_history = "";
 
             if (!empty($data['history_milk_category'])) {
                 $category_history = implode("|",$data['history_milk_category']);
@@ -79,10 +80,8 @@ class UserService extends BaseService
                 $brand_history = implode("|",$data['history_milk_product']);
             }
 
-            $packsize = $data['history_milk_packsize'];
-
-            if ($packsize == 'Others' && !empty($data['others_packsize'])) {
-                $packsize = $data['others_packsize'];
+            if (!empty($data['history_milk_packsize'])) {
+                $packsize_history = implode("|",$data['history_milk_packsize']);
             }
 
             $user->detail()->create([
@@ -92,7 +91,7 @@ class UserService extends BaseService
                 'child_date_of_birth' => $data['child_date_of_birth'],
                 'history_milk_category' => $category_history,
                 'history_milk_product' => $brand_history,
-                'history_milk_packsize' => $packsize,
+                'history_milk_packsize' => $packsize_history,
             ]);
 
             // $voucherInUser = Voucher::where('user_id', $user->id)->get();
