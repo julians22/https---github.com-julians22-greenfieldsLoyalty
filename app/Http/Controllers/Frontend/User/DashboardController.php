@@ -15,8 +15,6 @@ class DashboardController
      */
     public function index()
     {
-        $rewards = Reward::active()->latest()->take(5)->get();
-
         $voucherInUser = Voucher::where('user_id', auth()->user()->id)->get();
         if (!$voucherInUser->count()) {
             $voucher = Voucher::whereNull('given_at')->first();
@@ -26,6 +24,13 @@ class DashboardController
             ]);
         }
 
-        return view('frontend.user.dashboard', compact('rewards'));
+        $rewards = Reward::active()->latest()->take(5)->get();
+
+        $rewardsRecommendation = Reward::active()->where('point', '<', auth()->user()->point)->take(5)->get();
+
+        $address_data = auth()->user()->address_data;
+        $addresses_data = auth()->user()->addresses_data;
+
+        return view('frontend.user.dashboard', compact('rewards', 'rewardsRecommendation', 'address_data', 'addresses_data'));
     }
 }

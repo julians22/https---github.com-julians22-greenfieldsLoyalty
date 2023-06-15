@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\LocaleController;
 use App\Http\Controllers\Test\OtpController;
+use Shieldon\Firewall\Panel;
 
 /*
  * Global Routes
@@ -15,7 +16,7 @@ Route::get('lang/{lang}', [LocaleController::class, 'change'])->name('locale.cha
 /*
  * Frontend Routes
  */
-Route::group(['as' => 'frontend.'], function () {
+Route::group(['as' => 'frontend.', 'middleware' => 'firewall'], function () {
     includeRouteFiles(__DIR__.'/frontend/');
 });
 
@@ -37,3 +38,11 @@ Route::group(['prefix' => 'test', 'as' => 'test.'], function() {
 
     Route::post('validate', [OtpController::class, 'validate_otp'])->name('validate');
 });
+
+Route::any('/firewall/panel/{path?}', function() {
+
+    $panel = new Panel();
+    $panel->csrf(['_token' => csrf_token()]);
+    $panel->entry();
+
+})->where('path', '(.*)');

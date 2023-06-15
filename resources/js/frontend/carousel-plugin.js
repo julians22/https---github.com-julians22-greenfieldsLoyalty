@@ -35,6 +35,27 @@ document.addEventListener( 'DOMContentLoaded', function() {
     }
 } );
 
+document.addEventListener( 'DOMContentLoaded', function() {
+    if (document.getElementsByClassName('splide-c').length) {
+        var splide = new Splide('.splide-c', {
+            pagination: false,
+            perPage: 3,
+            gap: 20,
+            padding: 40,
+            classes: {
+                // Add classes for arrows.
+                arrows: 'splide__arrows dark-green',
+            },
+            breakpoints: {
+                768: {
+                    perPage: 1
+                },
+            }
+        });
+        splide.mount();
+    }
+} );
+
 // document.addEventListener( 'DOMContentLoaded', function() {
 //     if (document.getElementsByClassName('splide-activity').length) {
 //         var splide = new Splide('.splide-activity', {

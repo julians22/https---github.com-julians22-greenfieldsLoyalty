@@ -30,6 +30,7 @@
         "rappasoft/laravel-livewire-tables": "^1.0",
         "rappasoft/lockout": "^3.0",
         "seshac/otp-generator": "^0.0.7",
+        "shieldon/shieldon": "^2.1",
         "spatie/laravel-activitylog": "^3.14",
         "spatie/laravel-permission": "^3.11",
         "spatie/laravel-sluggable": "^3.5",

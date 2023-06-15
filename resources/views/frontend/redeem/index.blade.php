@@ -94,7 +94,7 @@
                 <div class="modal-header">
                     <div class="img-header d-flex align-items-center">
 
-                        <h5 class="text-center text-dark-green mx-auto" style="width: 75%">Terima kasih telah melakukan penukaran hadiah. Mohon menunggu 7x24 jam untuk pengiriman hadiah langsung ke rumahmu ya.</h5>
+                        <h3 class="text-center text-dark-green mx-auto" style="width: 75%">Terima kasih telah melakukan penukaran hadiah. Mohon menunggu 7x24 jam untuk pengiriman hadiah langsung ke rumahmu ya.</h3>
 
                         <div class="remaining-points-wrapper">
                             <div class="d-flex flex-column flex-md-row align-items-center">SISA POIN KAMU SAAT INI: <span id="remaining-poin"></span> Poin</div>
@@ -110,17 +110,17 @@
                             <div id="katalog-carousel" class="splide splide-b" aria-label="Katalog Produk">
                                 <div class="splide__track">
                                       <div class="splide__list">
-                                        @foreach ($rewardsRecommendation as $reward)
+                                        @foreach ($rewardsRecommendation as $rewardR)
                                             <div class="splide__slide">
                                                 <div class="card card-reward">
                                                     <div class="card-body">
                                                         <div class="reward-img-wrapper">
-                                                            <img src="{{ $reward->image }}" alt="{{ $reward->name }}" class="reward-img">
+                                                            <img src="{{ $rewardR->image }}" alt="{{ $rewardR->name }}" class="reward-img">
                                                         </div>
 
                                                         <div class="reward-detail-wrapper">
-                                                            <h4 class="card-title text-center" style="font-size: 16px">{{ $reward->name }}</h4>
-                                                            <p class="point" style="font-size: 12px">{{number_format($reward->point, 0, '.', '.')}} poin</p>
+                                                            <h4 class="card-title text-center" style="font-size: 16px">{{ $rewardR->name }}</h4>
+                                                            <p class="point" style="font-size: 12px">{{number_format($rewardR->point, 0, '.', '.')}} poin</p>
                                                         </div>
                                                         <a class="btn btn-sm mb-3 btn-rounded btn-secondary btn-green" href="{{ route('frontend.redeem.index') }}">TUKAR HADIAH</a>
                                                     </div>

@@ -138,7 +138,7 @@
                                 {{-- <img src="{{ asset('img/decorations/title_voucher.png') }}" alt=""> --}}
                                 <h1 class="title_text" title="Hadiah Kamu">Hadiah Kamu</h1>
                             </div>
-                            <p>Kamu bisa melihat hadiah khusus pengguna baru disini.</p>
+                            <p>Kamu bisa melihat hadiah khusus pengguna baru di sini.</p>
 
                             @if ($logged_in_user->isHasDetail() && $logged_in_user->isHasAddressData() && $logged_in_user->isWhatsappVerified())
                                 <div x-data="{ displayVoucher: false }">

@@ -94,7 +94,8 @@ class Kernel extends HttpKernel
         'type' => \App\Domains\Auth\Http\Middleware\UserTypeCheck::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'whatsapp_verified' => \App\Http\Middleware\EnsureWhatsappIsVerified::class,
-        'user_complete_detail' => \App\Http\Middleware\UserCompleteDetail::class
+        'user_complete_detail' => \App\Http\Middleware\UserCompleteDetail::class,
+        'firewall' => \App\Http\Middleware\ShieldonFirewall::class,
     ];
 
     /**
