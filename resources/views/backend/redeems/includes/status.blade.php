@@ -8,6 +8,6 @@
     @elseif($redeem->isSend())
         <span class='badge badge-info'>@lang('On Send') {{ $redeem->courier }} || {{ $redeem->airwaybill }}</span>
     @elseif($redeem->isFailed())
-        <span class='badge badge-danger'>@lang('Rejected')</span>
+        <span class='badge badge-danger'>@lang('Delay')</span>
     @endif
 @endif

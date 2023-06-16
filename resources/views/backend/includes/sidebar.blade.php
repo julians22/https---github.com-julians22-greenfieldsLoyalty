@@ -72,6 +72,16 @@
                 :text="__('Faqs Management')" />
         </li>
 
+        {{-- T&C Menu --}}
+        <li class="c-sidebar-nav-item">
+            <x-utils.link
+                class="c-sidebar-nav-link"
+                :href="route('admin.setting.index')"
+                :active="activeClass(Route::is('admin.setting*'), 'c-active')"
+                icon="c-sidebar-nav-icon fas fa-pager"
+                :text="__('Personalise')" />
+        </li>
+
         <li class="c-sidebar-nav-title">@lang('Transactions')</li>
 
         {{-- Top ups Menu --}}

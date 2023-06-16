@@ -7,6 +7,14 @@
 </x-livewire-tables::bs4.table.cell>
 
 <x-livewire-tables::bs4.table.cell>
+    {{ $row->reward->name }}
+</x-livewire-tables::bs4.table.cell>
+
+<x-livewire-tables::bs4.table.cell>
+    {{ number_format($row->point) }}
+</x-livewire-tables::bs4.table.cell>
+
+<x-livewire-tables::bs4.table.cell>
     @include('backend.redeems.includes.status', ['redeem' => $row])
 </x-livewire-tables::bs4.table.cell>
 

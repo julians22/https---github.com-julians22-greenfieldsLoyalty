@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 
 /**
@@ -15,6 +16,7 @@ class PrivacyController
      */
     public function index()
     {
-        return view('frontend.pages.privacy');
+        $privacy = Setting::where('key', 'privacy-policy')->first();
+        return view('frontend.pages.privacy', compact('privacy'));
     }
 }

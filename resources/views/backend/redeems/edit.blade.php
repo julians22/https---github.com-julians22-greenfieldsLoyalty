@@ -120,9 +120,9 @@
                     </div>
                         <div class="col-md-6">
                             <x-forms.patch :action="route('admin.redeem.update.reject', ['redeem' => $redeem])">
-                                <h4>Fill This form to reject</h4>
+                                <h4>Fill This form to set delay</h4>
                                 <div class="form-group">
-                                    <label for="failed_reason">@lang('Failed Reason'):</label>
+                                    <label for="failed_reason">@lang('Delay Reason'):</label>
                                     <textarea name="failed_reason" class="form-control" id="failed_reason" cols="" rows="5" required></textarea>
                                 </div>
                                 <button type="submit" class="btn btn-danger">@lang('Reject')</button>

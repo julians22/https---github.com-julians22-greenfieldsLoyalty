@@ -1,5 +1,5 @@
 @if($topup->isCompleted())
-    <span class='badge badge-success'>@lang('Completed')</span>
+    <span class='badge badge-success'>@lang('Completed') {{ number_format($topup->point) }} pts</span>
 @else
     @if ($topup->isCreated())
         <span class='badge badge-warning'>@lang('Waitng to Process')</span>

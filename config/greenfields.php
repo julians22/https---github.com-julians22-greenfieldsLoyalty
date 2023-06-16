@@ -83,6 +83,10 @@ return [
     ],
     'courier' => [
         [
+            'name' => 'RPX',
+            'value' => 'RPX'
+        ],
+        [
             'name' => 'JNE',
             'value' => 'JNE'
         ],

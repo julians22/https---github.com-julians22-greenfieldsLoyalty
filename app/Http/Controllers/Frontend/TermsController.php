@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Models\Setting;
+
 /**
  * Class TermsController.
  */
@@ -12,6 +14,7 @@ class TermsController
      */
     public function index()
     {
-        return view('frontend.pages.terms');
+        $term = Setting::where('key', 'terms-and-condition')->first();
+        return view('frontend.pages.terms', compact('term'));
     }
 }

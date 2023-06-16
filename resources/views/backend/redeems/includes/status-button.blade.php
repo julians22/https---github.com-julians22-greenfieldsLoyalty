@@ -10,6 +10,6 @@
         <button class='btn btn-info btn-sm' disabled type="button">@lang('On Send')</button>
         <x-utils.finish-button :href="route('admin.redeem.update.accept', $redeem)" />
     @elseif($redeem->isFailed())
-        <button class='btn btn-danger btn-sm' disabled type="button">@lang('Rejected')</button>
+        <button class='btn btn-danger btn-sm' disabled type="button">@lang('Delay')</button>
     @endif
 @endif

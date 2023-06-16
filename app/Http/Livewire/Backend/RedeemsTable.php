@@ -29,7 +29,7 @@ class RedeemsTable extends DataTableComponent
                     Redeem::STATUS_CREATED => 'Unprocessed',
                     Redeem::STATUS_PROCESS => 'Processed',
                     Redeem::STATUS_SUCCESS => 'Finished',
-                    Redeem::STATUS_FAILED => 'Canceled',
+                    Redeem::STATUS_FAILED => 'Delayed',
                 ])
         ];
     }
@@ -45,6 +45,9 @@ class RedeemsTable extends DataTableComponent
                 ->sortable(function(Builder $query, $direction) {
                     return $query->orderBy(User::select('name')->whereColumn('users.id', 'redeems.user_id'), $direction);
                 }),
+            Column::make(__('Reward Item'), 'reward.name'),
+            Column::make(__('Point'), 'point')
+                ->sortable(),
             Column::make(__('Status'), 'status')
                 ->sortable(),
             Column::make(__('Created Date'), 'created_at')
@@ -57,7 +60,8 @@ class RedeemsTable extends DataTableComponent
     {
         $query = Redeem::with('user')->whereHas('user');
 
-        return $query;
+        return $query
+            ->when($this->getFilter('status'), fn ($query, $status) => $query->where('status', $status));
     }
 
     /**
