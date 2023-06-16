@@ -1,15 +1,15 @@
 {
     "daemon": false,
     "admin": {
-        "user": "shieldon_cuber",
-        "pass": "$2y$10$dyj7OvQqzCAe9eCLFlY7sO4h629hYboFhmooLkNWkDrCJR842K5xS",
-        "last_modified": "2023-06-16 13:51:39"
+        "user": "shieldon_user",
+        "pass": "$2y$10$Nxh1mM0OkVcdnEyhqB2mXujiW4mBl26Di3tv3TzcGYAbbQXjSEcZ2",
+        "last_modified": "2023-06-16 14:08:30"
     },
     "channel_id": "",
     "driver_type": "file",
     "drivers": {
         "file": {
-            "directory_path": ""
+            "directory_path": "\/home\/demo\/demo\/greenfields-loyalty\/bootstrap\/..\/storage\/shieldon_firewall\/data_driver_file"
         },
         "sqlite": {
             "directory_path": ""
@@ -22,8 +22,8 @@
         "mysql": {
             "host": "127.0.0.1",
             "dbname": "shieldon_db",
-            "user": "root",
-            "pass": "",
+            "user": "shieldon_user",
+            "pass": 1234,
             "charset": "utf8"
         }
     },
@@ -31,7 +31,7 @@
         "action": {
             "enable": false,
             "config": {
-                "directory_path": "D:\\laragon\\www\\GreenfieldsLoyalty\\bootstrap\/..\/storage\/shieldon_firewall\/action_logs"
+                "directory_path": ""
             }
         }
     },
@@ -71,23 +71,23 @@
     },
     "components": {
         "ip": {
-            "enable": true
+            "enable": false
         },
         "trusted_bot": {
-            "enable": true,
+            "enable": false,
             "strict_mode": false,
             "allowed_list": []
         },
         "header": {
-            "enable": true,
+            "enable": false,
             "strict_mode": false
         },
         "user_agent": {
-            "enable": true,
+            "enable": false,
             "strict_mode": false
         },
         "rdns": {
-            "enable": true,
+            "enable": false,
             "strict_mode": false
         }
     },
@@ -327,7 +327,7 @@
             "watching_folder": ""
         }
     },
-    "tabs": "daemon",
-    "_token": "d9p2vhqJ1AYIcHUaKieCozBbx4gNO6msugW30aJQ",
+    "tabs": "components",
+    "_token": "RWQDbxTclffNkYFOxV1NONFuLFkAhsNUGtpmy7qw",
     "managed_by": "firewall"
 }
