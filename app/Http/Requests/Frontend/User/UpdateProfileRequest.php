@@ -37,7 +37,7 @@ class UpdateProfileRequest extends FormRequest
             "date_of_birth" => ['required', 'date'],
             "child_name" => ['required', 'max:100'],
             "child_date_of_birth" => ['required', 'date'],
-            "phone" => ['required', 'numeric'],
+            "phone" => ['required', 'numeric',  Rule::unique('users')->ignore($this->user()->id, 'phone')],
             "province" => ['string', 'required'],
             "city" => ['string', 'required'],
             "district" => ['string'],
