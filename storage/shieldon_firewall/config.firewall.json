@@ -1,15 +1,15 @@
 {
-    "daemon": true,
+    "daemon": false,
     "admin": {
-        "user": "shieldon_cuber3",
-        "pass": "$2y$10$BCXhxwCVYlFNeBemlwJ4COkNiDN5Ej\/dPU0YEhpVvlv96gstnFsG2",
-        "last_modified": "2023-06-15 20:44:09"
+        "user": "shieldon_cuber",
+        "pass": "$2y$10$dyj7OvQqzCAe9eCLFlY7sO4h629hYboFhmooLkNWkDrCJR842K5xS",
+        "last_modified": "2023-06-16 13:51:39"
     },
     "channel_id": "",
     "driver_type": "mysql",
     "drivers": {
         "file": {
-            "directory_path": "C:\\laragon\\www\\greenfieldsloyalty\\bootstrap\/..\/storage\/shieldon_firewall\/data_driver_file"
+            "directory_path": ""
         },
         "sqlite": {
             "directory_path": ""
@@ -29,9 +29,9 @@
     },
     "loggers": {
         "action": {
-            "enable": true,
+            "enable": false,
             "config": {
-                "directory_path": "C:\\laragon\\www\\greenfieldsloyalty\\bootstrap\/..\/storage\/shieldon_firewall\/action_logs"
+                "directory_path": "D:\\laragon\\www\\GreenfieldsLoyalty\\bootstrap\/..\/storage\/shieldon_firewall\/action_logs"
             }
         }
     },
@@ -55,7 +55,7 @@
             }
         },
         "session": {
-            "enable": true,
+            "enable": false,
             "config": {
                 "quota": 5,
                 "time_buffer": 5
@@ -75,7 +75,7 @@
         },
         "trusted_bot": {
             "enable": true,
-            "strict_mode": true,
+            "strict_mode": false,
             "allowed_list": []
         },
         "header": {
@@ -124,9 +124,9 @@
         }
     },
     "xss_protection": {
-        "post": true,
-        "get": true,
-        "cookie": true
+        "post": false,
+        "get": false,
+        "cookie": false
     },
     "xss_protected_list": [
         {
@@ -180,7 +180,13 @@
             "ip": "127.0.0.1"
         }
     ],
-    "www_authenticate": [],
+    "www_authenticate": [
+        {
+            "url": "\/admin\/",
+            "user": "wp_shieldon_admin",
+            "pass": "$2y$10$eA\/S6rH3JDkYV9nrrUvuMOTh8Q\/ts33DdCerbNAUpdwtSl3Xq9cQq"
+        }
+    ],
     "dialog_ui": {
         "background_image": "",
         "bg_color": "#ffffff",
@@ -293,20 +299,20 @@
             "confirm_test": false
         },
         "smtp": {
-            "enable": true,
+            "enable": false,
             "config": {
-                "host": "smtp.gmail.com",
-                "port": 587,
-                "type": "tls",
-                "user": "programmer.digital@gmail.com",
-                "pass": "rzciwxcxnbsawcgo",
-                "sender": "programmer.digital@gmail.com",
+                "host": "127.0.0.1",
+                "port": 25,
+                "type": "",
+                "user": "",
+                "pass": "",
+                "sender": "your@email.com",
                 "recipients": [
-                    "dean@designcub3.com",
-                    "programmer.digital@gmail.com"
+                    "user1@email.com",
+                    "user2@email.com"
                 ]
             },
-            "confirm_test": true
+            "confirm_test": false
         }
     },
     "iptables": {
@@ -321,8 +327,7 @@
             "watching_folder": ""
         }
     },
-    "_token": "m3CeZbRngj30bGfWsgx7G5WVFuZiSSpYpLrS1Ags",
-    "submit": "Submit",
-    "tabs": "filters",
+    "tabs": "daemon",
+    "_token": "d9p2vhqJ1AYIcHUaKieCozBbx4gNO6msugW30aJQ",
     "managed_by": "firewall"
 }

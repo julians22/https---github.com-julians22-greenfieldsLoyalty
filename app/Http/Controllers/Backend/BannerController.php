@@ -58,7 +58,7 @@ class BannerController extends Controller
         return view('backend.banners.show', compact('banner'));
     }
 
-    public function destory(Banner $banner) {
+    public function destroy(Banner $banner) {
         $banner->delete();
         return redirect()->route('admin.banner.index')->withFlashSuccess(__('The banner was successfully deleted.'));
     }

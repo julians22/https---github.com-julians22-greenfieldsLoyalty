@@ -8,6 +8,8 @@
 /public/storage
 # /public/mix-manifest.json
 /storage/*.key
+/storage/shieldon_firewall/action_logs/*
+/storage/shieldon_firewall/data_driver_file/**/*
 /vendor
 /.vscode
 *.sublime-project
