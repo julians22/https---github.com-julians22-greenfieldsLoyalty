@@ -6,7 +6,7 @@
         "last_modified": "2023-06-16 13:51:39"
     },
     "channel_id": "",
-    "driver_type": "mysql",
+    "driver_type": "file",
     "drivers": {
         "file": {
             "directory_path": ""
