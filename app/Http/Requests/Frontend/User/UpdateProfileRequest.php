@@ -10,7 +10,7 @@ use Illuminate\Validation\Rule;
  */
 class UpdateProfileRequest extends FormRequest
 {
-    protected $redirect = "/edit-account";
+    protected $redirect = "/account/edit";
 
     /**
      * Determine if the user is authorized to make this request.

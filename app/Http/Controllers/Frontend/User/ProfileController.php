@@ -44,27 +44,5 @@ class ProfileController
         return redirect()->route('frontend.auth.verification.whatsapp.validate')
             ->withSwalWarning('Satu langkah lagi, silahkan verifikasi nomor whatsapp kamu terlebih dahulu ya!');
 
-
-
-        // $user_address = [
-        //     "address" => $request->address ?? null,
-        //     "province" => $request->province ?? null,
-        //     "city" => $request->city ?? null,
-        //     "district" => $request->district ?? null,
-        //     "postal_code" => $request->postal_code ?? null,
-        //     "is_primary" => 1
-        // ];
-
-        // if ($user && !$user->isHasAddressData()) {
-        //     $user->address_data()->create($user_address);
-        // }
-
-        // $user->address_data()->update($user_address);
-
-
-        // if (session()->has('resent')) {
-        //     return redirect()->route('frontend.auth.verification.notice')->withFlashInfo(__('You must confirm your new e-mail address before you can go any further.'));
-        // }
-
     }
 }
