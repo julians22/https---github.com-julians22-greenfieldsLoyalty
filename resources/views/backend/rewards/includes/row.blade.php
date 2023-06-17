@@ -7,7 +7,15 @@
 </x-livewire-tables::bs4.table.cell>
 
 <x-livewire-tables::bs4.table.cell>
-    {{ number_format($row->stock) }}
+    {{ number_format($row->initial_stock) }}
+</x-livewire-tables::bs4.table.cell>
+
+<x-livewire-tables::bs4.table.cell>
+    {{ number_format($row->current_stock) }}
+</x-livewire-tables::bs4.table.cell>
+
+<x-livewire-tables::bs4.table.cell>
+    {{ number_format($row->redeems_count) }}
 </x-livewire-tables::bs4.table.cell>
 
 <x-livewire-tables::bs4.table.cell>
@@ -15,11 +23,7 @@
 </x-livewire-tables::bs4.table.cell>
 
 <x-livewire-tables::bs4.table.cell>
-    @displayDate($row->created_at)
-</x-livewire-tables::bs4.table.cell>
-
-<x-livewire-tables::bs4.table.cell>
-    @displayDate($row->updated_at)
+    @displayDate($row->created_at, 'd-m-Y')
 </x-livewire-tables::bs4.table.cell>
 
 <x-livewire-tables::bs4.table.cell>

@@ -18,7 +18,7 @@ class RewardsTable extends DataTableComponent
 
     public function query(): Builder
     {
-        $query = Reward::query();
+        $query = Reward::with('redeems')->withCount('redeems');
 
         return $query
             ->when($this->getFilter('search'), fn ($query, $term) => $query->search($term))
@@ -50,13 +50,15 @@ class RewardsTable extends DataTableComponent
                 ->sortable(),
             Column::make(__('Point'), 'point')
                 ->sortable(),
-            Column::make(__('Stock'), 'stock')
+            Column::make(__('Initial Stock'), 'initial_stock')
+                ->sortable(),
+            Column::make(__('Current Stock'), 'current_stock')
+                ->sortable(),
+            Column::make(__('Used Stock'))
                 ->sortable(),
             Column::make(__('Status'), 'status')
                 ->sortable(),
             Column::make(__('Created Date'), 'created_at')
-                ->sortable(),
-            Column::make(__('Latest Update'), 'updated_at')
                 ->sortable(),
             Column::make(__('Actions')),
         ];

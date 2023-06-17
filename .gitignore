@@ -9,7 +9,6 @@
 # /public/mix-manifest.json
 /storage/*.key
 /storage/shieldon_firewall
-/storage/shieldon_firewall/*.txt
 /vendor
 /.vscode
 *.sublime-project

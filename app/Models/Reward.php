@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Reward extends Model
@@ -26,7 +27,7 @@ class Reward extends Model
     public function scopeActive($query)
     {
         return $query->where('status', 1)
-            ->where('stock', '>', 0);
+            ->where('current_stock', '>', 0);
     }
 
     /**
@@ -49,5 +50,15 @@ class Reward extends Model
     public function isAvailable()
     {
         return $this->stock >= 1;
+    }
+
+    /**
+     * Get all of the redeems for the Reward
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function redeems(): HasMany
+    {
+        return $this->hasMany(Redeem::class, 'reward_id', 'id');
     }
 }

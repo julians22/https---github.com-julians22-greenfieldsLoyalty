@@ -119,6 +119,16 @@
         )
             <li class="c-sidebar-nav-title">@lang('System')</li>
 
+            {{-- Customer Menu --}}
+            <li class="c-sidebar-nav-item">
+                <x-utils.link
+                    class="c-sidebar-nav-link"
+                    :href="route('admin.customer.index')"
+                    :active="activeClass(Route::is('admin.customer*'), 'c-active')"
+                    icon="c-sidebar-nav-icon fas fa-user"
+                    :text="__('Customer Management')" />
+            </li>
+
             <li class="c-sidebar-nav-dropdown {{ activeClass(Route::is('admin.auth.user.*') || Route::is('admin.auth.role.*'), 'c-open c-show') }}">
                 <x-utils.link
                     href="#"
