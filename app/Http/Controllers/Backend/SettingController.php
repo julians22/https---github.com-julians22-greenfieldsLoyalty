@@ -18,21 +18,21 @@ class SettingController extends Controller
     public function update(Request $request) {
         $settings = Setting::all();
 
-        foreach ($settings as $key => $value) {
-            $valueUpdate = $request->{$value->key};
+        foreach ($settings as $key => $setting) {
+            $valueUpdate = $request->{$setting->key};
             if ($valueUpdate) {
-                switch ($value->type) {
+                switch ($setting->type) {
                     case Setting::TYPE_LONGTEXT:
-                        $value->long_text_value = $valueUpdate;
-                        $value->save();
+                        $setting->long_text_value = $valueUpdate;
+                        $setting->save();
                         break;
                     case Setting::TYPE_TEXT:
-                        $value->text_value = $valueUpdate;
-                        $value->save();
+                        $setting->text_value = $valueUpdate;
+                        $setting->save();
                         break;
                     case Setting::TYPE_IMAGE:
-                        $value->image_value = $valueUpdate;
-                        $value->save();
+                        $setting->image_value = $valueUpdate;
+                        $setting->save();
                         break;
                     default:
                         break;
