@@ -116,10 +116,10 @@ $fixedStyleSecond = "position-sticky w-100";
                         <x-utils.link
                             :text="__('Logout')"
                             class="btn btn-block btn-dark-green my-2 my-sm-0 btn-rounded"
-                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                            onclick="event.preventDefault();document.getElementById('logout-form-mobile').submit();">
                             <x-slot name="text">
                                 @lang('Logout')
-                                <x-forms.post :action="route('frontend.auth.logout')" id="logout-form" class="d-none" />
+                                <x-forms.post :action="route('frontend.auth.logout')" id="logout-form-mobile" class="d-none" />
                             </x-slot>
                         </x-utils.link>
                     </li>
