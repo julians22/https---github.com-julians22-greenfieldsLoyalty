@@ -203,7 +203,7 @@
                     </div>
                     <div class="form-group">
                         <label for="history_milk_packsize"><p class="mb-0 font-weight-bold ml-md-2">{{__('Packsize')}}</p></label>
-                        <select autocomplete="off" name="history_milk_packsize" id="history_milk_packsize" class="form-control select-size" data-current-value="{{ old('history_milk_packsize') ? json_encode(old('history_milk_packsize')) : '' }}" data-placeholder="{{__('Packsize')}}" multiple="multiple">
+                        <select autocomplete="off" name="history_milk_packsize[]" id="history_milk_packsize" class="form-control select-size" data-current-value="{{ old('history_milk_packsize') ? json_encode(old('history_milk_packsize')) : '' }}" data-placeholder="{{__('Packsize')}}" multiple="multiple">
                             {{-- <option value="" selected disabled>{{__('Packsize')}}</option> --}}
                             @foreach ($survey_packsizes as $packsize)
                                 <option value="{{ $packsize }}">{{ $packsize }}</option>
@@ -230,7 +230,13 @@
                                     ])
 
                                     <br>
+                                    {{-- @lang('I agree to the') <a href="{{ route('frontend.pages.terms') }}" target="_blank">@lang('Terms & Conditions')</a> --}}
+                                </label>
+                            </div>
 
+                            <div class="form-check">
+                                <input type="checkbox" name="promotion" value="1" id="promotion" class="form-check-input" required>
+                                <label class="form-check-label" for="promotion">
                                     Saya bersedia menerima segala penawaran, promosi, sampel dan komunikasi pemasaran terbaru lainnya melalui:
                                     <ul>
                                         <li>
@@ -243,7 +249,6 @@
                                             Nomor telepon
                                         </li>
                                     </ul>
-                                    {{-- @lang('I agree to the') <a href="{{ route('frontend.pages.terms') }}" target="_blank">@lang('Terms & Conditions')</a> --}}
                                 </label>
                             </div>
 

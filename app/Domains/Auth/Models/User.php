@@ -9,6 +9,7 @@ use App\Domains\Auth\Models\Traits\Scope\UserScope;
 use App\Domains\Auth\Notifications\Frontend\ResetPasswordNotification;
 use App\Domains\Auth\Notifications\Frontend\VerifyEmail;
 use App\Mail\OtpMail;
+use App\Models\TopUp;
 use App\Models\Voucher;
 use App\Notifications\OtpNotification;
 use DarkGhostHunter\Laraguard\Contracts\TwoFactorAuthenticatable;
@@ -218,5 +219,15 @@ class User extends Authenticatable implements MustVerifyEmail, TwoFactorAuthenti
     public function voucher(): HasOne
     {
         return $this->hasOne(Voucher::class, 'user_id', 'id');
+    }
+
+    /**
+     * Get all of the topups for the User
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function topups(): HasMany
+    {
+        return $this->hasMany(TopUp::class, 'user_id', 'id');
     }
 }

@@ -157,7 +157,7 @@
                                 <p id="current_postcode" class="text-black font-weight-bold text-center">{{ $address_data->postal_code }}</p>
                             </div>
                             <div class="col-md-12 text-center">
-                                <a href="{{ route('frontend.user.edit-account') }}" class="btn btn-secondary rounded-pill">Ubah Alamat Pengiriman</a>
+                                <a href="{{ route('frontend.user.edit-account') }}?from=redeem" class="btn btn-secondary rounded-pill">Ubah Alamat Pengiriman</a>
                             </div>
                         </div>
                     </div>

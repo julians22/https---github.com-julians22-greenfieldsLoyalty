@@ -21,7 +21,12 @@
                     <div class="col-12">
                         <div class="form-group">
                             <label for="receipt">@lang('Struk yang di upload'):</label>
-                            <img src="{{ asset($topup->filepath) }}" alt="" class="w-100">
+                            <div id="receipt" style="cursor: zoom-in">
+                                <img src="{{ asset($topup->filepath) }}" alt="" class="w-100">
+                            </div>
+                            <div style="display: none">
+                                <img id="receipt_image" src="{{ asset($topup->filepath) }}" alt="">
+                            </div>
                         </div>
                     </div>
                     <div class="col-12">
@@ -103,3 +108,21 @@
 </div>
 
 @endsection
+
+@push('after-scripts')
+    <script>
+        const $receipt = $('#receipt_image');
+        $receipt.viewer({
+            inline: true,
+            viewed: function() {
+                $image.viewer('zoomTo', 1);
+            }
+        });
+
+        // Get the Viewer.js instance after initialized
+        var viewer = $receipt.data('viewer');
+
+        // View a list of images
+        $('#receipt').viewer();
+    </script>
+@endpush

@@ -3,7 +3,9 @@
 namespace App\Http\Livewire\Backend;
 
 use App\Domains\Auth\Models\User;
+use App\Exports\Backend\RedeemExport;
 use App\Models\Redeem;
+use Excel;
 use Illuminate\Database\Eloquent\Builder;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Column;
@@ -16,6 +18,8 @@ class RedeemsTable extends DataTableComponent
 
     public string $defaultSortColumn = 'created_at';
     public string $defaultSortDirection = 'desc';
+
+    protected $listeners = ['exportRedeemsTable'];
 
     /**
      * @return array
@@ -62,6 +66,11 @@ class RedeemsTable extends DataTableComponent
 
         return $query
             ->when($this->getFilter('status'), fn ($query, $status) => $query->where('status', $status));
+    }
+
+    public function exportRedeemsTable() {
+        $query = $this->rowsQuery();
+        return Excel::download(new RedeemExport($query), 'GreenFieldsKlubIbuExtra-Redeems.xlsx');
     }
 
     /**

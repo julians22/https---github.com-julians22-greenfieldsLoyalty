@@ -55,6 +55,7 @@ $(document).ready(function() {
                 }
 
                 if (size_val) {
+                    console.log(size_val);
                     $(size_select).val(size_val);
                     $(size_select).trigger('change');
                 }

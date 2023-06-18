@@ -18,7 +18,6 @@ class ProfileController
      */
     public function update(UpdateProfileRequest $request, UserService $userService)
     {
-
         $postPhone = PhoneNumber::make($request->phone, 'ID');
 
         $user = $userService->updateProfile($request->user(), $request->validated());
@@ -36,10 +35,23 @@ class ProfileController
             $user->detail()->update($user_detail);
         }
 
-
         if ($user->isWhatsappVerified()) {
+            $from = null;
+            $oldUrl = parse_url(url()->previous());
+            parse_str($oldUrl['query'], $output);
+
+            if (array_key_exists('from', $output)) {
+                $from = $output['from'];
+            }
+
+            if ($from && $from == 'redeem') {
+                return redirect()->route('frontend.redeem.index')
+                    ->withSwalSuccess('Berhasil ubah profil, ayo tukar hadiah kamu');
+            }
+
             return redirect()->route('frontend.user.account')->withSwalSuccess(__('Profile successfully updated.'));
         }
+
 
         return redirect()->route('frontend.auth.verification.whatsapp.validate')
             ->withSwalWarning('Satu langkah lagi, silahkan verifikasi nomor whatsapp kamu terlebih dahulu ya!');

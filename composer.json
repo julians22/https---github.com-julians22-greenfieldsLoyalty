@@ -31,6 +31,7 @@
         "rappasoft/lockout": "^3.0",
         "seshac/otp-generator": "^0.0.7",
         "shieldon/shieldon": "^2.1",
+        "simplesoftwareio/simple-qrcode": "~4",
         "spatie/laravel-activitylog": "^3.14",
         "spatie/laravel-permission": "^3.11",
         "spatie/laravel-sluggable": "^3.5",
@@ -108,7 +109,8 @@
         "preferred-install": "dist",
         "sort-packages": true,
         "allow-plugins": {
-            "treeware/plant": true
+            "treeware/plant": true,
+            "php-http/discovery": true
         }
     },
     "minimum-stability": "dev",

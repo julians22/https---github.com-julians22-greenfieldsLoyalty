@@ -9,6 +9,13 @@
         </x-slot>
 
         <x-slot name="body">
+
+            <div class="row mb-2">
+                <div class="col-md-12">
+                    @livewire('backend.utils.export-button-component', ['to' => 'backend.customers-table', 'event' => 'exportCustomerTable'])
+                </div>
+            </div>
+
             <livewire:backend.customers-table />
         </x-slot>
     </x-backend.card>

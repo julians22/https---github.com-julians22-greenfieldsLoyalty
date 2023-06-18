@@ -3,7 +3,9 @@
 namespace App\Http\Livewire\Backend;
 
 use App\Domains\Auth\Models\User;
+use App\Exports\Backend\TopUpsExport;
 use App\Models\TopUp;
+use Excel;
 use Illuminate\Database\Eloquent\Builder;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Column;
@@ -17,6 +19,7 @@ class TopupTable extends DataTableComponent
     public string $defaultSortColumn = 'created_at';
     public string $defaultSortDirection = 'desc';
 
+    protected $listeners = ['exportTopUpTable'];
 
     /**
      * @return array
@@ -48,7 +51,9 @@ class TopupTable extends DataTableComponent
                 }),
             Column::make(__('Status'), 'status')
                 ->sortable(),
-            Column::make(__('Created Date'), 'created_at')
+            Column::make(__('Point'), 'point')
+                ->sortable(),
+            Column::make(__('Upload Date'), 'created_at')
                 ->sortable(),
             Column::make(__('Actions')),
         ];
@@ -60,6 +65,11 @@ class TopupTable extends DataTableComponent
 
         return $query
             ->when($this->getFilter('status'), fn ($query, $status) => $query->where('status', $status));
+    }
+
+    public function exportTopUpTable() {
+        $query = $this->rowsQuery();
+        return Excel::download(new TopUpsExport($query), 'GreenFieldsKlubIbuExtra-Topups.xlsx');
     }
 
     /**

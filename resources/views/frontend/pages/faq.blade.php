@@ -11,7 +11,8 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="page_title">
-                                <img src="{{ asset('img/decorations/faq_titletext.png') }}" alt="">
+                                {{-- <img src="{{ asset('img/decorations/faq_titletext.png') }}" alt=""> --}}
+                                <h1 class="title_text" title="FAQ">FAQ</h1>
                             </div>
                             <div class="accordion" id="accordionFaq">
                                 @foreach ($faqs as $faq)

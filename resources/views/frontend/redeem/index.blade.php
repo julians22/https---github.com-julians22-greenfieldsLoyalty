@@ -68,7 +68,7 @@
                                     <p id="current_postcode" class="text-black font-weight-bold text-center">{{ $address_data->postal_code }}</p>
                                 </div>
                                 <div class="col-md-12 text-center">
-                                    <a href="{{ route('frontend.user.edit-account') }}" class="btn btn-secondary rounded-pill">Ubah Alamat Pengiriman</a>
+                                    <a href="{{ route('frontend.user.edit-account') }}?from=redeem" class="btn btn-secondary rounded-pill">Ubah Alamat Pengiriman</a>
                                 </div>
                             </div>
                         </div>
@@ -95,7 +95,7 @@
                 <div class="modal-header">
                     <div class="img-header d-flex align-items-center">
 
-                        <h3 class="text-center text-dark-green mx-auto" style="width: 75%">Terima kasih telah melakukan penukaran hadiah. Mohon menunggu 7x24 jam untuk pengiriman hadiah langsung ke rumahmu ya.</h3>
+                        <h3 class="text-center text-dark-green mx-auto" style="width: 75%">Terima kasih telah melakukan penukaran hadiah. Mohon menunggu 14x24 jam untuk pengiriman hadiah langsung ke rumahmu ya.</h3>
 
                         <div class="remaining-points-wrapper">
                             <div class="d-flex flex-column flex-md-row align-items-center">SISA POIN KAMU SAAT INI: <span id="remaining-poin"></span> Poin</div>

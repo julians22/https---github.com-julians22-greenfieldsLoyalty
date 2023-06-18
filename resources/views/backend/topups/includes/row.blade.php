@@ -11,6 +11,10 @@
 </x-livewire-tables::bs4.table.cell>
 
 <x-livewire-tables::bs4.table.cell>
+    {!! $row->point ? number_format($row->point) : '<span class="badge badge-danger">'.__('-').'</span>' !!}
+</x-livewire-tables::bs4.table.cell>
+
+<x-livewire-tables::bs4.table.cell>
     @displayDate($row->created_at)
 </x-livewire-tables::bs4.table.cell>
 

@@ -38,8 +38,10 @@
         "filepond": "^4.30.4",
         "filepond-plugin-image-preview": "^4.6.11",
         "jquery-filepond": "^1.0.0",
+        "jquery-viewer": "^1.0.1",
         "select2": "^4.0.13",
         "select2-theme-bootstrap4": "^1.0.2",
-        "toastr": "^2.1.4"
+        "toastr": "^2.1.4",
+        "viewerjs": "^1.11.3"
     }
 }

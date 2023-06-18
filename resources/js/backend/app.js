@@ -8,3 +8,6 @@ require('@coreui/coreui');
 
 // Boilerplate
 require('../plugins');
+
+require('jquery-viewer');
+require('viewerjs');

@@ -10,8 +10,6 @@ use Illuminate\Validation\Rule;
  */
 class UpdateProfileRequest extends FormRequest
 {
-    protected $redirect = "/account/edit";
-
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -37,7 +35,7 @@ class UpdateProfileRequest extends FormRequest
             "date_of_birth" => ['required', 'date'],
             "child_name" => ['required', 'max:100'],
             "child_date_of_birth" => ['required', 'date'],
-            "phone" => ['required', 'numeric',  Rule::unique('users')->ignore($this->user()->id, 'phone')],
+            "phone" => ['required', 'numeric',  Rule::unique('users')->ignore($this->user()->id)],
             "province" => ['string', 'required'],
             "city" => ['string', 'required'],
             "district" => ['string'],
