@@ -38,7 +38,7 @@
                                 <img src="{{ asset('img/decorations/steps/step_'.$i.'_text.png') }}" alt="">
                                 @switch($i)
                                     @case(1)
-                                        <p>Isi data diri kamu di website www.loyalty.greenfieldsdairy.com atau di Whatsapp 0878-8259-6040</p>
+                                        <p>Isi data diri kamu di situs <a href="https://www.klubibuextra.greenfields.id">www.klubibuextra.greenfields.id</a> atau di Whatsapp 0878-8259-6040</p>
                                         @break
                                     @case(2)
                                         <p>Untuk setiap pembelanjaan produk Greenfields akan mendapatkan poin tertentu</p>
@@ -182,7 +182,7 @@
             <div class="modal-header">
                 <div class="img-header d-flex align-items-center">
 
-                    <h3 class="text-center text-dark-green mx-auto" style="width: 75%">Terima kasih telah melakukan penukaran hadiah. Mohon menunggu 7x24 jam untuk pengiriman hadiah langsung ke rumahmu ya.</h3>
+                    <h3 class="text-center text-dark-green mx-auto" style="width: 75%">Terima kasih telah melakukan penukaran hadiah. Mohon menunggu 14x24 jam (Hari Kerja) untuk pengiriman hadiah langsung ke rumahmu ya.</h3>
 
                     <div class="remaining-points-wrapper">
                         <div class="d-flex flex-column flex-md-row align-items-center">SISA POIN KAMU SAAT INI: <span id="remaining-poin"></span> Poin</div>

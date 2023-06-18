@@ -169,8 +169,8 @@ $fixedStyleSecond = "position-sticky w-100";
         <div class="point-wrapper-mobile">
             <div class="bg-dark-green p-2 rounded-lg">
                 <div class="point text-center">
-                    <p class="text-white"><strong>POIN KAMU</strong></p>
-                    <p class="text-white"><strong>{{ number_format($logged_in_user->point, 0, ".", ".") }}</strong></p>
+                    <p class="text-white mb-1"><strong>POIN KAMU</strong></p>
+                    <p class="text-gold h1"><strong>{{ number_format($logged_in_user->point, 0, ".", ".") }}</strong></p>
                 </div>
                 <button class="btn btn-gold btn-block btn-rounded font-weight-bold text-white" data-toggle="modal" data-target="#uploadReceiptModal" type="button">UPLOAD STRUK & TUKARKAN HADIAH</button>
             </div>

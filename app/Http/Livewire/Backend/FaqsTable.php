@@ -13,7 +13,6 @@ class FaqsTable extends DataTableComponent
     public function columns(): array
     {
         return [
-            Column::make(__('Title'), 'title'),
             Column::make(__('Question'), 'question'),
             Column::make(__('Last Updated'), 'updated_at'),
             Column::make(__('Actions'))

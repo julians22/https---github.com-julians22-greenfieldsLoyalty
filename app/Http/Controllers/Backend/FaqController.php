@@ -33,14 +33,14 @@ class FaqController extends Controller
 
     public function store(StoreFaqRequest $request)
     {
-        $faq = Faq::create($request->only('title', 'question', 'answer'));
+        $faq = Faq::create($request->only('question', 'answer'));
 
         return redirect()->route('admin.faq.index')->withFlashSuccess(__('The faq was successfully created.'));
     }
 
     public function update(UpdateFaqRequest $request, Faq $faq)
     {
-        $faq->update($request->only('title', 'question', 'answer'));
+        $faq->update($request->only('question', 'answer'));
 
         return redirect()->route('admin.faq.index')->withFlashSuccess(__('The faq was successfully updated.'));
     }

@@ -16,9 +16,10 @@
                             <div class="accordion" id="accordionFaq">
                                 @foreach ($faqs as $faq)
                                     <div class="card-faq">
-                                        <div class="question-wrapper" id="heading{{$faq->id}}">
-                                            <h2 class="mb-0" style="max-width: 70%">
-                                                {{$faq->title}}
+                                        <div class="question-wrapper" id="heading{{$faq->id}}" data-toggle="collapse" data-target="#collapse{{$faq->id}}"
+                                            aria-expanded="true" aria-controls="collapse{{$faq->id}}">
+                                            <h2 class="mb-0 faq-title">
+                                                {{$faq->question}}
                                             </h2>
                                             <button class="collapsed" type="button" data-toggle="collapse" data-target="#collapse{{$faq->id}}"
                                                 aria-expanded="true" aria-controls="collapse{{$faq->id}}">
@@ -29,7 +30,6 @@
                                         <div id="collapse{{$faq->id}}" class="collapse" aria-labelledby="heading{{$faq->id}}"
                                             data-parent="#accordionFaq">
                                             <div class="card-body">
-                                                <h4 class="text-dark-green">{{ $faq->question }}</h4>
                                                 <div class="answer-content">
                                                     {!! $faq->answer !!}
                                                 </div>

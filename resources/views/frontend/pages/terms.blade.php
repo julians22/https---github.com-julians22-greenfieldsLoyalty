@@ -12,10 +12,11 @@
                     <div class="row">
                         <div class="col-md-12 mb-2">
                             <div class="page_title">
-                                {{-- <img src="{{ asset('img/decorations/snk_titletext.png') }}" alt=""> --}}
                                 <h1 class="title_text" title="Syarat dan Ketentuan Program">Syarat dan Ketentuan Program</h1>
                             </div>
-                            {!! $term->long_text_value !!}
+                            <div class="terms-wrapper">
+                                {!! $term->long_text_value !!}
+                            </div>
                         </div>
                     </div>
                 </x-slot>

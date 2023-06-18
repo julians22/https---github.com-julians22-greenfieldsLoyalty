@@ -16,12 +16,6 @@
             <x-slot name="body">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="form-group row">
-                            <label class="col-md-2 col-form-label" for="title">@lang('Faq Title')</label>
-                            <div class="col-md-10">
-                                <input class="form-control" type="text" name="title" id="title" value="{{ old('title') ?? $faq->title }}" required autofocus>
-                            </div>
-                        </div>
 
                         <div class="form-group row">
                             <label class="col-md-2 col-form-label" for="name">@lang('Question')</label>

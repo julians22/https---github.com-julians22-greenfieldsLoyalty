@@ -357,6 +357,7 @@
 
 .point-wrapper-mobile{
     display: block;
+    width: 100%;
     @media (min-width: 768px) {
         display: none;
     }
@@ -494,6 +495,13 @@
             margin: 0;
             margin-left: 10px;
         }
+    }
+}
+
+.terms-wrapper{
+    img{
+        max-width: 100% !important;
+        height: auto;
     }
 }
 

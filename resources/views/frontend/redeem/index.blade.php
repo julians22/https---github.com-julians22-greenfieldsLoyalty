@@ -3,11 +3,12 @@
 @section('title', __('Tukar Hadiah'))
 
 @section('content')
-    <div class="container-fluid pt-md-5 pb-md-4">
+    <div class="container-fluid pt-5 pb-md-4">
         <div class="row justify-content-center">
             <div class="col-md-10">
                 <div class="page_title">
-                    <img src="{{ asset('img/decorations/redeem_titletext.png') }}" alt="">
+                    <h1 class="title_text" title="Pilih Hadiah Favorit Kamu">Pilih Hadiah Favorit Kamu</h1>
+                    {{-- <img src="{{ asset('img/decorations/redeem_titletext.png') }}" alt=""> --}}
                 </div>
                 @livewire('frontend.redeem-component')
             </div>

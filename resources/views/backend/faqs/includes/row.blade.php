@@ -1,8 +1,4 @@
 <x-livewire-tables::bs4.table.cell>
-    {{ $row->title }}
-</x-livewire-tables::bs4.table.cell>
-
-<x-livewire-tables::bs4.table.cell>
     {{ $row->question }}
 </x-livewire-tables::bs4.table.cell>
 

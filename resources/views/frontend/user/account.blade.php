@@ -10,15 +10,17 @@
             <x-frontend.card>
                 <x-slot name="body">
                     <div class="row">
-                        <div class="col-md-12 mb-2">
+                        <div class="col-md-12 mb-4 md-mb-2">
                             <div class="page_title">
-                                <img src="{{ asset('img/decorations/title_profile.png') }}" alt="">
+                                {{-- <img src="{{ asset('img/decorations/title_profile.png') }}" alt=""> --}}
+                                <h1 class="title_text" title="Profil">Profil</h1>
                             </div>
 
                             <div class="row">
                                 <div class="col-md-8 col-12">
                                     <div class="table-responsive">
-                                        <table class="table table-borderless table-hover table-striped table-sm">
+                                        {{-- Desktop View --}}
+                                        <table class="table table-borderless table-hover table-striped table-sm d-none d-md-table">
                                             <tbody>
                                                 <tr>
                                                     <th style="width: 25%">{{ __('Full Name') }}</th>
@@ -71,6 +73,69 @@
                                                 </tr>
                                             </tbody>
                                         </table>
+                                        {{-- Modile View --}}
+                                        <table class="table table-borderless table-hover table-striped table-sm d-table d-md-none">
+                                            <tbody>
+                                                <tr>
+                                                    <th>{{ __('Full Name') }}</th>
+                                                    <td>{{ $logged_in_user->name ?? "-" }}</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <th>{{ __('Phone Number') }}</th>
+                                                    <td>{{ $logged_in_user->phone ?? "-" }}</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <th>{{ __('E-mail Address') }}</th>
+                                                    <td>{{ $logged_in_user->email ?? "-" }}</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <th>{{ __('Date Of Birth') }}</th>
+                                                    <td>{{ $logged_in_user->date_of_birth ?? "-" }}</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <th>{{ __('Child Name') }}</th>
+                                                    <td>{{ $logged_in_user->child_name ?? "-" }}</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <th>{{ __('Child Date Of Birth') }}</th>
+                                                    <td>{{ $logged_in_user->child_date_of_birth ?? "-" }}</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <th colspan="2" class="bg-dark-green text-white">
+                                                        @lang('Alamat Domisili')
+                                                    </th>
+                                                </tr>
+
+                                                <tr>
+                                                    <th>{{__('Full Address')}}</th>
+                                                    <td colspan="2">{{ $logged_in_user->address ?? "-" }}</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <th>{{ __('Province') }}</th>
+                                                    <td>{{ $logged_in_user->province ? $logged_in_user->address_data->rel_province->name : "-" }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>{{ __('City') }}</th>
+                                                    <td>{{ $logged_in_user->city ? $logged_in_user->address_data->rel_city->name : "-" }}</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <th>{{ __('District') }}</th>
+                                                    <td>{{ $logged_in_user->city ? $logged_in_user->address_data->rel_district->name : "-" }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>{{ __('Postal Code') }}</th>
+                                                    <td>{{ $logged_in_user->postal_code ?? "-" }}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
                                     </div>
 
                                     <div class="row">
@@ -90,19 +155,20 @@
 
                         <div class="col-md-12 mb-2">
                             <div class="page_title">
-                                <img src="{{ asset('img/decorations/title_activity.png') }}" alt="">
+                                {{-- <img src="{{ asset('img/decorations/title_activity.png') }}" alt=""> --}}
+                                <h1 class="title_text" title="Riwayat Aktivitasmu">Riwayat Aktivitasmu</h1>
                             </div>
 
                             <div class="row">
                                 <div class="col-md-8">
 
-                                    <div class="row mb-1 mb-md-3">
+                                    <div class="row mb-2 mb-md-3">
                                         <div class="col">
                                             @livewire('frontend.widgets.user-top-up')
                                         </div>
                                     </div>
 
-                                    <div class="table-responsive">
+                                    <div class="table-responsive mb-2 md-mb-0">
                                         <table class="table table-sm table-bordered table-striped">
                                             <thead class="bg-dark-green text-white">
                                                 <tr>

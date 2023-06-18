@@ -3,11 +3,13 @@
 @section('title', __('Promo & Aktivitas'))
 
 @section('content')
-    <div class="container-fluid pt-md-5 pb-md-4">
+    <div class="container-fluid pt-5 pb-md-4">
         <div class="row justify-content-center">
             <div class="col-md-10">
                 <div class="page_title">
-                    <img src="{{ asset('img/decorations/promo_titletext.png') }}" alt="">
+                    {{-- <img src="{{ asset('img/decorations/promo_titletext.png') }}" alt=""> --}}
+                    <h1 class="title_text" title="Nikmati Promo & Aktivitas Menarik Kami">Nikmati Promo & Aktivitas Menarik Kami</h1>
+
                 </div>
 
                 <div class="row row-cols-1 row-cols-md-3">

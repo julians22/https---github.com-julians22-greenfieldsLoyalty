@@ -9,7 +9,7 @@
                 <x-frontend.card>
                     <x-slot name="body">
                         <div class="row">
-                            <div class="col-md-12 mb-2 text-justify">
+                            <div class="col-md-12 mb-2">
                                 <div class="page_title">
                                     <img src="{{ asset('img/decorations/privacy_titletext.png') }}" alt="">
                                 </div>
