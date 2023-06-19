@@ -1,8 +1,11 @@
 <div class="c-sidebar c-sidebar-dark c-sidebar-fixed c-sidebar-lg-show" id="sidebar">
     <div class="c-sidebar-brand d-lg-down-none">
-        <svg class="c-sidebar-brand-full" width="118" height="46" alt="CoreUI Logo">
+        <div class="c-sidebar-brand-full">
+            <img src="{{ asset('img/brand/Greenfields Logo_Green.png') }}" alt="" style="filter: brightness(0) invert(1);" width="200" height="auto">
+        </div>
+        {{-- <svg class="c-sidebar-brand-full" width="118" height="46" alt="CoreUI Logo">
             <use xlink:href="{{ asset('img/brand/coreui.svg#full') }}"></use>
-        </svg>
+        </svg> --}}
         <svg class="c-sidebar-brand-minimized" width="46" height="46" alt="CoreUI Logo">
             <use xlink:href="{{ asset('img/brand/coreui.svg#signet') }}"></use>
         </svg>

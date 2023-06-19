@@ -106,5 +106,19 @@ return [
             'name' => 'Tiki',
             'value' => 'Tiki'
         ],
+    ],
+    'sku' => [
+        'channel' => [
+            'Offline', 'Online'
+        ],
+        'offline_channel' => [
+            'Minimarket', 'Hypermarket', 'Supermarket', 'MTI A', 'MTI B'
+        ],
+        'online_channel' => [
+            'Ecommerce', 'QuickCommerce'
+        ],
+        'flavour' => [
+            'Fullcream', 'Strawberry', 'Chocolate', 'Low Fat', 'Skimmed'
+        ],
     ]
 ];

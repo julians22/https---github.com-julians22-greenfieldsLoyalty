@@ -53,6 +53,7 @@ class TopupTable extends DataTableComponent
                 ->sortable(),
             Column::make(__('Point'), 'point')
                 ->sortable(),
+            Column::make(__('Note'), 'note'),
             Column::make(__('Upload Date'), 'created_at')
                 ->sortable(),
             Column::make(__('Actions')),

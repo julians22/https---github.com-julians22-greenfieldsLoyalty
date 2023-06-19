@@ -81,8 +81,9 @@
                                 <input type="number" class="form-control" name="point">
                             </div>
                             <div class="form-group">
-                                <label for="note">@lang('Note') @lang('(Optional)')</label>
+                                <label for="note">@lang('Note') @lang('(Optional)'):</label>
                                 <textarea name="note" class="form-control" id="note" cols="" rows="5" required></textarea>
+                                <small class="d-inline-block">You can put transaction number, order date, product name, qty and price</small>
                             </div>
                             <button type="submit" class="btn btn-primary">@lang('Accept & Finish Top Up')</button>
                         </x-forms.patch>
