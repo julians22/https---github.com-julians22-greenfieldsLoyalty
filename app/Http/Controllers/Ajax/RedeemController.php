@@ -62,7 +62,7 @@ class RedeemController extends Controller
         $stock = $reward->current_stock - 1;
 
         $reward->update([
-            'stock' => $stock
+            'current_stock' => $stock
         ]);
 
         $reward->save();
