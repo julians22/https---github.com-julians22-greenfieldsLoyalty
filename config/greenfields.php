@@ -120,5 +120,6 @@ return [
         'flavour' => [
             'Fullcream', 'Strawberry', 'Chocolate', 'Low Fat', 'Skimmed'
         ],
+        'template' => "Tanggal Struk:\nNomor Struk:\nChannel: Offline / Online\nSub-Channel: Offline(Minimarket / Hypermarket / Supermarket / MTI A / MTI B), Online (Ecommerce / QuickCommerce)\nDaerah Toko: (Jawa Barat / Jawa Tengah / Etc)\nNama Toko: (Toko Albarkah)\nKategori produk apa: Fresh Milk / UHT Big Pack / UHT Small Pack / Yogurt / Cheese / Whipping Cream\nPacksize: (1L / 1.89 L)\nFlavor: (Full Cream / Strawberry / Chocolate / Low Fat / Skimmed / dll)\nQty Purchase: (1 / 2 / 3)\nNormal Price: xxx\nDiscount Price: xxx\nTotal Price: xxxx"
     ]
 ];

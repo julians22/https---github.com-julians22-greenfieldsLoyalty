@@ -11,7 +11,10 @@
 </x-livewire-tables::bs4.table.cell>
 
 <x-livewire-tables::bs4.table.cell>
-    {{ number_format($row->current_stock) }}
+    @php
+        $stock = $row->initial_stock - $row->redeems_count;
+    @endphp
+    {{ number_format($stock) }}
 </x-livewire-tables::bs4.table.cell>
 
 <x-livewire-tables::bs4.table.cell>

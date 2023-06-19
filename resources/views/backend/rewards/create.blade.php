@@ -51,8 +51,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="stock">@lang('Stock')</label>
-                            <input type="number" name="stock" id="stock" class="form-control" value="{{old('stock')}}">
+                            <label for="initial_stock">@lang('Stock')</label>
+                            <input type="number" name="initial_stock" id="initial_stock" class="form-control" value="{{old('initial_stock')}}">
                         </div>
 
                         <div class="form-group">

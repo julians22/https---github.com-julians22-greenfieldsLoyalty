@@ -73,7 +73,7 @@
             <x-slot name="body">
                 <div class="row">
                     @if ($topup->isProcessed())
-                    <div class="col-md-6">
+                    <div class="col-md-7">
                         <x-forms.patch :action="route('admin.topup.update.accept', ['topup' => $topup])">
                             <h4>Fill This form to accept</h4>
                             <div class="form-group">
@@ -81,14 +81,14 @@
                                 <input type="number" class="form-control" name="point">
                             </div>
                             <div class="form-group">
-                                <label for="note">@lang('Note') @lang('(Optional)'):</label>
-                                <textarea name="note" class="form-control" id="note" cols="" rows="5" required></textarea>
+                                <label for="note">@lang('Note') @lang('(Must Complete)'):</label>
+                                <textarea name="note" class="form-control" id="note" cols="" rows="10" required>{{$template}}</textarea>
                                 <small class="d-inline-block">You can put transaction number, order date, product name, qty and price</small>
                             </div>
                             <button type="submit" class="btn btn-primary">@lang('Accept & Finish Top Up')</button>
                         </x-forms.patch>
                     </div>
-                        <div class="col-md-6">
+                        <div class="col-md-5">
                             <x-forms.patch :action="route('admin.topup.update.reject', ['topup' => $topup])">
                                 <h4>Fill This form to reject</h4>
                                 <div class="form-group">

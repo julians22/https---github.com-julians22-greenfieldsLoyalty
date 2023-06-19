@@ -23,8 +23,11 @@ class TopupController extends Controller
 
     public function edit(Request $request, Topup $topup)
     {
+        $template = config('greenfields.sku.template');
         return view('backend.topups.edit')
-            ->with('topup', $topup);
+            ->with('topup', $topup)
+            ->with('template', $template);
+
     }
 
     public function accept(AcceptTopupRequest $request, Topup $topup)

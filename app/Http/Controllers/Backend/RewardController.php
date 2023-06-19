@@ -28,7 +28,7 @@ class RewardController extends Controller
             'point' => $request->point,
             'image' => $request->image,
             'status' => $request->has('status') ? 1 : 0,
-            'current_stock' => $request->stock
+            'initial_stock' => $request->initial_stock
         ];
 
         $reward = Reward::create($data);
@@ -51,7 +51,7 @@ class RewardController extends Controller
             'point' => $request->point,
             'image' => $request->image,
             'status' => $request->has('status') ? 1 : 0,
-            'current_stock' => $request->stock
+            'initial_stock' => $request->initial_stock
         ];
 
         $reward->update($data);
