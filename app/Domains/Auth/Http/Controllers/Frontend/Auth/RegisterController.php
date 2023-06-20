@@ -62,7 +62,7 @@ class RegisterController
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function showRegistrationForm()
+    public function showRegistrationForm(Request $request)
     {
         abort_unless(config('boilerplate.access.user.registration'), 404);
 
@@ -72,11 +72,18 @@ class RegisterController
 
         $provinces = Indonesia::allProvinces();
 
+        $from = $request->get('utm');
+        $offline = false;
+        if (!empty($from) && $from == 'offline_qr_code') {
+            $offline = true;
+        }
+
         return view('frontend.auth.register', compact(
             "survey_categories",
             "survey_brands",
             "survey_packsizes",
-            "provinces"
+            "provinces",
+            "offline"
             )
         );
     }
@@ -123,12 +130,12 @@ class RegisterController
      *
      * @throws \App\Domains\Auth\Exceptions\RegisterException
      */
-    protected function create(array $data)
+    protected function create(array $data, $utm = false)
     {
         abort_unless(config('boilerplate.access.user.registration'), 404);
 
         $data['completed_at'] = now();
-        return $this->userService->registerUser($data);
+        return $this->userService->registerUser($data, $utm);
     }
 
      /**
@@ -165,7 +172,18 @@ class RegisterController
                 ->withErrors($validatorPhone, 'register');
         }
 
-        event(new Registered($user = $this->create($request->all())));
+        $utm = null;
+        $offline = false;
+        $oldUrl = parse_url(url()->previous());
+        parse_str($oldUrl['query'], $output);
+        if (array_key_exists('utm', $output)) {
+            $utm = $output['utm'];
+        }
+        if ($utm && $utm == 'offline_qr_code') {
+            $offline = true;
+        }
+
+        event(new Registered($user = $this->create($request->all(), $offline)));
 
         $this->guard()->login($user);
 

@@ -29,6 +29,18 @@ trait UserMethod
         return true;
     }
 
+    public function isWebUser() {
+        return $this->register_channel == 'web';
+    }
+
+    public function isWebQrUser() {
+        return $this->register_channel == 'web_qr';
+    }
+
+    public function isWhatsappUser() {
+        return $this->register_channel == 'whatsapp';
+    }
+
     /**
      * @return bool
      */

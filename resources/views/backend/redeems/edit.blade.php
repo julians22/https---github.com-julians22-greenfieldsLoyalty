@@ -92,48 +92,58 @@
             </x-slot>
         </x-backend.card>
 
-        <x-backend.card>
-            <x-slot name="header">
-                @lang('Aksi')
-            </x-slot>
 
-            <x-slot name="body">
-                <div class="row">
-                    @if ($redeem->isProcessed())
-                    <div class="col-md-6">
-                        <x-forms.patch :action="route('admin.redeem.update.send', ['redeem' => $redeem])">
-                            <h4>Fill This form to send Gift</h4>
-                            <div class="form-group">
-                                <label for="point">@lang('Courier')</label>
-                                <select class="form-control" name="courier" id="courier">
-                                    @foreach ($couriers as $item)
-                                        <option value="{{$item['value']}}">{{$item['name']}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="point">@lang('Airwaybill Number')</label>
-                                <input type="text" class="form-control" name="airwaybill">
-                            </div>
-                            <button type="submit" class="btn btn-primary">@lang('Send Claim')</button>
-                        </x-forms.patch>
-                    </div>
-                        <div class="col-md-6">
-                            <x-forms.patch :action="route('admin.redeem.update.reject', ['redeem' => $redeem])">
-                                <h4>Fill This form to set delay</h4>
+
+            @if ($redeem->isProcessed())
+            <x-backend.card>
+                <x-slot name="header">
+                    @lang('Aksi')
+                </x-slot>
+                <x-slot name="body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <x-forms.patch :action="route('admin.redeem.update.send', ['redeem' => $redeem])">
+                                <h4>Fill This form to send Gift</h4>
                                 <div class="form-group">
-                                    <label for="failed_reason">@lang('Delay Reason'):</label>
-                                    <textarea name="failed_reason" class="form-control" id="failed_reason" cols="" rows="5" required></textarea>
+                                    <label for="point">@lang('Courier')</label>
+                                    <select class="form-control" name="courier" id="courier">
+                                        @foreach ($couriers as $item)
+                                            <option value="{{$item['value']}}">{{$item['name']}}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
-                                <button type="submit" class="btn btn-danger">@lang('Reject')</button>
+                                <div class="form-group">
+                                    <label for="point">@lang('Airwaybill Number')</label>
+                                    <input type="text" class="form-control" name="airwaybill">
+                                </div>
+                                <button type="submit" class="btn btn-primary">@lang('Send Claim')</button>
                             </x-forms.patch>
                         </div>
+                    </div>
+                </x-slot>
+            </x-backend.card>
+            <x-backend.card>
+                    <x-slot name="header">
+                        @lang('Aksi')
+                    </x-slot>
+                    <x-slot name="body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <x-forms.patch :action="route('admin.redeem.update.reject', ['redeem' => $redeem])">
+                                    <h4>Fill This form to set delay</h4>
+                                    <div class="form-group">
+                                        <label for="failed_reason">@lang('Delay Reason'):</label>
+                                        <textarea name="failed_reason" class="form-control" id="failed_reason" cols="" rows="5" required></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-danger">@lang('Reject')</button>
+                                </x-forms.patch>
+                            </div>
+                        </div>
+                    </x-slot>
+            </x-backend.card>
 
-                    @endif
-                </div>
-            </x-slot>
+            @endif
 
-        </x-backend.card>
     </div>
 
 </div>
