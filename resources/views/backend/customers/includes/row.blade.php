@@ -27,15 +27,15 @@
 </x-livewire-tables::bs4.table.cell>
 
 <x-livewire-tables::bs4.table.cell>
-    {{ $row->detail ? $row->detail->history_milk_category : '' }}
+    {{ $row->detail ? Str::replaceArray('|', ',', $row->detail->history_milk_category) : '' }}
 </x-livewire-tables::bs4.table.cell>
 
 <x-livewire-tables::bs4.table.cell>
-    {{ $row->detail ? $row->detail->history_milk_product : '' }}
+    {{ $row->detail ? Str::replaceArray('|', ',', $row->detail->history_milk_product) : '' }}
 </x-livewire-tables::bs4.table.cell>
 
 <x-livewire-tables::bs4.table.cell>
-    {{ $row->detail ? $row->detail->history_milk_packsize : '' }}
+    {{ $row->detail ? Str::replaceArray('|', ',', $row->detail->history_milk_packsize) : '' }}
 </x-livewire-tables::bs4.table.cell>
 
 <x-livewire-tables::bs4.table.cell>
