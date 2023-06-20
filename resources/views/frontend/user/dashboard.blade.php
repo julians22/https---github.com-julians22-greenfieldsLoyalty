@@ -38,7 +38,7 @@
                                 <img src="{{ asset('img/decorations/steps/step_'.$i.'_text.png') }}" alt="">
                                 @switch($i)
                                     @case(1)
-                                        <p>Isi data diri kamu di situs <a href="https://www.klubibuextra.greenfields.id">www.klubibuextra.greenfields.id</a> atau di Whatsapp 0878-8259-6040</p>
+                                        <p>Isi data diri kamu di situs <a href="https://www.klubibuextra.greenfields.id">www.klubibuextra.greenfields.id</a> atau di Whatsapp 0851-7210-0967</p>
                                         @break
                                     @case(2)
                                         <p>Untuk setiap pembelanjaan produk Greenfields akan mendapatkan poin tertentu</p>

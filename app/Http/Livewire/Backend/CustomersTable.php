@@ -32,7 +32,9 @@ class CustomersTable extends DataTableComponent
                 ->sortable(),
             Column::make(__('Failed Top Up'), 'failed_topups_count')
                 ->sortable(),
-            Column::make(__('Register At')),
+            Column::make('Category'),
+            Column::make('Brand'),
+            Column::make('Packsize'),
             Column::make('Action')
         ];
     }

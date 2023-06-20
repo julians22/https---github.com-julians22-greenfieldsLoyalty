@@ -27,7 +27,15 @@
 </x-livewire-tables::bs4.table.cell>
 
 <x-livewire-tables::bs4.table.cell>
-    @displayDate($row->created_at)
+    {{ $row->detail ? $row->detail->history_milk_category : '' }}
+</x-livewire-tables::bs4.table.cell>
+
+<x-livewire-tables::bs4.table.cell>
+    {{ $row->detail ? $row->detail->history_milk_product : '' }}
+</x-livewire-tables::bs4.table.cell>
+
+<x-livewire-tables::bs4.table.cell>
+    {{ $row->detail ? $row->detail->history_milk_packsize : '' }}
 </x-livewire-tables::bs4.table.cell>
 
 <x-livewire-tables::bs4.table.cell>
