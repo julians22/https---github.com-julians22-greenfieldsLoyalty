@@ -241,6 +241,6 @@ class User extends Authenticatable implements MustVerifyEmail, TwoFactorAuthenti
      */
     public function offline_reward(): HasOne
     {
-        return $this->hasOne(Redeem::class, 'user_id', 'id')->where('offline_reward', 1);
+        return $this->hasOne(Redeem::class, 'user_id', 'id')->where('offline_reward', 1)->withTrashed();
     }
 }
