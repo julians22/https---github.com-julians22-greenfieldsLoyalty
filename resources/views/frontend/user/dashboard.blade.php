@@ -20,10 +20,18 @@
         <div class="row justify-content-center">
             <div class="col-12 col-xl-10">
                 @if ($logged_in_user->isHasDetail() && $logged_in_user->isHasAddressData() && $logged_in_user->isWhatsappVerified())
-                    @if ($logged_in_user->voucher)
+                    @if ($logged_in_user->isWebUser() && $logged_in_user->isWhatsappUser())
+                        @if ($logged_in_user->voucher)
                         <div class="alert alert-dark-green heartbeat">
                             Kamu berhak mendapatkan promo khusus anggota baru: <strong>{{ $logged_in_user->voucher->code }}</strong>.  <a href="{{ route('frontend.promo.index') }}?show=promo-khusus-anggota-baru">Cek syarat & ketentuan disini.</a>
                         </div>
+                        @endif
+                    @elseif ($logged_in_user->isWebQrUser())
+                        @if ($logged_in_user->offline_reward)
+                        <div class="alert alert-dark-green heartbeat">
+                            Kamu berhak mendapatkan hadiah khusus anggota baru berupa <strong>{{ $logged_in_user->offline_reward->reward->name }}</strong>.  Akan dikirim ke alamat kamu dalam 14x24 jam (Hari kerja).
+                        </div>
+                        @endif
                     @endif
                 @else
                     <div class="alert alert-warning">

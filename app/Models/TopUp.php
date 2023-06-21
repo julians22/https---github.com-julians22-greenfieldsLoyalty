@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use BinaryCats\Sku\HasSku;
 use BinaryCats\Sku\Concerns\SkuOptions;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class TopUp extends Model
@@ -88,5 +89,15 @@ class TopUp extends Model
     public function isFailed()
     {
         return $this->status == self::STATUS_FAILED;
+    }
+
+    /**
+     * Get all of the details for the TopUp
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function details(): HasMany
+    {
+        return $this->hasMany(TopUpDetail::class, 'topup_id', 'id');
     }
 }

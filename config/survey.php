@@ -40,12 +40,12 @@ return [
         "Others"
     ],
     'packsizes' => [
-        "Lebih dari 1.000 ml (g)",
-        "500 – 999 ml (g)",
-        "250 – 499 ml (g)",
-        "200 – 249 ml (g)",
-        "100 – 199 ml (g)",
-        "Kurang dari 100ml (g)"
+        "Lebih dari 1.000 ml (gram)",
+        "500 – 999 ml (gram)",
+        "250 – 499 ml (gram)",
+        "200 – 249 ml (gram)",
+        "100 – 199 ml (gram)",
+        "Kurang dari 100ml (gram)"
     ]
     // 'packsizes' => [
     //     "1.89 L",

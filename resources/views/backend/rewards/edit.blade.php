@@ -51,7 +51,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="initial_stock">@lang('Stock')</label>
+                            <label for="initial_stock">@lang('Initial Stock')</label>
                             <input type="number" name="initial_stock" id="initial_stock" class="form-control" value="{{old('initial_stock') ?? $reward->initial_stock}}">
                         </div>
 

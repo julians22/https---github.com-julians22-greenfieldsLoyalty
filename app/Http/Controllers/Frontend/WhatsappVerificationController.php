@@ -54,15 +54,18 @@ class WhatsappVerificationController extends Controller
 
             if ($user->isWebQrUser()) {
                 $reward_offline_id = config('greenfields.offline_reward_id');
-
-                $rewardInUser = Redeem::where('user_id', $user->id)->where('offline_reward', $reward_offline_id)->first();
+                $rewardInUser = Redeem::where('user_id', $user->id)->where('offline_reward', 1)->first();
                 if (!$rewardInUser->count()) {
-                    $reward = Reward::find(1)->first();
                     Redeem::create([
                         'user_id' => $user->id,
-                        'reward_id' => $reward->id,
-                        'offline_reward' => $reward_offline_id
+                        'reward_id' => $reward_offline_id,
+                        'offline_reward' => 1,
+                        'address_id' => $user->address_data->id,
                     ]);
+
+                    $reward = Reward::find($reward_offline_id)->first();
+                    $reward->current_stock -= 1;
+                    $reward->save();
                 }
             }
 

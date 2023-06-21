@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-3">
         <x-backend.card>
             <x-slot name="header">
                 @lang('Manage Top Up')
@@ -43,7 +43,7 @@
         </x-backend.card>
     </div>
 
-    <div class="col-md-8">
+    <div class="col-md-9">
         <x-backend.card>
             <x-slot name="header">
                 @lang('Detail Pengguna')
@@ -71,34 +71,120 @@
             </x-slot>
 
             <x-slot name="body">
-                <div class="row">
+                <div class="row" x-data="{show: 'accept'}">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            {{-- inline radio --}}
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioaccept" value="accept" x-model="show">
+                                <label class="form-check-label" for="inlineRadioaccept">Accept</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioreject" value="reject" x-model="show">
+                                <label class="form-check-label" for="inlineRadioreject">Reject</label>
+                            </div>
+                        </div>
+                    </div>
                     @if ($topup->isProcessed())
-                    <div class="col-md-7">
+                    <div class="col-md-12" x-show="show === 'accept'">
                         <x-forms.patch :action="route('admin.topup.update.accept', ['topup' => $topup])">
-                            <h4>Fill This form to accept</h4>
+                            <h5 class="card-title">Fill This form to accept</h5>
+                            <div class="form-group">
+                                <label for="receipt_date">@lang('Tanggal Struk')</label>
+                                <input type="date" class="form-control" name="receipt_date">
+                            </div>
+                            <div class="form-group">
+                                <label for="receipt_number">@lang('Nomor Struk')</label>
+                                <input type="text" class="form-control" name="receipt_number">
+                            </div>
+                            <div class="form-group">
+                                <label for="receipt_channel">@lang('Channel')</label>
+                                <select name="receipt_channel" id="receipt_channel" class="form-control">
+                                    <option value="Offline">Offline</option>
+                                    <option value="Online">Online</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="receipt_subchannel">@lang('Subchannel')</label>
+                                <ul>
+                                    <li><small><strong>Offline : </strong>Minimarket / Hypermarket / Supermarket / MTI A / MTI B</small></li>
+                                    <li><small><strong>Online : </strong>Ecommerce / QuickCommerce</small></li>
+                                </ul>
+                                <input type="text" class="form-control" name="receipt_subchannel">
+                            </div>
+                            <div class="form-group">
+                                <label for="receipt_area">@lang('Daerah Toko')</label>
+                                <select name="receipt_area" id="receipt_area" class="form-control">
+                                    @foreach ($provinces as $province)
+                                        <option value="{{$province->name}}">{{$province->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="receipt_storename">@lang('Nama Toko')</label>
+                                <input type="text" class="form-control" name="receipt_storename">
+                            </div>
+                            <div x-data="addRemove()">
+                                <table class="table-sm table table-bordered">
+                                    <tr>
+                                        <th>Kategori</th>
+                                        <th >Pack's</th>
+                                        <th >QTY</th>
+                                        <th>Flavour</th>
+                                        <th>Price</th>
+                                        <th>Discount</th>
+                                        <td >*</td>
+                                    </tr>
+                                    <template x-for="(field, index) in fields" :key="field.id">
+                                        <tr>
+                                            <td>
+                                                <input type="text" :name=`details[${index}][product]` class="form-control form-control-sm">
+                                            </td>
+                                            <td>
+                                                <input type="number" :name=`details[${index}][packsize]` step="any" class="form-control form-control-sm">
+                                            </td>
+                                            <td>
+                                                <input type="number" :name=`details[${index}][qty]` class="form-control form-control-sm">
+                                            </td>
+                                            <td>
+                                                <input type="text" :name=`details[${index}][flavour]` class="form-control form-control-sm">
+                                            </td>
+                                            <td>
+                                                <input type="number" :name=`details[${index}][price]` class="form-control form-control-sm">
+                                            </td>
+                                            <td>
+                                                <input type="number" :name=`details[${index}][discount]` class="form-control form-control-sm">
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-danger btn-sm" x-show="index != 0" @click="removeField(field)">&times;</button>
+                                            </td>
+                                        </tr>
+                                    </template>
+                                </table>
+                                <button class="btn btn-sm btn-primary" type="button" @click="addNewField()">+ Produk</button>
+                            </div>
                             <div class="form-group">
                                 <label for="point">@lang('Point Calculated')</label>
                                 <input type="number" class="form-control" name="point">
                             </div>
                             <div class="form-group">
                                 <label for="note">@lang('Note') @lang('(Must Complete)'):</label>
-                                <textarea name="note" class="form-control" id="note" cols="" rows="10" required>{{$template}}</textarea>
+                                <textarea name="note" class="form-control" id="note" cols="" rows="5" required></textarea>
                                 <small class="d-inline-block">You can put transaction number, order date, product name, qty and price</small>
                             </div>
                             <button type="submit" class="btn btn-primary">@lang('Accept & Finish Top Up')</button>
                         </x-forms.patch>
                     </div>
-                        <div class="col-md-5">
-                            <x-forms.patch :action="route('admin.topup.update.reject', ['topup' => $topup])">
-                                <h4>Fill This form to reject</h4>
-                                <div class="form-group">
-                                    <label for="failed_reason">@lang('Failed Reason'):</label>
-                                    <textarea name="failed_reason" class="form-control" id="failed_reason" cols="" rows="5" required></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-danger">@lang('Reject')</button>
-                            </x-forms.patch>
-                        </div>
-
+                    <div class="col-md-12" x-show="show === 'reject'">
+                        <x-forms.patch :action="route('admin.topup.update.reject', ['topup' => $topup])">
+                            <h4>Fill This form to reject</h4>
+                            <div class="form-group">
+                                <label for="failed_reason">@lang('Failed Reason'):</label>
+                                <textarea name="failed_reason" class="form-control" id="failed_reason" cols="" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-danger">@lang('Reject')</button>
+                        </x-forms.patch>
+                    </div>
                     @endif
                 </div>
             </x-slot>
@@ -125,5 +211,23 @@
 
         // View a list of images
         $('#receipt').viewer();
+    </script>
+
+    <script>
+        function addRemove() {
+            return {
+                fields: [
+                    {
+                        id: new Date().getTime()
+                    }
+                ],
+                addNewField() {
+                    this.fields.push({id: new Date().getTime() + this.fields.length});
+                },
+                removeField(field) {
+                    this.fields.splice(this.fields.indexOf(field), 1);
+                }
+            }
+        }
     </script>
 @endpush
