@@ -52,8 +52,8 @@ class RewardController extends Controller
             'point' => $request->point,
             'image' => $request->image,
             'status' => $request->has('status') ? 1 : 0,
-            'initial_stock' => $reward->initial_stock + $request->initial_stock,
-            'current_stock' => $reward->current_stock + $request->initial_stock
+            // 'initial_stock' => $reward->initial_stock + $request->initial_stock,
+            // 'current_stock' => $reward->current_stock + $request->initial_stock
         ];
 
         $reward->update($data);

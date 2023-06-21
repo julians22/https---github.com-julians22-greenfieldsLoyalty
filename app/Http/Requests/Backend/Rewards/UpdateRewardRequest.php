@@ -29,7 +29,7 @@ class UpdateRewardRequest extends FormRequest
             "point" => 'numeric',
             "image" => 'required',
             "status" => 'sometimes',
-            "initial_stock" => 'required|numeric'
+            // "initial_stock" => 'required|numeric'
         ];
     }
 }
