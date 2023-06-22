@@ -27,9 +27,21 @@
 </x-livewire-tables::bs4.table.cell>
 
 <x-livewire-tables::bs4.table.cell>
-    @displayDate($row->created_at)
+    {{ $row->detail ? str_replace('|', ',', $row->detail->history_milk_category) : '' }}
 </x-livewire-tables::bs4.table.cell>
 
-{{-- <x-livewire-tables::bs4.table.cell>
-    @include('backend.topups.includes.actions', ['topup' => $row])
-</x-livewire-tables::bs4.table.cell> --}}
+<x-livewire-tables::bs4.table.cell>
+    {{ $row->detail ? str_replace('|', ',', $row->detail->history_milk_product) : '' }}
+</x-livewire-tables::bs4.table.cell>
+
+<x-livewire-tables::bs4.table.cell>
+    {{ $row->detail ? str_replace('|', ',', $row->detail->history_milk_packsize) : '' }}
+</x-livewire-tables::bs4.table.cell>
+
+<x-livewire-tables::bs4.table.cell>
+    {{ $row->register_channel }}
+</x-livewire-tables::bs4.table.cell>
+
+<x-livewire-tables::bs4.table.cell>
+    @include('backend.customers.includes.actions', ['user' => $row])
+</x-livewire-tables::bs4.table.cell>

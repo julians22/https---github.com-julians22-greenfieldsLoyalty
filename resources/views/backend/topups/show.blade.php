@@ -21,7 +21,12 @@
                     <div class="col-12">
                         <div class="form-group">
                             <label for="receipt">@lang('Struk yang di upload'):</label>
-                            <img src="{{ asset($topup->filepath) }}" alt="" class="w-100">
+                            <div id="receipt" style="cursor: zoom-in">
+                                <img src="{{ asset($topup->filepath) }}" alt="" class="w-100">
+                            </div>
+                            <div style="display: none">
+                                <img id="receipt_image" src="{{ asset($topup->filepath) }}" alt="">
+                            </div>
                         </div>
                     </div>
                     <div class="col-12">
@@ -89,8 +94,106 @@
                 </div>
             </x-slot>
         </x-backend.card>
+
+        @if ($topup->isCompleted())
+        <x-backend.card>
+            <x-slot name="header">
+                @lang('Detail Struk')
+            </x-slot>
+
+            <x-slot name="body">
+                <div class="form-group row">
+                    <label class="col-md-2 col-form-label" for="name">@lang('Tanggal Struk')</label>
+                    <div class="col-md-10">
+                        <input class="form-control" type="text" name="name" id="name" value="{{ $topup->receipt_date }}" disabled>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-2 col-form-label" for="name">@lang('Nomor Struk')</label>
+                    <div class="col-md-10">
+                        <input class="form-control" type="text" name="name" id="name" value="{{ $topup->receipt_number }}" disabled>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-2 col-form-label" for="name">@lang('Channel')</label>
+                    <div class="col-md-10">
+                        <input class="form-control" type="text" name="name" id="name" value="{{ $topup->receipt_channel }}" disabled>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-2 col-form-label" for="name">@lang('Subchannel')</label>
+                    <div class="col-md-10">
+                        <input class="form-control" type="text" name="name" id="name" value="{{ $topup->receipt_subchannel }}" disabled>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-2 col-form-label" for="name">@lang('Daerah Toko')</label>
+                    <div class="col-md-10">
+                        <input class="form-control" type="text" name="name" id="name" value="{{ $topup->receipt_area }}" disabled>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-2 col-form-label" for="name">@lang('Nama Toko')</label>
+                    <div class="col-md-10">
+                        <input class="form-control" type="text" name="name" id="name" value="{{ $topup->receipt_storename }}" disabled>
+                    </div>
+                </div>
+
+                @if ($topup->has('details'))
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <td>Kategori Produk</td>
+                                    <td>Ukuran Kemasan</td>
+                                    <td>Qty</td>
+                                    <td>Harga</td>
+                                    <td>Diskon</td>
+                                    <td>Total</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($topup->details as $detail)
+                                    <tr>
+                                        <td>{{$detail->product}}</td>
+                                        <td>{{$detail->packsize}}</td>
+                                        <td>{{$detail->qty}}</td>
+                                        <td>{{$detail->price}}</td>
+                                        <td>{{$detail->dicount_price}}</td>
+                                        <td>{{$detail->price * $detail->qty - $detail->dicount_price}}</td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                @endif
+
+            </x-slot>
+        </x-backend.card>
+        @endif
     </div>
 
 </div>
 
 @endsection
+
+@push('after-scripts')
+    <script>
+        const $receipt = $('#receipt_image');
+        $receipt.viewer({
+            inline: true,
+            viewed: function() {
+                $image.viewer('zoomTo', 1);
+            }
+        });
+
+        // Get the Viewer.js instance after initialized
+        var viewer = $receipt.data('viewer');
+
+        // View a list of images
+        $('#receipt').viewer();
+    </script>
+@endpush

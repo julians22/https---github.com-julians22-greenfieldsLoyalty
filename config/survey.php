@@ -31,6 +31,7 @@ return [
         "Oatside",
         "Dancow",
         "Milo",
+        "Greenfields Yogurt",
         "Heavenly Blush Yogurt",
         "Kin Yogurt",
         "Cimory Yogurt",
@@ -39,12 +40,20 @@ return [
         "Others"
     ],
     'packsizes' => [
-        "1.89 L",
-        "1 L",
-        "500 mL",
-        "250 mL",
-        "200 mL",
-        "105 mL",
-        "Others"
+        "Lebih dari 1.000 ml (gram)",
+        "500 – 999 ml (gram)",
+        "250 – 499 ml (gram)",
+        "200 – 249 ml (gram)",
+        "100 – 199 ml (gram)",
+        "Kurang dari 100ml (gram)"
     ]
+    // 'packsizes' => [
+    //     "1.89 L",
+    //     "1 L",
+    //     "500 mL",
+    //     "250 mL",
+    //     "200 mL",
+    //     "105 mL",
+    //     "Others"
+    // ]
 ];

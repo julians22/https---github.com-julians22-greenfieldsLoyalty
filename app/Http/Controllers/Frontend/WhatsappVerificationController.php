@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Domains\Auth\Models\User;
 use App\Http\Controllers\Controller;
+use App\Models\Redeem;
+use App\Models\Reward;
 use App\Models\Voucher;
 use Http;
 use Illuminate\Http\Request;
@@ -39,15 +41,34 @@ class WhatsappVerificationController extends Controller
             $user->active = 1;
             $user->save();
 
-
-            $voucherInUser = Voucher::where('user_id', $user->id)->get();
-            if (!$voucherInUser->count()) {
-                $voucher = Voucher::whereNull('given_at')->first();
-                $voucher->update([
-                    'user_id' => $user->id,
-                    'given_at' => now()
-                ]);
+            if ($user->isWebUser()) {
+                $voucherInUser = Voucher::where('user_id', $user->id)->get();
+                if (!$voucherInUser->count()) {
+                    $voucher = Voucher::whereNull('given_at')->first();
+                    $voucher->update([
+                        'user_id' => $user->id,
+                        'given_at' => now()
+                    ]);
+                }
             }
+
+            if ($user->isWebQrUser()) {
+                $reward_offline_id = config('greenfields.offline_reward_id');
+                $rewardInUser = Redeem::where('user_id', $user->id)->where('offline_reward', 1)->first();
+                if (!$rewardInUser->count()) {
+                    Redeem::create([
+                        'user_id' => $user->id,
+                        'reward_id' => $reward_offline_id,
+                        'offline_reward' => 1,
+                        'address_id' => $user->address_data->id,
+                    ]);
+
+                    $reward = Reward::find($reward_offline_id)->first();
+                    $reward->current_stock -= 1;
+                    $reward->save();
+                }
+            }
+
             return response()->json($status);
         }
 

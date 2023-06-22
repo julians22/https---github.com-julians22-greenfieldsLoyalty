@@ -34,7 +34,9 @@ class TopupTable extends DataTableComponent
                     TopUp::STATUS_PROCESS => 'Processed',
                     TopUp::STATUS_SUCCESS => 'Finished',
                     TopUp::STATUS_FAILED => 'Canceled',
-                ])
+                ]),
+            'topup_date' => Filter::make('Topup Date')
+                ->date()
         ];
     }
 
@@ -53,6 +55,7 @@ class TopupTable extends DataTableComponent
                 ->sortable(),
             Column::make(__('Point'), 'point')
                 ->sortable(),
+            Column::make(__('Note'), 'note'),
             Column::make(__('Upload Date'), 'created_at')
                 ->sortable(),
             Column::make(__('Actions')),
@@ -64,6 +67,7 @@ class TopupTable extends DataTableComponent
         $query = TopUp::with('user')->whereHas('user');
 
         return $query
+            ->when($this->getFilter('topup_date'), fn ($query, $date) => $query->whereDate('created_at', $date))
             ->when($this->getFilter('status'), fn ($query, $status) => $query->where('status', $status));
     }
 

@@ -11,3 +11,9 @@ require('../plugins');
 
 require('jquery-viewer');
 require('viewerjs');
+
+// Livewire.on('swalError', )
+
+window.addEventListener('swalError', event => {
+    alert('Name updated to: ' + event);
+})

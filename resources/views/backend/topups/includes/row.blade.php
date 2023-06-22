@@ -15,6 +15,24 @@
 </x-livewire-tables::bs4.table.cell>
 
 <x-livewire-tables::bs4.table.cell>
+    @if ($row->isCompleted())
+        <p class="mb-0" style="max-width: 200px">
+            <small>
+                {!! nl2br(e($row->note)) !!}
+            </small>
+        </p>
+        @endif
+
+    @if ($row->isFailed())
+        <p class="mb-0" style="max-width: 200px">
+            <small>
+                {!! nl2br(e($row->failed_reason)) !!}
+            </small>
+        </p>
+    @endif
+</x-livewire-tables::bs4.table.cell>
+
+<x-livewire-tables::bs4.table.cell>
     @displayDate($row->created_at)
 </x-livewire-tables::bs4.table.cell>
 

@@ -75,7 +75,7 @@ class Redeem extends Model
      */
     public function reward(): HasOne
     {
-        return $this->hasOne(Reward::class, 'id', 'reward_id');
+        return $this->hasOne(Reward::class, 'id', 'reward_id')->withTrashed();
     }
 
     /**

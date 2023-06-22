@@ -503,6 +503,26 @@
         max-width: 100% !important;
         height: auto;
     }
+
+    table{
+        max-width: 100%;
+        width: 100% !important;
+
+        @media (min-width: 768px) {
+            width: 50% !important;
+        }
+        tr, td{
+            height: auto;
+        }
+
+        td{
+            max-width: 30%;
+        }
+
+        p{
+            margin-bottom: 0;
+        }
+    }
 }
 
 #footer{

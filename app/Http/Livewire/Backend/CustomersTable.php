@@ -18,17 +18,24 @@ class CustomersTable extends DataTableComponent
     public function columns(): array
     {
         return [
-            Column::make(__('Name'), 'name'),
-            Column::make(__('Phone Number'), 'phone'),
+            Column::make(__('Name'), 'name')
+                ->searchable()
+                ->sortable(),
+            Column::make(__('Phone Number'), 'phone')
+                ->searchable(),
             Column::make(__('E-mail'), 'email'),
-            Column::make(__('Point'), 'point'),
+            Column::make(__('Point'), 'point')
+                ->sortable(),
             Column::make(__('Total Top Up'), 'topups_count')
                 ->sortable(),
             Column::make(__('Success Top Up'), 'success_topups_count')
                 ->sortable(),
             Column::make(__('Failed Top Up'), 'failed_topups_count')
                 ->sortable(),
-            Column::make(__('Register At'))
+            Column::make('Category'),
+            Column::make('Brand'),
+            Column::make('Packsize'),
+            Column::make('Action')
         ];
     }
 

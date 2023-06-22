@@ -207,21 +207,46 @@
                             <p>Kamu bisa melihat hadiah khusus pengguna baru di sini.</p>
 
                             @if ($logged_in_user->isHasDetail() && $logged_in_user->isHasAddressData() && $logged_in_user->isWhatsappVerified())
+                                @if ($logged_in_user->isWebUser() || $logged_in_user->isWhatsappUser())
+                                    <div x-data="{ displayVoucher: false }">
+                                        <button class="btn btn-dark-green btn-rounded" type="button" @click="displayVoucher = !displayVoucher">Lihat Hadiah</button>
+
+                                        <div x-show="displayVoucher" style="display: none" >
+                                            <div class="row my-md-4 my-2">
+                                                <div class="col-md-3">
+                                                    <div class="rounded bg-secondary p-2">
+                                                        <p class="h4 mb-0 font-weight-bolder text-white text-center">{{ $logged_in_user->voucher->code }}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p>Voucher dapat digunakan untuk pembelian di Ecommerce Tokopedia Greenfields Official Store untuk etalase berikut: <a target="blank" href="https://www.tokopedia.com/greenfields/twinpack-susu-segar-greenfields-fresh-milk-full-cream-1l?extParam=whid%3D14167728">Tokopedia</a></p>
+                                            <p>Cek <a href="{{ route('frontend.promo.index') }}?show=promo-khusus-anggota-baru">syarat & ketentuannya di sini!</a></p>
+                                        </div>
+                                    </div>
+                                @elseif ($logged_in_user->isWebQrUser())
+                                {{-- @dump($logged_in_user->offline_reward) --}}
                                 <div x-data="{ displayVoucher: false }">
                                     <button class="btn btn-dark-green btn-rounded" type="button" @click="displayVoucher = !displayVoucher">Lihat Hadiah</button>
 
                                     <div x-show="displayVoucher" style="display: none" >
                                         <div class="row my-md-4 my-2">
                                             <div class="col-md-3">
-                                                <div class="rounded bg-secondary p-2">
-                                                    <p class="h4 mb-0 font-weight-bolder text-white text-center">{{ $logged_in_user->voucher->code }}</p>
+                                                <div class="card card-reward">
+                                                    <div class="card-body">
+                                                        <div class="reward-img-wrapper">
+                                                            <img src="{{ $logged_in_user->offline_reward->reward->image }}" alt="{{ $logged_in_user->offline_reward->reward->name }}" class="reward-img">
+                                                        </div>
+
+                                                        <div class="reward-detail-wrapper">
+                                                            <h4 class="card-title text-center">{{ $logged_in_user->offline_reward->reward->name }}</h4>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <p>Voucher dapat digunakan untuk pembelian di Ecommerce Tokopedia Greenfields Official Store untuk etalase berikut: <a target="blank" href="https://www.tokopedia.com/greenfields/twinpack-susu-segar-greenfields-fresh-milk-full-cream-1l?extParam=whid%3D14167728">Tokopedia</a></p>
-                                        <p>Cek <a href="{{ route('frontend.promo.index') }}?show=promo-khusus-anggota-baru">syarat & ketentuannya di sini!</a></p>
                                     </div>
                                 </div>
+                                @endif
                             @else
                                 <div class="alert alert-warning">
                                     Ayo, lengkapi profil bunda sekarang untuk mendapatkan promo khusu anggota baru dari greenfields! <a href="{{ route('frontend.user.edit-account') }}">Klik disini</a>

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Models\Redeem;
+use App\Models\Reward;
 use App\Models\Voucher;
 
 /**
@@ -17,13 +19,30 @@ class HomeController
         if (auth()->guest()) {
             return view('frontend.index');
         }else{
-            $voucherInUser = Voucher::where('user_id', auth()->user()->id)->get();
-            if (!$voucherInUser->count()) {
-                $voucher = Voucher::whereNull('given_at')->first();
-                $voucher->update([
-                    'user_id' => auth()->user()->id,
-                    'given_at' => now()
-                ]);
+
+            if (auth()->user()->isWebUser()) {
+                $voucherInUser = Voucher::where('user_id', auth()->user()->id)->get();
+                if (!$voucherInUser->count()) {
+                    $voucher = Voucher::whereNull('given_at')->first();
+                    $voucher->update([
+                        'user_id' => auth()->user()->id,
+                        'given_at' => now()
+                    ]);
+                }
+            }
+
+            if (auth()->user()->isWebQrUser()) {
+                $reward_offline_id = config('greenfields.offline_reward_id');
+
+                $rewardInUser = Redeem::where('user_id', auth()->user()->id)->where('offline_reward', $reward_offline_id)->first();
+                if (!$rewardInUser->count()) {
+                    $reward = Reward::find(1)->first();
+                    Redeem::create([
+                        'user_id' => auth()->user()->id,
+                        'reward_id' => $reward->id,
+                        'offline_reward' => $reward_offline_id
+                    ]);
+                }
             }
 
             return redirect()->route('frontend.user.dashboard');

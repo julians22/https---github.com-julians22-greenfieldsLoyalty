@@ -52,12 +52,12 @@ class UserService extends BaseService
      *
      * @throws GeneralException
      */
-    public function registerUser(array $data = []): User
+    public function registerUser(array $data = [], $utm = false): User
     {
         DB::beginTransaction();
 
         try {
-            $user = $this->createUser($data);
+            $user = $this->createUser($data, $utm);
 
             $user->address_data()->create([
                 'address' => $data['address'],
@@ -400,7 +400,7 @@ class UserService extends BaseService
      * @param  array  $data
      * @return User
      */
-    protected function createUser(array $data = []): User
+    protected function createUser(array $data = [], $utm = false): User
     {
         $phone = null;
 
@@ -421,6 +421,7 @@ class UserService extends BaseService
             'provider_id' => $data['provider_id'] ?? null,
             'active' => $data['active'] ?? true,
             'completed_at' => $data['completed_at'] ?? null,
+            'register_channel' => $utm ? 'web_qr' : 'web'
         ]);
     }
 }

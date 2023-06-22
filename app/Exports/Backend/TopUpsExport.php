@@ -27,6 +27,13 @@ class TopUpsExport implements FromCollection, WithMapping, WithHeadings
     public function map($topup): array
     {
 
+        $note = "";
+        if ($topup->isCompleted()) {
+            $note = $topup->note;
+        }elseif ($topup->isFailed()) {
+            $note = $topup->failed_reason;
+        }
+
         return [
             $topup->transaction_code,
             $topup->user->name,
@@ -34,6 +41,7 @@ class TopUpsExport implements FromCollection, WithMapping, WithHeadings
             $topup->user->email,
             $topup->status,
             $topup->point,
+            $note,
             $topup->created_at,
         ];
     }
@@ -47,6 +55,7 @@ class TopUpsExport implements FromCollection, WithMapping, WithHeadings
             'Email',
             'Status',
             'Point',
+            'Notes',
             'Upload Date'
         ];
     }

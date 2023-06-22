@@ -9,6 +9,7 @@ use App\Domains\Auth\Models\Traits\Scope\UserScope;
 use App\Domains\Auth\Notifications\Frontend\ResetPasswordNotification;
 use App\Domains\Auth\Notifications\Frontend\VerifyEmail;
 use App\Mail\OtpMail;
+use App\Models\Redeem;
 use App\Models\TopUp;
 use App\Models\Voucher;
 use App\Notifications\OtpNotification;
@@ -70,7 +71,9 @@ class User extends Authenticatable implements MustVerifyEmail, TwoFactorAuthenti
         'phone',
         'whatsapp_validate_at',
         'completed_at',
-        'point'
+        'complete_survey_at',
+        'point',
+        'register_channel',
     ];
 
     /**
@@ -229,5 +232,15 @@ class User extends Authenticatable implements MustVerifyEmail, TwoFactorAuthenti
     public function topups(): HasMany
     {
         return $this->hasMany(TopUp::class, 'user_id', 'id');
+    }
+
+    /**
+     * Get the offline_reward associated with the User
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function offline_reward(): HasOne
+    {
+        return $this->hasOne(Redeem::class, 'user_id', 'id')->where('offline_reward', 1)->withTrashed();
     }
 }

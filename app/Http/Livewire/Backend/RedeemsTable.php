@@ -34,7 +34,9 @@ class RedeemsTable extends DataTableComponent
                     Redeem::STATUS_PROCESS => 'Processed',
                     Redeem::STATUS_SUCCESS => 'Finished',
                     Redeem::STATUS_FAILED => 'Delayed',
-                ])
+                ]),
+            'redeem_date' => Filter::make('Redeem Date')
+                ->date()
         ];
     }
 
@@ -54,7 +56,7 @@ class RedeemsTable extends DataTableComponent
                 ->sortable(),
             Column::make(__('Status'), 'status')
                 ->sortable(),
-            Column::make(__('Created Date'), 'created_at')
+            Column::make(__('Redeem Date'), 'created_at')
                 ->sortable(),
             Column::make(__('Actions')),
         ];
@@ -65,6 +67,7 @@ class RedeemsTable extends DataTableComponent
         $query = Redeem::with('user')->whereHas('user');
 
         return $query
+            ->when($this->getFilter('redeem_date'), fn ($query, $date) => $query->whereDate('created_at', $date))
             ->when($this->getFilter('status'), fn ($query, $status) => $query->where('status', $status));
     }
 
