@@ -20,7 +20,7 @@
         <div class="row justify-content-center">
             <div class="col-12 col-xl-10">
                 @if ($logged_in_user->isHasDetail() && $logged_in_user->isHasAddressData() && $logged_in_user->isWhatsappVerified())
-                    @if ($logged_in_user->isWebUser() && $logged_in_user->isWhatsappUser())
+                    @if ($logged_in_user->isWebUser() || $logged_in_user->isWhatsappUser())
                         @if ($logged_in_user->voucher)
                         <div class="alert alert-dark-green heartbeat">
                             Kamu berhak mendapatkan promo khusus anggota baru: <strong>{{ $logged_in_user->voucher->code }}</strong>.  <a href="{{ route('frontend.promo.index') }}?show=promo-khusus-anggota-baru">Cek syarat & ketentuan disini.</a>
