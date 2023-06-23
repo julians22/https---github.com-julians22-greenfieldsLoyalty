@@ -26,12 +26,13 @@ input[type="date"]:valid::before { display: none }
 .greenfields-form .form-control:-internal-autofill-selected,
 .greenfields-form .form-control:-webkit-autofill{
     background-color: $white !important;
-    color: white !important;
+    color: unset !important;
     border-radius: .5rem;
     font-size: 18px;
     position: relative;
 
     @media (min-width: 768px) {
+        color: white !important;
         background-color: $dark-green !important;
     }
 

@@ -1,15 +1,27 @@
 .select2-container--bootstrap .select2-selection--single .select2-selection__rendered{
-    color: white;
+    color: black;
+
+    @media (min-width: 768px) {
+        color: white;
+    }
 }
 
 .select2-container--bootstrap .select2-selection{
-    background-color: $dark-green;
+
+    background-color: white;
     border-radius: 0.5rem;
     font-size: 18px;
+
+    @media (min-width: 768px) {
+        background-color: $dark-green;
+    }
 }
 
 .select2-container--bootstrap.select2-container--disabled .select2-selection{
-    background-color: $dark-green-dis;
+    background-color: $gray-light;
+    @media (min-width: 768px) {
+        background-color: $dark-green-dis;
+    }
 }
 
 .select2-container--bootstrap .select2-selection--single{

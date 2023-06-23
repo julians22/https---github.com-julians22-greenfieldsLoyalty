@@ -163,4 +163,6 @@ return [
     |
     */
     'testing' => env('APP_TESTING', false),
+
+    'show_child_information' => env('SHOW_CHILD_INFORMATION', false),
 ];
