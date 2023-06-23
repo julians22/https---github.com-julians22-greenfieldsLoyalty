@@ -16,13 +16,26 @@ class WhatsappVerificationController extends Controller
 {
     public function show(Request $request)
     {
-        try {
-            $otp = $this->send_otp(auth()->user()->phone);
-        } catch (\Throwable $th) {
-            //throw $th;
+        $whatsappOtpAt = session('whatsapp_otp_at', null);
+        if (is_null($whatsappOtpAt)) {
+            try {
+                $otp = $this->send_otp(auth()->user()->phone);
+            } catch (\Throwable $th) {
+                //throw $th;
+            }
+        }else{
+            if (now()->diffInSeconds($whatsappOtpAt) > 180) {
+                try {
+                    $otp = $this->send_otp(auth()->user()->phone);
+                } catch (\Throwable $th) {
+                    //throw $th;
+                }
+                request()->session()->flash('swal_success','Berhasil mengirim OTP ke nomor whatsapp & email kamu');
+                return view('frontend.auth.verify-whatsapp');
+            }
+            request()->session()->flash('swal_warning','Mohon menunggu selama 3 menit untuk melakukan pengiriman ulang otp');
+            return view('frontend.auth.verify-whatsapp');
         }
-
-        // dd($otp);
 
         return view('frontend.auth.verify-whatsapp');
     }
@@ -79,7 +92,6 @@ class WhatsappVerificationController extends Controller
     {
         $otp =  Otp::generate($phone);
 
-        $mail = auth()->user()->sendOtpNotification($otp->token);
 
         $token = env('WHATSAPP_SENDER_TOKEN');
         $phone = $phone;
@@ -89,6 +101,8 @@ class WhatsappVerificationController extends Controller
         $messageSend = "Kde OTP Anda adalah : " . $otp->token;
         $url .= $endpoint;
         $response = Http::get($url);
+        $mail = auth()->user()->sendOtpNotification($otp->token);
+        session(['whatsapp_otp_at' => now()]);
         return $otp;
         // return $response;
     }
