@@ -18,15 +18,12 @@ class ProfileController
      */
     public function update(UpdateProfileRequest $request, UserService $userService)
     {
-        $postPhone = PhoneNumber::make($request->phone, 'ID');
-
         $user = $userService->updateProfile($request->user(), $request->validated());
 
         $user_detail = [
             "child_name" => $request->child_name ?? null,
             "date_of_birth" => $request->date_of_birth ?? null,
-            "child_date_of_birth" => $request->child_date_of_birth ?? null,
-            "phone" => $postPhone
+            "child_date_of_birth" => $request->child_date_of_birth ?? null
         ];
 
         if ($user && !$user->isHasDetail()) {

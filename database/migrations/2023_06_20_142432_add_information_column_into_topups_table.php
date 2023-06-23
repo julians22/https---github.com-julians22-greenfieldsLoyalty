@@ -32,7 +32,7 @@ class AddInformationColumnIntoTopupsTable extends Migration
      */
     public function down()
     {
-        Schema::table('topups', function (Blueprint $table) {
+        Schema::table('top_ups', function (Blueprint $table) {
             $table->dropColumn('receipt_number');
             $table->dropColumn('receipt_date');
             $table->dropColumn('receipt_channel');

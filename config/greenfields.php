@@ -63,12 +63,6 @@ return [
             'image' => '/img/online-stores/segari.png'
         ],
         [
-            'name' => 'Tokonow',
-            'title' => 'Tokonow',
-            'url' => '#',
-            'image' => '/img/online-stores/tokonow.png'
-        ],
-        [
             'name' => 'Grabmart kilat',
             'title' => 'Grabmart kilat',
             'url' => '#',

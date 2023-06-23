@@ -16,6 +16,7 @@ class ChangeChildDetailToNullableInUserDetails extends Migration
         Schema::table('user_details', function (Blueprint $table) {
             $table->string('child_name')->nullable()->change();
             $table->string('child_date_of_birth')->nullable()->change();
+            $table->dropColumn('phone');
         });
     }
 
@@ -29,6 +30,7 @@ class ChangeChildDetailToNullableInUserDetails extends Migration
         Schema::table('user_details', function (Blueprint $table) {
             $table->string('child_name')->nullable(false)->change();
             $table->string('child_date_of_birth')->nullable(false)->change();
+            $table->string('phone');
         });
     }
 }

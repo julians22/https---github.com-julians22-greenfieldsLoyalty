@@ -85,7 +85,6 @@ class UserService extends BaseService
             }
 
             $user->detail()->create([
-                'phone' => $data['phone'],
                 'date_of_birth' => $data['date_of_birth'],
                 'child_name' => $data['child_name'],
                 'child_date_of_birth' => $data['child_date_of_birth'],
@@ -252,7 +251,6 @@ class UserService extends BaseService
             "child_name" => $data['child_name'] ?? null,
             "date_of_birth" => $data['date_of_birth'] ?? null,
             "child_date_of_birth" => $data['child_date_of_birth'] ?? null,
-            "phone" => $phone
         ]);
 
         if ($user && !$user->isHasAddressData()) {
