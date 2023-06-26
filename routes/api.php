@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\RewardController;
 use App\Http\Controllers\Api\UserController;
 use Illuminate\Http\Request;
 
@@ -18,6 +19,10 @@ use Illuminate\Http\Request;
 //    return $request->user();
 //});
 
-Route::prefix('v1')->group(function () {
+Route::prefix('v1')->middleware('auth_api')->group(function () {
     Route::get('/check_user', [UserController::class, 'check_user']);
+    Route::get('/check_point', [UserController::class, 'check_point']);
+    Route::post('/register', [UserController::class, 'store']);
+
+    Route::get('rewards', [RewardController::class, 'index']);
 });

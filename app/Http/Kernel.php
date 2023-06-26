@@ -76,6 +76,7 @@ class Kernel extends HttpKernel
     protected $routeMiddleware = [
         '2fa' => \App\Domains\Auth\Http\Middleware\TwoFactorAuthenticationStatus::class,
         'auth' => \App\Http\Middleware\Authenticate::class,
+        'auth_api' => \App\Http\Middleware\AuthApi::class,
         'auth_admin' => \App\Http\Middleware\AuthenticateAdmin::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,

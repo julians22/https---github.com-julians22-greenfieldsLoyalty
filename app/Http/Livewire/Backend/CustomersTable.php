@@ -35,6 +35,7 @@ class CustomersTable extends DataTableComponent
             Column::make('Category'),
             Column::make('Brand'),
             Column::make('Packsize'),
+            Column::make('Register Channel'),
             Column::make('Action')
         ];
     }

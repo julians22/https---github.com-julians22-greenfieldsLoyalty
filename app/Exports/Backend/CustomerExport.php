@@ -27,6 +27,10 @@ class CustomerExport implements FromCollection, WithMapping, WithHeadings
     public function map($customer): array
     {
 
+        $category = $customer->detail ? $customer->detail->surveyCategory : null;
+        $product = $customer->detail ? $customer->detail->surveyProduct : null;
+        $packsize = $customer->detail ? $customer->detail->surveyPacksize : null;
+
         return [
             $customer->name,
             $customer->phone,
@@ -34,6 +38,9 @@ class CustomerExport implements FromCollection, WithMapping, WithHeadings
             $customer->topups_count,
             $customer->success_topups_count,
             $customer->failed_topups_count,
+            $category,
+            $product,
+            $packsize,
             $customer->created_at,
         ];
     }
@@ -47,6 +54,9 @@ class CustomerExport implements FromCollection, WithMapping, WithHeadings
             'Topup Total',
             'Success Topup',
             'Failed Topup',
+            'Survey (Kategori Susu)',
+            'Survey (Brand Susu Susu)',
+            'Survey (Ukuran Kemasan)',
             'Register Date',
         ];
     }

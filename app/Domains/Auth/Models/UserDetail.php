@@ -27,4 +27,16 @@ class UserDetail extends Model
         return $this->hasOne(User::class, 'id', 'user_id');
     }
 
+    public function getSurveyCategoryAttribute() {
+        return $this->history_milk_category ?? null;
+    }
+
+    public function getSurveyProductAttribute() {
+        return $this->history_milk_product ?? null;
+    }
+
+    public function getSurveyPacksizeAttribute() {
+        return $this->history_milk_packsize ?? null;
+    }
+
 }

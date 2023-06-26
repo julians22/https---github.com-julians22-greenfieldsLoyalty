@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ProductResource extends JsonResource
+class ActivityResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -14,11 +14,6 @@ class ProductResource extends JsonResource
      */
     public function toArray($request)
     {
-        return [
-            'name' => $this->name,
-            'point' => $this->point,
-            'full_url' => asset($this->image),
-            'image_path' => $this->image
-        ];
+        return parent::toArray($request);
     }
 }

@@ -28,11 +28,11 @@ class RedeemExport implements FromCollection, WithMapping, WithHeadings
     {
 
         return [
+            $redeem->created_at,
             $redeem->transaction_code,
             $redeem->user->name,
             $redeem->user->phone,
             $redeem->user->email,
-            $redeem->status,
             $redeem->reward->name,
             $redeem->point,
             $redeem->address->address,
@@ -40,18 +40,18 @@ class RedeemExport implements FromCollection, WithMapping, WithHeadings
             $redeem->address->rel_city->name,
             $redeem->address->rel_district->name,
             $redeem->address->postal_code,
-            $redeem->created_at,
+            $redeem->status,
         ];
     }
 
     public function headings(): array
     {
         return [
+            'Redeem Date',
             'Transaction Code',
             'Customer Name',
             'Phone',
             'Email',
-            'Status',
             'Reward',
             'Point',
             'Address',
@@ -59,7 +59,7 @@ class RedeemExport implements FromCollection, WithMapping, WithHeadings
             'City',
             'District',
             'Postal',
-            'Redeem Date'
+            'Status',
         ];
     }
 }
