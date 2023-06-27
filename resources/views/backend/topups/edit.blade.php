@@ -98,20 +98,25 @@
                                 <input type="text" class="form-control" name="receipt_number">
                             </div>
                             <div class="form-group">
-                                <label for="receipt_channel">@lang('Channel')</label>
+                                <label for="receipt_channel">@lang('Channel & Subchannel')</label>
                                 <select name="receipt_channel" id="receipt_channel" class="form-control">
-                                    <option value="Offline">Offline</option>
-                                    <option value="Online">Online</option>
+                                    @foreach ($channels as $key => $channel)
+                                        <optgroup label="{{$key}}">
+                                            @foreach ($channel as $item)
+                                                <option value="{{$item}}">{{$item}}</option>
+                                            @endforeach
+                                        </optgroup>
+                                    @endforeach
                                 </select>
                             </div>
-                            <div class="form-group">
+                            {{-- <div class="form-group">
                                 <label for="receipt_subchannel">@lang('Subchannel')</label>
                                 <ul>
                                     <li><small><strong>Offline : </strong>Minimarket / Hypermarket / Supermarket / MTI A / MTI B</small></li>
                                     <li><small><strong>Online : </strong>Ecommerce / QuickCommerce</small></li>
                                 </ul>
                                 <input type="text" class="form-control" name="receipt_subchannel">
-                            </div>
+                            </div> --}}
                             <div class="form-group">
                                 <label for="receipt_area">@lang('Daerah Toko')</label>
                                 <select name="receipt_area" id="receipt_area" class="form-control">
@@ -138,16 +143,28 @@
                                     <template x-for="(field, index) in fields" :key="field.id">
                                         <tr>
                                             <td>
-                                                <input type="text" :name=`details[${index}][product]` class="form-control form-control-sm">
+                                                <select :name=`details[${index}][product]` class="form-control form-control-sm">
+                                                    @foreach ($categories as $category)
+                                                        <option value="{{$category}}">{{$category}}</option>
+                                                    @endforeach
+                                                </select>
                                             </td>
                                             <td>
-                                                <input type="number" :name=`details[${index}][packsize]` step="any" class="form-control form-control-sm">
+                                                <select :name=`details[${index}][packsize]` class="form-control form-control-sm">
+                                                    @foreach ($packsizes as $packsize)
+                                                        <option value="{{$packsize}}">{{$packsize}}</option>
+                                                    @endforeach
+                                                </select>
                                             </td>
                                             <td>
-                                                <input type="number" :name=`details[${index}][qty]` class="form-control form-control-sm">
+                                                <input type="number" min="1" :name=`details[${index}][qty]` class="form-control form-control-sm">
                                             </td>
                                             <td>
-                                                <input type="text" :name=`details[${index}][flavour]` class="form-control form-control-sm">
+                                                <select :name=`details[${index}][flavour]` class="form-control form-control-sm">
+                                                    @foreach ($flavours as $flavour)
+                                                        <option value="{{$flavour}}">{{$flavour}}</option>
+                                                    @endforeach
+                                                </select>
                                             </td>
                                             <td>
                                                 <input type="number" :name=`details[${index}][price]` class="form-control form-control-sm">
@@ -161,16 +178,15 @@
                                         </tr>
                                     </template>
                                 </table>
-                                <button class="btn btn-sm btn-primary" type="button" @click="addNewField()">+ Produk</button>
+                                <button class="btn btn-sm btn-primary mb-2" type="button" @click="addNewField()">+ Produk</button>
                             </div>
                             <div class="form-group">
                                 <label for="point">@lang('Point Calculated')</label>
                                 <input type="number" class="form-control" name="point">
                             </div>
                             <div class="form-group">
-                                <label for="note">@lang('Note') @lang('(Must Complete)'):</label>
-                                <textarea name="note" class="form-control" id="note" cols="" rows="5" required></textarea>
-                                <small class="d-inline-block">You can put transaction number, order date, product name, qty and price</small>
+                                <label for="note">@lang('Note') @lang('(Optional)'):</label>
+                                <textarea name="note" class="form-control" id="note" cols="" rows="5"></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">@lang('Accept & Finish Top Up')</button>
                         </x-forms.patch>

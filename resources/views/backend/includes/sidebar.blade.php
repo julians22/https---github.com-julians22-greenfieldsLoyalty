@@ -117,7 +117,7 @@
                                 class="c-sidebar-nav-link"
                                 :href="route('admin.redeem.bulk_sync')"
                                 :active="activeClass(Route::is('admin.redeem.bulk_sync'), 'c-active')"
-                                :text="__('Sync Redeems')" />
+                                :text="__('Bulk Process Redeems')" />
                         </li>
                     </ul>
 

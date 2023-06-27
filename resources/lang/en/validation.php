@@ -153,6 +153,14 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'receipt_date' => 'Receipt Date',
+        'receipt_number' => 'Receipt Number',
+        'receipt_channel' => 'Receipt Channel',
+        'receipt_area' => 'Receipt Area',
+        'receipt_storename' => 'Store Name',
+        'details' => 'Detail',
+        'point' => 'Point'
+    ],
 
 ];

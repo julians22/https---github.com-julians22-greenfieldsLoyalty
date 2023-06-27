@@ -3,6 +3,8 @@
 namespace App\Http\Livewire\Backend;
 
 use App\Imports\SyncRedeemImport;
+use App\Models\Redeem;
+use DB;
 use Excel;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -29,7 +31,50 @@ class BulkRewardSyncComponent extends Component
     }
 
     public function submitSyncFile() {
-        Excel::import(new SyncRedeemImport, $this->file);
+        $redeemsRaw = Excel::toArray(new SyncRedeemImport, $this->file);
+        $redeems = $redeemsRaw[0];
+
+        DB::beginTransaction();
+
+        foreach ($redeems as $redeem) {
+            if (empty($redeem['transaction_code'])) continue;
+            if (empty($redeem['status']) || !$this->statusIsValid($redeem['status'])) continue;
+
+            $data = [
+                'status' => $redeem['status'] == 'send' ? $redeem['status'] : 'failed',
+                'airwaybill' => $redeem['airwaybill_number'],
+                'failed_reason' => $redeem['status'] == 'delay' ? $redeem['delay_reason'] : null,
+                'courier' => $this->courier
+            ];
+
+            if ($redeem['status'] == 'send') {
+                $data['send_at'] = now();
+            }
+
+            if ($redeem['status'] == 'delay') {
+                $data['failed_at'] = now();
+            }
+
+            try {
+                $redeem = Redeem::code($redeem['transaction_code'])->first();
+                $redeem->update($data);
+            } catch (\Throwable $th) {
+                DB::rollBack();
+            }
+
+        }
+        DB::commit();
+
+        $this->reset('file', 'fileName');
+        $this->emitTo('backend.bulk-redeems-table', 'refreshData');
+    }
+
+    private function statusIsValid($status = null) {
+        if (!empty($status) && ($status == 'send' || $status == 'delay')) {
+            return true;
+        }
+
+        return false;
     }
 
     public function updatedFile()

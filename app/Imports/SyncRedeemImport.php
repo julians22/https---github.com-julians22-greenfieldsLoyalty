@@ -13,9 +13,7 @@ class SyncRedeemImport implements ToCollection, WithHeadingRow
     */
     public function collection(Collection $collection)
     {
-        foreach ($collection as $row) {
-            dump($row["address"]);
-        }
+
     }
 
     public function headingRow(): int {

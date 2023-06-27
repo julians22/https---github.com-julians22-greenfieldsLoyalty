@@ -144,5 +144,15 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'receipt_date' => 'Tanggal Struk',
+        'receipt_number' => 'Nomor Struk',
+        'receipt_channel' => 'Channel Struk',
+        'receipt_area' => 'Area Struk',
+        'receipt_storename' => 'Nama toko',
+        'details' => 'Detail',
+        'point' => 'Point',
+        'details.*.qty' => 'Quantity didalam detail',
+        'details.*.price' => 'Harga didalam detail',
+    ],
 ];

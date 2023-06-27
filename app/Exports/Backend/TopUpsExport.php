@@ -3,10 +3,11 @@
 namespace App\Exports\Backend;
 
 use Maatwebsite\Excel\Concerns\FromCollection;
+use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\WithMapping;
 
-class TopUpsExport implements FromCollection, WithMapping, WithHeadings
+class TopUpsExport implements FromCollection, WithMapping, WithHeadings, ShouldAutoSize
 {
     protected $_query;
 
@@ -26,12 +27,31 @@ class TopUpsExport implements FromCollection, WithMapping, WithHeadings
 
     public function map($topup): array
     {
-
         $note = "";
         if ($topup->isCompleted()) {
             $note = $topup->note;
         }elseif ($topup->isFailed()) {
             $note = $topup->failed_reason;
+        }
+
+        $detailCategories = [];
+        $packsizes = [];
+        $flavours = [];
+        $quantities = [];
+        $prices = [];
+        $discounts = [];
+        $totals = [];
+
+        if ($topup->has('details')) {
+            foreach ($topup->details as $key => $value) {
+                array_push($detailCategories, $value->product);
+                array_push($packsizes, $value->packsize);
+                array_push($flavours, $value->flavour);
+                array_push($quantities, $value->qty);
+                array_push($prices, $value->price);
+                array_push($discounts, $value->dicount_price);
+                array_push($totals, $value->total);
+            }
         }
 
         return [
@@ -41,6 +61,18 @@ class TopUpsExport implements FromCollection, WithMapping, WithHeadings
             $topup->user->email,
             $topup->status,
             $topup->point,
+            $topup->receipt_number,
+            $topup->receipt_channel,
+            $topup->receipt_subchannel,
+            $topup->receipt_area,
+            $topup->receipt_storename,
+            implode("|", $detailCategories),
+            implode("|", $packsizes),
+            implode("|", $flavours),
+            implode("|", $quantities),
+            implode("|", $prices),
+            implode("|", $discounts),
+            implode("|", $totals),
             $note,
             $topup->created_at,
         ];
@@ -55,6 +87,18 @@ class TopUpsExport implements FromCollection, WithMapping, WithHeadings
             'Email',
             'Status',
             'Point',
+            'Nomor Struk',
+            'Channel',
+            'Sub-Channel',
+            'Region',
+            'Nama Toko',
+            'Kategori',
+            'Packsize',
+            'Flavor',
+            'Qty Purchase',
+            'Normal Price',
+            'Discount Price',
+            'Total Price',
             'Notes',
             'Upload Date'
         ];

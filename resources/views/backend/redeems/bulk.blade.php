@@ -1,11 +1,11 @@
 @extends('backend.layouts.app')
 
-@section('title', __('Sync Redeems'))
+@section('title', __('Bulk Process Redeems'))
 
 @section('content')
     <x-backend.card>
         <x-slot name="header">
-            @lang('Sync Management')
+            @lang('Bulk Process Redeems')
         </x-slot>
 
         <x-slot name="body">

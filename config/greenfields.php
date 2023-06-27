@@ -103,7 +103,18 @@ return [
     ],
     'sku' => [
         'channel' => [
-            'Offline', 'Online'
+            'Offline' => [
+                'Minis',
+                'Hyper',
+                'Super',
+                'MTI A',
+                'MTI B',
+            ],
+            'Online' => [
+                'Ecommerce',
+                'Quickcommerce',
+                'Home Delivery',
+            ]
         ],
         'offline_channel' => [
             'Minimarket', 'Hypermarket', 'Supermarket', 'MTI A', 'MTI B'
@@ -112,10 +123,60 @@ return [
             'Ecommerce', 'QuickCommerce'
         ],
         'flavour' => [
-            'Fullcream', 'Strawberry', 'Chocolate', 'Low Fat', 'Skimmed'
+            'Full Cream',
+            'Skimmed / Non Fat',
+            'Low Fat',
+            'Chocomalt',
+            'Fresh Jersey',
+            'Strawberry',
+            'Low Fat Mochaccino',
+            'Original Yogurt',
+            'Strawberry Yogurt',
+            'Blueberry Yogurt',
+            'Mango Yogurt',
+            'Raspberry Yogurt',
+            'Lychee Yogurt',
+            'Mixed Berry Yogurt',
+            'Mango Peach Yogurt',
+            'Plain Yogurt',
+            'Peach Yogurt',
+            'Summer soursoup Yogurt',
+            'Tropical Banana Yogurt',
+            'Mixed Fruit Yogurt',
+            'Bocconcini Cheese',
+            'Ricotta Cheese',
+            'Mozarella Cheese',
+            'Whipping Cream'
         ],
-        'template' => "Tanggal Struk:\nNomor Struk:\nChannel: Offline / Online\nSub-Channel: Offline(Minimarket / Hypermarket / Supermarket / MTI A / MTI B), Online (Ecommerce / QuickCommerce)\nDaerah Toko: (Jawa Barat / Jawa Tengah / Etc)\nNama Toko: (Toko Albarkah)\nKategori produk apa: Fresh Milk / UHT Big Pack / UHT Small Pack / Yogurt / Cheese / Whipping Cream\nPacksize: (1L / 1.89 L)\nFlavor: (Full Cream / Strawberry / Chocolate / Low Fat / Skimmed / dll)\nQty Purchase: (1 / 2 / 3)\nNormal Price: xxx\nDiscount Price: xxx\nTotal Price: xxxx"
-    ],
+        'template' => "Tanggal Struk:\nNomor Struk:\nChannel: Offline / Online\nSub-Channel: Offline(Minimarket / Hypermarket / Supermarket / MTI A / MTI B), Online (Ecommerce / QuickCommerce)\nDaerah Toko: (Jawa Barat / Jawa Tengah / Etc)\nNama Toko: (Toko Albarkah)\nKategori produk apa: Fresh Milk / UHT Big Pack / UHT Small Pack / Yogurt / Cheese / Whipping Cream\nPacksize: (1L / 1.89 L)\nFlavor: (Full Cream / Strawberry / Chocolate / Low Fat / Skimmed / dll)\nQty Purchase: (1 / 2 / 3)\nNormal Price: xxx\nDiscount Price: xxx\nTotal Price: xxxx",
 
+        // Packsize available configs
+        'packsize' => [
+            '1.89 L',
+            '1 L',
+            '500 ml',
+            '250 ml',
+            '200 ml',
+            '125 ml',
+            '105 ml',
+            '1 kg',
+            '500 gram',
+            '200 gram',
+            'shredded 200 gram',
+            '250 gram',
+            '125 gram',
+            '110 gram',
+            '330 gram',
+        ],
+        'categories' => [
+            'Fresh Milk',
+            'UHT Big Pack',
+            'UHT Small Pack',
+            'Yogurt',
+            'Cheese',
+            'Whipping Cream',
+        ],
+
+    ],
     'offline_reward_id' => env('OFFLINE_REWARD_ID', 1)
 ];

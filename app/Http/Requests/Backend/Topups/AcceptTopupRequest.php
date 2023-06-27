@@ -25,7 +25,15 @@ class AcceptTopupRequest extends FormRequest
     {
         return [
             'point' => 'required|numeric',
-            'note' => 'sometimes'
+            'note' => 'sometimes',
+            'receipt_date' => 'required',
+            'receipt_number' => 'required',
+            'receipt_channel' => 'required',
+            'receipt_area' => 'required',
+            'receipt_storename' => 'required',
+            'details' => 'required|array',
+            'details.*.qty' => 'required|numeric|min:1',
+            'details.*.price' => 'required|numeric|min:1'
         ];
     }
 }

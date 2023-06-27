@@ -135,4 +135,16 @@ class Redeem extends Model
     {
         return $query->where('status', self::STATUS_CREATED);
     }
+
+
+    /**
+     * Scope a query to only include transaction code
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeCode($query, $code)
+    {
+        return $query->where('transaction_code', $code);
+    }
 }

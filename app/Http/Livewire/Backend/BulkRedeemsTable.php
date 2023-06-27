@@ -14,7 +14,7 @@ use Excel;
 class BulkRedeemsTable extends DataTableComponent
 {
 
-    protected $listeners = ['exportRedeemsTable'];
+    protected $listeners = ['exportRedeemsTable', 'refreshData'];
 
     public function columns(): array
     {
@@ -44,5 +44,9 @@ class BulkRedeemsTable extends DataTableComponent
     public function exportRedeemsTable() {
         $query = $this->rowsQuery();
         return Excel::download(new BulkRewardActionExport($query), 'BulkActions-Redeems-'. now()->format('Y-m-d h:i') .'.xlsx');
+    }
+
+    public function refreshData() {
+        $this->resetAll();
     }
 }

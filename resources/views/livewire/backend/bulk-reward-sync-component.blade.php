@@ -2,14 +2,14 @@
     {{-- Be like water. --}}
     <a href="#" data-target="#syncModal" data-toggle="modal" class="btn btn-info">
         <i class="fas fa-file-excel mr-2"></i>
-        Sync Data
+        Upload File & Process Data
     </a>
 
     <div wire:ignore.self class="modal fade" id="syncModal" tabindex="-1" role="dialog" aria-labelledby="syncModal" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Sync Data</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Upload File & Process Data</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -51,7 +51,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     @if ($file)
-                        <button type="button" class="btn btn-primary" wire:click="submitSyncFile">Sync Data</button>
+                        <button type="button" class="btn btn-primary" wire:click="submitSyncFile">Process</button>
                     @endif
                 </div>
             </div>
