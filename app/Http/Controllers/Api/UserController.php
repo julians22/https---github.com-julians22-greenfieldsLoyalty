@@ -37,21 +37,20 @@ class UserController extends Controller
         $phone = PhoneNumber::make($phone, 'ID');
         $user = User::where('phone', $phone)->first();
 
-        if ($user) {
+        if (!$user) {
             $result = [
-                'pass' => true,
-                'detail' => new UserResource($user),
+                'pass' => false,
+                'message' => 'User not found'
             ];
 
-            return $result;
+            return response()->json($result, 404);
         }
 
         $result = [
-            'pass' => false,
-            'message' => 'User not found'
+            'pass' => true,
+            'detail' => new UserResource($user),
         ];
-
-        return response()->json($result, 404);
+        return $result;
     }
 
     public function check_point(Request $request) {

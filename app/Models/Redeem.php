@@ -124,4 +124,15 @@ class Redeem extends Model
     {
         return $this->status == self::STATUS_FAILED;
     }
+
+    /**
+     * Scope a query to only include created status
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeStatusCreated($query)
+    {
+        return $query->where('status', self::STATUS_CREATED);
+    }
 }

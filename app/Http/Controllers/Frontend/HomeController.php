@@ -16,7 +16,7 @@ class HomeController
      */
     public function index()
     {
-        if (auth()->guest()) {
+        if (auth()->guest() || auth()->user()->isAdmin()) {
             return view('frontend.index');
         }else{
 

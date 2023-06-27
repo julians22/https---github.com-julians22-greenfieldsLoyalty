@@ -12,6 +12,16 @@ Route::group(['prefix' => 'redeem', 'as' => 'redeem.'], function() {
                 ->push(__('Redeem Management'), route('admin.redeem.index'));
         });
 
+    Route::get('/sync', [RedeemController::class, 'bulk_sync'])
+        ->name('bulk_sync')
+        ->breadcrumbs(function (Trail $trail) {
+            $trail->parent('admin.dashboard')
+                ->push(__('Sync Redeems'), route('admin.redeem.bulk_sync'));
+        });
+
+    Route::post('/sync', [RedeemController::class, 'bulk_sync_store'])
+        ->name('bulk_sync.store');
+
     Route::post('/create', [RedeemController::class, 'store'])
         ->name('store');
 

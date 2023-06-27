@@ -172,7 +172,9 @@ $fixedStyleSecond = "position-sticky w-100";
                     <p class="text-white mb-1"><strong>POIN KAMU</strong></p>
                     <p class="text-gold h1"><strong>{{ number_format($logged_in_user->point, 0, ".", ".") }}</strong></p>
                 </div>
-                <button class="btn btn-gold btn-block btn-rounded font-weight-bold text-white" data-toggle="modal" data-target="#uploadReceiptModal" type="button">UPLOAD STRUK & TUKARKAN HADIAH</button>
+                @if ($logged_in_user->isUser())
+                    <button class="btn btn-gold btn-block btn-rounded font-weight-bold text-white" data-toggle="modal" data-target="#uploadReceiptModal" type="button">UPLOAD STRUK & TUKARKAN HADIAH</button>
+                @endif
             </div>
         </div>
         @endauth
@@ -223,7 +225,11 @@ $fixedStyleSecond = "position-sticky w-100";
                             <div class="point">
                                 {{ number_format($logged_in_user->point, 0, ".", ".") }}
                             </div>
-                            <button class="btn btn-gold btn-rounded font-weight-bold text-white" data-toggle="modal" data-target="#uploadReceiptModal" type="button">UPLOAD STRUK & <br> TUKARKAN HADIAH</button>
+                            @if ($logged_in_user->isUser() && $logged_in_user->isHasDetail() && $logged_in_user->isWhatsappVerified())
+                                <button class="btn btn-gold btn-rounded font-weight-bold text-white" data-toggle="modal" data-target="#uploadReceiptModal" type="button">UPLOAD STRUK & <br> TUKARKAN HADIAH</button>
+                            @else
+                                <button class="btn btn-gold btn-rounded font-weight-bold text-white disabled" type="button">UPLOAD STRUK & <br> TUKARKAN HADIAH</button>
+                            @endif
                         </div>
                     </div>
                 </div>

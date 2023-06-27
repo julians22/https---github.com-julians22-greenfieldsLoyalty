@@ -13,6 +13,11 @@ class RedeemController extends Controller
         return view('backend.redeems.index');
     }
 
+    public function bulk_sync()
+    {
+        return view('backend.redeems.bulk');
+    }
+
     public function show(Redeem $redeem)
     {
         return view('backend.redeems.show')
