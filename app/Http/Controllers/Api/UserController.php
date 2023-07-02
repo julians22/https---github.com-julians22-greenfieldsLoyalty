@@ -69,8 +69,8 @@ class UserController extends Controller
 
         return response()->json([
             'status' => true,
-            'activities' => ActivityResource::collection($transactions),
-            'current_point' => $user->point
+            'current_point' => $user->point,
+            'activities' => ActivityResource::collection($transactions)
         ]);
     }
 
@@ -243,12 +243,13 @@ class UserController extends Controller
         $activityText = $this->activity_generator($type, $value);
 
         return [
-            'id' => $value->id,
             'kode' => $value->transaction_code,
             'date' => $value->created_at,
             'activity' => $activityText,
             'status' => $this->status_generator($value->status, $type),
-            'type' => $type
+            'type' => $type,
+            'note' => $value->note,
+            'failed_reason' => $value->failed_reason,
         ];
     }
 

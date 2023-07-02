@@ -20,6 +20,9 @@ class TopUp extends Model
     const STATUS_FAILED = 'failed';
     const STATUS_CREATED = 'created';
 
+    const CHANNEL_WEB = 'web';
+    const CHANNEL_WHATSAPP = 'whatsapp';
+
     /**
      * The attributes that aren't mass assignable.
      *

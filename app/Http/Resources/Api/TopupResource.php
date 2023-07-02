@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Resources;
+namespace App\Http\Resources\Api;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ProductResource extends JsonResource
+class TopupResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -15,11 +15,11 @@ class ProductResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'id' => $this->id,
-            'name' => $this->name,
-            'point' => $this->point,
-            'full_url' => asset($this->image),
-            'image_path' => $this->image
+            "transaction_code" => $this->transaction_code,
+            "user_id" => $this->transaction_code,
+            "point" => $this->point,
+            "status" => $this->status,
+            "upload_date" => $this->created_at->format('d-m-Y h:i:s')
         ];
     }
 }

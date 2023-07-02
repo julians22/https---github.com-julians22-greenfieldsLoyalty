@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Api\RedeemController;
 use App\Http\Controllers\Api\RewardController;
+use App\Http\Controllers\Api\TopUpController;
 use App\Http\Controllers\Api\UserController;
 use Illuminate\Http\Request;
 
@@ -25,4 +27,12 @@ Route::prefix('v1')->middleware('auth_api')->group(function () {
     Route::post('/register', [UserController::class, 'store']);
 
     Route::get('rewards', [RewardController::class, 'index']);
+
+
+    // Topup routes
+    Route::get('topups', [TopUpController::class, 'index']);
+    Route::post('upload-receipt', [TopUpController::class, 'upload']);
+
+    // Redeems routes
+    Route::get('redeems', [RedeemController::class, 'index']);
 });
