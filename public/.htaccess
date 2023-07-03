@@ -7,6 +7,11 @@
 
     RewriteCond %{HTTPS} off
     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+    #RedirectMatch 301 ^(.*)$ / https://klubibuextra.greenfields-loyalty.com/$1
+
+    #RewriteEngine On
+    RewriteCond %{HTTP_HOST} ^(www.)?greenfields-loyalty\.com$ [NC]
+    RewriteRule ^(.*)$ https://klubibuextra.greenfields-loyalty.com/ [L,R=302]
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
@@ -22,3 +27,4 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 </IfModule>
+
