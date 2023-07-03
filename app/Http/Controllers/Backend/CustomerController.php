@@ -9,7 +9,9 @@ use Illuminate\Http\Request;
 class CustomerController extends Controller
 {
     public function index() {
-        return view('backend.customers.index');
+        $totalCustomer = User::users()->count();
+
+        return view('backend.customers.index', compact('totalCustomer'));
     }
 
     public function show(User $user) {

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Domains\Auth\Models\User;
+
 /**
  * Class DashboardController.
  */
@@ -12,6 +14,8 @@ class DashboardController
      */
     public function index()
     {
-        return view('backend.dashboard');
+        $totalCustomer = User::users()->count();
+
+        return view('backend.dashboard', compact('totalCustomer'));
     }
 }
