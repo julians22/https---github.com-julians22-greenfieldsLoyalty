@@ -176,8 +176,8 @@ class RegisterController
         $oldUrl = parse_url(url()->previous());
         if (array_key_exists('query', $oldUrl)) {
             parse_str($oldUrl['query'], $output);
-            if (array_key_exists('utm', $output)) {
-                $utm = $output['utm'];
+            if (array_key_exists('utm_source', $output)) {
+                $utm = $output['utm_source'];
             }
             if ($utm && $utm == config('greenfields.offline_user_utm')) {
                 $offline = true;
