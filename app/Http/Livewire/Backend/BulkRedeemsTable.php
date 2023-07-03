@@ -10,11 +10,23 @@ use Rappasoft\LaravelLivewireTables\DataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Column;
 use App\Models\Redeem;
 use Excel;
+use Rappasoft\LaravelLivewireTables\Views\Filter;
 
 class BulkRedeemsTable extends DataTableComponent
 {
 
     protected $listeners = ['exportRedeemsTable', 'refreshData'];
+
+    /**
+     * @return array
+     */
+    public function filters(): array
+    {
+        return [
+            'redeem_date' => Filter::make('Redeem Date')
+                ->date()
+        ];
+    }
 
     public function columns(): array
     {
@@ -30,6 +42,7 @@ class BulkRedeemsTable extends DataTableComponent
             Column::make(__('Reward Item'), 'reward.name'),
             Column::make(__('Point'), 'point')
                 ->sortable(),
+            Column::make(__('Redeem Date'), 'created_at'),
             Column::make(__('Status'), 'status')
                 ->sortable(),
         ];
@@ -38,7 +51,8 @@ class BulkRedeemsTable extends DataTableComponent
     public function query(): Builder
     {
         $query = Redeem::statusCreated()->with('user')->whereHas('user');
-        return $query;
+        return $query
+            ->when($this->getFilter('redeem_date'), fn ($query, $date) => $query->whereDate('created_at', $date));
     }
 
     public function exportRedeemsTable() {
