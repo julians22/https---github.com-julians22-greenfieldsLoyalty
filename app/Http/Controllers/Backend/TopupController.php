@@ -46,8 +46,6 @@ class TopupController extends Controller
 
     public function accept(AcceptTopupRequest $request, Topup $topup)
     {
-        // dd($request->all());
-
         $channelSources = config('greenfields.sku.channel');
 
         $channel = null;

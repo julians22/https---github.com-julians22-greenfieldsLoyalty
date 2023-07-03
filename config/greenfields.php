@@ -172,11 +172,14 @@ return [
             'Fresh Milk',
             'UHT Big Pack',
             'UHT Small Pack',
-            'Yogurt',
+            'Yogurt Pouch',
+            'Yogurt Cup',
+            'Yogurt RTD',
             'Cheese',
             'Whipping Cream',
         ],
 
     ],
-    'offline_reward_id' => env('OFFLINE_REWARD_ID', 1)
+    'offline_reward_id' => env('OFFLINE_REWARD_ID', 1),
+    'offline_user_utm' => env('OFFLINE_USER_UTM', 'offline')
 ];

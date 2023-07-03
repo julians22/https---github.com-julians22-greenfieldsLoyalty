@@ -98,6 +98,10 @@
                                 <input type="text" class="form-control" name="receipt_number">
                             </div>
                             <div class="form-group">
+                                <label for="receipt_storename">@lang('Nama Toko')</label>
+                                <input type="text" class="form-control" name="receipt_storename">
+                            </div>
+                            <div class="form-group">
                                 <label for="receipt_channel">@lang('Channel & Subchannel')</label>
                                 <select name="receipt_channel" id="receipt_channel" class="form-control">
                                     @foreach ($channels as $key => $channel)
@@ -109,14 +113,6 @@
                                     @endforeach
                                 </select>
                             </div>
-                            {{-- <div class="form-group">
-                                <label for="receipt_subchannel">@lang('Subchannel')</label>
-                                <ul>
-                                    <li><small><strong>Offline : </strong>Minimarket / Hypermarket / Supermarket / MTI A / MTI B</small></li>
-                                    <li><small><strong>Online : </strong>Ecommerce / QuickCommerce</small></li>
-                                </ul>
-                                <input type="text" class="form-control" name="receipt_subchannel">
-                            </div> --}}
                             <div class="form-group">
                                 <label for="receipt_area">@lang('Daerah Toko')</label>
                                 <select name="receipt_area" id="receipt_area" class="form-control">
@@ -125,10 +121,6 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="form-group">
-                                <label for="receipt_storename">@lang('Nama Toko')</label>
-                                <input type="text" class="form-control" name="receipt_storename">
-                            </div>
                             <div x-data="addRemove()">
                                 <table class="table-sm table table-bordered">
                                     <tr>
@@ -136,8 +128,8 @@
                                         <th >Pack's</th>
                                         <th >QTY</th>
                                         <th>Flavour</th>
-                                        <th>Price</th>
-                                        <th>Discount</th>
+                                        <th>Normal Price</th>
+                                        <th>Discount/Promo Price</th>
                                         <td >*</td>
                                     </tr>
                                     <template x-for="(field, index) in fields" :key="field.id">

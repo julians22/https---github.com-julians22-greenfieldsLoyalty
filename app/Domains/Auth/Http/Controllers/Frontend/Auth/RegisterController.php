@@ -179,7 +179,7 @@ class RegisterController
             if (array_key_exists('utm', $output)) {
                 $utm = $output['utm'];
             }
-            if ($utm && $utm == 'offline_qr_code') {
+            if ($utm && $utm == config('greenfields.offline_user_utm')) {
                 $offline = true;
             }
         }
