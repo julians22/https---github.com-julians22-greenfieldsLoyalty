@@ -11,7 +11,7 @@
         <x-slot name="body">
 
             <div class="row">
-                <div class="col-sm-2">
+                <div class="col-sm-2 col-md-3">
                     <x-backend.callout :count="$totalCustomer" title="Total Customer"/>
                 </div><!--/.col-->
             </div>

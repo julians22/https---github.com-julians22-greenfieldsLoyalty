@@ -86,6 +86,7 @@ class UserService extends BaseService
 
             $user->detail()->create([
                 'child_name' => null, //$data['child_name'],
+                'date_of_birth' => $data['date_of_birth'] ?? null, //$data['child_date_of_birth'],
                 'child_date_of_birth' => null, //$data['child_date_of_birth'],
                 'history_milk_category' => $category_history,
                 'history_milk_product' => $brand_history,

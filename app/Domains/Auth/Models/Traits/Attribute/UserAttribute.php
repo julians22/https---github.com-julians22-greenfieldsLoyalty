@@ -71,18 +71,6 @@ trait UserAttribute
     /**
      * @return null|string
      */
-    public function getDateOfBirthAttribute()
-    {
-        if (! $this->isHasDetail()) {
-            return null;
-        }
-
-        return $this->detail->date_of_birth;
-    }
-
-    /**
-     * @return null|string
-     */
     public function getChildNameAttribute()
     {
         if (! $this->isHasDetail()) {
