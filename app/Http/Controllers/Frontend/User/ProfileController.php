@@ -35,10 +35,12 @@ class ProfileController
         if ($user->isWhatsappVerified()) {
             $from = null;
             $oldUrl = parse_url(url()->previous());
-            parse_str($oldUrl['query'], $output);
+            if (array_key_exists('query', $oldUrl)) {
+                parse_str($oldUrl['query'], $output);
 
-            if (array_key_exists('from', $output)) {
-                $from = $output['from'];
+                if (array_key_exists('from', $output)) {
+                    $from = $output['from'];
+                }
             }
 
             if ($from && $from == 'redeem') {
