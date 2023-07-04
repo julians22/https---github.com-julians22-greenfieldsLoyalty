@@ -22,7 +22,7 @@ class CustomersTable extends DataTableComponent
     public function filters(): array
     {
         return [
-            'created_at' => Filter::make('Register Date')
+            'register_date' => Filter::make('Register Date')
                 ->date()
         ];
     }
@@ -65,7 +65,8 @@ class CustomersTable extends DataTableComponent
                 $query->where('status', TopUp::STATUS_SUCCESS);
             }]);
 
-        return $query;
+        return $query
+            ->when($this->getFilter('register_date'), fn ($query, $date) => $query->whereDate('created_at', $date));
     }
 
     public function exportCustomerTable() {
