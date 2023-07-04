@@ -9,11 +9,23 @@ use Excel;
 use Illuminate\Database\Eloquent\Builder;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Column;
+use Rappasoft\LaravelLivewireTables\Views\Filter;
 
 class CustomersTable extends DataTableComponent
 {
 
     protected $listeners = ['exportCustomerTable'];
+
+    /**
+     * @return array
+     */
+    public function filters(): array
+    {
+        return [
+            'created_at' => Filter::make('Register Date')
+                ->date()
+        ];
+    }
 
     public function columns(): array
     {
@@ -36,7 +48,8 @@ class CustomersTable extends DataTableComponent
             Column::make('Brand'),
             Column::make('Packsize'),
             Column::make('Register Channel'),
-            Column::make('Register At'),
+            Column::make('Register At', 'created_at')
+                ->sortable(),
             Column::make('Action')
         ];
     }
