@@ -43,7 +43,7 @@
 </x-livewire-tables::bs4.table.cell>
 
 <x-livewire-tables::bs4.table.cell>
-    {{ @displayDate($row->created_at) }}
+    @displayDate($row->created_at)
 </x-livewire-tables::bs4.table.cell>
 
 <x-livewire-tables::bs4.table.cell>
