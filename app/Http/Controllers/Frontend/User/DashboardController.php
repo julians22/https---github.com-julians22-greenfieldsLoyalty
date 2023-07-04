@@ -40,6 +40,9 @@ class DashboardController
                     'address_id' => auth()->user()->address_data->id,
                     'offline_reward' => 1
                 ]);
+                $reward = Reward::find($reward_offline_id)->first();
+                $reward->current_stock -= 1;
+                $reward->save();
             }
         }
 
