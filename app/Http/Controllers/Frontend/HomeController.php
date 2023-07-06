@@ -35,12 +35,16 @@ class HomeController
                 $reward_offline_id = config('greenfields.offline_reward_id');
                 $rewardInUser = Redeem::where('user_id', auth()->user()->id)->where('offline_reward', $reward_offline_id)->get();
                 if (!$rewardInUser->count()) {
-                    $reward = Reward::find(1)->first();
+                    $reward = Reward::find($reward_offline_id);
                     Redeem::create([
                         'user_id' => auth()->user()->id,
                         'reward_id' => $reward->id,
-                        'offline_reward' => $reward_offline_id
+                        'offline_reward' => $reward_offline_id,
+                        'address_id' => auth()->address_data->id,
                     ]);
+
+                    $reward->current_stock -= 1;
+                    $reward->save();
                 }
             }
 
