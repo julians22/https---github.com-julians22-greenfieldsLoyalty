@@ -33,8 +33,7 @@ class HomeController
 
             if (auth()->user()->isWebQrUser()) {
                 $reward_offline_id = config('greenfields.offline_reward_id');
-
-                $rewardInUser = Redeem::where('user_id', auth()->user()->id)->where('offline_reward', $reward_offline_id)->first();
+                $rewardInUser = Redeem::where('user_id', auth()->user()->id)->where('offline_reward', $reward_offline_id)->get();
                 if (!$rewardInUser->count()) {
                     $reward = Reward::find(1)->first();
                     Redeem::create([
