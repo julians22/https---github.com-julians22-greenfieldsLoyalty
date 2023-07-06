@@ -76,7 +76,7 @@ class WhatsappVerificationController extends Controller
                         'address_id' => $user->address_data->id,
                     ]);
 
-                    $reward = Reward::find($reward_offline_id)->first();
+                    $reward = Reward::where('id', $reward_offline_id)->first();
                     $reward->current_stock -= 1;
                     $reward->save();
                 }
