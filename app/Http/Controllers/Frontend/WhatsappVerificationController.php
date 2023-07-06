@@ -74,6 +74,7 @@ class WhatsappVerificationController extends Controller
                         'user_id' => $user->id,
                         'reward_id' => $reward_offline_id,
                         'offline_reward' => 1,
+                        'point' => 0,
                         'address_id' => $user->address_data->id,
                     ]);
 

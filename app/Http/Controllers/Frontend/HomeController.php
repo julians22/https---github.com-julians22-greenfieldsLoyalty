@@ -40,6 +40,7 @@ class HomeController
                         'user_id' => auth()->user()->id,
                         'reward_id' => $reward->id,
                         'offline_reward' => $reward_offline_id,
+                        'point' => 0,
                         'address_id' => auth()->user()->address_data->id,
                     ]);
 
