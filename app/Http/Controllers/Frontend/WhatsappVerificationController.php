@@ -84,8 +84,6 @@ class WhatsappVerificationController extends Controller
 
             return response()->json($status);
         }
-
-
     }
 
     protected function send_otp($phone)
