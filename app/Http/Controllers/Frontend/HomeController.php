@@ -40,7 +40,7 @@ class HomeController
                         'user_id' => auth()->user()->id,
                         'reward_id' => $reward->id,
                         'offline_reward' => $reward_offline_id,
-                        'address_id' => auth()->address_data->id,
+                        'address_id' => auth()->user()->address_data->id,
                     ]);
 
                     $reward->current_stock -= 1;
