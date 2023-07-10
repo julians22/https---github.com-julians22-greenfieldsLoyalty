@@ -14,7 +14,7 @@ class AddChannelColumnIntoRedeemsTable extends Migration
     public function up()
     {
         Schema::table('redeems', function (Blueprint $table) {
-            //
+            $table->enum('channel', ['web', 'whatsapp'])->default('web');
         });
     }
 
@@ -26,7 +26,7 @@ class AddChannelColumnIntoRedeemsTable extends Migration
     public function down()
     {
         Schema::table('redeems', function (Blueprint $table) {
-            //
+            $table->dropColumn('channel');
         });
     }
 }

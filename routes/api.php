@@ -35,4 +35,5 @@ Route::prefix('v1')->middleware('auth_api')->group(function () {
 
     // Redeems routes
     Route::get('redeems', [RedeemController::class, 'index']);
+    Route::post('redeems/create', [RedeemController::class, 'create']);
 });

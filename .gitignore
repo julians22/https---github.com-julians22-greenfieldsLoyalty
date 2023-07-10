@@ -6,6 +6,7 @@
 /public/uploads
 /public/hot
 /public/storage
+/public/.htaccess
 # /public/mix-manifest.json
 /storage/*.key
 /storage/shieldon_firewall

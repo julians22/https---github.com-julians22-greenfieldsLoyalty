@@ -169,10 +169,12 @@ class UserController extends Controller
         $voucherInUser = Voucher::where('user_id', $user->id)->get();
         if (!$voucherInUser->count()) {
             $voucher = Voucher::whereNull('given_at')->first();
-            $voucher->update([
-                'user_id' => $user->id,
-                'given_at' => now()
-            ]);
+            if ($voucher) {
+                $voucher->update([
+                    'user_id' => $user->id,
+                    'given_at' => now()
+                ]);
+            }
         }
 
         return response()->json([
