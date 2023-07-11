@@ -177,6 +177,10 @@ class RegisterController
 
         $this->guard()->login($user);
 
+        if ($offline != false) {
+            $request->session()->forget('offline_user_utm');
+        }
+
         if ($response = $this->registered($request, $user)) {
             return $response;
         }

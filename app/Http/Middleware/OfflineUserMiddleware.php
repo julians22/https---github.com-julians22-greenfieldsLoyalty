@@ -19,7 +19,6 @@ class OfflineUserMiddleware
     {
         if ($request->get('utm_source') && $request->get('utm_source') == 'offline') {
             $request->session()->put('offline_user_utm', config('greenfields.offline_user_utm'));
-            return redirect()->to($request->fullUrlWithoutQuery('utm_source'));
         }
         return $next($request);
     }
