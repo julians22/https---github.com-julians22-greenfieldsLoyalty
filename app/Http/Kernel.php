@@ -42,6 +42,7 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\LocaleMiddleware::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \App\Domains\Auth\Http\Middleware\ToBeLoggedOut::class,
+            \App\Http\Middleware\OfflineUserMiddleware::class
         ],
 
         'api' => [

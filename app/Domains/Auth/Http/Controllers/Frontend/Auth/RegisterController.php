@@ -171,18 +171,8 @@ class RegisterController
                 ->withErrors($validatorPhone, 'register');
         }
 
-        $utm = null;
-        $offline = false;
-        $oldUrl = parse_url(url()->previous());
-        if (array_key_exists('query', $oldUrl)) {
-            parse_str($oldUrl['query'], $output);
-            if (array_key_exists('utm_source', $output)) {
-                $utm = $output['utm_source'];
-            }
-            if ($utm && $utm == config('greenfields.offline_user_utm')) {
-                $offline = true;
-            }
-        }
+        $offline = session('offline_user_utm', false);
+
         event(new Registered($user = $this->create($request->all(), $offline)));
 
         $this->guard()->login($user);
