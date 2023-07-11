@@ -64,7 +64,7 @@ class RedeemsTable extends DataTableComponent
 
     public function query(): Builder
     {
-        $query = Redeem::with('user')->whereHas('user');
+        $query = Redeem::with('user')->has('user');
 
         return $query
             ->when($this->getFilter('redeem_date'), fn ($query, $date) => $query->whereDate('created_at', $date))
