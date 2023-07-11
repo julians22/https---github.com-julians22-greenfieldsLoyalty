@@ -33,7 +33,8 @@ class AcceptTopupRequest extends FormRequest
             'receipt_storename' => 'required',
             'details' => 'required|array',
             'details.*.qty' => 'required|numeric|min:1',
-            'details.*.price' => 'required|numeric|min:1'
+            'details.*.price' => 'required|numeric|min:1',
+            'details.*.total' => 'required|numeric|min:1'
         ];
     }
 }

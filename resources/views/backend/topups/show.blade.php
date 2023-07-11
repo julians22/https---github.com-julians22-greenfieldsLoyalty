@@ -159,9 +159,9 @@
                                         <td>{{$detail->product}}</td>
                                         <td>{{$detail->packsize}}</td>
                                         <td>{{$detail->qty}}</td>
-                                        <td>{{$detail->price}}</td>
-                                        <td>{{$detail->dicount_price}}</td>
-                                        <td>{{$detail->price * $detail->qty - $detail->dicount_price}}</td>
+                                        <td>{{number_format($detail->price)}}</td>
+                                        <td>{{number_format($detail->dicount_price)}}</td>
+                                        <td>{{number_format($detail->total)}}</td>
                                     </tr>
                                 @endforeach
                             </tbody>

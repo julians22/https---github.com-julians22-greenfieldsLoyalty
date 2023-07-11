@@ -65,6 +65,7 @@ class TopupController extends Controller
         $details = [];
         foreach ($request->details as $key => $value) {
             $discount = $value['discount'] ?? 0;
+            $total = $value['total'] ?? 0;
             array_push($details, [
                 "product" => $value['product'],
                 "packsize" => $value['packsize'],
@@ -72,7 +73,7 @@ class TopupController extends Controller
                 "flavour" => $value['flavour'],
                 "price" => $value['price'] ?? 0,
                 "dicount_price" => $discount,
-                "total" => $value['qty'] * $value['price'] - $discount
+                "total" => $total
             ]);
         }
 

@@ -130,6 +130,7 @@
                                         <th>Flavour</th>
                                         <th>Normal Price</th>
                                         <th>Discount/Promo Price</th>
+                                        <th>Total</th>
                                         <td >*</td>
                                     </tr>
                                     <template x-for="(field, index) in fields" :key="field.id">
@@ -163,6 +164,9 @@
                                             </td>
                                             <td>
                                                 <input type="number" :name=`details[${index}][discount]` class="form-control form-control-sm">
+                                            </td>
+                                            <td>
+                                                <input type="number" :name=`details[${index}][total]` class="form-control form-control-sm">
                                             </td>
                                             <td>
                                                 <button type="button" class="btn btn-danger btn-sm" x-show="index != 0" @click="removeField(field)">&times;</button>
