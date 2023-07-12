@@ -34,7 +34,14 @@ Route::group(['prefix' => 'topup', 'as' => 'topup.'], function() {
             ->name('edit')
             ->breadcrumbs(function (Trail $trail, Topup $topup) {
                 $trail->parent('admin.topup.index')
-                    ->push(__('Edit TopUp'), route('admin.topup.edit', $topup));
+                    ->push(__('Process TopUp'), route('admin.topup.edit', $topup));
+            });
+
+        Route::get('modify', [TopupController::class, 'modify'])
+            ->name('modify')
+            ->breadcrumbs(function (Trail $trail, Topup $topup) {
+                $trail->parent('admin.topup.index')
+                    ->push(__('Edit TopUp'), route('admin.topup.modify', $topup));
             });
 
         Route::get('process', function(Topup $topup){
@@ -50,6 +57,9 @@ Route::group(['prefix' => 'topup', 'as' => 'topup.'], function() {
 
         Route::patch('/accept', [TopupController::class, 'accept'])
             ->name('update.accept');
+
+        Route::patch('/update', [TopupController::class, 'update'])
+            ->name('update.update');
 
         Route::delete('/', [TopupController::class, 'destroy'])
             ->name('destroy');

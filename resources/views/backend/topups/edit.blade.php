@@ -9,6 +9,7 @@
         <x-backend.card>
             <x-slot name="header">
                 @lang('Manage Top Up')
+                @dump($topup)
             </x-slot>
 
             <x-slot name="headerActions">
@@ -76,38 +77,54 @@
                         <div class="form-group">
                             {{-- inline radio --}}
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioaccept" value="accept" x-model="show">
+                                <input @if ($topup->isCompleted()) disabled selected @endif class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioaccept" value="accept" x-model="show">
                                 <label class="form-check-label" for="inlineRadioaccept">Accept</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioreject" value="reject" x-model="show">
+                                <input @if ($topup->isCompleted()) disabled @endif class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioreject" value="reject" x-model="show">
                                 <label class="form-check-label" for="inlineRadioreject">Reject</label>
                             </div>
                         </div>
                     </div>
-                    @if ($topup->isProcessed())
+                    @if ($topup->isProcessed() || $topup->isCompleted())
+                    @php
+                        if (Route::is('admin.topup.edit')) {
+                            $action = route('admin.topup.update.accept', ['topup' => $topup]);
+                        } elseif (Route::is('admin.topup.modify')) {
+                            $action = route('admin.topup.update.update', ['topup' => $topup]);
+                        }else{
+                            $action = null;
+                        }
+                    @endphp
                     <div class="col-md-12" x-show="show === 'accept'">
-                        <x-forms.patch :action="route('admin.topup.update.accept', ['topup' => $topup])">
+                        <x-forms.patch :action="$action">
                             <h5 class="card-title">Fill This form to accept</h5>
                             <div class="form-group">
                                 <label for="receipt_date">@lang('Tanggal Struk')</label>
-                                <input type="date" class="form-control" name="receipt_date">
+                                <input type="date" class="form-control" name="receipt_date" value="{{ old('receipt_date') ?? $topup->receipt_date }}">
                             </div>
                             <div class="form-group">
                                 <label for="receipt_number">@lang('Nomor Struk')</label>
-                                <input type="text" class="form-control" name="receipt_number">
+                                <input type="text" class="form-control" name="receipt_number" value="{{ old('receipt_number') ?? $topup->receipt_number }}">
                             </div>
                             <div class="form-group">
                                 <label for="receipt_storename">@lang('Nama Toko')</label>
-                                <input type="text" class="form-control" name="receipt_storename">
+                                <input type="text" class="form-control" name="receipt_storename" value="{{ old('receipt_storename') ?? $topup->receipt_storename }}">
                             </div>
                             <div class="form-group">
                                 <label for="receipt_channel">@lang('Channel & Subchannel')</label>
                                 <select name="receipt_channel" id="receipt_channel" class="form-control">
+                                    @php
+                                        $selected_channel = old('receipt_channel') ?? $topup->receipt_subchannel
+                                    @endphp
                                     @foreach ($channels as $key => $channel)
                                         <optgroup label="{{$key}}">
                                             @foreach ($channel as $item)
-                                                <option value="{{$item}}">{{$item}}</option>
+                                                @if ($selected_channel && $selected_channel == $item)
+                                                    <option selected value="{{$item}}">{{$item}}</option>
+                                                @else
+                                                    <option value="{{$item}}">{{$item}}</option>
+                                                @endif
                                             @endforeach
                                         </optgroup>
                                     @endforeach
@@ -116,11 +133,21 @@
                             <div class="form-group">
                                 <label for="receipt_area">@lang('Daerah Toko')</label>
                                 <select name="receipt_area" id="receipt_area" class="form-control">
+                                    @php
+                                        $selected_area = old('receipt_area') ?? $topup->receipt_area
+                                    @endphp
                                     @foreach ($provinces as $province)
-                                        <option value="{{$province->name}}">{{$province->name}}</option>
+                                        @if ($selected_area == $province->name)
+                                            <option selected value="{{$province->name}}">{{$province->name}}</option>
+                                        @else
+                                            <option value="{{$province->name}}">{{$province->name}}</option>
+                                        @endif
                                     @endforeach
                                 </select>
                             </div>
+                            @php
+                                $details = $topup->details ?? null;
+                            @endphp
                             <div x-data="addRemove()">
                                 <table class="table-sm table table-bordered">
                                     <tr>
@@ -136,37 +163,37 @@
                                     <template x-for="(field, index) in fields" :key="field.id">
                                         <tr>
                                             <td>
-                                                <select :name=`details[${index}][product]` class="form-control form-control-sm">
+                                                <select x-model="field.product" :name=`details[${index}][product]` class="form-control form-control-sm">
                                                     @foreach ($categories as $category)
                                                         <option value="{{$category}}">{{$category}}</option>
                                                     @endforeach
                                                 </select>
                                             </td>
                                             <td>
-                                                <select :name=`details[${index}][packsize]` class="form-control form-control-sm">
+                                                <select x-model="field.packsize" :name=`details[${index}][packsize]` class="form-control form-control-sm">
                                                     @foreach ($packsizes as $packsize)
                                                         <option value="{{$packsize}}">{{$packsize}}</option>
                                                     @endforeach
                                                 </select>
                                             </td>
                                             <td>
-                                                <input type="number" min="1" :name=`details[${index}][qty]` class="form-control form-control-sm">
+                                                <input x-model="field.qty" type="number" min="1" :name=`details[${index}][qty]` class="form-control form-control-sm">
                                             </td>
                                             <td>
-                                                <select :name=`details[${index}][flavour]` class="form-control form-control-sm">
+                                                <select x-model="field.flavour" :name=`details[${index}][flavour]` class="form-control form-control-sm">
                                                     @foreach ($flavours as $flavour)
                                                         <option value="{{$flavour}}">{{$flavour}}</option>
                                                     @endforeach
                                                 </select>
                                             </td>
                                             <td>
-                                                <input type="number" :name=`details[${index}][price]` class="form-control form-control-sm">
+                                                <input x-model="field.price" type="number" :name=`details[${index}][price]` class="form-control form-control-sm">
                                             </td>
                                             <td>
-                                                <input type="number" :name=`details[${index}][discount]` class="form-control form-control-sm">
+                                                <input x-model="field.dicount_price" type="number" :name=`details[${index}][discount]` class="form-control form-control-sm">
                                             </td>
                                             <td>
-                                                <input type="number" :name=`details[${index}][total]` class="form-control form-control-sm">
+                                                <input x-model="field.total" type="number" :name=`details[${index}][total]` class="form-control form-control-sm">
                                             </td>
                                             <td>
                                                 <button type="button" class="btn btn-danger btn-sm" x-show="index != 0" @click="removeField(field)">&times;</button>
@@ -178,13 +205,17 @@
                             </div>
                             <div class="form-group">
                                 <label for="point">@lang('Point Calculated')</label>
-                                <input type="number" class="form-control" name="point">
+                                <input @if ($topup->isCompleted()) disabled @endif type="number" class="form-control" name="point" value="{{ old('point') ?? $topup->point }}">
                             </div>
                             <div class="form-group">
                                 <label for="note">@lang('Note') @lang('(Optional)'):</label>
-                                <textarea name="note" class="form-control" id="note" cols="" rows="5"></textarea>
+                                <textarea name="note" class="form-control" id="note" cols="" rows="5">{{ old('note') ?? $topup->note }}</textarea>
                             </div>
+                            @if ($topup->isCompleted())
+                            <button type="submit" class="btn btn-primary">@lang('Update')</button>
+                            @else
                             <button type="submit" class="btn btn-primary">@lang('Accept & Finish Top Up')</button>
+                            @endif
                         </x-forms.patch>
                     </div>
                     <div class="col-md-12" x-show="show === 'reject'">
@@ -226,13 +257,21 @@
     </script>
 
     <script>
+        const fieldData = @json($details);
         function addRemove() {
+            let fields = [
+                {
+                    id: new Date().getTime()
+                }
+            ];
+            if (fieldData) {
+                fields = [];
+                fieldData.forEach(element => {
+                    fields.push(element);
+                });
+            }
             return {
-                fields: [
-                    {
-                        id: new Date().getTime()
-                    }
-                ],
+                fields: fields,
                 addNewField() {
                     this.fields.push({id: new Date().getTime() + this.fields.length});
                 },

@@ -37,6 +37,10 @@ class TopUp extends Model
      */
     protected $dates = ['success_at', 'failed_at', 'process_at'];
 
+    protected $with = [
+        'details'
+    ];
+
     /**
      * Get the options for generating the Sku.
      *

@@ -142,30 +142,34 @@
                 @if ($topup->has('details'))
                 <div class="row">
                     <div class="col-md-12">
-                        <table class="table table-sm">
-                            <thead>
-                                <tr>
-                                    <td>Kategori Produk</td>
-                                    <td>Ukuran Kemasan</td>
-                                    <td>Qty</td>
-                                    <td>Harga</td>
-                                    <td>Diskon</td>
-                                    <td>Total</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($topup->details as $detail)
+                        <div class="table-responsive">
+                            <table class="table table-sm">
+                                <thead>
                                     <tr>
-                                        <td>{{$detail->product}}</td>
-                                        <td>{{$detail->packsize}}</td>
-                                        <td>{{$detail->qty}}</td>
-                                        <td>{{number_format($detail->price)}}</td>
-                                        <td>{{number_format($detail->dicount_price)}}</td>
-                                        <td>{{number_format($detail->total)}}</td>
+                                        <td>Kategori Produk</td>
+                                        <td>Ukuran Kemasan</td>
+                                        <td>Flavour</td>
+                                        <td>Qty</td>
+                                        <td>Harga</td>
+                                        <td>Diskon</td>
+                                        <td>Total</td>
                                     </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    @foreach ($topup->details as $detail)
+                                        <tr>
+                                            <td>{{$detail->product}}</td>
+                                            <td>{{$detail->packsize}}</td>
+                                            <td>{{$detail->flavour}}</td>
+                                            <td>{{$detail->qty}}</td>
+                                            <td>{{number_format($detail->price)}}</td>
+                                            <td>{{number_format($detail->dicount_price)}}</td>
+                                            <td>{{number_format($detail->total)}}</td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
 
