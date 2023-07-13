@@ -9,7 +9,6 @@
         <x-backend.card>
             <x-slot name="header">
                 @lang('Manage Top Up')
-                @dump($topup)
             </x-slot>
 
             <x-slot name="headerActions">
@@ -264,7 +263,7 @@
                     id: new Date().getTime()
                 }
             ];
-            if (fieldData) {
+            if (fieldData.length) {
                 fields = [];
                 fieldData.forEach(element => {
                     fields.push(element);
