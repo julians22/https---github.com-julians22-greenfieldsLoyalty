@@ -45,7 +45,7 @@ Route::group(['prefix' => 'topup', 'as' => 'topup.'], function() {
             });
 
         Route::get('process', function(Topup $topup){
-            if ($topup->isCompleted() && $topup->isFailed()) {
+            if ($topup->isCompleted() || $topup->isFailed()) {
                 return redirect()->route('admin.topup.show', ['topup' => $topup])->withFlash('warning', 'Anda tidak dapat melakukan proses topup kepada item yang sudah di konfirmasi atau di tolak');
             }
             $topup->update(['status' => Topup::STATUS_PROCESS]);
