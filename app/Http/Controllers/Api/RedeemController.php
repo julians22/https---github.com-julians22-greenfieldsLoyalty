@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\Api\RedeemResource;
 use App\Models\Redeem;
 use App\Models\Reward;
+use DB;
 use Illuminate\Http\Request;
 use Propaganistas\LaravelPhone\PhoneNumber;
 
@@ -88,30 +89,46 @@ class RedeemController extends Controller
             ], 200);
         }
 
-        $redeem = Redeem::create([
-            'reward_id' => $request->reward_id,
-            'address_id' => $user->address_data->id,
-            'user_id' => $user->id,
-            'point' => $reward->point,
-        ]);
+        try {
 
-        $user = User::where('id', $user->id)->first();
+            DB::beginTransaction();
 
-        $user->update([
-            'point' => $pointNow
-        ]);
+            $redeem = Redeem::create([
+                'reward_id' => $request->reward_id,
+                'address_id' => $user->address_data->id,
+                'user_id' => $user->id,
+                'point' => $reward->point,
+                'channel' => Redeem::CHANNEL_WHATSAPP
+            ]);
 
-        $user->save();
+            $user = User::where('id', $user->id)->first();
 
-        $stock = $reward->current_stock - 1;
+            $user->update([
+                'point' => $pointNow
+            ]);
 
-        $reward->update([
-            'current_stock' => $stock
-        ]);
+            $user->save();
 
-        $reward->save();
+            $stock = $reward->current_stock - 1;
+
+            $reward->update([
+                'current_stock' => $stock
+            ]);
+
+            $reward->save();
+        } catch (\Throwable $th) {
+            DB::rollBack();
+
+            return response()->json([
+                'status' => false,
+                'message' => $th->getMessage()
+            ]);
+        }
+
+        DB::commit();
 
         return response()->json([
+            'status' => true,
             'message' => "Berhasil tukar hadiah",
             'redeem' => $redeem,
             'point_now' => $pointNow
