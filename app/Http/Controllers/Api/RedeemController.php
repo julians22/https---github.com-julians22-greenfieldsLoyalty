@@ -89,9 +89,9 @@ class RedeemController extends Controller
             ], 200);
         }
 
-        try {
+        DB::beginTransaction();
 
-            DB::beginTransaction();
+        try {
 
             $redeem = Redeem::create([
                 'reward_id' => $request->reward_id,

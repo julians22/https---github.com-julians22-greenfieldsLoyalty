@@ -105,6 +105,7 @@ class TopupController extends Controller
 
         try {
             $topup->update([
+                'status' => Topup::STATUS_SUCCESS,
                 'note' => $request->note ?? null,
                 'receipt_date' => $request->receipt_date,
                 'receipt_number' => $request->receipt_number,
