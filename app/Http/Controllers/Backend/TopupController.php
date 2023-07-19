@@ -26,7 +26,11 @@ class TopupController extends Controller
 
     public function modify(Request $request, Topup $topup) {
         if ($topup->isFailed()) {
-            return redirect()->route('admin.topup.show', ['topup' => $topup])->withFlashWarning('You cant modify rejected topup data');
+            $topup->update([
+                'status' => Topup::STATUS_PROCESS,
+            ]);
+
+            return redirect()->route('admin.topup.process', ['topup' => $topup]);
         }
         $template = config('greenfields.sku.template');
         $packsizes = config('greenfields.sku.packsize');
