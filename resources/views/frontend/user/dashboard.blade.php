@@ -153,6 +153,8 @@
                     <div class="text-black font-weight-bold px-4 text-center reedem_total_user_point"></div>
                 </div>
 
+                @if (!empty($address_data))
+
                 <div class="row pb-5">
                     <div class="col-md-12">
                         <h5 class="text-black text-center">Hadiah akan dikirim ke alamat:</h5>
@@ -181,6 +183,11 @@
                         <button class="btn btn-dark-green btn-rounded" id="submit-reward" data-submit-url="{{ route('frontend.ajax.redeem.store') }}">Setuju</button>
                     </div>
                 </div>
+                @else
+                    <div class="col-md-12 text-center">
+                        <a href="{{ route('frontend.user.edit-account') }}?from=redeem" class="btn btn-dark-green shadow rounded-pill">Ayo lengkapi alamat kamu untuk melanjutkan penukaran hadiah</a>
+                    </div>
+                @endif
             </div>
         </div>
     </div>
