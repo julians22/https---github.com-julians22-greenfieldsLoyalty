@@ -3,7 +3,7 @@
     <x-utils.process-button : :href="route('admin.topup.process', $topup)" />
     @endif
 
-@if ($topup->isCompleted())
+@if ($topup->isCompleted() || $topup->isFailed())
     <x-utils.edit-button : :href="route('admin.topup.modify', $topup)" />
 @endif
 
