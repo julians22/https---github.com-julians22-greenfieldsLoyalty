@@ -16,7 +16,7 @@
             <div class="col-md-10">
                 <x-forms.post autocomplete="on" :action="route('frontend.auth.register')" class="greenfields-form register-form">
                     <div class="form-group row mb-md-3 mb-0">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <label for="" class="d-block d-md-none">{{ __('Full Name') }}</label>
                             <input autocomplete="off" type="text" name="name" id="name" class="form-control {{$errors->register->has('name') ? 'is-invalid' : ''}}" value="{{ old('name') }}" placeholder="{{ __('Full Name') }}" maxlength="100" required autofocus  />
                             {{-- Error Message --}}
@@ -26,16 +26,16 @@
                                 </div>
                             @endif
                         </div>
-                        <div class="col-md-6">
-                            <label for="" class="d-block d-md-none">{{ __('Date Of Birth') }}</label>
-                            <input autocomplete="off" type="date" name="date_of_birth" id="date_of_birth" class="form-control {{$errors->register->has('date_of_birth') ? 'is-invalid' : ''}}" value="{{ old('date_of_birth') }}" data-placeholder="{{ __('Date Of Birth') }}" required >
+                        {{-- <div class="col-md-6"> --}}
+                            {{-- <label for="" class="d-block d-md-none">{{ __('Date Of Birth') }}</label> --}}
+                            {{-- <input autocomplete="off" type="date" name="date_of_birth" id="date_of_birth" class="form-control {{$errors->register->has('date_of_birth') ? 'is-invalid' : ''}}" value="{{ old('date_of_birth') }}" data-placeholder="{{ __('Date Of Birth') }}" required > --}}
                             {{-- Error Message --}}
-                            @if ($errors->register->has('date_of_birth'))
+                            {{-- @if ($errors->register->has('date_of_birth'))
                                 <div id="date_of_birthFeedback" class="invalid-feedback">
                                     {{ $errors->register->first('date_of_birth') }}
                                 </div>
-                            @endif
-                        </div>
+                            @endif --}}
+                        {{-- </div> --}}
                     </div><!--form-group-->
 
                     @if (config('boilerplate.show_child_information'))

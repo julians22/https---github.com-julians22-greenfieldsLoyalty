@@ -103,7 +103,7 @@ class RegisterController
             // 'city' => ['required'],
             // 'district' => ['required'],
             // 'postal_code' => ['required'],
-            'date_of_birth' => ['required', 'date'],
+            // 'date_of_birth' => ['required', 'date'],
             'history_milk_category' => ['required'],
             'history_milk_product' => ['required'],
             'history_milk_packsize' => ['required'],
