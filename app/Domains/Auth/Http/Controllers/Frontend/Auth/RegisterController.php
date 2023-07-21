@@ -98,11 +98,11 @@ class RegisterController
     {
         $rules = [
             'name' => ['required', 'string', 'max:100'],
-            'address' => ['required', 'string'],
-            'province' => ['required'],
-            'city' => ['required'],
-            'district' => ['required'],
-            'postal_code' => ['required'],
+            // 'address' => ['required', 'string'],
+            // 'province' => ['required'],
+            // 'city' => ['required'],
+            // 'district' => ['required'],
+            // 'postal_code' => ['required'],
             'date_of_birth' => ['required', 'date'],
             'history_milk_category' => ['required'],
             'history_milk_product' => ['required'],

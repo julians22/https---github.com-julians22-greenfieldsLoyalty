@@ -103,8 +103,9 @@
                         </div>
                     </div><!--form-group-->
 
-                    <div class="form-group row mb-md-3 mb-0">
+                    @if (config('boilerplate.show_address_form'))
 
+                    <div class="form-group row mb-md-3 mb-0">
                         <div class="col-md-12">
                             <label for="" class="d-block d-md-none">{{ __('Alamat Rumah Lengkap') }}</label>
                             <textarea autocomplete="off" name="address" id="address" rows="1" class="form-control {{$errors->register->has('address') ? 'is-invalid' : ''}}" placeholder="{{__('Alamat Rumah Lengkap')}}">{{ old('address') }}</textarea>
@@ -167,6 +168,8 @@
                         </div>
 
                     </div><!--form-group-->
+
+                    @endif
 
                     <div class="form-group row mb-md-3 mb-0">
                         <div class="col-md-6">

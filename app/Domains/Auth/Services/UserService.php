@@ -59,14 +59,14 @@ class UserService extends BaseService
         try {
             $user = $this->createUser($data, $utm);
 
-            $user->address_data()->create([
-                'address' => $data['address'],
-                'province' => $data['province'],
-                'city' => $data['city'],
-                'district' => $data['district'],
-                'postal_code' => $data['postal_code'],
-                'is_primary' => true
-            ]);
+            // $user->address_data()->create([
+            //     'address' => $data['address'],
+            //     'province' => $data['province'],
+            //     'city' => $data['city'],
+            //     'district' => $data['district'],
+            //     'postal_code' => $data['postal_code'],
+            //     'is_primary' => true
+            // ]);
 
             $brand_history = "";
             $category_history = "";

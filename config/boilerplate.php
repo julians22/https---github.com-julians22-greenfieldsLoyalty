@@ -165,4 +165,6 @@ return [
     'testing' => env('APP_TESTING', false),
 
     'show_child_information' => env('SHOW_CHILD_INFORMATION', false),
+
+    'show_address_form' => env('SHOW_ADDRESS_FORM', false),
 ];

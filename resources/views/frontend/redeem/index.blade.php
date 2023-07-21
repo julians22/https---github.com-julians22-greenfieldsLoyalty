@@ -54,34 +54,39 @@
                         <div class="text-black font-weight-bold px-4 text-center reedem_total_user_point"></div>
                     </div>
 
-                    <div class="row pb-5">
-                        <div class="col-md-12">
-                            <h5 class="text-black text-center">Hadiah akan dikirim ke alamat:</h5>
-                            <input type="hidden" name="address_id" id="current_address_id" value="{{ $address_data->id }}">
-                            <input type="hidden" name="redeem_id" id="current_redeem_id">
-                            <div class="row mt-2">
-                                <div class="col-md-6 offset-md-3">
-                                    <p id="current_address" class="text-black font-weight-bold text-center mb-0">{{ $address_data->address }},</p>
-                                    <p id="current_province" class="text-black font-weight-bold text-center mb-0">{{ $address_data->rel_province->name }},</p>
-                                    <p id="current_city" class="text-black font-weight-bold text-center mb-0">{{ $address_data->rel_city->name }},</p>
-                                    <p id="current_district" class="text-black font-weight-bold text-center mb-0">{{ $address_data->rel_district->name }},</p>
-                                    <p id="current_postcode" class="text-black font-weight-bold text-center">{{ $address_data->postal_code }}</p>
-                                </div>
-                                <div class="col-md-12 text-center">
-                                    <a href="{{ route('frontend.user.edit-account') }}?from=redeem" class="btn btn-secondary rounded-pill">Ubah Alamat Pengiriman</a>
+                    @if (!empty($address_data))
+                        <div class="row pb-5">
+                            <div class="col-md-12">
+                                <h5 class="text-black text-center">Hadiah akan dikirim ke alamat:</h5>
+                                <input type="hidden" name="address_id" id="current_address_id" value="{{ $address_data->id }}">
+                                <input type="hidden" name="redeem_id" id="current_redeem_id">
+                                <div class="row mt-2">
+                                    <div class="col-md-6 offset-md-3">
+                                        <p id="current_address" class="text-black font-weight-bold text-center mb-0">{{ $address_data->address }},</p>
+                                        <p id="current_province" class="text-black font-weight-bold text-center mb-0">{{ $address_data->rel_province->name }},</p>
+                                        <p id="current_city" class="text-black font-weight-bold text-center mb-0">{{ $address_data->rel_city->name }},</p>
+                                        <p id="current_district" class="text-black font-weight-bold text-center mb-0">{{ $address_data->rel_district->name }},</p>
+                                        <p id="current_postcode" class="text-black font-weight-bold text-center">{{ $address_data->postal_code }}</p>
+                                    </div>
+                                    <div class="col-md-12 text-center">
+                                        <a href="{{ route('frontend.user.edit-account') }}?from=redeem" class="btn btn-secondary rounded-pill">Ubah Alamat Pengiriman</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="row d-flex justify-content-between">
-                        <div class="col-6 col-md-2">
-                            <button data-dismiss="modal" class="btn btn-secondary btn-rounded">Batal</button>
+                        <div class="row d-flex justify-content-between">
+                            <div class="col-6 col-md-2">
+                                <button data-dismiss="modal" class="btn btn-secondary btn-rounded">Batal</button>
+                            </div>
+                            <div class="col-6 col-md-2 text-right">
+                                <button class="btn btn-dark-green btn-rounded" id="submit-reward" data-submit-url="{{ route('frontend.ajax.redeem.store') }}">Setuju</button>
+                            </div>
                         </div>
-                        <div class="col-6 col-md-2 text-right">
-                            <button class="btn btn-dark-green btn-rounded" id="submit-reward" data-submit-url="{{ route('frontend.ajax.redeem.store') }}">Setuju</button>
+                    @else
+                        <div class="col-md-12 text-center">
+                            <a href="{{ route('frontend.user.edit-account') }}?from=redeem" class="btn btn-dark-green shadow rounded-pill">Ayo lengkapi alamat kamu untuk melanjutkan penukaran hadiah</a>
                         </div>
-                    </div>
+                    @endif
                 </div>
             </div>
         </div>
