@@ -206,8 +206,8 @@
                             </div>
                             <p>Kamu bisa melihat hadiah khusus pengguna baru di sini.</p>
 
-                            @if ($logged_in_user->isHasDetail() && $logged_in_user->isHasAddressData() && $logged_in_user->isWhatsappVerified() && $logged_in_user->voucher)
-                                @if ($logged_in_user->isWebUser() || $logged_in_user->isWhatsappUser())
+                            @if ($logged_in_user->isHasDetail() && $logged_in_user->isHasAddressData() && $logged_in_user->isWhatsappVerified())
+                                @if ($logged_in_user->isWebUser() || $logged_in_user->isWhatsappUser() && $logged_in_user->voucher)
                                     <div x-data="{ displayVoucher: false }">
                                         <button class="btn btn-dark-green btn-rounded" type="button" @click="displayVoucher = !displayVoucher">Lihat Hadiah</button>
 
@@ -223,7 +223,7 @@
                                             <p>Cek <a href="{{ route('frontend.promo.index') }}?show=promo-khusus-anggota-baru">syarat & ketentuannya di sini!</a></p>
                                         </div>
                                     </div>
-                                @elseif ($logged_in_user->isWebQrUser())
+                                @elseif ($logged_in_user->isWebQrUser() && $logged_in_user->offline_reward)
                                 {{-- @dump($logged_in_user->offline_reward) --}}
                                 <div x-data="{ displayVoucher: false }">
                                     <button class="btn btn-dark-green btn-rounded" type="button" @click="displayVoucher = !displayVoucher">Lihat Hadiah</button>
