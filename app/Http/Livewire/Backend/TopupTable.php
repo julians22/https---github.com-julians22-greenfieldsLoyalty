@@ -35,8 +35,8 @@ class TopupTable extends DataTableComponent
                     TopUp::STATUS_SUCCESS => 'Finished',
                     TopUp::STATUS_FAILED => 'Canceled',
                 ]),
-            'topup_date' => Filter::make('Topup Date')
-                ->date()
+            'created_from' => Filter::make('Created From')->date(),
+            'created_to' => Filter::make('Created To')->date()
         ];
     }
 
@@ -68,7 +68,9 @@ class TopupTable extends DataTableComponent
 
         return $query
             ->when($this->getFilter('topup_date'), fn ($query, $date) => $query->whereDate('created_at', $date))
-            ->when($this->getFilter('status'), fn ($query, $status) => $query->where('status', $status));
+            ->when($this->getFilter('status'), fn ($query, $status) => $query->where('status', $status))
+            ->when($this->getFilter('created_from'), fn ($query, $date) => $query->whereDate('created_at', '>=', date('Y-m-d', strtotime($date))))
+            ->when($this->getFilter('created_to'), fn ($query, $date) => $query->whereDate('created_at', '<=', date('Y-m-d', strtotime($date))));
     }
 
     public function exportTopUpTable() {

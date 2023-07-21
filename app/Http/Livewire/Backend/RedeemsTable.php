@@ -36,7 +36,9 @@ class RedeemsTable extends DataTableComponent
                     Redeem::STATUS_FAILED => 'Delayed',
                 ]),
             'redeem_date' => Filter::make('Redeem Date')
-                ->date()
+                ->date(),
+            'created_from' => Filter::make('Created From')->date(),
+            'created_to' => Filter::make('Created To')->date()
         ];
     }
 
@@ -68,6 +70,8 @@ class RedeemsTable extends DataTableComponent
 
         return $query
             ->when($this->getFilter('redeem_date'), fn ($query, $date) => $query->whereDate('created_at', $date))
+            ->when($this->getFilter('created_from'), fn ($query, $date) => $query->whereDate('created_at', '>=', date('Y-m-d', strtotime($date))))
+            ->when($this->getFilter('created_to'), fn ($query, $date) => $query->whereDate('created_at', '<=', date('Y-m-d', strtotime($date))))
             ->when($this->getFilter('status'), fn ($query, $status) => $query->where('status', $status));
     }
 
