@@ -38,6 +38,12 @@
                             <div class="form-group">
                                 <label for="password" class="d-md-none d-block">{{ __('Password') }}</label>
                                 <input type="password" name="password" id="password" class="form-control" placeholder="{{ __('Password') }}" maxlength="100" required autocomplete="current-password" />
+                                <div class="form-check mt-2 mb-md-0 mb-2">
+                                    <input type="checkbox" id="password_show" class="form-check-input">
+                                    <label class="form-check-label" for="password_show">
+                                        Tampilkan Kata Sandi
+                                    </label>
+                                </div>
                             </div>
 
                             <div class="text-md-right mb-2 mb-md-0">
@@ -61,3 +67,15 @@
         </div>
     </div><!--container-->
 @endsection
+
+@push('after-scripts')
+    <script>
+        $('#password_show').on('change', function(e){
+            if(this.checked){
+                $('#password').attr('type', 'text')
+            }else{
+                $('#password').attr('type', 'password')
+            }
+        });
+    </script>
+@endpush

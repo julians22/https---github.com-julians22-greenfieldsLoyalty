@@ -84,7 +84,7 @@
                         </div>
                     @else
                         <div class="col-md-12 text-center">
-                            <a href="{{ route('frontend.user.edit-account') }}?from=redeem" class="btn btn-dark-green shadow rounded-pill">Ayo lengkapi alamat kamu untuk melanjutkan penukaran hadiah</a>
+                            <a href="{{ route('frontend.user.edit-account') }}?from=redeem" class="btn btn-dark-green shadow rounded-pill">Tambahkan alamat pengiriman kamu di sini</a>
                         </div>
                     @endif
                 </div>
