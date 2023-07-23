@@ -21,81 +21,87 @@
                 :text="__('Dashboard')" />
         </li>
 
-        <li class="c-sidebar-nav-title">@lang('Master')</li>
+        @if ($logged_in_user->hasAllAccess())
+            <li class="c-sidebar-nav-title">@lang('Master')</li>
 
-        {{-- Reward Menu --}}
-        <li class="c-sidebar-nav-item">
-            <x-utils.link
-                class="c-sidebar-nav-link"
-                :href="route('admin.reward.index')"
-                :active="activeClass(Route::is('admin.reward*'), 'c-active')"
-                icon="c-sidebar-nav-icon fas fa-gifts"
-                :text="__('Rewards Management')" />
-        </li>
+            {{-- Reward Menu --}}
+            <li class="c-sidebar-nav-item">
+                <x-utils.link
+                    class="c-sidebar-nav-link"
+                    :href="route('admin.reward.index')"
+                    :active="activeClass(Route::is('admin.reward*'), 'c-active')"
+                    icon="c-sidebar-nav-icon fas fa-gifts"
+                    :text="__('Rewards Management')" />
+            </li>
 
-        {{-- Vouchers Menu --}}
-        <li class="c-sidebar-nav-item">
-            <x-utils.link
-                class="c-sidebar-nav-link"
-                :href="route('admin.voucher.index')"
-                :active="activeClass(Route::is('admin.voucher*'), 'c-active')"
-                icon="c-sidebar-nav-icon fas fa-table"
-                :text="__('Voucher Management')" />
-        </li>
+            {{-- Vouchers Menu --}}
+            <li class="c-sidebar-nav-item">
+                <x-utils.link
+                    class="c-sidebar-nav-link"
+                    :href="route('admin.voucher.index')"
+                    :active="activeClass(Route::is('admin.voucher*'), 'c-active')"
+                    icon="c-sidebar-nav-icon fas fa-table"
+                    :text="__('Voucher Management')" />
+            </li>
 
-        <li class="c-sidebar-nav-title">@lang('CMS')</li>
+            <li class="c-sidebar-nav-title">@lang('CMS')</li>
 
-        {{-- Activity Menu --}}
-        <li class="c-sidebar-nav-item">
-            <x-utils.link
-                class="c-sidebar-nav-link"
-                :href="route('admin.banner.index')"
-                :active="activeClass(Route::is('admin.banner*'), 'c-active')"
-                icon="c-sidebar-nav-icon fas fa-pager"
-                :text="__('Banners Management')" />
-        </li>
+            {{-- Activity Menu --}}
+            <li class="c-sidebar-nav-item">
+                <x-utils.link
+                    class="c-sidebar-nav-link"
+                    :href="route('admin.banner.index')"
+                    :active="activeClass(Route::is('admin.banner*'), 'c-active')"
+                    icon="c-sidebar-nav-icon fas fa-pager"
+                    :text="__('Banners Management')" />
+            </li>
 
-        {{-- Activity Menu --}}
-        <li class="c-sidebar-nav-item">
-            <x-utils.link
-                class="c-sidebar-nav-link"
-                :href="route('admin.activity.index')"
-                :active="activeClass(Route::is('admin.activity*'), 'c-active')"
-                icon="c-sidebar-nav-icon fas fa-pager"
-                :text="__('Activities Management')" />
-        </li>
+            {{-- Activity Menu --}}
+            <li class="c-sidebar-nav-item">
+                <x-utils.link
+                    class="c-sidebar-nav-link"
+                    :href="route('admin.activity.index')"
+                    :active="activeClass(Route::is('admin.activity*'), 'c-active')"
+                    icon="c-sidebar-nav-icon fas fa-pager"
+                    :text="__('Activities Management')" />
+            </li>
 
-        {{-- Faq Menu --}}
-        <li class="c-sidebar-nav-item">
-            <x-utils.link
-                class="c-sidebar-nav-link"
-                :href="route('admin.faq.index')"
-                :active="activeClass(Route::is('admin.faq*'), 'c-active')"
-                icon="c-sidebar-nav-icon fas fa-pager"
-                :text="__('Faqs Management')" />
-        </li>
+            {{-- Faq Menu --}}
+            <li class="c-sidebar-nav-item">
+                <x-utils.link
+                    class="c-sidebar-nav-link"
+                    :href="route('admin.faq.index')"
+                    :active="activeClass(Route::is('admin.faq*'), 'c-active')"
+                    icon="c-sidebar-nav-icon fas fa-pager"
+                    :text="__('Faqs Management')" />
+            </li>
 
-        {{-- T&C Menu --}}
-        <li class="c-sidebar-nav-item">
-            <x-utils.link
-                class="c-sidebar-nav-link"
-                :href="route('admin.setting.index')"
-                :active="activeClass(Route::is('admin.setting*'), 'c-active')"
-                icon="c-sidebar-nav-icon fas fa-pager"
-                :text="__('Personalise')" />
-        </li>
+            {{-- T&C Menu --}}
+            <li class="c-sidebar-nav-item">
+                <x-utils.link
+                    class="c-sidebar-nav-link"
+                    :href="route('admin.setting.index')"
+                    :active="activeClass(Route::is('admin.setting*'), 'c-active')"
+                    icon="c-sidebar-nav-icon fas fa-pager"
+                    :text="__('Personalise')" />
+            </li>
+        @endif
+
 
         <li class="c-sidebar-nav-title">@lang('Transactions')</li>
 
-        {{-- Top ups Menu --}}
-        <li class="c-sidebar-nav-item">
-            <x-utils.link
-                class="c-sidebar-nav-link"
-                :href="route('admin.topup.index')"
-                :active="activeClass(Route::is('admin.topup*'), 'c-active')"
-                icon="c-sidebar-nav-icon fas fa-exchange-alt"
-                :text="__('Top up Management')" />
-        </li>
+        @if ($logged_in_user->hasAllAccess() || $logged_in_user->can('admin.manage.topup'))
+            {{-- Top ups Menu --}}
+            <li class="c-sidebar-nav-item">
+                <x-utils.link
+                    class="c-sidebar-nav-link"
+                    :href="route('admin.topup.index')"
+                    :active="activeClass(Route::is('admin.topup*'), 'c-active')"
+                    icon="c-sidebar-nav-icon fas fa-exchange-alt"
+                    :text="__('Top up Management')" />
+            </li>
+        @endif
+
 
         {{-- Redeems Menu --}}
         <li class="c-sidebar-nav-dropdown {{ activeClass(Route::is('admin.redeem*'), 'c-open c-show') }}">
