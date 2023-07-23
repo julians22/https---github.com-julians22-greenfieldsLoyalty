@@ -90,7 +90,7 @@
 
         <li class="c-sidebar-nav-title">@lang('Transactions')</li>
 
-        @if ($logged_in_user->hasAllAccess() || $logged_in_user->can('admin.manage.topup'))
+        @if ($logged_in_user->hasAllAccess() || $logged_in_user->can('admin.access.topups'))
             {{-- Top ups Menu --}}
             <li class="c-sidebar-nav-item">
                 <x-utils.link
@@ -102,32 +102,34 @@
             </li>
         @endif
 
+        @if ($logged_in_user->hasAllAccess() || $logged_in_user->can('admin.access.redeems'))
+            {{-- Redeems Menu --}}
+            <li class="c-sidebar-nav-dropdown {{ activeClass(Route::is('admin.redeem*'), 'c-open c-show') }}">
+                <x-utils.link
+                    href="#"
+                    icon="c-sidebar-nav-icon fas fa-exchange-alt fa-flip-horizontal"
+                    class="c-sidebar-nav-dropdown-toggle"
+                    :text="__('Redeem')" />
+                        <ul class="c-sidebar-nav-dropdown-items">
+                            <li class="c-sidebar-nav-item">
+                                <x-utils.link
+                                    class="c-sidebar-nav-link"
+                                    :href="route('admin.redeem.index')"
+                                    :active="activeClass(Route::is('admin.redeem.index') || Route::is('admin.redeem.edit') || Route::is('admin.redeem.show'), 'c-active')"
+                                    :text="__('Redeem Management')" />
+                            </li>
+                            <li class="c-sidebar-nav-item">
+                                <x-utils.link
+                                    class="c-sidebar-nav-link"
+                                    :href="route('admin.redeem.bulk_sync')"
+                                    :active="activeClass(Route::is('admin.redeem.bulk_sync'), 'c-active')"
+                                    :text="__('Bulk Process Redeems')" />
+                            </li>
+                        </ul>
+            </li>
+        @endif
 
-        {{-- Redeems Menu --}}
-        <li class="c-sidebar-nav-dropdown {{ activeClass(Route::is('admin.redeem*'), 'c-open c-show') }}">
-            <x-utils.link
-                href="#"
-                icon="c-sidebar-nav-icon fas fa-exchange-alt fa-flip-horizontal"
-                class="c-sidebar-nav-dropdown-toggle"
-                :text="__('Redeem')" />
-                    <ul class="c-sidebar-nav-dropdown-items">
-                        <li class="c-sidebar-nav-item">
-                            <x-utils.link
-                                class="c-sidebar-nav-link"
-                                :href="route('admin.redeem.index')"
-                                :active="activeClass(Route::is('admin.redeem.index') || Route::is('admin.redeem.edit') || Route::is('admin.redeem.show'), 'c-active')"
-                                :text="__('Redeem Management')" />
-                        </li>
-                        <li class="c-sidebar-nav-item">
-                            <x-utils.link
-                                class="c-sidebar-nav-link"
-                                :href="route('admin.redeem.bulk_sync')"
-                                :active="activeClass(Route::is('admin.redeem.bulk_sync'), 'c-active')"
-                                :text="__('Bulk Process Redeems')" />
-                        </li>
-                    </ul>
 
-        </li>
 
 
         @if (
