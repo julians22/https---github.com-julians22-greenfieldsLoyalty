@@ -98,6 +98,10 @@ class Kernel extends HttpKernel
         'whatsapp_verified' => \App\Http\Middleware\EnsureWhatsappIsVerified::class,
         'user_complete_detail' => \App\Http\Middleware\UserCompleteDetail::class,
         'firewall' => \App\Http\Middleware\ShieldonFirewall::class,
+
+        // addition role middleware
+        'is_logistic_admin' => \App\Http\Middleware\AdminLogisticCheck::class,
+        'is_validator_admin' => \App\Http\Middleware\AdminValidatorCheck::class
     ];
 
     /**

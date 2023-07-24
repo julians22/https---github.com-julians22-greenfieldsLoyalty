@@ -4,7 +4,7 @@ use App\Http\Controllers\Backend\RedeemController;
 use App\Models\Redeem;
 use Tabuna\Breadcrumbs\Trail;
 
-Route::group(['prefix' => 'redeem', 'as' => 'redeem.'], function() {
+Route::group(['prefix' => 'redeem', 'as' => 'redeem.', 'middleware' => 'is_logistic_admin'], function() {
     Route::get('/', [RedeemController::class, 'index'])
         ->name('index')
         ->breadcrumbs(function (Trail $trail) {

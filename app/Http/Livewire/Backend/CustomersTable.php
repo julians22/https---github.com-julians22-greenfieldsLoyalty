@@ -22,8 +22,8 @@ class CustomersTable extends DataTableComponent
     public function filters(): array
     {
         return [
-            'register_date' => Filter::make('Register Date')
-                ->date()
+            'created_from' => Filter::make('Register Date From')->date(),
+            'created_to' => Filter::make('Register Date To')->date()
         ];
     }
 
@@ -66,7 +66,8 @@ class CustomersTable extends DataTableComponent
             }]);
 
         return $query
-            ->when($this->getFilter('register_date'), fn ($query, $date) => $query->whereDate('created_at', $date));
+            ->when($this->getFilter('created_from'), fn ($query, $date) => $query->whereDate('created_at', '>=', date('Y-m-d', strtotime($date))))
+            ->when($this->getFilter('created_to'), fn ($query, $date) => $query->whereDate('created_at', '<=', date('Y-m-d', strtotime($date))));
     }
 
     public function exportCustomerTable() {

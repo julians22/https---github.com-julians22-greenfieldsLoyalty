@@ -4,7 +4,7 @@ use App\Http\Controllers\Backend\TopupController;
 use App\Models\TopUp as Topup;
 use Tabuna\Breadcrumbs\Trail;
 
-Route::group(['prefix' => 'topup', 'as' => 'topup.'], function() {
+Route::group(['prefix' => 'topup', 'as' => 'topup.', 'middleware' => 'is_validator_admin'], function() {
     Route::get('/', [TopupController::class, 'index'])
         ->name('index')
         ->breadcrumbs(function (Trail $trail) {
