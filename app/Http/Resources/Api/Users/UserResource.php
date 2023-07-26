@@ -19,7 +19,7 @@ class UserResource extends JsonResource
             'email' => $this->email,
             'no_hp' => $this->phone,
             'alamat' => $this->isHasAddressData() ?? $this->address_data->address,
-            'provinsi' => $this->isHasAddressData() ?? $this->address_data->rel_province->name,
+            'provinsi' => $this->isHasAddressData() ?? $this->address_data->rel_province ? $this->address_data->rel_province->name : null,
             'kota' => $this->isHasAddressData() ?? $this->address_data->rel_city ? $this->address_data->rel_city->name : null,
             'kecamatan' => $this->isHasAddressData() ?? $this->address_data->rel_district ? $this->address_data->rel_district->name : null,
             'created_at' => $this->created_at->format('Y-m-d h:i:s'),
