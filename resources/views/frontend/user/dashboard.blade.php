@@ -29,9 +29,13 @@
                             @endif
                         @elseif ($logged_in_user->isWebQrUser())
                             @if ($logged_in_user->offline_reward)
-                            <div class="alert alert-dark-green heartbeat">
-                                Kamu berhak mendapatkan hadiah khusus anggota baru berupa <strong>{{ $logged_in_user->offline_reward->reward->name }}</strong>.  Akan dikirim ke alamat kamu dalam 14x24 jam (Hari kerja).
-                            </div>
+                                <div class="alert alert-dark-green heartbeat">
+                                    Kamu berhak mendapatkan hadiah khusus anggota baru berupa <strong>{{ $logged_in_user->offline_reward->reward->name }}</strong>.  Akan dikirim ke alamat kamu dalam 14x24 jam (Hari kerja).
+                                </div>
+                            @else
+                                <div class="alert alert-warning">
+                                    Ayo lengkapi profil kamu sekarang untuk mendapatkan hadiah menarik dari greenfields! <a href="{{ route('frontend.user.edit-account') }}">Klik disini</a>
+                                </div>
                             @endif
                         @endif
                     @endif

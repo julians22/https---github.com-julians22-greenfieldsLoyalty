@@ -246,6 +246,12 @@
                                         </div>
                                     </div>
                                 </div>
+                                @else
+                                    @if ($logged_in_user->isWebQrUser())
+                                        <div class="alert alert-warning">
+                                            Ayo, lengkapi profil kamu sekarang untuk mendapatkan promo khusus anggota baru dari greenfields! <a href="{{ route('frontend.user.edit-account') }}">Klik disini</a>
+                                        </div>
+                                    @endif
                                 @endif
                             @else
                                 <div class="alert alert-warning">
