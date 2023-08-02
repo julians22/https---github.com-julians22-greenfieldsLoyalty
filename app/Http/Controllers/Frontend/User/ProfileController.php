@@ -46,7 +46,7 @@ class ProfileController
             }
 
             if ($user->isWebQrUser()) {
-                if ($user->hasAddressData()) {
+                if ($user->isHasAddressData()) {
                     $reward_offline_id = config('greenfields.offline_reward_id');
                     $rewardInUser = Redeem::where('user_id', $user->id)->where('offline_reward', 1)->get();
                     if (!$rewardInUser->count()) {
