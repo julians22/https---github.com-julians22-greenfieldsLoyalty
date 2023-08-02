@@ -57,7 +57,7 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="email">{{ __('E-mail Address') }}</label>
-                                                    <input type="email" name="email" id="email" class="form-control" placeholder="{{ __('E-mail Address') }}" value="{{ $logged_in_user->email }}" maxlength="255" required autocomplete="false" />
+                                                    <input type="email" disabled name="email" id="email" class="form-control" placeholder="{{ __('E-mail Address') }}" value="{{ $logged_in_user->email }}" maxlength="255" required autocomplete="false" />
                                                 </div>
                                             </div>
 

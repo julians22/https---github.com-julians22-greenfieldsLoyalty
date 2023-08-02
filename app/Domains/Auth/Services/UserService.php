@@ -274,12 +274,12 @@ class UserService extends BaseService
             $user->completed_at = now();
         }
 
-        if ($user->canChangeEmail() && $user->email !== $data['email']) {
-            $user->email = $data['email'];
-            // $user->email_verified_at = null;
-            $user->sendEmailVerificationNotification();
-            session()->flash('resent', true);
-        }
+        // if ($user->canChangeEmail() && $user->email !== $data['email']) {
+        //     $user->email = $data['email'];
+        //     // $user->email_verified_at = null;
+        //     $user->sendEmailVerificationNotification();
+        //     session()->flash('resent', true);
+        // }
 
         return tap($user)->save();
     }
