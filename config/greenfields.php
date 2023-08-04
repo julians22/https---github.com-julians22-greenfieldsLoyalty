@@ -109,6 +109,7 @@ return [
                 'Super',
                 'MTI A',
                 'MTI B',
+                'General Trade'
             ],
             'Online' => [
                 'Ecommerce',
@@ -117,7 +118,7 @@ return [
             ]
         ],
         'offline_channel' => [
-            'Minimarket', 'Hypermarket', 'Supermarket', 'MTI A', 'MTI B'
+            'Minimarket', 'Hypermarket', 'Supermarket', 'MTI A', 'MTI B', 'General Trade'
         ],
         'online_channel' => [
             'Ecommerce', 'QuickCommerce'
