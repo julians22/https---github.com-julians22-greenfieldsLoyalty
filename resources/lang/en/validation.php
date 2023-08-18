@@ -136,6 +136,8 @@ return [
     |
     */
 
+    'phone' => 'The :attribute field must be a valid number.',
+
     'custom' => [
         'attribute-name' => [
             'rule-name' => 'custom-message',

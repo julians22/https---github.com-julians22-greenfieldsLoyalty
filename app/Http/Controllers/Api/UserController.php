@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Password;
 use Propaganistas\LaravelPhone\PhoneNumber;
+use Propaganistas\LaravelPhone\Rules\Phone;
 
 class UserController extends Controller
 {
@@ -82,6 +83,21 @@ class UserController extends Controller
      **/
     public function store(Request $request)
     {
+        $validatorPhoneCountry = Validator::make([
+            'phone' => $request->phone
+        ], [
+            'phone' => ['required', (new Phone)->country(['ID'])]
+        ], [
+            'phone.phone' => 'Nomor ini tidak terdaftar di Indonesia'
+        ]);
+
+        if ($validatorPhoneCountry->fails()) {
+            return response()->json([
+                'errors' => $validatorPhoneCountry->errors(),
+                'status' => false
+            ], 403);
+        }
+
         $phoneField = phone($request->phone, 'ID');
 
         $validatorPhone = Validator::make([
