@@ -14,14 +14,16 @@ class UserResource extends JsonResource
      */
     public function toArray($request)
     {
+        // dd($this->address_data->hasProvince());
         return [
             'name' => $this->name,
             'email' => $this->email,
             'no_hp' => $this->phone,
-            'alamat' => $this->isHasAddressData() ?? $this->address_data->address,
-            'provinsi' => $this->isHasAddressData() ?? $this->address_data->rel_province ? $this->address_data->rel_province->name : null,
-            'kota' => $this->isHasAddressData() ?? $this->address_data->rel_city ? $this->address_data->rel_city->name : null,
-            'kecamatan' => $this->isHasAddressData() ?? $this->address_data->rel_district ? $this->address_data->rel_district->name : null,
+            'alamat' => $this->isHasAddressData() ? $this->address_data->address : null,
+            'domicile' => $this->isHasAddressData() ? $this->address_data->domicile : null,
+            'provinsi' =>  ($this->address_data->hasProvince() && $this->isHasAddressData()) ? $this->address_data->rel_province->name : null,
+            'kota' =>  ($this->address_data->hasCity() && $this->isHasAddressData()) ? $this->address_data->rel_city->name : null,
+            'kecamatan' =>  ($this->address_data->hasDistrict() && $this->isHasAddressData()) ? $this->address_data->rel_district->name : null,
             'created_at' => $this->created_at->format('Y-m-d h:i:s'),
             'related_voucher' => $this->voucher ? $this->voucher->code : 'Voucher Tidak Ditemukan'
         ];

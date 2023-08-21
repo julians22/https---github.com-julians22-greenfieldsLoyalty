@@ -163,9 +163,13 @@
                         <div class="row mt-2">
                             <div class="col-md-6 offset-md-3">
                                 <p id="current_address" class="text-black font-weight-bold text-center mb-0">{{ $address_data->address }},</p>
-                                <p id="current_province" class="text-black font-weight-bold text-center mb-0">{{ $address_data->rel_province->name }},</p>
-                                <p id="current_city" class="text-black font-weight-bold text-center mb-0">{{ $address_data->rel_city->name }},</p>
-                                <p id="current_district" class="text-black font-weight-bold text-center mb-0">{{ $address_data->rel_district->name }},</p>
+                                @if ($logged_in_user->isWhatsappUser())
+                                    <p id="current_province" class="text-black font-weight-bold text-center mb-0">{{ $address_data->domicile }}</p>
+                                @else
+                                    <p id="current_province" class="text-black font-weight-bold text-center mb-0">{{ ($address_data->hasProvince() && $address_data->isHasAddressData()) ? $address_data->rel_province->name : null }},</p>
+                                    <p id="current_city" class="text-black font-weight-bold text-center mb-0">{{ ($address_data->hasCity() && $address_data->isHasAddressData()) ? $address_data->rel_city->name : null }},</p>
+                                    <p id="current_district" class="text-black font-weight-bold text-center mb-0">{{ ($address_data->hasDistrict() && $address_data->isHasAddressData()) ? $address_data->rel_district->name : null }},</p>
+                                @endif
                                 <p id="current_postcode" class="text-black font-weight-bold text-center">{{ $address_data->postal_code }}</p>
                             </div>
                             <div class="col-md-12 text-center">

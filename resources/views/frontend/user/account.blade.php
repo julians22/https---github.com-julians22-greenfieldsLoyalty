@@ -55,7 +55,15 @@
                                                     <th>{{__('Full Address')}}</th>
                                                     <td colspan="3">{{ $logged_in_user->address ?? "-" }}</td>
                                                 </tr>
+                                                @if ($logged_in_user->isWhatsappUser())
+                                                <tr>
+                                                    <th>{{ __('Domicile') }}</th>
+                                                    <td>{{ $logged_in_user->domicile ? $logged_in_user->domicile : "-" }}</td>
 
+                                                    <th>{{ __('Postal Code') }}</th>
+                                                    <td>{{ $logged_in_user->postal_code ?? "-" }}</td>
+                                                </tr>
+                                                @else
                                                 <tr>
                                                     <th>{{ __('Province') }}</th>
                                                     <td>{{ $logged_in_user->province ? $logged_in_user->address_data->rel_province->name : "-" }}</td>
@@ -71,6 +79,7 @@
                                                     <th>{{ __('Postal Code') }}</th>
                                                     <td>{{ $logged_in_user->postal_code ?? "-" }}</td>
                                                 </tr>
+                                                @endif
                                             </tbody>
                                         </table>
                                         {{-- Modile View --}}

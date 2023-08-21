@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Api;
 
 use App\Domains\Auth\Models\User;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\ActivityCollection;
 use App\Http\Resources\ActivityResource;
 use App\Http\Resources\Api\Users\UserResource;
 use App\Models\Redeem;
@@ -14,7 +13,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
-use Password;
 use Propaganistas\LaravelPhone\PhoneNumber;
 use Propaganistas\LaravelPhone\Rules\Phone;
 
@@ -156,10 +154,11 @@ class UserController extends Controller
 
             $user->address_data()->create([
                 "address" => $request->address ?? null,
+                "domicile" => $request->domicile ?? null,
                 "province" => $request->province ?? null,
                 "city" => $request->city ?? null,
                 "district" => $request->district ?? null,
-                "postal_code" => $data["postal_code"] ?? null,
+                "postal_code" => $request->postal_code ?? null,
                 "is_primary" => 1
             ]);
 
@@ -210,9 +209,7 @@ class UserController extends Controller
         $rules = [
             'name' => ['required', 'string', 'max:100'],
             'address' => ['required', 'string'],
-            'province' => ['required'],
-            'city' => ['sometimes'],
-            'district' => ['sometimes'],
+            'domicile' => ['required'],
             'postal_code' => ['required'],
             'date_of_birth' => ['required', 'date'],
             'history_milk_category' => ['required', 'array'],

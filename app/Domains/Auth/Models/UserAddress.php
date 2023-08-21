@@ -55,4 +55,16 @@ class UserAddress extends Model
     {
         return $this->hasOne(District::class, 'id', 'district');
     }
+
+    public function hasCity() {
+        return $this->city != null;
+    }
+
+    public function hasProvince() {
+        return $this->province != null;
+    }
+
+    public function hasDistrict() {
+        return $this->district != null;
+    }
 }

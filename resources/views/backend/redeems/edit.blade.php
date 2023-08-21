@@ -67,19 +67,19 @@
                     <div class="form-group row">
                         <label class="col-md-4 col-form-label" for="name">@lang('Province')</label>
                         <div class="col-md-8">
-                            <input type="text" class="form-control" value="{{ $redeem->address->rel_province->name }}" disabled>
+                            <input type="text" class="form-control" value="{{ $redeem->address->hasProvince() ? $redeem->address->rel_province->name : '-' }}" disabled>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-4 col-form-label" for="name">@lang('City')</label>
                         <div class="col-md-8">
-                            <input type="text" class="form-control" value="{{ $redeem->address->rel_city->name }}" disabled>
+                            <input type="text" class="form-control" value="{{ $redeem->address->hasCity() ? $redeem->address->rel_city->name : '-' }}" disabled>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-4 col-form-label" for="name">@lang('District')</label>
                         <div class="col-md-8">
-                            <input type="text" class="form-control" value="{{ $redeem->address->rel_district->name }}" disabled>
+                            <input type="text" class="form-control" value="{{ $redeem->address->hasDistrict() ? $redeem->address->rel_district->name : '-' }}" disabled>
                         </div>
                     </div>
                     <div class="form-group row">

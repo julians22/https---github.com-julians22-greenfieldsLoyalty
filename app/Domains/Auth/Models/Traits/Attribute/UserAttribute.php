@@ -163,4 +163,16 @@ trait UserAttribute
 
         return $this->address_data->district;
     }
+
+    /**
+     * @return null|string
+     */
+    public function getDomicileAttribute()
+    {
+        if (! $this->isHasAddressData()) {
+            return null;
+        }
+
+        return $this->address_data->domicile;
+    }
 }

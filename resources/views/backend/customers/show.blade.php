@@ -75,17 +75,23 @@
                         <th>@lang('Full Address')</th>
                         <td>{{ $user->address_data->address }}</td>
                     </tr>
+                    @if ($user->isHasAddressData() && $user->address_data->domicile)
+                        <tr>
+                            <th>@lang('Domicile')</th>
+                            <td>{{ ($user->isHasAddressData()) ?  $user->address_data->domicile : '-' }}</td>
+                        </tr>
+                    @endif
                     <tr>
                         <th>@lang('Province')</th>
-                        <td>{{ $user->address_data->rel_province->name }}</td>
+                        <td>{{ ($user->address_data->hasProvince() && $user->isHasAddressData()) ?  $user->address_data->rel_province->name : '-' }}</td>
                     </tr>
                     <tr>
                         <th>@lang('City')</th>
-                        <td>{{ $user->address_data->rel_city->name }}</td>
+                        <td>{{  ($user->address_data->hasCity() && $user->isHasAddressData()) ? $user->address_data->rel_city->name : '-' }}</td>
                     </tr>
                     <tr>
                         <th>@lang('Distict')</th>
-                        <td>{{ $user->address_data->rel_district->name }}</td>
+                        <td>{{  ($user->address_data->hasDistrict() && $user->isHasAddressData()) ? $user->address_data->rel_district->name : '-' }}</td>
                     </tr>
                     <tr>
                         <th>@lang('Postal Code')</th>
