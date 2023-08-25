@@ -31,6 +31,10 @@
 
     gtag('config', 'G-45N073QGGQ');
     </script>
+
+    @if (env('ENABLE_PIXEL'))
+        @include('frontend.includes.tags.pixel')
+    @endif
 @endif
 
 <body class="bg-white">
