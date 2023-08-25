@@ -22,6 +22,10 @@
 
 
     @if (env('APP_ENV') == 'production')
+        @if (env('ENABLE_PIXEL'))
+            @include('frontend.includes.tags.pixel')
+        @endif
+
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-45N073QGGQ"></script>
         <script>
@@ -40,9 +44,6 @@
         })(window,document,'script','dataLayer','GTM-5R98K6NH');</script>
         <!-- End Google Tag Manager -->
 
-        @if (env('ENABLE_PIXEL'))
-            @include('frontend.includes.tags.pixel')
-        @endif
     @endif
 </head>
 
