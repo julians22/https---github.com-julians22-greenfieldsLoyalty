@@ -45,13 +45,17 @@
         <!-- End Google Tag Manager -->
 
     @endif
+
 </head>
 
 
 <body class="bg-white">
+    @if(session()->get('flash_success_register'))
+        <img src="https://trk.ultraind.in/pixel?adid=64d9b6b5d8a5995d7d592cd5&txn_id=ORDER_ID">
+    @endif
+
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5R98K6NH"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5R98K6NH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     @include('includes.partials.read-only')
     @include('includes.partials.logged-in-as')
