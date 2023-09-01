@@ -185,8 +185,10 @@ class RegisterController
             return $response;
         }
 
+        session()->flash('flash_success_register');
+
         return $request->wantsJson()
                     ? new JsonResponse([], 201)
-                    : redirect($this->redirectPath())->withFlashSuccessRegister();
+                    : redirect($this->redirectPath());
     }
 }

@@ -20,10 +20,12 @@ class DashboardController
             $voucherInUser = Voucher::where('user_id', auth()->user()->id)->get();
             if (!$voucherInUser->count()) {
                 $voucher = Voucher::whereNull('given_at')->first();
-                $voucher->update([
-                    'user_id' => auth()->user()->id,
-                    'given_at' => now()
-                ]);
+                if ($voucher) {
+                    $voucher->update([
+                        'user_id' => auth()->user()->id,
+                        'given_at' => now()
+                    ]);
+                }
             }
         }
 

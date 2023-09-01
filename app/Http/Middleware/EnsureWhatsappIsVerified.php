@@ -20,6 +20,7 @@ class EnsureWhatsappIsVerified
     public function handle($request, Closure $next, $redirectToRoute = null)
     {
         if (! $request->user() || is_null($request->user()->whatsapp_validate_at)) {
+            session()->reflash();
             return $request->expectsJson()
                     ? abort(403, 'Nomor Whatsapp kamu belum terverifikasi.')
                     : Redirect::guest(URL::route($redirectToRoute ?: 'frontend.auth.verification.whatsapp.notice'));
