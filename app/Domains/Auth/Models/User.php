@@ -235,6 +235,16 @@ class User extends Authenticatable implements MustVerifyEmail, TwoFactorAuthenti
     }
 
     /**
+     * Get all of the topups for the User
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function redeems(): HasMany
+    {
+        return $this->hasMany(Redeem::class, 'user_id', 'id');
+    }
+
+    /**
      * Get the offline_reward associated with the User
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasOne

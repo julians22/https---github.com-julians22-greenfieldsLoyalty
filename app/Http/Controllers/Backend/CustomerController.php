@@ -15,6 +15,7 @@ class CustomerController extends Controller
     }
 
     public function show(User $user) {
+        $user->load(['topups', 'redeems']);
         return view('backend.customers.show', compact('user'));
     }
 }
