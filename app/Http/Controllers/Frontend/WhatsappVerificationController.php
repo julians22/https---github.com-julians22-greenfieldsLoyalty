@@ -11,6 +11,8 @@ use Http;
 use Illuminate\Http\Request;
 use Seshac\Otp\Otp;
 
+use App\Library\ValueFirstLibrary;
+
 
 class WhatsappVerificationController extends Controller
 {
@@ -91,13 +93,20 @@ class WhatsappVerificationController extends Controller
         }
     }
 
-    protected function send_otp($phone)
+    protected function send_otp($phone) {
+        $otp =  Otp::generate($phone);
+        $phone = $phone;
+
+
+
+    }
+
+    protected function send_otp_wablas($phone)
     {
         $otp =  Otp::generate($phone);
 
 
         $token = env('WHATSAPP_SENDER_TOKEN');
-        $phone = $phone;
         $messageSend = "Kode OTP Anda adalah : " . $otp->token . "\nMohon untuk tidak membalas pesan ini.\n\n\nTerima Kasih,\nGreenfields Dairy Indonesia";
         $url = env('WHATSAPP_BASE_URL');
         $endpoint = "/api/send-message?phone=$phone&message=$messageSend&token=$token";
