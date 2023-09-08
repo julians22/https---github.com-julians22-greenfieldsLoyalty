@@ -144,11 +144,33 @@
 
             <x-slot name="body">
                 <div class="row">
+                    <div class="col-md-12">
+                        <x-backend.callout :count="$user->point" title="Total poin saat ini"/>
+                    </div>
                     <div class="col-md-4">
                         <x-backend.callout :count="count($user->topups)" title="Total Top up"/>
                     </div>
                     <div class="col-md-4">
-                        <x-backend.callout :count="count($user->redeems)" title="Total Redeem"/>
+                        @php
+                            $pointRedeemed = 0;
+                            if (count($user->redeems)) {
+                                foreach ($user->redeems as $key => $redeem) {
+                                    $pointRedeemed += $reedem->point;
+                                }
+                            }
+                        @endphp
+                        <x-backend.callout :count="$pointRedeemed" title="Total Poin yang di tukar"/>
+                    </div>
+                    <div class="col-md-4">
+                        @php
+                            $pointRedeemed = $user->point;
+                            if (count($user->redeems)) {
+                                foreach ($user->redeems as $key => $redeem) {
+                                    $pointRedeemed += $reedem->point;
+                                }
+                            }
+                        @endphp
+                        <x-backend.callout :count="$pointRedeemed" title="Total poin yang di kumpulkan"/>
                     </div>
                 </div>
                 <div class="row">
