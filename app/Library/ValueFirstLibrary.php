@@ -4,44 +4,85 @@ namespace App\Library;
 
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Http\Client\RequestException;
 
 class ValueFirstLibrary
 {
-    protected string $token = '';
 
-    public function __construct() {
-        // $token = null;
-    }
+    public string $baseUrl = "https://api.myvfirst.com/psms";
+    public string $authBasic = "Basic Z3JlZW5maWVsZHdhOnFAMERbWjlbWzFrSlN2";
 
-    public function getToken(): string {
-        return $this->token . 'kkk';
-    }
-
-    public function setToken(array $jsonResponse) {
+    public function setToken(array $jsonResponse) : void {
         $expiryDate = Carbon::parse($jsonResponse['expiryDate']);
         $now = Carbon::now();
-
         $ttlDiff = $expiryDate->diffInMinutes($now);
-
         $token = $jsonResponse['token'];
-        $this->token = $token;
-
-        return $ttlDiff;
+        Cache::put('value_first_bearer', $token, $ttlDiff);
     }
 
-    public function fakeJson() : string
-    {
-        $fake = '{"token":"eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaS5teXZhbHVlZmlyc3QuY29tL3BzbXMiLCJzdWIiOiJncmVlbmZpZWxkd2EiLCJleHAiOjE2OTQ4ODQyMDd9.JWrk_d2Qd655fZmnLe6XHdRJV2FhNEYgXEfOjS2kzBg","expiryDate":"2023-09-14 22:40:07"}';
-        return $fake;
+    public function getToken() {
+        $token = Cache::get('value_first_bearer', null);
+
+        if ($token) {
+            return $token;
+        }
+        return $this->reGenerateToken();
+    }
+
+    public function reGenerateToken() {
+        $headers = [
+            'Authorization' => $this->authBasic
+        ];
+
+        $url = $this->baseUrl . "/api/messages/token?action=generate";
+
+        $response = Http::withHeaders($headers)
+            ->post($url);
+
+        $response->throw();
+
+        $responseJson = $response->body();
+
+        $json = json_decode($responseJson, true);
+
+        $this->setToken($json);
+
+        activity()
+            ->causedBy(auth()->user())
+            ->log('Success requesting token, with response '.$response->body());
+
+        return $json['token'] ?? null;
+    }
+
+    public function sendOtp($phone, $otp) {
+
+        $body = '{ "@VER": "1.2", "USER":{ "@CH_TYPE": "4", "@UNIXTIMESTAMP": ""}, "DLR":{ "@URL": ""}, "SMS": [ { "@UDH": "0", "@CODING": "1", "@TEMPLATEINFO": "1022522542~'.$otp.'", "@B_URLINFO": "'.$otp.'", "@PROPERTY": "0", "@MSGTYPE": "3", "@ID": "1", "ADDRESS": [ { "@FROM": "6285172100967", "@TO": "'.$phone.'", "@SEQ": "1", "@TAG": "TID 1022522542 Test"} ]} ]}';
+
+        $url = $this->baseUrl . "/servlet/psms.JsonEservice";
+
+        $response = Http::withToken($this->getToken())
+            ->retry(2, 0, function ($exception) {
+                if (! $exception instanceof RequestException || $exception->response->status() !== 401) {
+                    $this->reGenerateToken();
+                    return false;
+                }
+
+                activity()
+                    ->causedBy(auth()->user())
+                    ->log('Retry send otp, by regenerating token');
+
+                return true;
+            })
+            ->withBody($body, 'application/json')
+            ->post($url);
+
+        activity()
+            ->causedBy(auth()->user())
+            ->log('Success requesting otp, with response '.$response->body());
+
+        return [
+            'response' => $response
+        ];
     }
 }
-
-// $testClass = new ValueFirstLibrary();
-
-// $json = $testClass->fakeJson();
-
-// echo $testClass->setToken(json_decode($json, true));
-
-// echo "\n======\n\n======\n";
-
-// echo $testClass->getToken();

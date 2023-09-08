@@ -94,11 +94,19 @@ class WhatsappVerificationController extends Controller
     }
 
     protected function send_otp($phone) {
-        $otp =  Otp::generate($phone);
+        $otpGenerate =  Otp::generate($phone);
         $phone = $phone;
 
+        $otp = $otpGenerate->token;
 
+        $valueFirst = new ValueFirstLibrary();
 
+        $token = $valueFirst->sendOtp($phone, $otp);
+
+        $mail = auth()->user()->sendOtpNotification($otp);
+        session(['whatsapp_otp_at' => now()]);
+
+        return $otpGenerate;
     }
 
     protected function send_otp_wablas($phone)
@@ -116,6 +124,5 @@ class WhatsappVerificationController extends Controller
         $mail = auth()->user()->sendOtpNotification($otp->token);
         session(['whatsapp_otp_at' => now()]);
         return $otp;
-        // return $response;
     }
 }
