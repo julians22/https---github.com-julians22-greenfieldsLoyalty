@@ -101,7 +101,10 @@ class WhatsappVerificationController extends Controller
 
         $otp = $otpGenerate->token;
 
-        $valueFirst = new ValueFirstLibrary();
+        $baseUrl = config("valuefirst.base_url");
+        $authBasic = config("valuefirst.basic");
+
+        $valueFirst = new ValueFirstLibrary($baseUrl, $authBasic);
 
         $token = $valueFirst->sendOtp($phone, $otp);
 
