@@ -13,9 +13,9 @@ class ValueFirstLibrary
     public string $baseUrl = "";
     public string $authBasic = "";
 
-    public function __construct(string $baseUrl, string $authBasic) {
-        $this->baseUrl = $baseUrl;
-        $this->authBasic = $authBasic;
+    public function __construct() {
+        $this->baseUrl = config("valuefirst.base_url");
+        $this->authBasic = config("valuefirst.basic");
     }
 
     public function setToken(array $jsonResponse) : void {

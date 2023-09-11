@@ -18,7 +18,7 @@ return [
     | Value First Base URL API
     |--------------------------------------------------------------------------
     */
-    "base_url" => env("VALUE_FIRST_BASE_URL". "https://api.myvfirst.com/psms")
+    "base_url" => env("VALUE_FIRST_BASE_URL", "https://api.myvfirst.com/psms")
 
 ];
 
