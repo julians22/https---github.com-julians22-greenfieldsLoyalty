@@ -9,15 +9,6 @@ use Illuminate\Http\Client\RequestException;
 
 class ValueFirstLibrary
 {
-
-    public string $baseUrl = "";
-    public string $authBasic = "";
-
-    public function __construct() {
-        $this->baseUrl = config("valuefirst.base_url");
-        $this->authBasic = config("valuefirst.basic");
-    }
-
     public function setToken(array $jsonResponse) : void {
         $expiryDate = Carbon::parse($jsonResponse['expiryDate']);
         $now = Carbon::now();
@@ -37,10 +28,10 @@ class ValueFirstLibrary
 
     public function reGenerateToken() {
         $headers = [
-            'Authorization' => $this->authBasic
+            'Authorization' => config("valuefirst.basic")
         ];
 
-        $url = $this->baseUrl . "/api/messages/token?action=generate";
+        $url = config("valuefirst.base_url") . "/api/messages/token?action=generate";
 
         $response = Http::withHeaders($headers)
             ->post($url);
@@ -64,7 +55,7 @@ class ValueFirstLibrary
 
         $body = '{ "@VER": "1.2", "USER":{ "@CH_TYPE": "4", "@UNIXTIMESTAMP": ""}, "DLR":{ "@URL": ""}, "SMS": [ { "@UDH": "0", "@CODING": "1", "@TEMPLATEINFO": "1022522542~'.$otp.'", "@B_URLINFO": "'.$otp.'", "@PROPERTY": "0", "@MSGTYPE": "3", "@ID": "1", "ADDRESS": [ { "@FROM": "6285172100967", "@TO": "'.$phone.'", "@SEQ": "1", "@TAG": "TID 1022522542 Test"} ]} ]}';
 
-        $url = $this->baseUrl . "/servlet/psms.JsonEservice";
+        $url = config("valuefirst.base_url") . "/servlet/psms.JsonEservice";
 
         $response = Http::withToken($this->getToken())
             ->retry(2, 0, function ($exception) {
