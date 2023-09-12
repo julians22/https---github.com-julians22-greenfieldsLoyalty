@@ -93,13 +93,18 @@ class WhatsappVerificationController extends Controller
         }
     }
 
+    // Send otp by WABA API
+    // Using custom library
     protected function send_otp($phone) {
         $otpGenerate =  Otp::generate($phone);
         $phone = $phone;
 
         $otp = $otpGenerate->token;
 
-        $valueFirst = new ValueFirstLibrary();
+        $baseUrl = config("valuefirst.base_url");
+        $authBasic = config("valuefirst.basic");
+
+        $valueFirst = new ValueFirstLibrary($baseUrl, $authBasic);
 
         $token = $valueFirst->sendOtp($phone, $otp);
 
@@ -109,6 +114,8 @@ class WhatsappVerificationController extends Controller
         return $otpGenerate;
     }
 
+    // This method unusued
+    // Send OTP by WABLAS application
     protected function send_otp_wablas($phone)
     {
         $otp =  Otp::generate($phone);

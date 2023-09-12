@@ -10,8 +10,13 @@ use Illuminate\Http\Client\RequestException;
 class ValueFirstLibrary
 {
 
-    public string $baseUrl = "https://api.myvfirst.com/psms";
-    public string $authBasic = "Basic Z3JlZW5maWVsZHdhOnFAMERbWjlbWzFrSlN2";
+    public string $baseUrl = "";
+    public string $authBasic = "";
+
+    public function __construct() {
+        $this->baseUrl = config("valuefirst.base_url");
+        $this->authBasic = config("valuefirst.basic");
+    }
 
     public function setToken(array $jsonResponse) : void {
         $expiryDate = Carbon::parse($jsonResponse['expiryDate']);
