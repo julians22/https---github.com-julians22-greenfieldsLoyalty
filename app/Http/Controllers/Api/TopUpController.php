@@ -32,15 +32,6 @@ class TopUpController extends Controller
 
         $user = User::where('phone', $phone)->first();
 
-        // $waitingTopUp = TopUp::where('user_id', $user->id)->where('status', TopUp::STATUS_CREATED)->orWhere('status', TopUp::STATUS_PROCESS)->get();
-
-        // if ($waitingTopUp->count()) {
-        //     return response()->json([
-        //         'status' => false,
-        //         'message' => 'Pengguna memiliki permintaan top up yang belum terselesaikan silahkan menunggu hingga proses topup sebelumnya selesai.',
-        //     ], 419);
-        // }
-
         $imagePath = "uploads/receipt/";
         $imageName = 'WA'.time().'.'.$request->receipt->extension();
 
