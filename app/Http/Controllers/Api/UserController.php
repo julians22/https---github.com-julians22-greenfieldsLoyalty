@@ -60,17 +60,25 @@ class UserController extends Controller
         $phone = PhoneNumber::make($phone, 'ID');
         $user = User::where('phone', $phone)->first();
 
-        $transactions = [];
-        $topup = TopUp::where('user_id', $user->id)->take(10)->get();
-        $redeem = Redeem::where('user_id', $user->id)->take(10)->get();
-        $transactions = array_merge($this->extract_data($topup, 'topup'), $this->extract_data($redeem, 'redeem'));
-        $transactions = collect($transactions)->sortByDesc('date')->toArray();
+        if ($user) {
+            $transactions = [];
+            $topup = TopUp::where('user_id', $user->id)->take(10)->get();
+            $redeem = Redeem::where('user_id', $user->id)->take(10)->get();
+            $transactions = array_merge($this->extract_data($topup, 'topup'), $this->extract_data($redeem, 'redeem'));
+            $transactions = collect($transactions)->sortByDesc('date')->toArray();
+
+            return response()->json([
+                'status' => true,
+                'current_point' => $user->point,
+                'activities' => ActivityResource::collection($transactions)
+            ]);
+        }
 
         return response()->json([
-            'status' => true,
-            'current_point' => $user->point,
-            'activities' => ActivityResource::collection($transactions)
-        ]);
+            'status' => false,
+            'message' => 'User not found'
+        ], 404);
+
     }
 
     /**
