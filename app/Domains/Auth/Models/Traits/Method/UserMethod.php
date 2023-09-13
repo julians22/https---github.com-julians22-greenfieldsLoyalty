@@ -29,6 +29,40 @@ trait UserMethod
         return true;
     }
 
+    public function isHasCity(): bool {
+        if (!$this->isHasAddressData()) {
+            return $this->isHasAddressData();
+        }
+
+        if ($this->address_data->isHasCity()) {
+            return false;
+        }
+
+        return true;
+    }
+    public function isHasProvince(): bool {
+        if (!$this->isHasAddressData()) {
+            return $this->isHasAddressData();
+        }
+
+        if ($this->address_data->isHasProvince()) {
+            return false;
+        }
+
+        return true;
+    }
+    public function isHasDistrict(): bool {
+        if (!$this->isHasAddressData()) {
+            return $this->isHasAddressData();
+        }
+
+        if ($this->address_data->isHasDistrict()) {
+            return false;
+        }
+
+        return true;
+    }
+
     public function isWebUser() {
         return $this->register_channel == 'web';
     }
