@@ -25,7 +25,8 @@ class UserResource extends JsonResource
             'kota' =>  ($this->isHasCity()) ? $this->address_data->rel_city->name : null,
             'kecamatan' =>  ($this->isHasDistrict()) ? $this->address_data->rel_district->name : null,
             'created_at' => $this->created_at->format('Y-m-d h:i:s'),
-            'related_voucher' => $this->voucher ? $this->voucher->code : 'Voucher Tidak Ditemukan'
+            'related_voucher' => $this->voucher ? $this->voucher->code : 'Voucher Tidak Ditemukan',
+            'register_channel' => $this->register_channel
         ];
     }
 }
