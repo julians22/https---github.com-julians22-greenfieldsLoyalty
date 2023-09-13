@@ -34,7 +34,7 @@ trait UserMethod
             return $this->isHasAddressData();
         }
 
-        if ($this->address_data->hasCity()) {
+        if (!$this->address_data->hasCity()) {
             return false;
         }
 
@@ -45,7 +45,7 @@ trait UserMethod
             return $this->isHasAddressData();
         }
 
-        if ($this->address_data->hasProvince()) {
+        if (!$this->address_data->hasProvince()) {
             return false;
         }
 
@@ -56,7 +56,7 @@ trait UserMethod
             return $this->isHasAddressData();
         }
 
-        if ($this->address_data->hasDistrict()) {
+        if (!$this->address_data->hasDistrict()) {
             return false;
         }
 
