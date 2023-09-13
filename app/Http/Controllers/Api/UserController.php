@@ -45,6 +45,12 @@ class UserController extends Controller
             return response()->json($result, 404);
         }
 
+        if (!$user->isWhatsappVerified()) {
+            $user->update([
+                'whatsapp_validate_at' => now(),
+            ]);
+        }
+
         $result = [
             'pass' => true,
             'detail' => new UserResource($user),
