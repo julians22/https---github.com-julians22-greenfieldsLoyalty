@@ -66,6 +66,7 @@ class RedeemExport implements FromCollection, WithMapping, WithHeadings
             'Email',
             'Reward',
             'Point',
+            'Channel',
             'Address',
             'Domicile',
             'Province',
