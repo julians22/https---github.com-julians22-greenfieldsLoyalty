@@ -32,10 +32,10 @@ class RedeemExport implements FromCollection, WithMapping, WithHeadings
         $district = "";
         $domicile = "";
 
-        $province = $redeem->address_data->hasProvince() ? $redeem->address->rel_province->name : "";
-        $city = $redeem->address_data->hasCity() ? $redeem->address->rel_city->name : "";
-        $district = $redeem->address_data->hasDistrict() ? $redeem->address->rel_district->name : "";
-        $domicile = ($redeem->address_data->domicile) ? $redeem->address->domicile : "";
+        $province = $redeem->address->hasProvince() ? $redeem->address->rel_province->name : "";
+        $city = $redeem->address->hasCity() ? $redeem->address->rel_city->name : "";
+        $district = $redeem->address->hasDistrict() ? $redeem->address->rel_district->name : "";
+        $domicile = $redeem->address->domicile ?? "";
 
         return [
             $redeem->created_at,
