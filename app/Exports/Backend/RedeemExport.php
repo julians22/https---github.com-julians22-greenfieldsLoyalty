@@ -27,6 +27,16 @@ class RedeemExport implements FromCollection, WithMapping, WithHeadings
     public function map($redeem): array
     {
 
+        $province = "";
+        $city = "";
+        $district = "";
+        $domicile = "";
+
+        $province = $redeem->address_data->hasProvince() ? $redeem->address->rel_province->name : "";
+        $city = $redeem->address_data->hasCity() ? $redeem->address->rel_city->name : "";
+        $district = $redeem->address_data->hasDistrict() ? $redeem->address->rel_district->name : "";
+        $domicile = ($redeem->address_data->domicile) ? $redeem->address->domicile : "";
+
         return [
             $redeem->created_at,
             $redeem->transaction_code,
@@ -35,10 +45,12 @@ class RedeemExport implements FromCollection, WithMapping, WithHeadings
             $redeem->user->email,
             $redeem->reward->name,
             $redeem->point,
+            $redeem->channel,
             $redeem->address->address,
-            $redeem->address->rel_province->name,
-            $redeem->address->rel_city->name,
-            $redeem->address->rel_district->name,
+            $domicile,
+            $province,
+            $city,
+            $district,
             $redeem->address->postal_code,
             $redeem->status,
         ];
@@ -55,6 +67,7 @@ class RedeemExport implements FromCollection, WithMapping, WithHeadings
             'Reward',
             'Point',
             'Address',
+            'Domicile',
             'Province',
             'City',
             'District',
