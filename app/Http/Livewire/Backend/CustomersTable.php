@@ -22,8 +22,15 @@ class CustomersTable extends DataTableComponent
     public function filters(): array
     {
         return [
+            'register_channel' => Filter::make('Register Channel')
+                ->select([
+                    '' => 'Any',
+                    User::REGISTER_WEB => 'Web',
+                    User::REGISTER_WEB_QR => 'Web QR',
+                    User::REGISTER_WHATSAPP => 'Whatsapp',
+                ]),
             'created_from' => Filter::make('Register Date From')->date(),
-            'created_to' => Filter::make('Register Date To')->date()
+            'created_to' => Filter::make('Register Date To')->date(),
         ];
     }
 
@@ -66,6 +73,7 @@ class CustomersTable extends DataTableComponent
             }]);
 
         return $query
+            ->when($this->getFilter('register_channel'), fn ($query, $register) => $query->where('register_channel', $register))
             ->when($this->getFilter('created_from'), fn ($query, $date) => $query->whereDate('created_at', '>=', date('Y-m-d', strtotime($date))))
             ->when($this->getFilter('created_to'), fn ($query, $date) => $query->whereDate('created_at', '<=', date('Y-m-d', strtotime($date))));
     }

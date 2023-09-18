@@ -27,6 +27,12 @@ class TopupTable extends DataTableComponent
     public function filters(): array
     {
         return [
+            'topup_channel' => Filter::make('Topup Channel')
+                ->select([
+                    '' => 'Any',
+                    Topup::CHANNEL_WEB => 'Web',
+                    Topup::CHANNEL_WHATSAPP => 'Whatsapp',
+                ]),
             'status' => Filter::make('Status')
                 ->select([
                     '' => 'Any',
@@ -56,6 +62,7 @@ class TopupTable extends DataTableComponent
             Column::make(__('Point'), 'point')
                 ->sortable(),
             Column::make(__('Note'), 'note'),
+            Column::make(__('Topup Channel'), 'channel'),
             Column::make(__('Upload Date'), 'created_at')
                 ->sortable(),
             Column::make(__('Actions')),
@@ -69,6 +76,7 @@ class TopupTable extends DataTableComponent
         return $query
             ->when($this->getFilter('topup_date'), fn ($query, $date) => $query->whereDate('created_at', $date))
             ->when($this->getFilter('status'), fn ($query, $status) => $query->where('status', $status))
+            ->when($this->getFilter('topup_channel'), fn ($query, $channel) => $query->where('channel', $channel))
             ->when($this->getFilter('created_from'), fn ($query, $date) => $query->whereDate('created_at', '>=', date('Y-m-d', strtotime($date))))
             ->when($this->getFilter('created_to'), fn ($query, $date) => $query->whereDate('created_at', '<=', date('Y-m-d', strtotime($date))));
     }

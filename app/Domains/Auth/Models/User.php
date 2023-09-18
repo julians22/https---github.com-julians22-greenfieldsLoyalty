@@ -46,8 +46,14 @@ class User extends Authenticatable implements MustVerifyEmail, TwoFactorAuthenti
         UserRelationship,
         UserScope;
 
+    // User Type Constant
     public const TYPE_ADMIN = 'admin';
     public const TYPE_USER = 'user';
+
+    // Register Channel Constant
+    public const REGISTER_WEB = 'web';
+    public const REGISTER_WEB_QR = 'web_qr';
+    public const REGISTER_WHATSAPP = 'whatsapp';
 
     /**
      * The attributes that are mass assignable.
