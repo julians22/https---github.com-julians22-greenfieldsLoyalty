@@ -19,6 +19,10 @@
 </x-livewire-tables::bs4.table.cell>
 
 <x-livewire-tables::bs4.table.cell>
+    {{ $row->channel }}
+</x-livewire-tables::bs4.table.cell>
+
+<x-livewire-tables::bs4.table.cell>
     @displayDate($row->created_at)
 </x-livewire-tables::bs4.table.cell>
 

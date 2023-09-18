@@ -35,6 +35,12 @@ class RedeemsTable extends DataTableComponent
                     Redeem::STATUS_SUCCESS => 'Finished',
                     Redeem::STATUS_FAILED => 'Delayed',
                 ]),
+            'redeem_channel' => Filter::make('Redeem Channel')
+                ->select([
+                    '' => 'Any',
+                    Redeem::CHANNEL_WEB => 'Web',
+                    Redeem::CHANNEL_WHATSAPP => 'Whatsapp',
+                ]),
             'redeem_date' => Filter::make('Redeem Date')
                 ->date(),
             'created_from' => Filter::make('Created From')->date(),
@@ -58,6 +64,7 @@ class RedeemsTable extends DataTableComponent
                 ->sortable(),
             Column::make(__('Status'), 'status')
                 ->sortable(),
+            Column::make(__('Redeem Channel'), 'channel'),
             Column::make(__('Redeem Date'), 'created_at')
                 ->sortable(),
             Column::make(__('Actions')),
@@ -70,6 +77,7 @@ class RedeemsTable extends DataTableComponent
 
         return $query
             ->when($this->getFilter('redeem_date'), fn ($query, $date) => $query->whereDate('created_at', $date))
+            ->when($this->getFilter('redeem_channel'), fn ($query, $channel) => $query->where('channel', $channel))
             ->when($this->getFilter('created_from'), fn ($query, $date) => $query->whereDate('created_at', '>=', date('Y-m-d', strtotime($date))))
             ->when($this->getFilter('created_to'), fn ($query, $date) => $query->whereDate('created_at', '<=', date('Y-m-d', strtotime($date))))
             ->when($this->getFilter('status'), fn ($query, $status) => $query->where('status', $status));
