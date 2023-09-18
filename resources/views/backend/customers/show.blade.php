@@ -155,7 +155,7 @@
                             $pointRedeemed = 0;
                             if (count($user->redeems)) {
                                 foreach ($user->redeems as $key => $redeem) {
-                                    $pointRedeemed += $reedem->point;
+                                    $pointRedeemed += $redeem->point;
                                 }
                             }
                         @endphp
@@ -166,7 +166,7 @@
                             $pointRedeemed = $user->point;
                             if (count($user->redeems)) {
                                 foreach ($user->redeems as $key => $redeem) {
-                                    $pointRedeemed += $reedem->point;
+                                    $pointRedeemed += $redeem->point;
                                 }
                             }
                         @endphp
