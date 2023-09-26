@@ -24,6 +24,7 @@ class ModifyTopUpRequest extends FormRequest
     public function rules()
     {
         return [
+            'update_point' => 'sometimes|numeric|min:0',
             'note' => 'sometimes',
             'receipt_date' => 'required',
             'receipt_number' => 'required',
@@ -34,6 +35,13 @@ class ModifyTopUpRequest extends FormRequest
             'details.*.qty' => 'required|numeric|min:1',
             'details.*.price' => 'required|numeric|min:1',
             'details.*.total' => 'required|numeric|min:1'
+        ];
+    }
+
+    public function attributes()
+    {
+        return [
+            'update_point' => "Update Point"
         ];
     }
 }

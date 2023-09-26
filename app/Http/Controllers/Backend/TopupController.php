@@ -108,19 +108,39 @@ class TopupController extends Controller
         DB::beginTransaction();
 
         try {
-            $topup->update([
-                'status' => Topup::STATUS_SUCCESS,
-                'note' => $request->note ?? null,
-                'receipt_date' => $request->receipt_date,
-                'receipt_number' => $request->receipt_number,
-                'receipt_channel' => $channel,
-                'receipt_subchannel' => $request->receipt_channel,
-                'receipt_area' => $request->receipt_area,
-                'receipt_storename' => $request->receipt_storename,
-            ]);
+            if ($request->update_point > 0) {
+                $user_point = $topup->user->point - $topup->point;
+
+
+                $topup->user->update([
+                    'point' =>  $user_point + $request->update_point
+                ]);
+
+                $topup->update([
+                    'point' => $request->update_point,
+                    'status' => Topup::STATUS_SUCCESS,
+                    'note' => $request->note ?? null,
+                    'receipt_date' => $request->receipt_date,
+                    'receipt_number' => $request->receipt_number,
+                    'receipt_channel' => $channel,
+                    'receipt_subchannel' => $request->receipt_channel,
+                    'receipt_area' => $request->receipt_area,
+                    'receipt_storename' => $request->receipt_storename,
+                ]);
+            }else{
+                $topup->update([
+                    'status' => Topup::STATUS_SUCCESS,
+                    'note' => $request->note ?? null,
+                    'receipt_date' => $request->receipt_date,
+                    'receipt_number' => $request->receipt_number,
+                    'receipt_channel' => $channel,
+                    'receipt_subchannel' => $request->receipt_channel,
+                    'receipt_area' => $request->receipt_area,
+                    'receipt_storename' => $request->receipt_storename,
+                ]);
+            }
             $topup->details()->delete();
             $topup->details()->createMany($details);
-
 
         } catch (\Throwable $th) {
             //throw $th;

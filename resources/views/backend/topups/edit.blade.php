@@ -206,6 +206,20 @@
                                 <label for="point">@lang('Point Calculated')</label>
                                 <input @if ($topup->isCompleted()) disabled @endif type="number" class="form-control" name="point" value="{{ old('point') ?? $topup->point }}">
                             </div>
+                            @if ($topup->isCompleted())
+                                <div class="form-group">
+                                    <label for="point">@lang('Update Point')</label>
+                                    <input type="number" class="form-control" name="update_point" value="{{ old('update_point') ?? 0 }}">
+                                    <ul>
+                                        <li>
+                                            <small>@lang('All points previously awarded to the user will be deducted')</small>
+                                        </li>
+                                        <li>
+                                            <small>@lang('Update Point field, will be entered into user points')</small>
+                                        </li>
+                                    </ul>
+                                </div>
+                            @endif
                             <div class="form-group">
                                 <label for="note">@lang('Note') @lang('(Optional)'):</label>
                                 <textarea name="note" class="form-control" id="note" cols="" rows="5">{{ old('note') ?? $topup->note }}</textarea>
