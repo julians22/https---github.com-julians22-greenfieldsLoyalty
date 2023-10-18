@@ -35,13 +35,16 @@
     },
     "dependencies": {
         "@splidejs/splide": "^4.1.4",
+        "chart.js": "^4.4.0",
         "filepond": "^4.30.4",
         "filepond-plugin-image-preview": "^4.6.11",
         "jquery-filepond": "^1.0.0",
         "jquery-viewer": "^1.0.1",
+        "moment": "^2.29.4",
         "select2": "^4.0.13",
         "select2-theme-bootstrap4": "^1.0.2",
         "toastr": "^2.1.4",
-        "viewerjs": "^1.11.3"
+        "viewerjs": "^1.11.3",
+        "vue-chartjs": "^5.2.0"
     }
 }
