@@ -1,3 +1,4 @@
+<!--/.col-->
 @inject('topup_model', '\App\Models\TopUp')
 
 @extends('backend.layouts.app')
