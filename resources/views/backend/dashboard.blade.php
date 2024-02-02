@@ -45,6 +45,17 @@
                     </x-backend.callout>
                 </div><!--/.col-->
             </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <livewire:member-chart />
+                </div>
+                <div class="col-md-6">
+                    <livewire:upload-chart />
+                </div>
+            </div>
+        
+            
+            
         </x-slot>
     </x-backend.card>
 @endsection
