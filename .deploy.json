@@ -1,0 +1,21 @@
+{
+    "DEPLOYPATH" : "/home/designcube3/demo_projects/greenfieldsloyalty",
+    "task" :  [
+        "app",
+        "bootstrap",
+        "config",
+        "database",
+        "public",
+        "resources",
+        "routes",
+        "storage",
+        "tests",
+        "artisan",
+        "composer.json",
+        "composer.lock",
+        "package.json",
+        "package-lock.json",
+        "server.php",
+        "webpack.mix.js"
+    ]
+}
