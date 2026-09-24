@@ -132,8 +132,8 @@ $fixedStyleSecond = "position-sticky w-100";
                     @if ($logged_in_user->isAdmin())
                         <li class="desktop-nav-item nav-item">
                             <x-utils.link
-                                :href="route('frontend.admin.dashboard')"
-                                :active="activeClass(Route::is('frontend.admin.dashboard'))"
+                                :href="route('admin.dashboard')"
+                                :active="false"
                                 :text="__('Admin Dashboard')"
                                 class="mr-2 btn-rounded btn btn-dark-green" />
                         </li>
