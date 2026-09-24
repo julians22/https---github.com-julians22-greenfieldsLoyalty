@@ -23,12 +23,12 @@ $fixedStyleSecond = "position-sticky w-100";
 <nav class="navbar navbar-expand-md navbar-light bg-white py-1 py-md-2 {{ $fixedStyle }}" style="z-index: 2;" id="white-navbar">
     <div class="container-fluid">
         <div class="navbar-brand">
-            <div class="d-flex items-center position-relative">
+            <div class="position-relative d-flex items-center">
                 <div class="d-inline-flex align-items-center mr-1">
                     <img src="{{ asset('img/brand/Greenfields Logo_Green.png') }}" alt="" width="180" height="51">
                 </div>
                 <x-utils.link
-                    class="stretched-link text-dark ml-2"
+                    class="ml-2 text-dark stretched-link"
                     :href="route('frontend.index')">
                     <div class="d-md-inline-block d-none" style="line-height: 1;">
                         KLUB IBU EXTRA <br> <strong>LOYALTY PROGRAM</strong>
@@ -42,7 +42,7 @@ $fixedStyleSecond = "position-sticky w-100";
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
+            <ul class="ml-auto navbar-nav">
                 @guest
                     @if (
                         Route::is('frontend.index')
@@ -52,14 +52,14 @@ $fixedStyleSecond = "position-sticky w-100";
                                 :href="route('frontend.pages.terms')"
                                 :active="activeClass(Route::is('frontend.pages.terms'))"
                                 :text="__('Syarat & Ketentuan')"
-                                class="nav-link mr-2" />
+                                class="mr-2 nav-link" />
                         </li>
                         <li class="nav-item">
                             <x-utils.link
                                 :href="route('frontend.pages.privacy')"
                                 :active="activeClass(Route::is('frontend.pages.privacy'))"
                                 :text="__('Kebijakan Privasi')"
-                                class="nav-link mr-2" />
+                                class="mr-2 nav-link" />
                         </li>
                     @endif
                 @endguest
@@ -69,7 +69,7 @@ $fixedStyleSecond = "position-sticky w-100";
                             :href="route('frontend.auth.login')"
                             :active="activeClass(Route::is('frontend.auth.login'))"
                             :text="__('Login')"
-                            class="nav-link mr-2" />
+                            class="mr-2 nav-link" />
                     </li>
 
                     @if (config('boilerplate.access.user.registration'))
@@ -108,14 +108,14 @@ $fixedStyleSecond = "position-sticky w-100";
                             :href="route('frontend.user.account')"
                             :active="activeClass(Route::is('frontend.user.account'))"
                             :text="__('Profile')"
-                            class="btn btn-block btn-dark-green btn-rounded mr-2" />
+                            class="btn-block mr-2 btn-rounded btn btn-dark-green" />
                     </li>
 
 
                     <li class="mobile-nav-item nav-item">
                         <x-utils.link
                             :text="__('Logout')"
-                            class="btn btn-block btn-dark-green my-2 my-sm-0 btn-rounded"
+                            class="btn-block my-2 my-sm-0 btn-rounded btn btn-dark-green"
                             onclick="event.preventDefault();document.getElementById('logout-form-mobile').submit();">
                             <x-slot name="text">
                                 @lang('Logout')
@@ -129,19 +129,30 @@ $fixedStyleSecond = "position-sticky w-100";
                         </a>
                     </li>
 
-                    <li class="desktop-nav-item nav-item">
-                        <x-utils.link
-                            :href="route('frontend.user.account')"
-                            :active="activeClass(Route::is('frontend.user.account'))"
-                            :text="__('Profile')"
-                            class="btn btn-dark-green btn-rounded mr-2" />
-                    </li>
+                    @if ($logged_in_user->isAdmin())
+                        <li class="desktop-nav-item nav-item">
+                            <x-utils.link
+                                :href="route('frontend.admin.dashboard')"
+                                :active="activeClass(Route::is('frontend.admin.dashboard'))"
+                                :text="__('Admin Dashboard')"
+                                class="mr-2 btn-rounded btn btn-dark-green" />
+                        </li>
+                    @else
+                        <li class="desktop-nav-item nav-item">
+                            <x-utils.link
+                                :href="route('frontend.user.account')"
+                                :active="activeClass(Route::is('frontend.user.account'))"
+                                :text="__('Profile')"
+                                class="mr-2 btn-rounded btn btn-dark-green" />
+                        </li>
+                    @endif
+
 
 
                     <li class="desktop-nav-item nav-item">
                         <x-utils.link
                             :text="__('Logout')"
-                            class="btn btn-dark-green my-2 my-sm-0 btn-rounded"
+                            class="my-2 my-sm-0 btn-rounded btn btn-dark-green"
                             onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                             <x-slot name="text">
                                 @lang('Logout')
@@ -168,12 +179,12 @@ $fixedStyleSecond = "position-sticky w-100";
         @auth
         <div class="point-wrapper-mobile">
             <div class="bg-dark-green p-2 rounded-lg">
-                <div class="point text-center">
-                    <p class="text-white mb-1"><strong>POIN KAMU</strong></p>
+                <div class="text-center point">
+                    <p class="mb-1 text-white"><strong>POIN KAMU</strong></p>
                     <p class="text-gold h1"><strong>{{ number_format($logged_in_user->point, 0, ".", ".") }}</strong></p>
                 </div>
                 @if ($logged_in_user->isUser())
-                    <button class="btn btn-gold btn-block btn-rounded font-weight-bold text-white" data-toggle="modal" data-target="#uploadReceiptModal" type="button">UPLOAD STRUK & TUKARKAN HADIAH</button>
+                    <button class="btn-block btn-rounded font-weight-bold text-white btn btn-gold" data-toggle="modal" data-target="#uploadReceiptModal" type="button">UPLOAD STRUK & TUKARKAN HADIAH</button>
                 @endif
             </div>
         </div>
@@ -185,10 +196,10 @@ $fixedStyleSecond = "position-sticky w-100";
 @auth
 
 <div style="z-index: 2; top: 0;" class="shadow-lg  d-none d-md-block {{ $fixedStyleSecond }}">
-    <nav class="navbar navbar-expand-md navbar-light py-0 navbar-stack">
+    <nav class="py-0 navbar navbar-expand-md navbar-light navbar-stack">
 
-        <div class="container-fluid justify-content-between">
-            {{-- <div class="d-flex "> --}}
+        <div class="justify-content-between container-fluid">
+            {{-- <div class="d-flex"> --}}
                 <ul class="navbar-nav">
                     <li class="nav-item {{ activeClass(Route::is('frontend.user.dashboard')) }}">
                         <a class="nav-link" href="{{ route('frontend.user.dashboard') }}">Beranda</a>
@@ -226,9 +237,9 @@ $fixedStyleSecond = "position-sticky w-100";
                                 {{ number_format($logged_in_user->point, 0, ".", ".") }}
                             </div>
                             @if ($logged_in_user->isUser() && $logged_in_user->isHasDetail() && $logged_in_user->isWhatsappVerified())
-                                <button class="btn btn-gold btn-rounded font-weight-bold text-white" data-toggle="modal" data-target="#uploadReceiptModal" type="button">UPLOAD STRUK & <br> TUKARKAN HADIAH</button>
+                                <button class="btn-rounded font-weight-bold text-white btn btn-gold" data-toggle="modal" data-target="#uploadReceiptModal" type="button">UPLOAD STRUK & <br> TUKARKAN HADIAH</button>
                             @else
-                                <button class="btn btn-gold btn-rounded font-weight-bold text-white disabled" type="button">UPLOAD STRUK & <br> TUKARKAN HADIAH</button>
+                                <button class="btn-rounded font-weight-bold text-white btn btn-gold disabled" type="button">UPLOAD STRUK & <br> TUKARKAN HADIAH</button>
                             @endif
                         </div>
                     </div>
